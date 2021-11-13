@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       1f3a2214-b3ff-4d6f-8858-a99e5c3bec27
+:END:
+#+title: Data-flow Integrity (DFI)

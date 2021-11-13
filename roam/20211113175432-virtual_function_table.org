@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       eb05babc-760e-4880-af12-63949bae4c0e
+:END:
+#+title: Virtual Function Table

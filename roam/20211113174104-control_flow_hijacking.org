@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       c65b9685-bf84-482c-9094-415f4103a035
+:END:
+#+title: Control-flow Hijacking

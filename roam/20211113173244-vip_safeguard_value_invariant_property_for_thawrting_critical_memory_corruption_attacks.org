@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       192dfbc3-f4f0-431f-bd17-379c2363db58
+:END:
+#+title: VIP: Safeguard Value Invariant Property for Thawrting Critical memory Corruption Attacks
+
+* Summary
+The paper claims to invented a new security property named Value Invariant
+Property. Instead of providing complete protection like other methods in
+[[id:f84adbd3-6db6-4651-bd29-bdfb1534065c][Defenses Against Memory Corruption]], it only focus on preventing two classes of
+attack, the [[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]] and [[id:004655b9-bd2c-4e0a-8d12-6b01318588aa][Heap Metadata Corruption]] attacks.
+
+VIP protect integrity of the data values for security-sensitive data (function
+pointers, [[id:eb05babc-760e-4880-af12-63949bae4c0e][Virtual Function Table]] pointers) by enforcing that those data could
+only be altered via legitimate updates.
+
+The prototype is called HyperSpace. It record the security sensitive values in
+[[id:027687ec-a1ba-4d7d-8c56-de4e17cc6e1d][Intel MPK]]-protected regions, and validate the sensitive value with the recorded
+before use. Compiler optimizations to reduce the cost is also presented.
+
+The mechanism is proved to be very efficient in doing it job. it provides with
+ 6.28% performance overhead with 13.18% memory overhead in SPEC CPU 2006.

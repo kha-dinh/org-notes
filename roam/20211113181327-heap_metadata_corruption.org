@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       004655b9-bd2c-4e0a-8d12-6b01318588aa
+:END:
+#+title: Heap Metadata Corruption
+
+* Overview
+This attack, the heap management algorithm is tricked due to corrupted heap metadata.
+* TODO How it work

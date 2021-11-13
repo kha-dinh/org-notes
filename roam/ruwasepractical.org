@@ -2,7 +2,7 @@
 :ID:       3e0400d3-bfab-4822-a5cf-745dbb3d517d
 :ROAM_REFS: cite:ruwasepractical
 :END:
-#+TITLE: : A Practical Dynamic Buffer Overflow Detector
+#+TITLE: A Practical Dynamic Buffer Overflow Detector
 
 - tags ::
 - keywords ::

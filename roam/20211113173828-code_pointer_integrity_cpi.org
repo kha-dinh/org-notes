@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       19dc195b-8a0c-4fea-829e-0a9af64a8b04
+:END:
+#+title: Code-pointer Integrity (CPI)

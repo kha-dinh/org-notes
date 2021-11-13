@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       f84adbd3-6db6-4651-bd29-bdfb1534065c
+:END:
+#+title: Defenses Against Memory Corruption
+
+* Defenses
++ [[id:fdbace7f-32d7-4501-bd97-56ebbad2c365][Memory Safety]] enforce spatial and temporal memory safety typically through
+  bounds checking and quarantine. It typically have highest runtime overhead.
++ [[id:e4f7a2a5-41dc-43cb-ba44-840341771650][Control-flow Integrity (CFI)]] enforce the integrity of the expected
+  control-flow of a program based on the [[id:9db852f0-600b-481b-a3e3-b46a7332c322][Control Flow Graph (CFG)]]
++ [[id:19dc195b-8a0c-4fea-829e-0a9af64a8b04][Code-pointer Integrity (CPI)]] Protect the code pointers via [[id:19b1c06c-52dd-477e-8a22-d93b02c276ca][Information Hiding]]
++ [[id:1f3a2214-b3ff-4d6f-8858-a99e5c3bec27][Data-flow Integrity (DFI)]] prevents both control and [[id:20b040ae-e8c2-4326-8c12-cc12d28cb1a2][Non-control Data Attacks]]
+  by ensuring that the data flow at runtime does not deviate from the computed
+  [[id:2079f2c0-9b47-4265-a8f7-a096d3c9f462][Data Flow Graph (DFG)]].
++ Value Invariant Property: A property introduced by the paper [[id:192dfbc3-f4f0-431f-bd17-379c2363db58][VIP: Safeguard
+  Value Invariant Property for Thawrting Critical memory Corruption Attacks]] that
+  focus on preventing [[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]] and heap metadata corruption
