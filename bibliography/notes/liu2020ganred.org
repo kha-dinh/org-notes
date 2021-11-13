@@ -1,0 +1,38 @@
+#+TITLE: #+TITLE: Ganred: gan-based reverse engineering of dnns via cache side-channel
+#+ROAM_KEY: liu2020ganred
+* TODO Notes
+:PROPERTIES:
+:Custom_ID: liu2020ganred
+:NOTER_DOCUMENT:
+:AUTHOR: Liu, Y. & Srivastava, A.
+:JOURNAL:
+:DATE:
+:YEAR: 2020
+:DOI:  http://dx.doi.org/10.1145/3411495.3421356
+:URL:
+:END:
+
+
+* Summary
+The paper propose a reverse engineering attack that use GAN to train on cache
+timing side-channel information to generate the DNN structures.
+
+The cache technique used was PRIME+PROBE ([[file:../../roam/20210726150221-cache_attacks.org][Cache Attacks]]). The DNN is constructed
+layer by layer by by comparing the side-channel information of each layer
+between attacker model and victim model.
+
+Compared to cite:yan2020cache, cite:hong2020security it do not requires shared
+DNN library and can extract the entire model instead of just architecture.
+
+* Details
+** Extrating side-channel information
+ The attacker only focus on a single LLC set, base on the assumption that large
+ DNN computation results are many times larger than LLC, thus every cache set
+ have uniform accesses.
+
+ Traditional PRIME+PROBE is used on LLC (without kernel privilege). Also, only
+ the /number of LLC misses/ in each probing cycle is measured by the attacker.
+
+ Multiple measurement are made to overcome randomness. After probing, the
+ attacker obtains a set of trace from the DNN.
+** Process

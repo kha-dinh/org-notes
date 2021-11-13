@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       ce77b344-a252-4347-a98f-8761037f7dfa
+:END:
+#+title: CPU Caches
+
++ From: [[id:ba4542ee-1abb-4e61-90b0-d0b3d4aaaec9][ARMageddon: Cache Attacks on Mobile Devices]]
+* Cache set
++ Cache lines are organized in *sets*
++ Each memory address maps to one of the sets
+  + Addresses that map to the same set are /congruent/
++ Congruent addresses compete for the same set with a /replacement policy/ (eviction policy)
+ + Some replacement policies
+  - Intel: Least-recently used (LRU)
+  - ARM use pseudo-LRU for L1, pseudo random replacement for L2
+* Cache index
++ Can be virtually or physically indexed using a /tag/
+  - A tag identifies the address that is cached in a cacheline
+* Cache inclusiveness
++ /Inclusive cache/: cacheline from lower levels are also stored in higher level
++ /Exclusive cache/: a cache line is only in one level at a time
++ /Non-inclusive/: neither inclusive nor exclusive
+* Cache coherence
++ Coherence protocol is used to synchronize cache of multiple CPU cores

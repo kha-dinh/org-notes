@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       64996a46-f5e7-47d8-961a-1df23173f394
+:END:
+#+title: LLVM Passes
+
+* Pass dependencies
+There are two types of dependency:
++ *Explicit dependency*, which is established through a direct use of a pass analysis information. For example, this line of code set up the dependency of a user to the DominatorTree pass:
+    #+begin_src C++
+    DominatorTree &DT = getAnalysis<DominatorTree>(Func);
+    #+end_src
++ *Implicit dependency*: Sometime a pass have to be right after some transformation pass. This type of dependency have to be set up using the /pass manager/.

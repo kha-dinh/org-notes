@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       2921cb35-237c-4918-b3c0-1e94c1c983a8
+:END:
+#+title: Privilege Separation
+
+* What it is
+Following the principle of least privilege, each software component should only
+have the smallest amount of privilege that it need.
+
+Typically, privilege separation need [[id:2600bd94-d792-4546-8a24-b98a33ee935a][Memory Isolation]] to isolate the memory
+regions of the components.
+
+An example of the principle is in microkernels, where only the minimum amount of
+code is inside of the kernel, while most of the functionalities are moved out.
+The Chromium browser also isolate each tab into separated sandboxes.

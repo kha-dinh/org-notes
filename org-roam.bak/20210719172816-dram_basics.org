@@ -1,0 +1,31 @@
+#+title: DRAM Basics
+
+
+* DRAM Organization
++ A DRAM Chip consists of /DRAM Array/ and /Peripheral Circuitry/
++ A DRAM array is divided into multiple banks, each bank contains a 2-d array of
+  DRAM cells.
+  - Each cell store 1 bit using capacitor.
+  - Cells of an array is connected to a row of /sense amplifiers/ via vertical
+    wires (/bitlines/)
+  - The row of sense amplifier is called the /row buffer/
++ Peripheral circuitry have 3 components:
+  - /I/O component/ receive command and transfer data between DRAM and CPU
+  - /Delay-lock loop (DLL)/ synchronize data signal with external clock to
+    coordinate data transfer
+  - /Control logic/ decode DRAM commands and select row & column of cells
+* Accessing Data
++ Reading a cache line requires 3 commands: =ACTIVE=, =READ= and =PRECHARGE=
++ Each command requires some time to complete (the /timing parameters/). The
+  memory controller can be programmed to follow different sets of timing
+  parametes
+  - =ACTIVATE=:
+    + Open the target row in the bank. The target row start to leak electrical
+      charge to the row buffer, which trigger the row buffer to "latch" on data.
+    + Timing parameter for ACTIVE is =tRCD (Activation Latency)=: the minimum
+      amount of time to pass from the issue time of ACTIVE until the issue of a
+      column command (READ or WRITE) *(FROM ACT to READ/WRITE)*
+    + Cells' charge need to be restore to prevent data loss, so the row buffer performs /charge restoration/ at the same time of ACTIVATE. After cells' charge is restored, the row can be closed using PRECHARGE.
+      - Timing parameter for restoration is =tRAS=: *From ACT to PRE*
+  - =READ=:
+  -

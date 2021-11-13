@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       42fc703f-26e3-4eac-8d26-cc8a65aeeb66
+:END:
+#+title: Embedded Systems

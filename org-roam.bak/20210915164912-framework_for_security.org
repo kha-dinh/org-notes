@@ -1,0 +1,9 @@
+#+title: Framework for Security
+
+* Framework for Security
++ *Policy*: What you are supposed to achieve ([[file:20210915165803-security_policy.org][Security Policy]])
++ *Mechanism*: Cipher, access control, hardware to implement  the policy
++ *Assurance*: Reliance for each mechanism
++ *Incentive*: Motive for people guarding the system
+
+The big problem is iften developing _proper security policies_

@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       7fb432b5-2300-4db1-8689-336028c1af68
+:END:
+#+title: Cache Attacks
+
+
+
+* PRIME+PROBE
+cite:liu2015lastlevel
++ Attack on LLC does not require sharing cores or memory
++ Develop an algorithm to probe exactly one cache set without knowing virtual-address mapping
++ Use =temporal access pattern= to identify security-critical accesses
++ Attack steps:
+  a. At $t_{0}$, the attacker /primes/ the cache (fill the entire cache with data)
+  b. At $t_{1}$, execute code with /memory accesses dependent to sensitive data/
+  c. At $t_{2}$, /probes/ which of attacker's cache line got evicted
+     + -> those are used by the victim
+     + Commonly use access time to measure evicted cacheline
+     + Attacker know the mapping of the victim -> know which address is access.
+
+
+* SGX Cache attack
+cite:brassersoftware
++ Use privileged sw to PIN victim process to a single core
++ based on PIM+PROBE

@@ -1,0 +1,21 @@
+#+title: LLVM Backend
+
+
+* Overview :ATTACH:
+:PROPERTIES:
+:ID:       c4fc9174-4491-4160-bad0-223ac8dae1c4
+:END:
+[[attachment:_20211102_120325screenshot.png]]
++ *Instruction Selection* convert LLVM IR into target-specific ~SelectionDAG~ nodes. Each basic block is associated with a DAG, where the nodes are instructions, the edges are dataflow dependency or other dependencies.
+  + DAG representation allows for tree-based pattern matching instruction selection algorithm.
++ *Pre-Register Allocation(RA) Scheduling*: Is the first Instruction scheduling instance, try to schedule instructions to maximize instruction-level parallelism. The instructions are convert to MachineInstr (have [[file:20210305150006-three_address_code.org][Three Address Code]] representation).
+  + The DAG alone does not have the ordering of instruction without dependencies.
++ *Register Allocation* allocate infinite set of virtual register into finite set of target-specific registers and generate spills when needed.
++ *Post-RA Scheduling*: Use the info of delay and extra hazards from the real register information to improve ordering.
++ *Code Emission* convert instructions from ~MachineInstr~ to ~MCInst~ which is more suitable for assemblers and linkers.
++ *Passes*: Inbetween the core /superpasses/ above, there can be smaller passes that improve the generated code efficiency.
+* Libraries
++ ~CodeGen~: /Target-independent/ code generation and machine IR analysis & transformation: instruction selection, scheduler, register allocation, and analyses needed for them.
++ ~MC~: Implementation of low-level functionalities  for assembler, disassembler, idiom such as ELF, COFF, MachO, etc.
++ ~TableGen~: Implementation of the TableGen tool.
++ ~Target/*~: Target implementation, where

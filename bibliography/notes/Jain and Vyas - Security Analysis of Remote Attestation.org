@@ -1,0 +1,5 @@
+* Jain and Vyas - Security Analysis of Remote Attestation
+:PROPERTIES:
+:NOTER_DOCUMENT: ../../../../Zotero/storage/EICS3PXL/Jain and Vyas - Security Analysis of Remote Attestation.pdf
+:NOTER_PAGE: 1
+:END:

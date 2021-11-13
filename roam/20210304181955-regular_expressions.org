@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       cdf40696-a3be-480c-8e9b-3d67994d0435
+:END:
+#+title: Regular Expressions
+
+ - A regular expression can be used to denote [[id:a906f467-b06f-4847-a047-0e944cb5ba69][Regular Language]]
+   + \varepsilon: a regular expression denote set {\varepsilon} or L(\varepsilon)
+   + x and y denotes L(x) and L(y)
+     - x|y : L(x) \cup L(y)
+     - xy : L(x)L(y)
+     - x* : L(x)*

@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       e25d8b4c-2331-4d55-9d09-2c11d3ba476c
+:END:
+#+title: UART

@@ -1,0 +1,5 @@
+#+title: Strongly Connected Components (SCC)
+
+* Why SCC matter
+SCCs are helpful in clustering a graph.
+Useful in identifying bottlenect

@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       e8285f91-893a-40f0-8960-079aeeef7b66
+:END:
+#+title: A Modern Primer on Processing in Memory
+#+filetags: :paper:pim:

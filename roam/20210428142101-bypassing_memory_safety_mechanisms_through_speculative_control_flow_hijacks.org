@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       d786fa96-dcff-4f5c-b13b-ef19bc0f525a
+:END:
+#+title: Bypassing memory safety mechanisms through speculative control flow hijacks
+#+filetags: :paper:
+
++ Use speculative execution to bypass stack smashing protection and control flow integrity in memory safe languages (go, rust)
++ Works by overwriting backward / forward edge, followed by speculative code reuse to leak data

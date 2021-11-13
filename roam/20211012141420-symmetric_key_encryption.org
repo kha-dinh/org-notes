@@ -1,0 +1,46 @@
+:PROPERTIES:
+:ID:       a5b0504e-6bd1-41ff-aaec-dce6e7464b7a
+:END:
+#+title: Symmetric Key Encryption
+
+* Stream cipher
++ In stream cipher, a short key is stretched into a long *keystream* using pseudorandom generator (PRG).
++ Don't have perfect secrecy
++ Popular in the past, but not now
+  + Because efficient in hardware
++ /"The death of stream ciphers"/ - Shamir
+** RC4
++ Representative of stream cipher
++ Systematically swap and produce output bytes
+
+* Block cipher
++ Each round, iterate /substitution/ and /permutation/ each round.
++ A key is expanded into /round keys/ to use for each round operation
++ A round $R(k,m)$ is a round function.
++ DES: 16 rounds (n = 16)
++ AES: 10 rounds (n = 10)
++ Two main /cipher structures/ are used: Feistel structure and Subtitution-Permutation (SP) network
+** Feistel structure
+  + By Horst Feistel at IBM
+  + Each round  use an /F-function/ ($F$) with input is half a block and a round key. Output is half block of scrambled data, and is XOR-ed with the other half-block
+  + Split a plaintext block into two halves, left and right
+  + For each round, compute:
+    + $L_{i}=R_{i-1}$
+    + $R_{i}=L_{i-1} xor F(R_{i-1},K_{i})$
+  + Works for any function $F$, but only a certain function F is secure.
+  + Vs. SP network: More flexible because F-function don't need to be reversible
+** SP networks
+   + Designed by Shamir
+   + Each round have 2 layers: /substitution/ to provide confusion, and /permutation/ to provide diffusion ([[id:01f66afd-111b-432f-99c0-51f593d36e5b][Cryptography]])
+   + Place constraint on the round functions: must be /reversible/
+   + Each rounds can be computed in parallel
+   + Typically, encryption and decryption is different (reverse the round function to change between encrypt / decrypt)
+   + Vs. Feistel: Faster, change a whole block in one round
+** Data Encryption Standard (DES)
++ Feistel cipher with
+  + 64 bit block length
+  + 56 bit key length
+  + 8 bit parity
+  + 16 rounds
+  + 48 bits round key
++ =64-bit Input -> Permutation -> Round 1 ... 16 -> Swap 32-bit halves -> Permutation -> 64-bit Output=

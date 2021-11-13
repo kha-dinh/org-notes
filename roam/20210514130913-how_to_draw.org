@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       d203ebb6-0ecc-4a77-88ec-8f66ccb63bdf
+:END:
+#+title: How To Draw
+
+* Books
++ Figure drawing for concept artists
++ Drawing the heads and hands
++ Sketching the basics

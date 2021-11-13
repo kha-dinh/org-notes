@@ -1,0 +1,59 @@
+:PROPERTIES:
+:ID:       fa05cf90-9b97-433a-9ff5-18426e98c645
+:END:
+#+title: Backup
+* Overall
++ Need to :
+  - Better motivate the problem (rev 1)
+  - Better describe how to PIM can eliminate side-channels (rev 1)
+  - Better describe how this is zero-copy, maybe with figure (rev 1)
+
++ No one questioned the evaluation setup & delay so we can use it
++ No one questioned the projection of k-mean
+
+* Design changes
++ Most are from  reviewer 2
+  - Memory access control need more details on how it can be achieved
+  - May Need to change design to accommodate multiple users
+  - Attacker can still see the memory change before & after PIM computation
+
+    #+begin_quote
+    Recent advances in IO accelerators (e.g, FPGA, GPU) and their ability to improve the performance of specific types of workloads when offloaded from the host has led to the development of shared virtual memory (SVM) concepts that allow seamless sharing of data between the host and the IO accelerator. This is in sharp contrast to the new computing model with PIMs assumes that the host is interested only in the eventual result of the data and not so much any intermediate value. The PIM model also assumes that the processing happens in bulk and not so much a ping-pong fashion. So, is the PIM enclave useful for all types of computation?
+    #+end_quote
+
+
+
+* Fix evaluation
+** Overhead of checking every memory access?
+** DMA
++ Maybe we should remove random access overhead, it almost the same as sequential (rev 2)
+** Applications
++ The overhead of the secure channel is not clear (rev 2)
++ Should we measure host performance at all?
+#+begin_quote
+Isn't the plot that compares host performance vs. perf. with different number of PIM enclaves misleading? Wouldn't the number of host threads >> number of PIM enclaves? (rev 2)
+#+end_quote
+
+
+
+* Related works
+#+BEGIN_QUOTE
+One of the main premises in your work is that you place the data in the memory bank before the computation, so there is no data movement during the computation. Isn't the same also possible by pre-loading SGX enclaves with data before computation, and using methods such as large page-based defenses (e.g., SGX-LAPD from RAID'17)?
+#+END_QUOTE
+
+* Change Writing
+** From rev 1:
+  - (Page 7)   Add that physical attack on PIM is not sensible because PIM use stacked memory so opening the package would be difficult
+  - The threat  model is contradictory
+#+BEGIN_QUOTE
+The paragraph beginning with "The PIM Memory Model" on page 5 is very poorly written. I don't u understand what you mean by "DRAM module is enclavized with a memory bank of the in-memory enclave as a unit of the in-memory enclave that comprises a memory bank PIM core and PIM local memory."
+#+END_QUOTE
+
+** From rev 2
+#+begin_quote
+While the paper is very well written and easy to read, it does get repetitive in terms of the motivation for PIM enclaves and the components of the architecture. For example, you could combine sections 4.1, 4.3
+
+List all the side channel attacks that you want to compare in terms of host TEEs and PIM enclaves in a table. That would make it much easier even for a reader to contrast the two approaches.
+
+There are inconsistencies in minor ways: in section 4.2 under offloading model, the paper says attestation will be described in section 4.4 which in turn essentially says, attestation procedures are well-known and wraps it up.
+#+end_quote

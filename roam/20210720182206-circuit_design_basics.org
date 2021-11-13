@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       a6ffd7e7-3a86-4f1b-8a07-efffd3d3db13
+:END:
+#+title: Circuit Design Basics

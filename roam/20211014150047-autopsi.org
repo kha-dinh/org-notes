@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       afc38ac1-3fc9-4d21-99b8-d0e708198687
+:END:
+#+title: AutoPSI
+
+* Program slicing
++  Program slicing find of the programs that is relavent to the chosen set of variables. The slicer then
+
+[Program Slicing](http://www0.cs.ucl.ac.uk/staff/mharman/exe1.html)

@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       3028a884-86fd-4b3e-9a7b-3073d3b78d40
+:END:
+#+title: Booting Process

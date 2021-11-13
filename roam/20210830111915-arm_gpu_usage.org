@@ -1,0 +1,71 @@
+:PROPERTIES:
+:ID:       de705c91-d781-43e5-a806-b3b06e763044
+:END:
+#+title: ARM GPU Usage
+#+latex_header: \input{./settings}
+#+latex_header: \titlegraphic{\hfill \includegraphics[width=.18\textwidth]{sslab-logo.pdf}}
+
+
+
+
+
+
+
+#+begin_latex
+
+#+end_latex
+
+
+
+* Test
+#+begin_quote
+
+OpenCL + ARM Mali + Linux DRM  GPU stack analysis
+
+1. How is a GPU context defined in terms memory and function calls?
+2. How is OpenCL <-> GPU kernel Jit done? where is it done?
+3. etc
+#+end_quote
+
+
+Midgard Mali
+
+
+
+* OK :ATTACH:
+[[attachment:_20210830_122312screenshot.png]]
+The Linux graphics stack consists of kernel-space drivers, "gatekeepers" for those drivers and user-space drivers.
+
+    Kernel-space drivers are radeon (older AMD driver for older GPUs, tho still supported), amdgpu (newer driver for newer GPUs, allows using a few new features), i915, nouveau and a few others. They're what handles the gory details of talking to the GPU itself (writing to proper registers, handling its memory directly, configuring outputs, and so on). Unfortunately most of what they're exposing can be only consumed by a single user of that GPU, which is why we need...
+
+    DRM and DRI (Direct Rendering Manager/Infrastructure), which is what controls access to the GPUs, provides interfaces for talking to the GPU concurrently by multiple apps at once (without them breaking each other) and lets the system perform the most basic tasks like setting proper resolution and such if no userspace apps understand how to talk to the GPU exposed. DRI and DRM expose the GPU interfaces mostly as-is, not in a "vendor-neutral" portable way - if you don't have an application developed specifically for a GPU you have, it won't work.
+
+    So you'd say, "let's create a vendor-neutral interface for graphics so that apps can ignore the GPU-specific bits and get right to the drawing!" - which is what OpenGL is. User-space drivers implement the OpenGL specification and expose it as an OpenGL library (libGL) to apps (like games, browsers, etc) instead of the GPU tidbits. Mesa is the most popular collection of open-source user-space drivers, Nvidia has their own proprietary user-space driver for their GPUs, AMD has proprietary AMDGPU-PRO (which requires the amdgpu kernel-space driver).
+
+    Mesa is a collection, because it contains a few user-space drivers for different GPU families: radeonsi for most modern AMD GPUs (and r600g, r300g and others for older ones), i915/i965 for old/new Intel GPUs and nouveau for Nvidia GPUs. There's also Gallium, which is a bunch of utilities and common code shared among these drivers - if certain things can be done once and work everywhere (assuming the drivers follow a few rules), they'll land in Gallium and benefit all the drivers. Most Mesa drivers use Gallium (radeonsi, nouveau, software renderers), some don't (intel), basically up to the devs whenever they wanted to use it in the first place and if it was worth it.
+
+    That's for 3D acceleration - what about just displaying 2D windows and such? X.org supports device-specific 2D drivers as well, but nowadays most of these are no longer needed as the modesetting can handle most hardware on its own. As the DRM/DRI got some additional interfaces for what used to be hardware-specific (setting resolutions, refresh rates, etc) and software requiring accelerated 2D drawing was optimized to hell and back or moved to OpenGL-based renderers, 2D acceleration is slowly going away. They're still there in xf86-something packages if you want or need them, though.
+
+    What about software that needs hardware 2D acceleration to work sensibly and doesn't do 3D hardware acceleration by itself? There's GLAMOR, a library that implements most 2D drawing operations with OpenGL. This means you need a user-space OpenGL library, but if you have that, you can drop the device-specific 2D acceleration implementation and everything's still silky smooth. Nowadays it's part of the X.org Server itself (and isn't needed on Wayland, since the 2D graphics APIs in question are part of the X.org Server and the X11 protocol, not any "portable" standard).
+
+    But hey, modern GPUs can also decode video! There's VDPAU (NVIDIA & AMD GPUs) and VA-API (AMD & Intel GPUs) that can also talk to the GPU exposed via DRM/DRI and issue proper commands to decode/encode a given video stream. Those drivers are GPU-specific too. There's also XvMC for ancient GPUs.
+
+So let's say you have some example GPUs, here's how example stacks could look like:
+
+    AMD Radeon HD4850: radeon kernel driver -> DRM/DRI -> Mesa (r600g, driver for a bit older Radeon GPU that is the HD4850) -> games/apps/etc.
+
+    NVIDIA GeForce 560Ti: nouveau kernel driver -> DRM/DRI -> Mesa (nouveau) -> games/apps.
+
+    Intel HD 530: i915 kernel driver -> DRM/DRI -> Mesa (i965) -> games/apps.
+
+    NVIDIA GeForce 1060: nvidia proprtietary kernel driver -> DRM/DRI -> NVIDIA user-space driver -> games/apps.
+
+Out of a few interesting tidbits that come to mind:
+
+    Other graphics APIs like Vulkan or Direct3D would be implemented as separate user-space drivers. (Mesa actually supports Direct3D 9 on Gallium drivers if you compile it with that option, and apps running on Wine can utilise that.) You could also skip graphics APIs entirely and talk directly to the GPU... if you're brave enough.
+
+    This stack is actually very tightly integrated and is generally a moving target. Various component interfaces change quite often and proprtietary stacks historically have had a problem with this as they target specific component versions (often the ones available at the stack's release) and that'll be it, good enough, amirite? - so many legacy mobile chipsets with proprietary Linux drivers are pretty much MIA: the rest of the stack moved on and won't talk to older, less popular hardware despite drivers being out there.
+
+    Mobile GPUs like Adrenos (built into the Qualcomm Snapdragon CPUs) and VideoCore (in Raspberry Pis, basicallyBroadcom CPUs) also are starting to be supported on modern open-source graphics stacks. It's a bit hard to install regular Linux distros on most mobile devices (not in a chroot, but rather natively), so it won't matter for a while, but what used to be a strictly proprietary ground is now worked on in open projects - that is, once they're ready, they'll be supported for as long as they're humanly usable and someone bothers to keep them updated, not when their manufacturers slap "EOL" on the package and call it a day. Ancient GPUs like Voodoo still work under modern distros (that's stretching the definition of "humanly usable", but hey, it works).
+
+    AMD had their own fully-proprietary driver stack (kernel + user-space components, like the current NVIDIA stack) called fglrx back in the day... haha, funny thing, let's forget about it as soon as possible because holy hell that was not good.

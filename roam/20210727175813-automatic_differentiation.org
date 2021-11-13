@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       e84aba7e-ddcd-4f6d-9214-f57aa9cf1a28
+:END:
+#+title: Automatic Differentiation
+
++ Used to evaluate derivative of a function by applying chain rule
++ Often by remember what operation happens in what order in forward pass
+* In Tensorfow
++ Tensorflow use a /GradientTape/ to record operation executed
++

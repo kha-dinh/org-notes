@@ -1,0 +1,39 @@
+#+title: Multi-level Security Models
+
+* Goal
+To prevent unauthorized information disclosure
+
+* Definition
++ The model is defined in term of objects (=O=) and subjects (=S=)
+  - O has a classification
+  - S has a clearance
+  - The security level is denoted by L(O) and L(S)
+** Basic security theorem
++ A state transition is secure if both initial and final states are secure
++ If all state transition are secure and the initial state is secure, then every subsequence states will be secure
+* Bell-LaPadula (BLP) Confidentiality Model
++ In this model, information only flows up, now down. e.g.,
+  - Only read down is allowed: S can read O if L(O) <= L(S)
+    + A subject can only read object with the same or lower level
+  - Only write up is allowed: S can write O if L(S) <= L(O)
+    + No write down: an subject cannot leak information
++ Using this model, a system that start in a secure state will end in a secure state
+** Limitation:
+*** Cascade problem
+Systems cannot merge security labels
+*** Composability
+*** Covert Channels
+*** High cannot write to low
+Which is common in real systems
+** Modifications
++ Tranquility are weaken:
+  - Strong Tranquility: Security labels never change
+  - Weak tranquility: Security label can change if it does not violate "established security policy"
+  - - To implement, we use "high watermark principle", which update the security label of a subject to the highest label of resource that it touch.
++ Trusted subject can be allowed to "write down"
+  - This leads to the introduction of [[file:20210915172826-trusted_computing_base_tcb.org][Trusted Computing Base (TCB)]], that trusted subject use.
+* Biba Integrity Model
++ Focus on integrity instead of confidentiality
++ No read down & no write up
+  - Prevent malware from corrupting high level
+  - High level preserve integrity by not reading low

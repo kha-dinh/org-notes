@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       49f833e8-1454-4907-8c62-e0c4120f7581
+:END:
+#+title: Rowhamer.js
+* Background
++ [[id:ce77b344-a252-4347-a98f-8761037f7dfa][CPU Caches]]
+* Cache eviction strategies
++ Find the best eviction strategy in a automated way to replace clflush
++ /Eviction set/ is a set of congruent addresses
++ An /eviction strategy/ access address inside of an eviction set in a access pattern so that the cache line is evicted similarly to clflush
+  - Can have multiple accesses per address

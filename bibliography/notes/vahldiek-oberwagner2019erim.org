@@ -1,0 +1,13 @@
+#+TITLE: #+TITLE: \ERIM\: secure, efficient in-process isolation with protection keys (\MPK\)
+#+ROAM_KEY: vahldiek-oberwagner2019erim
+* TODO Notes
+:PROPERTIES:
+:Custom_ID: vahldiek-oberwagner2019erim
+:NOTER_DOCUMENT:
+:AUTHOR: Vahldiek-Oberwagner}, A. et al.
+:JOURNAL:
+:DATE:
+:YEAR: 2019
+:DOI:
+:URL:
+:END:

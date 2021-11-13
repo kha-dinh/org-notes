@@ -1,0 +1,63 @@
+:PROPERTIES:
+:ID:       6bc87e74-cf9e-4d12-81ff-e979b4107177
+:END:
+#+title: Compilers
+
+* Jobs of a compiler
++ To recognize  legal programs
++ To generate correct code
++ To manage the storage of variables and code
+*  Traditional Compiler Anatomy
+** Front End
+- Most of the front end functions can be *automated* since they revolve around text parsing
+*** Responsibilities of the front end
+**** Recognize legal programs
+**** Report errors in useful ways
+**** Produce IR & preliminary storage map
+**** Setup the /shape/ of the code for backend
+*** Modules
+**** Scanner
++ Process streams of characters into /words/ into *tokens*
++ *Tokens* : a word plus the part of speech it belongs to
+  - /Example/:
+    - x = x + y; becomes
+    - <id,x> <EQ,=> <id,x> <OP,+> <id,y> <EoE,;>
+    - <token type(part of speech),*lexeme*(word)>
+  - Typical tokens: /number, identifier, operator, new, while, if/
++ White spaces are eliminated
++ [[id:cdf40696-a3be-480c-8e9b-3d67994d0435][Regular Expressions]] are used to extract tokens
+  - By inputing regular expressions as specifications, a *Scanner Generator* could build the Scanner
+    + e.g. ANTLR
+**** [[id:5b0c852c-c63f-43f0-88f5-c35999ab852e][Parser]]
+- Using *rules* to recognizes syntax from *tokens* ( *Context-free analysis*)
+- Performs *context-sensitive* (semantic) analysis
+  + Analysis that include relation between multiple sentences
+  + E.g. type checking
+- Build [[id:e87d9b01-6c61-4114-a671-e79e058b7d3e][Intermediate Representations]]
+- Some types of analysis
+  + [[id:9db852f0-600b-481b-a3e3-b46a7332c322][Control Flow Graph (CFG)]]  (Control Flow Analysys)
+  + [[id:d57045e0-aad1-4ee2-a11b-0971d5865d58][Data Flow Analysis]]
+** Back End
++ Automation is less useful in backend. Most of the tasks are done through heuristics
++ Problems in the back end are /NP-hard/
+*** Responsibilities
++ Translate IR into target machine code
++ Choose instructions to implement IR operations
++ Decide which values -> registers
++ Find optimal order of execution
++ Ensure conformance with system interfaces
+*** Instruction Selection
++ Maps [[id:e87d9b01-6c61-4114-a671-e79e058b7d3e][Intermediate Representations]] into assembly code
+*** Instruction scheduling
++ [[id:8dd69ef0-9b3a-494e-afe5-785d72228110][Instruction Scheduling]]
+** Middle End
++ Mostly used for code optimization:
+  - Analyze and transforms IR into more optimized forms
+*** Goal:
+  - Reduce Execution time, space, power consumption
+  - Preserve original meaning
+* Optimizations
++ Idea: to transform code into mode efficient form
++ [[id:2f20edcc-5a7e-461f-aa3b-e42b7ae37423][Common Optimizations (Compiler)]]
++  [[id:cf0b91bf-c333-402c-b07b-9be4b3f03e8e][Instruction Selection]]
+*

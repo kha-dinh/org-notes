@@ -1,0 +1,45 @@
+:PROPERTIES:
+:ID:       2e19fc10-2640-4d41-b5da-8bf0940b64b3
+:END:
+#+title: Attribute-based Encryption
+
+
+* Summary :ATTACH:
+
++ Based on cite:zhang2020attributebased
+[[attachment:_20210706_130333screenshot.png]]
++ Allow data owner to define access control policy for their data
++ Three entities: Data User (DU), Data Owner (DO) and Cloud Service Provider
++ Attributes are embedded into ciphertext
+  + When new user join, DO doesn't have to do anything
++ 2 Categories: ciphertext-policy ABE (CP-ABE) and key-policy ABE (KP-ABE)
+
+
+** CP-ABE
++ In CP-APE, a user's =attribute secret key= is associated with an =attribute list=
++ =ciphertext= have =access policy= that defined over an =attribute universe=
++ Ciphertext can be decrypted if user's =attribute list= match =ciphertext's
+  access policy=
++ For example: the attribute universe is ={IDENTITY, DEPARTMENT, YEAR}=,
+  =IDENTITY={Teacher, Student}=, =DEPARTMENT={CS,CE,etc.}=, =YEAR={Year 1, Year 2,
+  Year 3, Year 4}=
+  + The grade is encrypted under access policy: =((IDENTITY: Student AND
+    DEPARTMENT: CS) OR IDENTITY: Teacher)=
+  + Only Teacher or CS student can decrypt the access policy
++ Enhanced CP-ABE: Basic, Revocable, Policy-hiding, Policy Updating, Multi-authority, Hierarchical, Online/Offline, Outsourced
+
+** KP-ABE
++ IN KP-ABE, the =access policy= over an =attribute universe= is encoded into the
+  user's =attribute secret key=
++ Ciphertext is created with respect to an attribute list
++ A ciphertext can only be decrypted if corresponding =attribute list= matches the encoded =access policy=
++ For example: access policy =((IDENTITY: Student AND DEPARTMENT: CS) OR IDENTITY: Teacher)= encoded into Bob's attribute secret key
+  + Ciphertext computed based on attribute list ={IDENTITY: Student, DEPARTMENT: CE, YEAR: Year 3}=
+    - Bob fails to decrypt ciphertext
+  + Bob can decrypt ciphertext with ={IDENTITY:Teacher}=
++ Categories:
+*
+
+* Taxonomy
+** Enhanced CP-ABE
++ =Revocable CP-ABE=:

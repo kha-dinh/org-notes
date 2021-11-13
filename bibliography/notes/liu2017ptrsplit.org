@@ -1,0 +1,63 @@
+#+TITLE: #+TITLE: Ptrsplit: supporting general pointers in automatic program partitioning
+#+ROAM_KEY: liu2017ptrsplit
+* TODO Notes
+:PROPERTIES:
+:Custom_ID: liu2017ptrsplit
+:NOTER_DOCUMENT:
+:AUTHOR: Liu, S. et al.
+:JOURNAL:
+:DATE:
+:YEAR: 2017
+:DOI:  http://dx.doi.org/10.1145/3133956.3134066
+:URL:
+:END:
+
+
+* Motivation
++ There are difficulty when dealing with /pointers/ when partitioning applications into least-privileged components.
+  - Pointers make calculating data dependence difficult
+  - Pointer can go out of bound because they have no bound information
++ The paper proposes techniques to support pointers in automatic program partitioning.
+  - Use Program Dependence Graph to track data and control dependencies
+  - Use parameter tree to represent pointers in the PGD
+  - Selective pointer bounds tracking to limit the performance overhead of global pointer analysis
+
+* Summary
++ The system takes source code annotate with sensitive / insensitive data as input.
++ The source code is converted into LLVM IR. PtrSplit then construct PGD for the IR program.
++ The system use the PDG to compute
+  - /sensitive raw partition/ that can access sensitive data and
+  - /insensitive raw partition/ contains the reset of the code
++ After partitioning, some function calls become RPC and need RPC wrapper for marshalling and unmarshalling.
++ PtrSplit performs /selective pointer bounds tracking/, which only track bound of pointers that can cross the partitioning boundary. The bound information is used by /a type-based method/ to generate the RPC wrappers
++ Finally, the system generate executable partitions:
+  - One with sensitive code & data & RPC wrapper
+  - One with insensitive code & data & RPC wrapper
+* Why PGD & Parameter tree
+** PGD
++ [[file:../../roam/20210910115056-program_dependence_graph.org][Program Dependence Graph]] have /instruction node/, /data/control dependence edges/ and /call edge/
++ Two types of data dependence edges is used:
+  - /def-use dependence/ : var =x= is defined on =n2= & and edge from =n2= to =n1= with label =x= is added
+  - /RAW (Read-After-Write) dependence/ : =n1= read memory written by =n2= and edge from =n2= to =n1= with label id is added (id point to the memory)
++ For control dependence, =n1= is control dependent on =n2= it there are 2 edges out of =n2=, one results in =n1=, the other results in =n1= not executing.
++ Call edges connect call sites with possible callees
+  - Indirect call may connect with multiple possible callees
+  - Type-based matching is used to connect indirect function pointer with the function with the compatible type, which requires some preprocessing on the source code.
+** Parameter Tree
++ The motivation is to =simplify the computation of inter-procedural data dependence= & to have a =modular PGD construction=.
+
++ Each parameter of a function have a /formal parameter tree/
+  - contains nodes that represents all memory regions that the function can access through the parameter (indirectly or directly)
+  - Pointers will point to the actual memory region in the tree
+    + e.g., =text: char*= \rightarrow =text*: char=
+  - Represents the parameter definitions
++ At the call site, an /actual parameter tree/ is constructed for each argument of the call
+  - nodes in actual tree is connected with formal tree using data-dependence edges.
+  - Represent the actual parameters used in the program
++ Using the parameter tree, global analysis could be avoided: Construct PDG for each function first using intra-procedural analysis, then "/glue/" PDGs together using parameter trees (connecting formal parameter trees & actual parameter trees)
++ Return values & global values are also represented as parameter trees. Data dependence edges between global accessing instruction and tree nodes are added.
+* PGD-based Partitioning
++ Program is splitted at function-level and does not split the function.
++ Input is a PGD, output is a set of function F_{s} and global variable Gl_{s} that should be put into sensitive partition. The rest is put into insensitive partition.
++ The [[file:../../roam/20210910142457-worklist_algorithm.org][Worklist Algorithm]] compute set of nodes that sensitive nodes can reach along data-dependence edges (explicit data flow) and control-dependence edges (implicit dataflow).
++

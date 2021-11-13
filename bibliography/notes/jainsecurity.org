@@ -1,0 +1,14 @@
+#+TITLE: #+TITLE: Security Analysis of Remote Attestation
+#+ROAM_KEY: cite:jainsecurity
+* TODO Notes
+:PROPERTIES:
+:Custom_ID: jainsecurity
+:NOTER_DOCUMENT: ~/Zotero/storage/EICS3PXL/Jain and Vyas - Security Analysis of Remote Attestation.pdf
+:AUTHOR: Jain, L. & Vyas, J.
+:JOURNAL: 
+:DATE: 
+:YEAR: 
+:DOI: 
+:URL: 
+:NOTER_PAGE: 2
+:END:

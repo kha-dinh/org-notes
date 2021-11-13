@@ -1,0 +1,50 @@
+#+title: Threats and Security Goals
+
+* Threats
+** Common threats
++ Disclosure: Unauthorized access to information
++ Modification: Unauthorized change of information
++ Deception: Acceptance of false data
++ Disruption: Prevention of correct operation
++ Usurpation: Unauthorized control of some part of the system
+
+
+** Security Goals
+*** Confidentiality
+Private information is accessible only OT authorized parties
+**** Confidentiality vs. Privacy
+Privacy only involves personally sensitive information
+*** Integrity
+*** Availability
+*** Other
+**** Authorization
+Computing resource only accessible to authorized entities
+**** Authentication
+Assurance that a principal, data is genuine
+**** Accountability
+Identify principals responsible for past actions
+
+*** To achieve security goals
+**** Prevention
+To prevent attacks from happenings
+Cryptography is used
+**** Detection
+Detect violation of security policies
+**** Deference (detection + penalty)
+To defer attacks
+**** Recovery
+Stop attack, access and repair
+
+* Adversary Models
+We need an adversary model to build a basis for attacks and countermeasures.
+Elements of an adversary model:
++ Who is the adversary (e.g., users of the system)
++ Security Goals (CIA)
++ Adversary's capability
+  - Computing resource
+  - Knowledge (key, passwords, other secrets)
+  - Opportunity for accessing the system's components (source code, implementation details)
+  - Opportunity to control the system's components (using the service, modifying messages)
+**  The economic view of adversary models
++ Rational attacker compare cost of an attack with gains from it
++ Rational defenders compare risk of attack with cost of implementing defense

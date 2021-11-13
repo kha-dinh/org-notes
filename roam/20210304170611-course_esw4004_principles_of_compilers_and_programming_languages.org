@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       bfc72404-3fa3-4156-b6b2-2104a82baef7
+:END:
+#+title: Course: [ESW4004] Principles of Compilers and Programming Languages
+
+* General
+* Grading
+** Midterm: 30%
+** Final: 30%
+** Term project: 30%
+** Participation: 10%
+
+
+* Notes
+** [[id:6bc87e74-cf9e-4d12-81ff-e979b4107177][Compilers]]

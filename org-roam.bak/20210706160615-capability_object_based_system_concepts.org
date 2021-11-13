@@ -1,0 +1,21 @@
+#+title: Capability-based & Object-based System
+
+* Summary
++ Provides:
+  - Single mechanism to address both primary and secondary memory
+  - Single mechanism to address HW and SW resources
++ A capability is a =token= that give the processor permission to access an =entity= in a computer system
++ Capability is implemented in a data structure that contains: =unique object identifer= and =access rights=
+  - Identifier is address or name of an object
+  - Access right define operations that can be perform on the object
++ Each user/process have a =list of capabilities=: all of object that process can access
+  - Each capability in the list /identify the object/ and /indicate if the operation is permitted/
++ Capabilities is used for object protection, so system must inhibit programs from directly modify its capability
+  - Capability is only modifiable by hardware or operating system
++ Operations of capability system:
+  + Move capability in a list
+  + Delete
+  + Restrict rights
+  + Pass to a procedure
+  + Transmit to another user
++ A user can have several capability lists in multi-level

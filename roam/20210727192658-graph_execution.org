@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       6e065fe8-00fe-4f35-9a30-70df5f258de0
+:END:
+#+title: Graph Execution
+
+
+* In tensorflow
++ Graph execution means computation are executed as a TensorFlow graph
++ /Graphs/ are data structure containing a set of /operations/ (a unit of operation)
+  - ex: MatMul, Add, Relu...
++ /Tensors/ represent units of data that flow between operations
++ Graphs can be saved, run and restored without original python code

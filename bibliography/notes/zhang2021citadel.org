@@ -1,0 +1,21 @@
+#+TITLE: #+TITLE: Citadel: protecting data privacy and model confidentiality for collaborative learning with sgx
+#+ROAM_KEY: zhang2021citadel
+* TODO Notes
+:PROPERTIES:
+:Custom_ID: zhang2021citadel
+:NOTER_DOCUMENT:
+:AUTHOR: Zhang, C. et al.
+:JOURNAL:
+:DATE:
+:YEAR: 2021
+:DOI:
+:URL:
+:END:
+
+* Design
++ Split data handling code and model handling code. Data handling code can be seen by the data owner. Model handling code is kept private.
++ Each data owner has a dedicated training enclave that contains data handling code. Data handling code
+
++
+* Limitations
++ Is federated learning on the cloud

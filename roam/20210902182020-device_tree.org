@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       76110f69-6b37-4202-8d1a-bae789721771
+:END:
+#+title: Device Tree
+
+* Motivation
++ Typical boot sequence of a system:
+  - The firmware performs low-level initialization of the hardware before passing control to the software (OS, bootloader or hypervisor).
+  - The bootloader and hypervisor load and transfer control to the OS.
++ A /boot program/ refer to the software that initialize the system state, then, it execute the /client program/.
+  - For example:
+    + boot program: firmware -> client program: bootloader
+    + boot program: bootloader -> client program: OS
++ The /devicetree specification (DTSpec)/ define the interface of boot programs and client programs, and also define the minimum system requirements.
++ The devicetree is useful for defining embedded systems' requirements. Embedded system typically consists of hardware, OS and software the designed to perform fixed functions. This might have some additional constraints:
+  - Fixed I/O devices
+  - Limited user interface
+  - Resource constraint
+  - Real-time constrants
+  - Use various OS, including Linux, real-time OS, custom OS
+* The Devicetree
++ The devicetree describe device information in the system that cannot be detected by the client program. Any device that can be probed by the client is not required. For example, the PCI architecture allows clients to probe attached devices
+
+* Basic
+The device tree describe the system hardware. A boot program loads the device tree into the memory, pass the pointer to the client. It is a tree, which the nodes describe the physical devices in the system.
+
+The *Device Tree Source (DTS)* contains the definition of the device tree
+The *Device Tree Compiler* compile the code into a *Device Tree Blob (DTB)*
+The DTB is loaded by the bootloader and passed to the kernel at boot time.
+$arch/arm/boot/dts/Makefile$ contains a list of DTBs that should be generated

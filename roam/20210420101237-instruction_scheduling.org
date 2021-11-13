@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       8dd69ef0-9b3a-494e-afe5-785d72228110
+:END:
+#+title: Instruction Scheduling
+
+* Purpose
++ Reorder operations to hide latencies

@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       54e328ec-fe5a-47dd-b78a-d1204b790ecf
+:END:
+#+title: LLVM
+
+* LLVM
+** Design
++ The design of LLVM focuses on maximizing the reuse of code, which are encapsulated by the libraries and tools. LLVM components could be used as either tools or libraries. Higher-level tools such as Clang link multiple low-level libraries for their functionalities. How ever, each tool could also be used independently through LLVM IR files as the input.
++ Polymorphism is strongly enforced. There are target-independent code, which can be used by all target and target-specific code.
++ Most of the documentation
+** Architecture
+The infrastructure consist of 3 parts:
++ The *frontend* translate programing languages into LLVM IR
++ *LLVM IR*
+  + The tools and libraries provides interfaces for IR construction, assembling and disassembling
+  + LLVM optimizer containing most of the  operates on IR
+  + In [[id:583e515b-c277-4a40-9268-8b1d6fa11dc6][Three Address Code]] form and [[id:d5ef6abe-669d-4e22-b87c-4e101f4c1930][Static Single Assignment (SSA) Form]]
+  + [[id:64996a46-f5e7-47d8-961a-1df23173f394][LLVM Passes]]
++ The *backend* is responsible for code generation. It convert LLVM IR to target-specific assembly code.
+  + Many optimizaions are back-end specific: register allocation, loop transformations, peephole optimizers, etc.
+  + [[id:5af253d7-03c2-4778-a638-547f5ca0401a][LLVM Backend]]
+** The libraries
+There are main libraries:
++ ~libLLVMCore~: Contains logic related to LLVM IR: IR construction and IR verifier. Also contains the pass manager.
++ ~libLLVMAnalysis~: IR analysis passes
++ ~libLLVMCodeGen~: /Target-independent/ code generation and machine IR analysis & transformation.
++ ~libLLVMTarget~: Provide access to target machine information
++ ~libLLVMX{arch}CodeGen~:  code generation for target architecture. Have information, transformation, and analysis passes
++ ~libLLVMSupport~: Utilities such as integer & floating point handling, command-line parsing, debugging, ...
++ ~libclang~: C interface for clang
++ ~libclangDriver~: Classes used by the clang driver (executable).
++ ~libclangAnalysis~: Front-end level analyses provided by Clang
+* Related

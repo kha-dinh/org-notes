@@ -1,0 +1,55 @@
+:PROPERTIES:
+:ID:       f347de84-bd93-4a31-a98f-e527a278b7c2
+:END:
+#+title: Installing SGX on Linux
+
+* Arch
+** Driver
+#+begin_src shell
+git clone https://github.com/intel/SGXDataCenterAttestationPrimitives.git
+cd SGXDataCenterAttestationPrimitives/driver/linux
+#+end_src
++ version can be found in =dkms.conf=
+#+begin_src shell
+sudo mkdir /usr/src/sgx-<version>
+sudo cp * /usr/src/sgx-<version>
+sudo dkms add -m sgx -v <version>
+sudo dkms build -m sgx -v <version>
+sudo dkms install -m sgx -v <version>
+sudo /sbin/modprobe intel_sgx
+
+sudo cp  10-sgx.rules /etc/udev/rules.d
+sudo groupadd sgx_prv
+sudo udevadm trigger
+#+end_src
+** SDK
++ Required packages: =ocaml ocamlbuild=
++ Clone and prepare
+#+begin_src shell
+git clone https://github.com/intel/linux-sgx.git
+cd linux-sgx
+make preparation
+make sdk
+make sdk_install_pkg
+#+end_src
++ Install the sdk and config the install dir
+  #+begin_src shell
+cd linux/installer/bin
+./{sdk-file}.bin
+source {sdk-dir}/environment
+  #+end_src
+** PSW
++ There is a bug in =external/CppMicroServices/framework/src/util/Utils.h= that need to add =#include<exception>=  to the top of the file
+from the root
+#+begin_src shell
+make psw
+make psw_install_pkg
+#+end_src
+
+
+
+* Using Docker
+2. Make using docker for convenience
+#+begin_src shell
+cd docker/build && ./build_compose_run.sh
+#+end_src

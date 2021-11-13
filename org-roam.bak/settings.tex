@@ -1,0 +1,77 @@
+% \usepackage{./sslab-theme/}
+% \usepackage{./sslab-theme/pgfplotsthemetol}
+\usepackage{./sslab-theme/beamercolorthemesslab}
+\usepackage{./sslab-theme/beamerfontthemesslab}
+\usepackage{./sslab-theme/beamerinnerthemesslab}
+\usepackage{./sslab-theme/beamerouterthemesslab}
+\usepackage{./sslab-theme/beamerthemesslab}
+
+\usepackage{graphicx}
+\usepackage{textpos}
+\usepackage{kotex}
+\usepackage{booktabs} % Nice tables
+\usepackage{dcolumn} % Booktabs column spacing
+\usepackage{threeparttable} % Align column caption, table, and notes
+\usepackage{adjustbox}
+\usepackage{ifxetex}
+
+\ifxetex
+\usepackage{fontspec}
+   \fontspec [ Path = fonts/, ... ]  { }
+\else
+   % \usepackage{tgtermes}
+\fi
+
+% \usepackage{showframe}
+ 
+
+\graphicspath{{./images/}}
+
+
+% \setbeamersize{text margin left=3em}  % <- like this
+% \setbeamersize{text margin right=3em}
+% <- like this
+% \setbeamersize{text margin bottom=0em}
+\usetheme{sslab}
+%% Define colors 
+\definecolor{orange}{HTML}{CF4A30}
+\definecolor{sslab_light_blue}{HTML}{4882C6}
+\definecolor{sslab_blue}{HTML}{2A64A8}
+\definecolor{sslab_bg}{HTML}{FFFFFF}
+
+
+%%%% Metropolis Theme Settings
+\setbeamertemplate{itemize item}{\tiny\color{sslab_blue}$\blacktriangleright$}
+\setbeamertemplate{itemize subitem}{\tiny\color{sslab_blue}$\bullet$}
+
+% Progress bar
+% \metroset{outer/progressbar=frametitle}
+\setbeamercolor{progress bar}{
+  fg=sslab_light_blue,
+  bg=alerted text.fg!50!black!30
+}
+
+
+% Progressbar width
+% \makeatletter
+% \setlength{\metropolis@titleseparator@linewidth}{1pt}
+% \setlength{\metropolis@progressonsectionpage@linewidth}{0pt}
+% \setlength{\metropolis@progressinheadfoot@linewidth}{2pt}
+% \setlength{\metropolis@frametitle@padding}{8pt}
+% \makeatother
+
+%% Set colors
+\setbeamercolor{alerted text}{fg=sslab_blue}
+\setbeamercolor{frametitle}{
+  fg=sslab_blue,
+  bg=white, 
+}
+
+% \setbeamercolor{frametitle}{bg=white}
+% \setbeamercolor{frametitle}{fg=sslab_blue}
+\setbeamercolor{background canvas}{bg=white}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "template"
+%%% End:

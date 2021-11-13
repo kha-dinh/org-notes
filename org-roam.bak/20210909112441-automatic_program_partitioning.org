@@ -1,0 +1,13 @@
+#+title: Automatic Program Partitioning
+
+
+
+
+* Motivation
+Partitioning security-sensitive applications into different security domains is useful for security.
+
+* Principle of least privilege in software
+Following the principle of least privilege, software should be separated into multiple partition with its own set of privileges. Function calls between partition are performed using RPC and data for the RPC is marshalled between partitions. An example of the principle is in microkernels, where only the minimum amount of code is inside of the kernel, while most of the functionalities are moved out. The Chromium browser isolate each tab into separated sandboxes.
+
+* Challenges in partitioning application
+Pointers make

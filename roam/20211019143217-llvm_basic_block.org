@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       6261a703-c201-44e8-9c99-a0557f31b031
+:END:
+#+title: LLVM Basic Block
+
+* Content
+A well67

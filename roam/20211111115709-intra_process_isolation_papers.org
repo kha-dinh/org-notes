@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       214813f8-4936-46ef-9f85-9e162c90408b
+:END:
+#+title: Intra Process Isolation Papers
+
+[[id:0fc81ef8-f433-4a84-95b6-9a0b19a48b73][Cali: Compiler-Assisted Library Isolation]]

@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       fc9e7ab5-e82e-4f28-b90b-1d6aa30f7167
+:ROAM_REFS: cite:jainsecurity
+:END:
+#+TITLE: test: Security Analysis of Remote Attestation
+
+- keywords :: test
+
+
+* Security Analysis of Remote Attestation
+  :PROPERTIES:
+  :Custom_ID: test
+  :URL: test
+  :AUTHOR: test
+  :NOTER_DOCUMENT:
+  :NOTER_PAGE:
+  :END:

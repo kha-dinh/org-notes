@@ -1,0 +1,72 @@
+:PROPERTIES:
+:ID:       6dc10701-b02d-439b-a93b-bf9c55382b1a
+:END:
+#+title: Timeline of Security
+
+
+* Timeline
+** 1970s
+=The access control schemes are invented. Also, the birth of public crypto system is in this period=
++ Multi-user OS is becoming popular
+  - Access control models
+    + Multi-level security
+    + Bell-LaPadula, Biba
++ DES encryption
+  - Key distribution is needed
+  - Cryptanalysis
++ Public-key crypto system
+  - Diffie-Hellman, Merkle-Hellman, RSA
++ Key distribution
+** 1980s
+=Security evaluation criteria are introduced. Moreover, software protection is first discussed=
++ The Orange book (1985)
++ X.509 PKI: the standard of public key system
++ IBM PC
+  - Software copy protection
+  - Floppy disk virus
++ Internet is introduced ->  Morris worm
+** 1990s
+=Era of cryptography and authentication. More methodological approaches to security research are developed=
++ Cryptography is widely adapted
+  - Cellular networks: GSM
+  - Open-source cryptography: PGP
+  - Password sniffers -> SSH
+  - Commercial Internet -> SSL & VeriSign CA
++ PKI is criticized for its trust in a centralized party
+  - Trust management researches
++ Biometric authentication
++ Intrusion detection techniques are developed
++ Macro virus
++ DRM techology
+
+** 2000s
+=Era of vulnerability analysis=
++ Fast spreading internet worms
+  - Secure programming methodology
+  - Secure programming language
+  - Security analysis and testing tools
++ Botnets, spyware
+  - Malware analysis
++ Phishing
++ Enterprise identity management
++ Security in mobile networks
++ Mobile device OSes
++ User's privacy
+
+** 2010s
+=Era of application security=
++ IoT
++ Cloud Computing
++ Big data security
++ Mobile app security
++ Usable security
++ Smart grid security
++ Smart cars
++ Targeted attacks
++ Hactivism (use computer to promote political)
++ Blockchain
+** 2020s
++ Security using AI
++ Security of AI (adversarial of machine learning)
++ Hardware security
++ Security for decentralized environments

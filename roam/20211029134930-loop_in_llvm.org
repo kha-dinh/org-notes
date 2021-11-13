@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       61817c04-c9e3-43f9-a1e9-865942c9014e
+:END:
+#+title: Loop in LLVM
+
+* Definition
+All loops in LLVM are /natural loops/
+A loop is a subset of nodes from the CFG with the properties:
+1. The induced subgraph is [[id:8a0f0a56-a48f-473a-ba19-5fcb1693a771][Strongly Connected Components (SCC)]]
+2. All from outside into the loop's nodes must point to the loop header. This make the loop header /dominates/ all nodes in the loops
+3. The loop is the maximum subset with these properties. That is, no mode node can be added so that the graph strongly connected and have same header.

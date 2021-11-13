@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       58f6dbef-ae05-4182-8b6a-58e3b255d0bf
+:END:
+#+title: Basic Block Reordering
+
+* What it is
++ There are algorithms for reordering basic blocks, but they /do not/ reorder the CFG. They reorder the /code position/ inside the final binary instead to better utilize cache & memory.
++ The algorithm is proposed way back in 1990. It use the profile (the frequency of access) of the edges to try to select the longest chain with the heaviest weight (See Profile guided code positioning)
++ Using edge measurement is better than the node because it capture more information about loops

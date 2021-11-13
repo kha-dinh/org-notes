@@ -1,0 +1,7 @@
+#+title: Program Dependence Graph
+
+* Overview
++ Program dependence graph represents a program's /data dependence/ and /control dependence/ in a single graph and can facilitate static analyses.
++ Every instruction is represented as an /instruction node/.
++ /Data/control dependence edges/ and /call edges/ are the edges
++ Instruction node n1 is data dependent on node n2 if n1 use data produced by n2.

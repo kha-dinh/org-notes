@@ -1,0 +1,15 @@
+#+TITLE: : A Practical Dynamic Buffer Overflow Detector
+#+ROAM_KEY: cite:ruwasepractical
+
+- tags ::
+- keywords ::
+
+
+* A Practical Dynamic Buffer Overflow Detector
+  :PROPERTIES:
+  :Custom_ID:
+  :URL:
+  :AUTHOR:
+  :NOTER_DOCUMENT:
+  :NOTER_PAGE:
+  :END:

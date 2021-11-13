@@ -1,0 +1,20 @@
+#+TITLE: #+TITLE: An Isolation-Based Distributed Outlier Detection Framework Using Nearest Neighbor Ensembles for Wireless Sensor Networks
+#+ROAM_KEY: cite:wang2019isolationbased
+* TODO Notes
+:PROPERTIES:
+:Custom_ID: wang2019isolationbased
+:NOTER_DOCUMENT: ~/Zotero/storage/WJ2QDBS8/Wang et al_2019_An Isolation-Based Distributed Outlier Detection Framework Using Nearest.pdf
+:AUTHOR: Wang, Z. et al.
+:JOURNAL:
+:DATE:
+:YEAR: 2019
+:DOI:  http://dx.doi.org/10.1109/ACCESS.2019.2929581
+:URL:
+:NOTER_PAGE: 1
+:END:
+okok
+** How this work
+:PROPERTIES:
+:NOTER_PAGE: (1 . 0.6976744186046512)
+:END:
+ok ok

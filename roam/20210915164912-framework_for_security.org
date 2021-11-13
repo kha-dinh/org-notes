@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       c3119fe2-38cf-4246-adc6-0ae7d702c6ea
+:END:
+#+title: Framework for Security
+
+* Framework for Security
++ *Policy*: What you are supposed to achieve ([[id:21019586-ca97-4a8d-bcd8-788f565fc5eb][Security Policy]])
++ *Mechanism*: Cipher, access control, hardware to implement  the policy
++ *Assurance*: Reliance for each mechanism
++ *Incentive*: Motive for people guarding the system
+
+The big problem is iften developing _proper security policies_

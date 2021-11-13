@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       23cc6dc1-2fe1-492f-a988-aeeddebf6a7b
+:END:
+#+title: Writing Evaluations
+#+tags: writing

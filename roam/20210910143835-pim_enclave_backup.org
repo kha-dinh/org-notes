@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       a253b630-276f-4c39-8e46-ac8c02d06931
+:END:
+#+title: Pim Enclave Backup
+python2 util/decode_packet_trace.py ../../../SMC-WORK/scenarios/55/HOST-pim_kmean_enclave-PIM-enclave_kmean-hostcpu-1-pimclk-1.0-numpim-1-host-dataset-letter-datasize-20000/m5out/smon_host_trace.txt host_trace.txt 3205101485000 3942947635000
+# 3234063380000
+
+python2 util/decode_packet_trace.py ../../../SMC-WORK/scenarios/55/HOST-pim_kmean_enclave-PIM-enclave_kmean-hostcpu-1-pimclk-1.0-numpim-1-with_enc-dataset-letter-datasize-20000/m5out/smon_host_trace.txt pim_trace.txt 3067346410000 4872186940000
+# 3091063865000
+
+python2 util/decode_packet_trace.py ../../../SMC-WORK/scenarios/55/HOST-pim_kmean_enclave-PIM-enclave_kmean-hostcpu-1-pimclk-1.0-numpim-1-host-dataset-letter-datasize-20000/m5out/smon_host_trace.txt host_trace.txt 3091247521000 3091260341000
+
+python2 util/decode_packet_trace.py ../../../SMC-WORK/scenarios/55/HOST-pim_kmean_enclave-PIM-enclave_kmean-hostcpu-1-pimclk-1.0-numpim-1-host-dataset-letter-datasize-20000/m5out/smon_host_trace.txt host_trace.txt 3091247521000 3091260341000
+
+python2 util/decode_packet_trace.py ../../../SMC-WORK//scenarios//55//HOST-pim_kmean_enclave-PIM-dummy_kernel-hostcpu-1-pimclk-1.0-numpim-1-with_enc-dataset-letter-datasize-10000/m5out/smon_host_trace.txt host_trace.txt 3090472333000 3090482368000 2163044352 2163048448
+
+python2 util/decode_packet_trace.py ../../../SMC-WORK//scenarios//55//HOST-pim_kmean_enclave-PIM-dummy_kernel-hostcpu-1-pimclk-1.0-numpim-1-with_enc-dataset-letter-datasize-10000/m5out/smon_host_trace.txt host_trace.txt 3080838995000 3144370654000 0 99999999999
+700000000

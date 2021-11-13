@@ -1,0 +1,21 @@
+#+title: Data Protection in AI Services
+
+
+* Personalization-Privacy paradox
+* Terminology
+** Personal Data
++ Groups of data
+  - /Volunteered data/ is explicitly shared by individuals
+  - /Observed data/ is captured  by recording individuals
+  - /Inferred data/ is from analyzing two previous data
++ Factors of personal data
+  - Type of data
+  - Quantity and quality of data
+  - Time frame of data
+    + Present data
+    + Past data
+    + Anticipated future data
+** Data Privacy, protection, ownership
++ Data privacy: who has access to data and who defines it
++ Data protection: how to secure data against unauthorized access
++ Data

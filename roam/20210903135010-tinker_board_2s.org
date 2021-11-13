@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       d05b992d-89e8-4d24-8636-9c0aea0a376d
+:END:
+#+title: Tinker Board 2s

@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       b13511a1-cdab-4209-b35a-1c177f43117e
+:END:
+#+title: Writing Rules
+
+* Ommiting article (the/a/an)
+** General rules:
++ The when refer to specific person, place, thing
++ A/an means not specific.
++ Can't count -> no article
++ /Some/ of something -> no article
+  - /Example/: Let's have coffee (some coffee)

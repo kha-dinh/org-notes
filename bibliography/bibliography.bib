@@ -1,0 +1,1586 @@
+
+@article{absarscheduler,
+  title = {Scheduler for In-Order Processors    {{What}}'s Present and What's Missing in {{LLVM}}?},
+  author = {Absar, Javed},
+  pages = {28},
+  langid = {english}
+}
+% == BibLateX quality report for absarscheduler:
+% Exactly one of 'date' / 'year' must be present
+% Missing required field 'journaltitle'
+% ? Unused libraryCatalog: Zotero
+% ? Unused version: 129
+
+@inproceedings{acay2021viaduct,
+  title = {Viaduct: An Extensible, Optimizing Compiler for Secure Distributed Programs},
+  shorttitle = {Viaduct},
+  booktitle = {Proceedings of the 42nd {{ACM SIGPLAN International Conference}} on {{Programming Language Design}} and {{Implementation}}},
+  author = {Acay, Co\c{s}ku and Recto, Rolph and Gancher, Joshua and Myers, Andrew C. and Shi, Elaine},
+  date = {2021-06-19},
+  pages = {740--755},
+  publisher = {{ACM}},
+  location = {{Virtual Canada}},
+  doi = {10.1145/3453483.3454074},
+  abstract = {Modern distributed systems involve interactions between principals with limited trust, so cryptographic mechanisms are needed to protect confidentiality and integrity. At the same time, most developers lack the training to securely employ cryptography. We present Viaduct, a compiler that transforms high-level programs into secure, efficient distributed realizations. Viaduct's source language allows developers to declaratively specify security policies by annotating their programs with information flow labels. The compiler uses these labels to synthesize distributed programs that use cryptography efficiently while still defending the source-level security policy. The Viaduct approach is general, and can be easily extended with new security mechanisms.},
+  eventtitle = {{{PLDI}} '21: 42nd {{ACM SIGPLAN International Conference}} on {{Programming Language Design}} and {{Implementation}}},
+  isbn = {978-1-4503-8391-2},
+  langid = {english},
+  annotation = {0 citations (Semantic Scholar/DOI) [2021-10-25]}
+}
+
+@online{adding,
+  title = {Adding an Architecture Specific Intrinsic and an Annotation},
+  url = {https://www.cs.cmu.edu/~seth/llvm/archspecific.html#readingsp},
+  urldate = {2021-11-01}
+}
+% == BibLateX quality report for adding:
+% Exactly one of 'date' / 'year' must be present
+% ? Unused version: 208
+
+@article{agrawaldynamic,
+  title = {Dynamic {{Program Slicing}}},
+  author = {Agrawal, H and Horgan, J R},
+  pages = {11},
+  abstract = {The conventional notion of a program slice|the set of all statements that might a ect the value of a variable occurrence|is totally independent of the program input values. Program debugging, however, involves analyzing the program behavior under the speci c inputs that revealed the bug. In this paper we address the dynamic counterpart of the static slicing problem| nding all statements that really a ected the value of a variable occurrence for the given program inputs. Several approaches for computing dynamic slices are examined. The notion of a Dynamic Dependence Graph and its use in computing dynamic slices is discussed. We introduce the concept of a Reduced Dynamic Dependence Graph whose size does not depend on the length of execution history, which is unbounded in general, but whose size is bounded and is proportional to the number of dynamic slices arising during the program execution.},
+  langid = {english}
+}
+% == BibLateX quality report for agrawaldynamic:
+% Exactly one of 'date' / 'year' must be present
+% Missing required field 'journaltitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: Zotero
+% ? Unused version: 89
+
+@online{autopsi,
+  title = {{{AutoPSI}}},
+  url = {https://www.overleaf.com/project/611603d481dd823f61ab1cc7},
+  urldate = {2021-10-22},
+  abstract = {An online LaTeX editor that's easy to use. No installation, real-time collaboration, version control, hundreds of LaTeX templates, and more.},
+  langid = {english}
+}
+% == BibLateX quality report for autopsi:
+% Exactly one of 'date' / 'year' must be present
+% ? Unused version: 155
+
+@online{autopsia,
+  title = {{{AutoPSI}}},
+  url = {https://www.overleaf.com/project/611603d481dd823f61ab1cc7},
+  urldate = {2021-11-08},
+  abstract = {An online LaTeX editor that's easy to use. No installation, real-time collaboration, version control, hundreds of LaTeX templates, and more.},
+  langid = {english}
+}
+% == BibLateX quality report for autopsia:
+% Exactly one of 'date' / 'year' must be present
+% ? Unused version: 315
+
+@online{avoid,
+  title = {Avoid {{LLVM IR Optimization}} on Certain Basic Blocks},
+  url = {https://stackoverflow.com/questions/43541155/avoid-llvm-ir-optimization-on-certain-basic-blocks},
+  urldate = {2021-10-19},
+  organization = {{Stack Overflow}}
+}
+% == BibLateX quality report for avoid:
+% Exactly one of 'date' / 'year' must be present
+% ? Unused version: 125
+
+@inproceedings{bauer2021cali,
+  title = {Cali: Compiler-{{Assisted Library Isolation}}},
+  shorttitle = {Cali},
+  booktitle = {Proceedings of the 2021 {{ACM Asia Conference}} on {{Computer}} and {{Communications Security}}},
+  author = {Bauer, Markus and Rossow, Christian},
+  date = {2021-05-24},
+  pages = {550--564},
+  publisher = {{ACM}},
+  location = {{Virtual Event Hong Kong}},
+  doi = {10.1145/3433210.3453111},
+  abstract = {Software libraries can freely access the program's entire address space, and also inherit its system-level privileges. This lack of separation regularly leads to security-critical incidents once libraries contain vulnerabilities or turn rogue. We present Cali, a compilerassisted library isolation system that fully automatically shields a program from a given library. Cali is fully compatible with mainline Linux and does not require supervisor privileges to execute. We compartmentalize libraries into their own process with well-defined security policies. To preserve the functionality of the interactions between program and library, Cali uses a Program Dependence Graph to track data flow between the program and the library during link time. We evaluate our open-source prototype against three popular libraries: Ghostscript, OpenSSL, and SQLite. Cali successfully reduced the amount of memory that is shared between the program and library to 0.08\% (ImageMagick) \textendash{} 0.4\% (Socat), while retaining an acceptable program performance.},
+  eventtitle = {{{ASIA CCS}} '21: {{ACM Asia Conference}} on {{Computer}} and {{Communications Security}}},
+  isbn = {978-1-4503-8287-8},
+  langid = {english},
+  annotation = {2 citations (Semantic Scholar/DOI) [2021-09-16] 0 citations (Crossref) [2021-09-16]}
+}
+% == BibLateX quality report for bauer2021cali:
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: https://dl.acm.org/doi/10.1145/3433210.3453111
+% ? Unused version: 62
+
+@article{binkley1988interprocedural,
+  title = {Interprocedural {{Slicing Using Dependence Graphs}}},
+  author = {Binkley, David},
+  date = {1988},
+  pages = {12},
+  abstract = {A slice of a program with respect to a program point p and variable x consistsof all statementsof the program that might affect the value of x at point p. This paper concerns the problem of interprocedural slicing - generating a slice of an entire program, where the slice crossesthe boundariesof procedurecalls. To solve this problem, we introduce a new kind of graph to represent programs, called a system dependence graph, which extends previous dependencerepresentationsto incorporate collections of procedures (with procedure calls) rather than just monolithic programs. Our main result is an algorithm for interproceduralslicing that usesthe new representation.},
+  langid = {english}
+}
+% == BibLateX quality report for binkley1988interprocedural:
+% Missing required field 'journaltitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: Zotero
+% ? Unused version: 102
+
+@online{brent2018vandal,
+  title = {Vandal: A {{Scalable Security Analysis Framework}} for {{Smart Contracts}}},
+  shorttitle = {Vandal},
+  author = {Brent, Lexi and Jurisevic, Anton and Kong, Michael and Liu, Eric and Gauthier, Francois and Gramoli, Vincent and Holz, Ralph and Scholz, Bernhard},
+  date = {2018-09-11},
+  shortjournal = {ArXiv180903981 Cs},
+  eprint = {1809.03981},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  url = {http://arxiv.org/abs/1809.03981},
+  urldate = {2021-10-22},
+  abstract = {The rise of modern blockchains has facilitated the emergence of smart contracts: autonomous programs that live and run on the blockchain. Smart contracts have seen a rapid climb to prominence, with applications predicted in law, business, commerce, and governance.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Programming Languages},
+  annotation = {123 citations (Semantic Scholar/arXiv) [2021-10-22]}
+}
+% == BibLateX quality report for brent2018vandal:
+% Unexpected field 'primaryclass'
+% Unexpected field 'archiveprefix'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused version: 147
+
+@article{brumley2004privtrans,
+  title = {Privtrans: Automatically {{Partitioning Programs}} for {{Privilege Separation}}},
+  author = {Brumley, David and Song, Dawn},
+  date = {2004},
+  pages = {16},
+  abstract = {Privilege separation partitions a single program into two parts: a privileged program called the monitor and an unprivileged program called the slave. All trust and privileges are relegated to the monitor, which results in a smaller and more easily secured trust base. Previously the privilege separation procedure, i.e., partitioning one program into the monitor and slave, was done by hand [18, 28]. We design techniques and develop a tool called Privtrans that allows us to automatically integrate privilege separation into source code, provided a few programmer annotations. For instance, our approach can automatically integrate the privilege separation previously done by hand in OpenSSH, while enjoying similar security benefits. Additionally, we propose optimization techniques that augment static analysis with dynamic information. Our optimization techniques reduce the number of expensive calls made by the slave to the monitor. We show Privtrans is effective by integrating privilege separation into several open-source applications.},
+  langid = {english}
+}
+% == BibLateX quality report for brumley2004privtrans:
+% Missing required field 'journaltitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: Zotero
+% ? Unused version: 6
+
+@inproceedings{carlini2015controlflow,
+  title = {Control-{{Flow Bending}}: On the {{Effectiveness}} of {{Control}}-{{Flow Integrity}}},
+  shorttitle = {Control-{{Flow Bending}}},
+  author = {Carlini, Nicholas and Barresi, Antonio and Payer, Mathias and Wagner, David and Gross, Thomas R.},
+  date = {2015},
+  pages = {161--176},
+  url = {https://www.usenix.org/conference/usenixsecurity15/technical-sessions/presentation/carlini},
+  urldate = {2021-11-08},
+  eventtitle = {24th {{USENIX Security Symposium}} ({{USENIX Security}} 15)},
+  isbn = {978-1-939133-11-3},
+  langid = {english}
+}
+% == BibLateX quality report for carlini2015controlflow:
+% Missing required field 'booktitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: www.usenix.org
+% ? Unused version: 326
+
+@inproceedings{carr2017datashield,
+  title = {{{DataShield}}: Configurable {{Data Confidentiality}} and {{Integrity}}},
+  shorttitle = {{{DataShield}}},
+  booktitle = {Proceedings of the 2017 {{ACM}} on {{Asia Conference}} on {{Computer}} and {{Communications Security}}},
+  author = {Carr, Scott A. and Payer, Mathias},
+  date = {2017-04-02},
+  pages = {193--204},
+  publisher = {{ACM}},
+  location = {{Abu Dhabi United Arab Emirates}},
+  doi = {10.1145/3052973.3052983},
+  abstract = {Applications written in C/C++ are prone to memory corruption, which allows attackers to extract secrets or gain control of the system. With the rise of strong control-flow hijacking defenses, non-control data attacks have become the dominant threat. As vulnerabilities like HeartBleed have shown, such attacks are equally devastating.},
+  eventtitle = {{{ASIA CCS}} '17: {{ACM Asia Conference}} on {{Computer}} and {{Communications Security}}},
+  isbn = {978-1-4503-4944-4},
+  langid = {english},
+  annotation = {40 citations (Semantic Scholar/DOI) [2021-09-16] 20 citations (Crossref) [2021-09-16]}
+}
+% == BibLateX quality report for carr2017datashield:
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: https://dl.acm.org/doi/10.1145/3052973.3052983
+% ? Unused version: 63
+
+@inproceedings{castro2006securing,
+  title = {Securing Software by Enforcing Data-Flow Integrity},
+  booktitle = {Proceedings of the 7th Symposium on {{Operating}} Systems Design and Implementation},
+  author = {Castro, Miguel and Costa, Manuel and Harris, Tim},
+  date = {2006-11-06},
+  series = {{{OSDI}} '06},
+  pages = {147--160},
+  publisher = {{USENIX Association}},
+  location = {{USA}},
+  abstract = {Software attacks often subvert the intended data-flow in a vulnerable program. For example, attackers exploit buffer overflows and format string vulnerabilities to write data to unintended locations. We present a simple technique that prevents these attacks by enforcing data-flow integrity. It computes a data-flow graph using static analysis, and it instruments the program to ensure that the flow of data at runtime is allowed by the data-flow graph. We describe an efficient implementation of data-flow integrity enforcement that uses static analysis to reduce instrumentation overhead. This implementation can be used in practice to detect a broad class of attacks and errors because it can be applied automatically to C and C++ programs without modifications, it does not have false positives, and it has low overhead.},
+  isbn = {978-1-931971-47-8}
+}
+% == BibLateX quality report for castro2006securing:
+% ? Unsure about the formatting of the booktitle
+% ? Unused libraryCatalog: ACM Digital Library
+% ? Unused version: 321
+
+@online{cecchetti2020securinga,
+  title = {Securing {{Smart Contracts}} with {{Information Flow}}},
+  author = {Cecchetti, Ethan and Yao, Siqiu and Ni, Haobin and Myers, A.},
+  date = {2020},
+  url = {https://www.semanticscholar.org/paper/Securing-Smart-Contracts-with-Information-Flow-Cecchetti-Yao/faac612534848f93a8b0766f2dd85c40f11d05d1},
+  urldate = {2021-10-27},
+  abstract = {Securing blockchain smart contracts is difficult, especially when they interact with one another. Existing tools for reasoning about smart contract security are limited in one of two ways: they either cannot analyze cooperative interaction between contracts, or they require all interacting code to be written in a specific language. We propose an approach based on information flow control (IFC), which supports fine-grained, compositional security policies and rules out dangerous vulnerabilities. However, existing IFC systems provide few guarantees on interaction with legacy contracts and unknown code. We extend existing IFC constructs to support these important functionalities while retaining compositional security guarantees, including reentrancy control. We mix static and dynamic mechanisms to achieve these goals in a flexible manner while minimizing run-time costs.},
+  langid = {english}
+}
+% == BibLateX quality report for cecchetti2020securinga:
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused version: 187
+
+@incollection{chalupa2020dg,
+  title = {{{DG}}: Analysis and {{Slicing}} of {{LLVM Bitcode}}},
+  shorttitle = {{{DG}}},
+  booktitle = {Automated {{Technology}} for {{Verification}} and {{Analysis}}},
+  author = {Chalupa, Marek},
+  editor = {Hung, Dang Van and Sokolsky, Oleg},
+  date = {2020},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  volume = {12302},
+  pages = {557--563},
+  publisher = {{Springer International Publishing}},
+  location = {{Cham}},
+  doi = {10.1007/978-3-030-59152-6_33},
+  abstract = {DG is a library written in C++ that provides several types of program analysis for LLVM bitcode. The main parts of DG are a parametric points-to analysis, a call graph construction, a data dependence analysis, and a control dependence analysis. The project includes several tools built around the analyses, the main one being a static slicer for LLVM bitcode. This paper describes what analyses are implemented in DG and its use cases with the focus on program slicing.},
+  isbn = {978-3-030-59151-9 978-3-030-59152-6},
+  langid = {english}
+}
+% == BibLateX quality report for chalupa2020dg:
+% 'isbn': not a valid ISBN
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: http://link.springer.com/10.1007/978-3-030-59152-6_33
+% ? Unused version: 81
+
+@inproceedings{clements2018aces,
+  title = {\{\vphantom\}{{ACES}}\vphantom\{\}: Automatic {{Compartments}} for {{Embedded Systems}}},
+  shorttitle = {\{\vphantom\}{{ACES}}\vphantom\{\}},
+  author = {Clements, Abraham A. and Almakhdhub, Naif Saleh and Bagchi, Saurabh and Payer, Mathias},
+  date = {2018},
+  pages = {65--82},
+  url = {https://www.usenix.org/conference/usenixsecurity18/presentation/clements},
+  urldate = {2021-09-09},
+  eventtitle = {27th \{\vphantom\}{{USENIX}}\vphantom\{\} {{Security Symposium}} (\{\vphantom\}{{USENIX}}\vphantom\{\} {{Security}} 18)},
+  isbn = {978-1-939133-04-5},
+  langid = {english}
+}
+% == BibLateX quality report for clements2018aces:
+% Missing required field 'booktitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: www.usenix.org
+% ? Unused version: 5
+
+@inproceedings{connor2020pku,
+  title = {{{PKU Pitfalls}}: Attacks on {{PKU}}-Based {{Memory Isolation Systems}}},
+  shorttitle = {\{\vphantom\}{{PKU}}\vphantom\{\} {{Pitfalls}}},
+  author = {Connor, R. Joseph and McDaniel, Tyler and Smith, Jared M. and Schuchard, Max},
+  date = {2020},
+  pages = {1409--1426},
+  url = {https://www.usenix.org/conference/usenixsecurity20/presentation/connor},
+  urldate = {2021-09-09},
+  eventtitle = {29th \{\vphantom\}{{USENIX}}\vphantom\{\} {{Security Symposium}} (\{\vphantom\}{{USENIX}}\vphantom\{\} {{Security}} 20)},
+  isbn = {978-1-939133-17-5},
+  langid = {english}
+}
+% == BibLateX quality report for connor2020pku:
+% Missing required field 'booktitle'
+% ? Unused libraryCatalog: www.usenix.org
+% ? Unused version: 3
+
+@article{cytron1991efficiently,
+  title = {Efficiently Computing Static Single Assignment Form and the Control Dependence Graph},
+  author = {Cytron, Ron and Ferrante, Jeanne and Rosen, Barry K. and Wegman, Mark N. and Zadeck, F. Kenneth},
+  date = {1991-10},
+  journaltitle = {ACM Trans. Program. Lang. Syst.},
+  volume = {13},
+  number = {4},
+  pages = {451--490},
+  issn = {0164-0925, 1558-4593},
+  doi = {10.1145/115372.115320},
+  langid = {english},
+  annotation = {2367 citations (Semantic Scholar/DOI) [2021-10-22]}
+}
+% == BibLateX quality report for cytron1991efficiently:
+% 'issn': not a valid ISSN
+% ? Possibly abbreviated journal title ACM Trans. Program. Lang. Syst.
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused publicationTitle: ACM Transactions on Programming Languages and Systems
+% ? Unused url: https://dl.acm.org/doi/10.1145/115372.115320
+% ? Unused version: 153
+
+@online{ddg,
+  title = {{{DDG}}.Pptx | {{Powered}} by {{Box}}},
+  url = {https://ibm.ent.box.com/v/directed-graph-and-ddg},
+  urldate = {2021-10-19}
+}
+% == BibLateX quality report for ddg:
+% Exactly one of 'date' / 'year' must be present
+% ? Unused version: 133
+
+@online{erimslides,
+  title = {{{ErimSlides}}},
+  url = {https://www.usenix.org/sites/default/files/conference/protected-files/sec19_slides_vahldiek-oberwagner.pdf},
+  urldate = {2021-11-03}
+}
+% == BibLateX quality report for erimslides:
+% Exactly one of 'date' / 'year' must be present
+
+@article{ferranteprogram,
+  title = {The {{Program Dependence Graph}} and {{Its Use}} in {{Optimization}}},
+  author = {Ferrante, Jeanne},
+  journaltitle = {ACM Trans. Program. Lang. Syst.},
+  volume = {9},
+  number = {3},
+  pages = {31},
+  langid = {english}
+}
+% == BibLateX quality report for ferranteprogram:
+% Exactly one of 'date' / 'year' must be present
+% ? Possibly abbreviated journal title ACM Trans. Program. Lang. Syst.
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: Zotero
+% ? Unused publicationTitle: ACM Transactions on Programming Languages and Systems
+% ? Unused version: 40
+
+@online{formal,
+  title = {Formal {{Programming Language Theory}}},
+  url = {https://www.ed.tus.ac.jp/j-mune/keio/m/},
+  urldate = {2021-10-28}
+}
+% == BibLateX quality report for formal:
+% Exactly one of 'date' / 'year' must be present
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused version: 193
+
+@inproceedings{fournet2009securitypreserving,
+  title = {A Security-Preserving Compiler for Distributed Programs: From Information-Flow Policies to Cryptographic Mechanisms},
+  shorttitle = {A Security-Preserving Compiler for Distributed Programs},
+  booktitle = {Proceedings of the 16th {{ACM}} Conference on {{Computer}} and Communications Security - {{CCS}} '09},
+  author = {Fournet, C\'edric and Le Guernic, Gurvan and Rezk, Tamara},
+  date = {2009},
+  pages = {432},
+  publisher = {{ACM Press}},
+  location = {{Chicago, Illinois, USA}},
+  doi = {10.1145/1653662.1653715},
+  abstract = {We enforce information flow policies in programs that run at multiple locations, with diverse levels of security. We build a compiler from a small imperative language with locality and security annotations down to distributed code linked to concrete cryptographic libraries. Our compiler splits source programs into local threads; inserts checks on auxiliary variables to enforce the source control flow; implements shared distributed variables using instead a series of local replicas with explicit updates; and finally selects cryptographic mechanisms for securing the communication of updates between locations.},
+  eventtitle = {The 16th {{ACM}} Conference},
+  isbn = {978-1-60558-894-0},
+  langid = {english},
+  annotation = {44 citations (Semantic Scholar/DOI) [2021-09-27]}
+}
+% == BibLateX quality report for fournet2009securitypreserving:
+% ? Unsure about the formatting of the booktitle
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: http://portal.acm.org/citation.cfm?doid=1653662.1653715
+% ? Unused version: 71
+
+@inproceedings{frassetto2018imix,
+  title = {{{IMIX}}: In-{{Process Memory Isolation EXtension}}},
+  shorttitle = {{{IMIX}}},
+  author = {Frassetto, Tommaso and Jauernig, Patrick and Liebchen, Christopher and Sadeghi, Ahmad-Reza},
+  date = {2018},
+  pages = {83--97},
+  url = {https://www.usenix.org/conference/usenixsecurity18/presentation/frassetto},
+  urldate = {2021-09-16},
+  eventtitle = {27th {{USENIX Security Symposium}} ({{USENIX Security}} 18)},
+  isbn = {978-1-939133-04-5},
+  langid = {english}
+}
+% == BibLateX quality report for frassetto2018imix:
+% Missing required field 'booktitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: www.usenix.org
+% ? Unused version: 52
+
+@inproceedings{fredrikson2014zo,
+  title = {{{Z\O}}: An {{Optimizing Distributing Zero}}-{{Knowledge Compiler}}},
+  shorttitle = {{{Z\O}}},
+  author = {Fredrikson, Matthew and Livshits, Benjamin},
+  date = {2014},
+  pages = {909--924},
+  url = {https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/fredrikson},
+  urldate = {2021-09-10},
+  eventtitle = {23rd \{\vphantom\}{{USENIX}}\vphantom\{\} {{Security Symposium}} (\{\vphantom\}{{USENIX}}\vphantom\{\} {{Security}} 14)},
+  isbn = {978-1-931971-15-7},
+  langid = {english}
+}
+% == BibLateX quality report for fredrikson2014zo:
+% Missing required field 'booktitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: www.usenix.org
+% ? Unused version: 5
+
+@inproceedings{ghosn2021enclosure,
+  title = {Enclosure: Language-Based Restriction of Untrusted Libraries},
+  shorttitle = {Enclosure},
+  booktitle = {Proceedings of the 26th {{ACM International Conference}} on {{Architectural Support}} for {{Programming Languages}} and {{Operating Systems}}},
+  author = {Ghosn, Adrien and Kogias, Marios and Payer, Mathias and Larus, James R. and Bugnion, Edouard},
+  date = {2021-04-19},
+  pages = {255--267},
+  publisher = {{ACM}},
+  location = {{Virtual USA}},
+  doi = {10.1145/3445814.3446728},
+  abstract = {Programming languages and systems have failed to address the security implications of the increasingly frequent use of public libraries to construct modern software. Most languages provide tools and online repositories to publish, import, and use libraries; however, this double-edged sword can incorporate a large quantity of unknown, unchecked, and unverified code into an application. The risk is real, as demonstrated by malevolent actors who have repeatedly inserted malware into popular open-source libraries. This paper proposes a solution: enclosures, a new programming language construct for library isolation that provides a developer with fine-grain control over the resources that a library can access, even for libraries with complex inter-library dependencies. The programming abstraction is language-independent and could be added to most languages. These languages would then be able to take advantage of hardware isolation mechanisms that are effective across language boundaries.},
+  eventtitle = {{{ASPLOS}} '21: 26th {{ACM International Conference}} on {{Architectural Support}} for {{Programming Languages}} and {{Operating Systems}}},
+  isbn = {978-1-4503-8317-2},
+  langid = {english},
+  annotation = {2 citations (Semantic Scholar/DOI) [2021-09-16] 1 citations (Crossref) [2021-09-16]}
+}
+
+@inproceedings{gibbons1986efficient,
+  title = {Efficient Instruction Scheduling for a Pipelined Architecture},
+  booktitle = {Proceedings of the 1986 {{SIGPLAN}} Symposium on {{Compiler}} Construction},
+  author = {Gibbons, Philip B. and Muchnick, Steven S.},
+  date = {1986-07-01},
+  series = {{{SIGPLAN}} '86},
+  pages = {11--16},
+  publisher = {{Association for Computing Machinery}},
+  location = {{New York, NY, USA}},
+  doi = {10.1145/12276.13312},
+  abstract = {As part of an effort to develop an optimizing compiler for a pipelined architecture, a code reorganization algorithm has been developed that significantly reduces the number of runtime pipeline interlocks. In a pass after code generation, the algorithm uses a dag representation to heuristically schedule the instructions in each basic block. Previous algorithms for reducing pipeline interlocks have had worst-case runtimes of at least O (n4). By using a dag representation which prevents scheduling deadlocks and a selection method that requires no lookahead, the resulting algorithm reorganizes instructions almost as effectively in practice, while having an O (n2) worst-case runtime.},
+  isbn = {978-0-89791-197-9},
+  annotation = {23 citations (Semantic Scholar/DOI) [2021-10-19]}
+}
+% == BibLateX quality report for gibbons1986efficient:
+% ? Unsure about the formatting of the booktitle
+% ? Unused libraryCatalog: ACM Digital Library
+% ? Unused url: https://doi.org/10.1145/12276.13312
+% ? Unused version: 115
+
+@article{goff1991practical,
+  title = {Practical Dependence Testing},
+  author = {Goff, Gina and Kennedy, Ken and Tseng, Chau-Wen},
+  date = {1991-05-01},
+  journaltitle = {SIGPLAN Not.},
+  volume = {26},
+  number = {6},
+  pages = {15--29},
+  issn = {0362-1340},
+  doi = {10.1145/113446.113448},
+  annotation = {2 citations (Semantic Scholar/DOI) [2021-10-21]}
+}
+% == BibLateX quality report for goff1991practical:
+% ? Possibly abbreviated journal title SIGPLAN Not.
+% ? Unused libraryCatalog: June 1991
+% ? Unused publicationTitle: ACM SIGPLAN Notices
+% ? Unused url: https://doi.org/10.1145/113446.113448
+% ? Unused version: 138
+
+@inproceedings{goodman1988code,
+  title = {Code Scheduling and Register Allocation in Large Basic Blocks},
+  booktitle = {In {{Proceedings}} of the 1988 {{International Conference}} on {{Supercomputing}}},
+  author = {Goodman, James R.},
+  date = {1988},
+  pages = {442--452},
+  abstract = {We discuss the issues about the interdependency between code scheduling and register allocation. We present two methods as solutions: (1) an integrated code scheduling technique; and (2) a DAGdriven register allocator. The integrated code scheduling method combines two scheduling techniques- one to reduce pipeline delays and the other to minimize register usage- into a single phase. By keeping track of the number of available registers, the scheduler can choose the appropriate scheduling technique to schedule a better code sequence. The DAG-driven register allocator uses a dependency graph to assist in assigning registers; it introduces much less extra dependency than does an ordinary register allocator. For large basic blocks, both approaches were shown to generate more efficient code sequences than conventional techniques in the simulations. 1.}
+}
+
+@article{grafinformation,
+  title = {Information {{Flow Control}} with {{System Dependence Graphs}} - {{Improving Modularity}}, {{Scalability}} and {{Precision}} for {{Object Oriented Languages}}},
+  author = {Graf, J\"urgen},
+  pages = {332},
+  langid = {english}
+}
+% == BibLateX quality report for grafinformation:
+% Exactly one of 'date' / 'year' must be present
+% Missing required field 'journaltitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: Zotero
+% ? Unused version: 142
+
+@online{graph,
+  title = {Graph {{Algorithms}}},
+  url = {https://courses.cs.duke.edu/fall17/compsci330/lecture12note.pdf},
+  urldate = {2021-10-25}
+}
+% == BibLateX quality report for graph:
+% Exactly one of 'date' / 'year' must be present
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused version: 157
+
+@book{grune2012modern,
+  title = {Modern {{Compiler Design}}},
+  author = {Grune, Dick and family=Reeuwijk, given=Kees, prefix=van, useprefix=true and Bal, Henri E. and Jacobs, Ceriel J.H. and Langendoen, Koen},
+  date = {2012},
+  publisher = {{Springer New York}},
+  location = {{New York, NY}},
+  doi = {10.1007/978-1-4614-4699-6},
+  isbn = {978-1-4614-4698-9 978-1-4614-4699-6},
+  langid = {english}
+}
+% == BibLateX quality report for grune2012modern:
+% 'isbn': not a valid ISBN
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: http://link.springer.com/10.1007/978-1-4614-4699-6
+% ? Unused version: 215
+
+@inproceedings{gudka2015clean,
+  title = {Clean {{Application Compartmentalization}} with {{SOAAP}}},
+  booktitle = {Proceedings of the 22nd {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}}},
+  author = {Gudka, Khilan and Watson, Robert N.M. and Anderson, Jonathan and Chisnall, David and Davis, Brooks and Laurie, Ben and Marinos, Ilias and Neumann, Peter G. and Richardson, Alex},
+  date = {2015-10-12},
+  pages = {1016--1031},
+  publisher = {{ACM}},
+  location = {{Denver Colorado USA}},
+  doi = {10.1145/2810103.2813611},
+  abstract = {Application compartmentalization, a vulnerability mitigation technique employed in programs such as OpenSSH and the Chromium web browser, decomposes software into isolated components to limit privileges leaked or otherwise available to attackers. However, compartmentalizing applications \textendash{} and maintaining that compartmentalization \textendash{} is hindered by ad hoc methodologies and significantly increased programming effort. In practice, programmers stumble through (rather than overtly reason about) compartmentalization spaces of possible decompositions, unknowingly trading off correctness, security, complexity, and performance. We present a new conceptual framework embodied in an LLVM-based tool: the Security-Oriented Analysis of Application Programs (SOAAP) that allows programmers to reason about compartmentalization using source-code annotations (compartmentalization hypotheses). We demonstrate considerable benefit when creating new compartmentalizations for complex applications, and analyze existing compartmentalized applications to discover design faults and maintenance issues arising from application evolution.},
+  eventtitle = {{{CCS}}'15: The 22nd {{ACM Conference}} on {{Computer}} and {{Communications Security}}},
+  isbn = {978-1-4503-3832-5},
+  langid = {english},
+  annotation = {46 citations (Semantic Scholar/DOI) [2021-09-16] 16 citations (Crossref) [2021-09-16]}
+}
+% == BibLateX quality report for gudka2015clean:
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: https://dl.acm.org/doi/10.1145/2810103.2813611
+% ? Unused version: 63
+
+@article{hammer2009flowsensitive,
+  title = {Flow-Sensitive, Context-Sensitive, and Object-Sensitive Information Flow Control Based on Program Dependence Graphs},
+  author = {Hammer, Christian and Snelting, Gregor},
+  date = {2009-12},
+  journaltitle = {Int. J. Inf. Secur.},
+  volume = {8},
+  number = {6},
+  pages = {399--422},
+  issn = {1615-5262, 1615-5270},
+  doi = {10.1007/s10207-009-0086-1},
+  abstract = {Information flow control (IFC) checks whether a program can leak secret data to public ports, or whether critical computations can be influenced from outside. But many IFC analyses are imprecise, as they are flow-insensitive, context-insensitive, or object-insensitive; resulting in false alarms. We argue that IFC must better exploit modern program analysis technology, and present an approach based on program dependence graphs (PDG). PDGs have been developed over the last 20 years as a standard device to represent information flow in a program, and today can handle realistic programs. In particular, our dependence graph generator for full Java bytecode is used as the basis for an IFC implementation which is more precise and needs less annotations than traditional approaches. We explain PDGs for sequential and multi-threaded programs, and explain precision gains due to flow-, context-, and object-sensitivity. We then augment PDGs with a lattice of security levels and introduce the flow equations for IFC. We describe algorithms for flow computation in detail and prove their correctness. We then extend flow equations to handle declassification, and prove that our algorithm respects monotonicity of release. Finally, examples demonstrate that our implementation can check realistic sequential programs in full Java bytecode.},
+  langid = {english},
+  annotation = {232 citations (Semantic Scholar/DOI) [2021-10-25]}
+}
+% == BibLateX quality report for hammer2009flowsensitive:
+% 'issn': not a valid ISSN
+% ? Possibly abbreviated journal title Int. J. Inf. Secur.
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused publicationTitle: International Journal of Information Security
+% ? Unused url: http://link.springer.com/10.1007/s10207-009-0086-1
+% ? Unused version: 165
+
+@inproceedings{hedayati2019hodor,
+  title = {Hodor: Intra-{{Process Isolation}} for {{High}}-{{Throughput Data Plane Libraries}}},
+  shorttitle = {Hodor},
+  author = {Hedayati, Mohammad and Gravani, Spyridoula and Johnson, Ethan and Criswell, John and Scott, Michael L. and Shen, Kai and Marty, Mike},
+  date = {2019},
+  pages = {489--504},
+  url = {https://www.usenix.org/conference/atc19/presentation/hedayati-hodor},
+  urldate = {2021-09-09},
+  eventtitle = {2019 \{\vphantom\}{{USENIX}}\vphantom\{\} {{Annual Technical Conference}} (\{\vphantom\}{{USENIX}}\vphantom\{\} \{\vphantom\}{{ATC}}\vphantom\{\} 19)},
+  isbn = {978-1-939133-03-8},
+  langid = {english}
+}
+% == BibLateX quality report for hedayati2019hodor:
+% Missing required field 'booktitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: www.usenix.org
+% ? Unused version: 4
+
+@inproceedings{hedin2012perspective,
+  title = {A {{Perspective}} on {{Information}}-{{Flow Control}}},
+  booktitle = {Software {{Safety}} and {{Security}}},
+  author = {Hedin, Daniel and Sabelfeld, A.},
+  date = {2012},
+  doi = {10.3233/978-1-61499-028-4-319},
+  abstract = {This document gives an account of the state-of-the-art in confidentiality and integrity policies and their enforcement with a systematic formalization of four dominant formulations of noninterference: termination-insensitive, termination-sensitive, progress- insensitive, and progress- sensitive, cast in the setting of two minimal while languages. Information-flow control tracks how information propagates through the program during execution to make sure that the program handles the information securely. Secure information flow is comprised of two related aspects: information confidentiality and information integrity \textemdash{} intuitively pertaining to the reading and writing of the information. The prevailing basic semantic notion of secure information flow is noninterference, demanding independence of public (or, in the case of integrity, trusted) output from secret (or, in the case of integrity, untrusted) input. This document gives an account of the state-of-the-art in confidentiality and integrity policies and their enforcement with a systematic formalization of four dominant formulations of noninterference: termination-insensitive, termination-sensitive, progress-insensitive, and progress-sensitive, cast in the setting of two minimal while languages. 1. Information-flow control The control of how information is propagated by computing systems is vital for information security. Historically, access control has been the main means of preventing information from being disseminated. As the name indicates, access control verifies that the program's access rights at the point of access, and either grants or denies the program access. Once the program has been given access to information no further effort is made to make sure that the program handles the accessed information correctly. However, access control is inadequate in many situations, since it forces an all-or-nothing choice of either fully trusting the program not to leak/compromise information or not allowing access to this information altogether. Information-flow control tracks how information propagates through the program during execution to make sure that the program handles the information securely. The research on secure information flow goes back to the early 70's [35,39], primarily in the context of military systems. Secure information flow is comprised of two related aspects: information confidentiality and information integrity \textemdash{} intuitively pertaining to the reading and writing of the information. The prevailing basic semantic notion of secure information flow is noninterference [46], demanding independence of public (or, in the case of integrity, trusted) output from secret (or, in the case of integrity, untrusted) input. As the field has matured, numerous variations of noninterference [98], as well as other semantic characterizations have been explored [103]. Recently, information integrity has received attention [55,57,19,4]. Integrity has frequently been seen as the dual of confidentiality [18], though it can be argued that this description might ignore other important facets [19]. One important aspect of integrity lies in its interaction with declassification \textemdash{} intentional lowering of security classification of information \textemdash{} in order to prevent the attacker from controlling what information is declassified [77,78]. Below we give an account of the state-of-the-art in confidentiality and integrity policies and enforcement, with a detailed exposition of various formulations of noninterference.},
+  annotation = {84 citations (Semantic Scholar/DOI) [2021-10-27]}
+}
+% == BibLateX quality report for hedin2012perspective:
+% ? Unsure about the formatting of the booktitle
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: Semantic Scholar
+% ? Unused version: 184
+
+@article{horwitz1990interprocedural,
+  title = {Interprocedural {{Slicing Using Dependence Graphs}}},
+  author = {Horwitz, Susan and Reps, Thomas and Binkley, David},
+  date = {1990},
+  volume = {12},
+  number = {1},
+  pages = {35},
+  langid = {english}
+}
+% == BibLateX quality report for horwitz1990interprocedural:
+% Missing required field 'journaltitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: Zotero
+% ? Unused version: 100
+
+@online{how,
+  title = {How Do {{Terminators}} Work in the {{LLVM IR}}? - {{Quora}}},
+  url = {https://www.quora.com/How-do-Terminators-work-in-the-LLVM-IR},
+  urldate = {2021-10-19}
+}
+% == BibLateX quality report for how:
+% Exactly one of 'date' / 'year' must be present
+% ? Unused version: 127
+
+@inproceedings{huang2017art,
+  title = {The {{ART}} of {{App Compartmentalization}}: Compiler-Based {{Library Privilege Separation}} on {{Stock Android}}},
+  shorttitle = {The {{ART}} of {{App Compartmentalization}}},
+  booktitle = {Proceedings of the 2017 {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}}},
+  author = {Huang, Jie and Schranz, Oliver and Bugiel, Sven and Backes, Michael},
+  date = {2017-10-30},
+  pages = {1037--1049},
+  publisher = {{ACM}},
+  location = {{Dallas Texas USA}},
+  doi = {10.1145/3133956.3134064},
+  abstract = {Third-party libraries are commonly used by app developers for alleviating the development efforts and for monetizing their apps. On Android, the host app and its third-party libraries reside in the same sandbox and share all privileges awarded to the host app by the user, putting the users' privacy at risk of intrusions by third-party libraries. In this paper, we introduce a new privilege separation approach for third-party libraries on stock Android. Our solution partitions Android applications at compile-time into isolated, privilege-separated compartments for the host app and the included third-party libraries. A particular benefit of our approach is that it leverages compiler-based instrumentation available on stock Android versions and thus abstains from modification of the SDK, the app bytecode, or the device firmware. A particular challenge for separating libraries from their host apps is the reconstruction of the communication channels and the preservation of visual fidelity between the now separated app and its libraries. We solve this challenge through new IPC-based protocols to synchronize layout and lifecycle management between different sandboxes. Finally, we demonstrate the efficiency and effectiveness of our solution by applying it to real world apps from the Google Play Store that contain advertisements.},
+  eventtitle = {{{CCS}} '17: 2017 {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}}},
+  isbn = {978-1-4503-4946-8},
+  langid = {english},
+  annotation = {15 citations (Semantic Scholar/DOI) [2021-09-16] 7 citations (Crossref) [2021-09-16]}
+}
+
+@inproceedings{huang2021finegrained,
+  title = {Fine-Grained {{Program Partitioning}} for {{Security}}},
+  booktitle = {Proceedings of the 14th {{European Workshop}} on {{Systems Security}}},
+  author = {Huang, Zhen and Jaeger, Trent and Tan, Gang},
+  date = {2021-04-26},
+  pages = {21--26},
+  publisher = {{ACM}},
+  location = {{Online United Kingdom}},
+  doi = {10.1145/3447852.3458717},
+  abstract = {Complex software systems are often not designed with the principle of least privilege, which requires each component be given the minimum amount of privileges to function. As a result, software vulnerabilities in less privileged code can lead to privilege escalation, defeating security and privacy. Privilege separation is the process of automatically partitioning a software system into least privileged components, and we argue that it is effective at reducing the attack surface. However, previous privilege-separation systems do not provide fine-grained separation of privileged code and non-privileged code co-existing in the same function for C/C++ applications. We propose a fine-grained partitioning technique for supporting fine-grained separation in automatic program partitioning. The technique has been applied to a set of security-sensitive networking and interactive programs. Results show that it can automatically generate executable partitions for C applications; further, partitioned programs incur acceptable runtime overheads.},
+  eventtitle = {{{EuroSys}} '21: Sixteenth {{European Conference}} on {{Computer Systems}}},
+  isbn = {978-1-4503-8337-0},
+  langid = {english},
+  annotation = {0 citations (Semantic Scholar/DOI) [2021-09-16] 0 citations (Crossref) [2021-09-16]}
+}
+
+@online{im2021endokernel,
+  title = {The {{Endokernel}}: Fast, {{Secure}}, and {{Programmable Subprocess Virtualization}}},
+  shorttitle = {The {{Endokernel}}},
+  author = {Im, Bumjin and Yang, Fangfei and Tsai, Chia-Che and LeMay, Michael and Vahldiek-Oberwagner, Anjo and Dautenhahn, Nathan},
+  date = {2021-08-10},
+  shortjournal = {ArXiv210803705 Cs},
+  eprint = {2108.03705},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  url = {http://arxiv.org/abs/2108.03705},
+  urldate = {2021-11-09},
+  abstract = {Commodity applications contain more and more combinations of interacting components (user, application, library, and system) and exhibit increasingly diverse tradeoffs between isolation, performance, and programmability. We argue that the challenge of future runtime isolation is best met by embracing the multi-principle nature of applications, rethinking process architecture for fast and extensible intra-process isolation. We present, the Endokernel, a new process model and security architecture that nests an extensible monitor into the standard process for building efficient least-authority abstractions. The Endokernel introduces a new virtual machine abstraction for representing subprocess authority, which is enforced by an efficient self-isolating monitor that maps the abstraction to system level objects (processes, threads, files, and signals). We show how the Endokernel Architecture can be used to develop specialized separation abstractions using an exokernel-like organization to provide virtual privilege rings, which we use to reorganize and secure NGINX. Our prototype, includes a new syscall monitor, the nexpoline, and explores the tradeoffs of implementing it with diverse mechanisms, including Intel\textregistered{} Control Enhancement Technology. Overall, we believe sub-process isolation is a must and that the Endokernel Architecture exposes an essential set of abstractions for realizing this in a simple and feasible way.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Cryptography and Security},
+  annotation = {0 citations (Semantic Scholar/arXiv) [2021-11-09]}
+}
+% == BibLateX quality report for im2021endokernel:
+% Unexpected field 'primaryclass'
+% Unexpected field 'archiveprefix'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused version: 337
+
+@inproceedings{jenkins2020ghostbusting,
+  title = {Ghostbusting: Mitigating Spectre with Intraprocess Memory Isolation},
+  shorttitle = {Ghostbusting},
+  booktitle = {Proceedings of the 7th {{Symposium}} on {{Hot Topics}} in the {{Science}} of {{Security}}},
+  author = {Jenkins, Ira Ray and Anantharaman, Prashant and Shapiro, Rebecca and Brady, J. Peter and Bratus, Sergey and Smith, Sean W.},
+  date = {2020-09-21},
+  pages = {1--11},
+  publisher = {{ACM}},
+  location = {{Lawrence Kansas}},
+  doi = {10.1145/3384217.3385627},
+  abstract = {Spectre attacks have drawn much attention since their announcement. Speculative execution creates so-called transient instructions, those whose results are ephemeral and not committed architecturally. However, various side-channels exist to extract these transient results from the microarchitecture, e.g., caches. Spectre Variant 1, the so-called Bounds Check Bypass, was the first such attack to be demonstrated. Leveraging transient read instructions and cachetiming effects, the adversary can read secret data. In this work, we explore the ability of intraprocess memory isolation to mitigate Spectre Variant 1 attacks. We demonstrate this using Executable and Linkable Format-based access control (ELFbac) which is a technique for achieving intraprocess memory isolation at the application binary interface (ABI) level. Additionally, we consider Memory Protection Keys (MPKs), a recent extension to Intel processors, that partition virtual pages into security domains. Using the original Spectre proof-of-concept (POC) code, we show how ELFbac and MPKs can be used to thwart Spectre Variant 1 by constructing explicit policies to allow and disallow the exploit. We compare our techniques against the commonly suggested mitigation using serialized instructions, e.g., lfence. Additionally, we consider other Spectre variants based on transient execution that intraprocess memory isolation would naturally mitigate.},
+  eventtitle = {{{HotSoS}} '20: Hot {{Topics}} in the {{Science}} of {{Security}}},
+  isbn = {978-1-4503-7561-0},
+  langid = {english},
+  annotation = {3 citations (Semantic Scholar/DOI) [2021-09-16] 1 citations (Crossref) [2021-09-16]}
+}
+
+@inproceedings{juglaret2016good,
+  title = {Beyond {{Good}} and {{Evil}}: Formalizing the {{Security Guarantees}} of {{Compartmentalizing Compilation}}},
+  shorttitle = {Beyond {{Good}} and {{Evil}}},
+  booktitle = {2016 {{IEEE}} 29th {{Computer Security Foundations Symposium}} ({{CSF}})},
+  author = {Juglaret, Yannis and Hritcu, Catalin and Amorim, Arthur Azevedo De and Eng, Boris and Pierce, Benjamin C.},
+  date = {2016-06},
+  pages = {45--60},
+  issn = {2374-8303},
+  doi = {10.1109/CSF.2016.11},
+  abstract = {Compartmentalization is good security-engineering practice. By breaking a large software system into mutually distrustful components that run with minimal privileges, restricting their interactions to conform to well-defined interfaces, we can limit the damage caused by low-level attacks such as control-flow hijacking. When used to defend against such attacks, compartmentalization is often implemented cooperatively by a compiler and a low-level compartmentalization mechanism. However, the formal guarantees provided by such compartmentalizing compilation have seen surprisingly little investigation. We propose a new security property, secure compartmentalizing compilation (SCC), that formally characterizes the guarantees provided by compartmentalizing compilation and clarifies its attacker model. We reconstruct our property by starting from the well-established notion of fully abstract compilation, then identifying and lifting three important limitations that make standard full abstraction unsuitable for compartmentalization. The connection to full abstraction allows us to prove SCC by adapting established proof techniques, we illustrate this with a compiler from a simple unsafe imperative language with procedures to a compartmentalized abstract machine.},
+  eventtitle = {2016 {{IEEE}} 29th {{Computer Security Foundations Symposium}} ({{CSF}})},
+  keywords = {compartmentalization,compilation,Context,full abstraction,High level languages,Program processors,Safety,security,Security,Software systems,Standards},
+  annotation = {39 citations (Semantic Scholar/DOI) [2021-09-16] 9 citations (Crossref) [2021-09-16]}
+}
+% == BibLateX quality report for juglaret2016good:
+% Unexpected field 'issn'
+% ? Unsure about the formatting of the booktitle
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: IEEE Xplore
+% ? Unused version: 62
+
+@inproceedings{koning2017no,
+  title = {No {{Need}} to {{Hide}}: Protecting {{Safe Regions}} on {{Commodity Hardware}}},
+  shorttitle = {No {{Need}} to {{Hide}}},
+  booktitle = {Proceedings of the {{Twelfth European Conference}} on {{Computer Systems}}},
+  author = {Koning, Koen and Chen, Xi and Bos, Herbert and Giuffrida, Cristiano and Athanasopoulos, Elias},
+  date = {2017-04-23},
+  series = {{{EuroSys}} '17},
+  pages = {437--452},
+  publisher = {{Association for Computing Machinery}},
+  location = {{New York, NY, USA}},
+  doi = {10.1145/3064176.3064217},
+  abstract = {As modern 64-bit x86 processors no longer support the segmentation capabilities of their 32-bit predecessors, most research projects assume that strong in-process memory isolation is no longer an affordable option. Instead of strong, deterministic isolation, new defense systems therefore rely on the probabilistic pseudo-isolation provided by randomization to "hide" sensitive (or safe) regions. However, recent attacks have shown that such protection is insufficient; attackers can leak these safe regions in a variety of ways. In this paper, we revisit isolation for x86-64 and argue that hardware features enabling efficient deterministic isolation do exist. We first present a comprehensive study on commodity hardware features that can be repurposed to isolate safe regions in the same address space (e.g., Intel MPX and MPK). We then introduce MemSentry, a framework to harden modern defense systems with commodity hardware features instead of information hiding. Our results show that some hardware features are more effective than others in hardening such defenses in each scenario and that features originally conceived for other purposes (e.g., Intel MPX for bounds checking) are surprisingly efficient at isolating safe regions compared to their software equivalent (i.e., SFI).},
+  isbn = {978-1-4503-4938-3},
+  keywords = {hardware features,information hiding,isolation,software fault isolation},
+  annotation = {71 citations (Semantic Scholar/DOI) [2021-09-16] 35 citations (Crossref) [2021-09-16]}
+}
+% == BibLateX quality report for koning2017no:
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: ACM Digital Library
+% ? Unused url: https://doi.org/10.1145/3064176.3064217
+% ? Unused version: 62
+
+@inproceedings{lattner2004llvm,
+  title = {{{LLVM}}: A Compilation Framework for Lifelong Program Analysis \& Transformation},
+  shorttitle = {{{LLVM}}},
+  booktitle = {International {{Symposium}} on {{Code Generation}} and {{Optimization}}, 2004. {{CGO}} 2004.},
+  author = {Lattner, C. and Adve, V.},
+  date = {2004},
+  pages = {75--86},
+  publisher = {{IEEE}},
+  location = {{San Jose, CA, USA}},
+  doi = {10.1109/CGO.2004.1281665},
+  abstract = {This paper describes LLVM (Low Level Virtual Machine), a compiler framework designed to support transparent, lifelong program analysis and transformation for arbitrary programs, by providing high-level information to compiler transformations at compile-time, link-time, run-time, and in idle time between runs. LLVM defines a common, low-level code representation in Static Single Assignment (SSA) form, with several novel features: a simple, language-independent type-system that exposes the primitives commonly used to implement high-level language features; an instruction for typed address arithmetic; and a simple mechanism that can be used to implement the exception handling features of high-level languages (and setjmp/longjmp in C) uniformly and efficiently. The LLVM compiler framework and code representation together provide a combination of key capabilities that are important for practical, lifelong analysis and transformation of programs. To our knowledge, no existing compilation approach provides all these capabilities. We describe the design of the LLVM representation and compiler framework, and evaluate the design in three ways: (a) the size and effectiveness of the representation, including the type information it provides; (b) compiler performance for several interprocedural problems; and (c) illustrative examples of the benefits LLVM provides for several challenging compiler problems.},
+  eventtitle = {International {{Symposium}} on {{Code Generation}} and {{Optimization}}, 2004. {{CGO}} 2004.},
+  isbn = {978-0-7695-2102-2},
+  langid = {english},
+  annotation = {4440 citations (Semantic Scholar/DOI) [2021-10-22]}
+}
+% == BibLateX quality report for lattner2004llvm:
+% ? Unsure about the formatting of the booktitle
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: http://ieeexplore.ieee.org/document/1281665/
+% ? Unused version: 145
+
+@inproceedings{lavaee2019codestitcher,
+  title = {Codestitcher: Inter-Procedural Basic Block Layout Optimization},
+  shorttitle = {Codestitcher},
+  booktitle = {Proceedings of the 28th {{International Conference}} on {{Compiler Construction}} - {{CC}} 2019},
+  author = {Lavaee, Rahman and Criswell, John and Ding, Chen},
+  date = {2019},
+  pages = {65--75},
+  publisher = {{ACM Press}},
+  location = {{Washington, DC, USA}},
+  doi = {10.1145/3302516.3307358},
+  abstract = {Modern software executes a large amount of code. Previous techniques of code layout optimization were developed one or two decades ago and have become inadequate to cope with the scale and complexity of new types of applications such as compilers, browsers, interpreters, language VMs and shared libraries.},
+  eventtitle = {The 28th {{International Conference}}},
+  isbn = {978-1-4503-6277-1},
+  langid = {english},
+  annotation = {4 citations (Semantic Scholar/DOI) [2021-10-18]}
+}
+
+@inproceedings{lind2017glamdring,
+  title = {Glamdring: Automatic {{Application Partitioning}} for {{Intel}} \{\vphantom\}{{SGX}}\vphantom\{\}},
+  shorttitle = {Glamdring},
+  author = {Lind, Joshua and Priebe, Christian and Muthukumaran, Divya and O'Keeffe, Dan and Aublin, Pierre-Louis and Kelbert, Florian and Reiher, Tobias and Goltzsche, David and Eyers, David and Kapitza, R\"udiger and Fetzer, Christof and Pietzuch, Peter},
+  date = {2017},
+  pages = {285--298},
+  url = {https://www.usenix.org/conference/atc17/technical-sessions/presentation/lind},
+  urldate = {2021-09-09},
+  eventtitle = {2017 \{\vphantom\}{{USENIX}}\vphantom\{\} {{Annual Technical Conference}} (\{\vphantom\}{{USENIX}}\vphantom\{\} \{\vphantom\}{{ATC}}\vphantom\{\} 17)},
+  isbn = {978-1-931971-38-6},
+  langid = {english}
+}
+% == BibLateX quality report for lind2017glamdring:
+% Missing required field 'booktitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: www.usenix.org
+% ? Unused version: 4
+
+@inproceedings{liu2017ptrsplit,
+  title = {{{PtrSplit}}: Supporting {{General Pointers}} in {{Automatic Program Partitioning}}},
+  shorttitle = {{{PtrSplit}}},
+  booktitle = {Proceedings of the 2017 {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}}},
+  author = {Liu, Shen and Tan, Gang and Jaeger, Trent},
+  date = {2017-10-30},
+  pages = {2359--2371},
+  publisher = {{ACM}},
+  location = {{Dallas Texas USA}},
+  doi = {10.1145/3133956.3134066},
+  abstract = {Partitioning a security-sensitive application into least-privileged components and putting each into a separate protection domain have long been a goal of security practitioners and researchers. However, a stumbling block to automatically partitioning C/C++ applications is the presence of pointers in these applications. Pointers make calculating data dependence, a key step in program partitioning, difficult and hard to scale; furthermore, C/C++ pointers do not carry bounds information, making it impossible to automatically marshall and unmarshall pointer data when they are sent across the boundary of partitions. In this paper, we propose a set of techniques for supporting general pointers in automatic program partitioning. Our system, called PtrSplit, constructs a Program Dependence Graph (PDG) for tracking data and control dependencies in the input program and employs a parameter-tree approach for representing data of pointer types; this approach is modular and avoids global pointer analysis. Furthermore, it performs selective pointer bounds tracking to enable automatic marshalling/unmarshalling of pointer data, even when there is circularity and arbitrary aliasing. As a result, PtrSplit can automatically generate executable partitions for C applications that contain arbitrary pointers.},
+  eventtitle = {{{CCS}} '17: 2017 {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}}},
+  isbn = {978-1-4503-4946-8},
+  langid = {english},
+  annotation = {21 citations (Semantic Scholar/DOI) [2021-09-16] 12 citations (Crossref) [2021-09-16]}
+}
+% == BibLateX quality report for liu2017ptrsplit:
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: https://dl.acm.org/doi/10.1145/3133956.3134066
+% ? Unused version: 120
+
+@inproceedings{liu2017ptrsplitslides,
+  title = {{{PtrSplitSlides}}},
+  shorttitle = {{{PtrSplit}}},
+  booktitle = {Proceedings of the 2017 {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}}},
+  author = {Liu, Shen and Tan, Gang and Jaeger, Trent},
+  date = {2017-10-30},
+  pages = {2359--2371},
+  publisher = {{ACM}},
+  location = {{Dallas Texas USA}},
+  doi = {10.1145/3133956.3134066},
+  eventtitle = {{{CCS}} '17: 2017 {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}}},
+  isbn = {978-1-4503-4946-8},
+  langid = {english},
+  annotation = {23 citations (Semantic Scholar/DOI) [2021-11-03]}
+}
+
+@inproceedings{liu2018rttrust,
+  title = {{{RT}}-Trust: Automated Refactoring for Trusted Execution under Real-Time Constraints},
+  shorttitle = {{{RT}}-Trust},
+  booktitle = {Proceedings of the 17th {{ACM SIGPLAN International Conference}} on {{Generative Programming}}: Concepts and {{Experiences}}},
+  author = {Liu, Yin and An, Kijin and Tilevich, Eli},
+  date = {2018-11-05},
+  pages = {175--187},
+  publisher = {{ACM}},
+  location = {{Boston MA USA}},
+  doi = {10.1145/3278122.3278137},
+  abstract = {Real-time systems must meet strict timeliness requirements. These systems also often need to protect their critical program information (CPI) from adversarial interference and intellectual property theft. Trusted execution environments (TEE) execute CPI tasks on a special-purpose processor, thus providing hardware protection. However, adapting a system written to execute in environments without TEE requires partitioning the code into the regular and trusted parts. This process involves complex manual program transformations that are not only laborious and intellectually tiresome, but also hard to validate and verify for the adherence to real-time constraints. To address these problems, this paper presents novel program analyses and transformation techniques, accessible to the developer via a declarative meta-programming model. The developer declaratively specifies the CPI portion of the system. A custom static analysis checks CPI specifications for validity, while probe-based profiling helps identify whether the transformed system would continue to meet the original real-time constraints, with a feedback loop suggesting how to modify the code, so its CPI can be isolated. Finally, an automated refactoring isolates the CPI portion for TEE-based execution, communicated with through generated calls to the TEE API. We have evaluated our approach by successfully enabling the trusted execution of the CPI portions of several microbenchmarks and a drone autopilot. Our approach shows the promise of declarative meta-programming in reducing the programmer effort required to adapt systems for trusted execution under real-time constraints.},
+  eventtitle = {{{GPCE}} '18: 17th {{ACM SIGPLAN International Conference}} on {{Generative Programming}}: Concepts and {{Experiences}}},
+  isbn = {978-1-4503-6045-6},
+  langid = {english},
+  annotation = {11 citations (Semantic Scholar/DOI) [2021-09-16] 5 citations (Crossref) [2021-09-16]}
+}
+
+@inproceedings{liu2019programmandering,
+  title = {Program-Mandering: Quantitative {{Privilege Separation}}},
+  shorttitle = {Program-Mandering},
+  booktitle = {Proceedings of the 2019 {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}}},
+  author = {Liu, Shen and Zeng, Dongrui and Huang, Yongzhe and Capobianco, Frank and McCamant, Stephen and Jaeger, Trent and Tan, Gang},
+  date = {2019-11-06},
+  pages = {1023--1040},
+  publisher = {{ACM}},
+  location = {{London United Kingdom}},
+  doi = {10.1145/3319535.3354218},
+  abstract = {Privilege separation is an effective technique to improve software security. However, past partitioning systems do not allow programmers to make quantitative tradeoffs between security and performance. In this paper, we describe our toolchain called PM. It can automatically find the optimal boundary in program partitioning. This is achieved by solving an integer-programming model that optimizes for a user-chosen metric while satisfying the remaining security and performance constraints on other metrics. We choose security metrics to reason about how well computed partitions enforce information flow control to: (1) protect the program from low-integrity inputs or (2) prevent leakage of program secrets. As a result, functions in the sensitive module that fall on the optimal partition boundaries automatically identify where declassification is necessary. We used PM to experiment on a set of real-world programs to protect confidentiality and integrity; results show that, with moderate user guidance, PM can find partitions that have better balance between security and performance than partitions found by a previous tool that requires manual declassification.},
+  eventtitle = {{{CCS}} '19: 2019 {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}}},
+  isbn = {978-1-4503-6747-9},
+  langid = {english},
+  annotation = {7 citations (Semantic Scholar/DOI) [2021-09-16] 5 citations (Crossref) [2021-09-16]}
+}
+
+@letter{llvm-dev2016llvmdev,
+  type = {E-mail},
+  title = {[Llvm-Dev] {{How}} to Get Started with Instruction Scheduling? Advice Needed.},
+  shorttitle = {[Llvm-Dev] {{How}} to Get Started with Instruction Scheduling?},
+  author = {family=dev, given=Christof Douma, prefix=via, useprefix=true},
+  year = {Tue Apr 26 05:09:45 PDT 2016},
+  url = {https://lists.llvm.org/pipermail/llvm-dev/2016-April/098763.html},
+  urldate = {2021-10-18}
+}
+% == BibLateX quality report for llvm-dev2016llvmdev:
+% Unexpected field 'type'
+% Unexpected field 'title'
+% Unexpected field 'author'
+% ? Unused version: 96
+
+@online{llvmddg,
+  title = {{{LLVMDDG}}: Include/Llvm/{{Analysis}}/{{DDG}}.h {{Source File}}},
+  url = {https://llvm.org/doxygen/DDG_8h_source.html},
+  urldate = {2021-10-19}
+}
+% == BibLateX quality report for llvmddg:
+% Exactly one of 'date' / 'year' must be present
+% ? Unused version: 144
+
+@book{lopes2014getting,
+  title = {Getting Started with {{LLVM}} Core Libraries: Get to Grips with {{LLVM}} Essentials and Use the Core Libraries to Build Advanced Tools},
+  shorttitle = {Getting Started with {{LLVM}} Core Libraries},
+  author = {Lopes, Bruno Cardoso and Auler, Rafael},
+  date = {2014},
+  series = {Community Experience Distilled},
+  publisher = {{Packt Publ}},
+  location = {{Birmingham}},
+  isbn = {978-1-78216-692-4},
+  langid = {english},
+  pagetotal = {295}
+}
+
+@online{melara2020enclavedom,
+  title = {{{EnclaveDom}}: Privilege {{Separation}} for {{Large}}-{{TCB Applications}} in {{Trusted Execution Environments}}},
+  shorttitle = {{{EnclaveDom}}},
+  author = {Melara, Marcela S. and Freedman, Michael J. and Bowman, Mic},
+  date = {2020-06-17},
+  shortjournal = {ArXiv190713245 Cs},
+  eprint = {1907.13245},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  url = {http://arxiv.org/abs/1907.13245},
+  urldate = {2021-11-01},
+  abstract = {Trusted executions environments (TEEs) such as Intel\textregistered{} SGX provide hardware-isolated execution areas in memory, called enclaves. By running only the most trusted application components in the enclave, TEEs enable developers to minimize the TCB of their applications thereby helping to protect sensitive application data. However, porting existing applications to TEEs often requires considerable refactoring efforts, as TEEs provide a restricted interface to standard OS features. To ease development efforts, TEE application developers often choose to run their unmodified application in a library OS container that provides a full in-enclave OS interface. Yet, this large-TCB development approach now leaves sensitive in-enclave data exposed to potential bugs or vulnerabilities in third-party code imported into the application. Importantly, because the TEE libOS and the application run in the same enclave address space, even the libOS management data structures (e.g. file descriptor table) may be vulnerable to attack, where in traditional OSes these data structures may be protected via privilege isolation.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Cryptography and Security,Computer Science - Operating Systems},
+  annotation = {10 citations (Semantic Scholar/arXiv) [2021-11-01]}
+}
+% == BibLateX quality report for melara2020enclavedom:
+% Unexpected field 'primaryclass'
+% Unexpected field 'archiveprefix'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused version: 205
+
+@incollection{mogosanu2018microstache,
+  title = {{{MicroStache}}: A {{Lightweight Execution Context}} for {{In}}-{{Process Safe Region Isolation}}},
+  shorttitle = {{{MicroStache}}},
+  booktitle = {Research in {{Attacks}}, {{Intrusions}}, and {{Defenses}}},
+  author = {Mogosanu, Lucian and Rane, Ashay and Dautenhahn, Nathan},
+  editor = {Bailey, Michael and Holz, Thorsten and Stamatogiannakis, Manolis and Ioannidis, Sotiris},
+  date = {2018},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  volume = {11050},
+  pages = {359--379},
+  publisher = {{Springer International Publishing}},
+  location = {{Cham}},
+  doi = {10.1007/978-3-030-00470-5_17},
+  abstract = {In this work we present, MicroStache, a specialized hardware mechanism and new process abstraction for accelerating safe region security solutions. In the safe region paradigm, an application is split into safe and unsafe parts. Unfortunately, frequent mixing of safe and unsafe operations stresses memory isolation mechanisms. MicroStache addresses this challenge by adding an orthogonal execution domain into the process abstraction, consisting of a memory segment and minimal instruction set. Unlike alternative hardware, MicroStache implements a simple microarchitectural memory segmentation scheme while integrating it with paging, and also extends the safe region abstraction to isolate data in the processor cache, allowing it to protect against cache side channel attacks. A prototype is presented that demonstrates how to automatically leverage MicroStache to enforce security polices, SafeStack and CPI, with 5\% and 1.2\% overhead beyond randomized isolation. Despite specialization, MicroStache enhances a growing and critical programming paradigm with minimal hardware complexity.},
+  isbn = {978-3-030-00469-9 978-3-030-00470-5},
+  langid = {english}
+}
+% == BibLateX quality report for mogosanu2018microstache:
+% 'isbn': not a valid ISBN
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: http://link.springer.com/10.1007/978-3-030-00470-5_17
+% ? Unused version: 56
+
+@inproceedings{myers1999jflow,
+  title = {{{JFlow}}: Practical Mostly-Static Information Flow Control},
+  shorttitle = {{{JFlow}}},
+  booktitle = {Proceedings of the 26th {{ACM SIGPLAN}}-{{SIGACT}} Symposium on {{Principles}} of Programming Languages  - {{POPL}} '99},
+  author = {Myers, Andrew C.},
+  date = {1999},
+  pages = {228--241},
+  publisher = {{ACM Press}},
+  location = {{San Antonio, Texas, United States}},
+  doi = {10.1145/292540.292561},
+  abstract = {A promising technique for protecting privacy and integrity of sensitive data is to statically check information flow within programs that manipulate the data. While previous work has proposed programming language extensions to allow this static checking, the resulting languages are too restrictive for practical use and have not been implemented. In this paper, we describe the new language JFlow, an extension to the Java language that adds statically-checked information flow annotations. JFlow provides several new features that make information flow checking more flexible and convenient than in previous models: a decentralized label model, label polymorphism, run-time label checking, and automatic label inference. JFlow also supports many language features that have never been integrated successfully with static information flow control, including objects, subclassing, dynamic type tests, access control, and exceptions. This paper defines the JFlow language and presents formal rules that are used to check JFlow programs for correctness. Because most checking is static, there is little code space, data space, or run-time overhead in the JFlow implementation.},
+  eventtitle = {The 26th {{ACM SIGPLAN}}-{{SIGACT}} Symposium},
+  isbn = {978-1-58113-095-9},
+  langid = {english},
+  annotation = {1188 citations (Semantic Scholar/DOI) [2021-10-25]}
+}
+% == BibLateX quality report for myers1999jflow:
+% ? Unsure about the formatting of the booktitle
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: http://portal.acm.org/citation.cfm?doid=292540.292561
+% ? Unused version: 161
+
+@article{nadkarnipractical,
+  title = {Practical {{DIFC Enforcement}} on {{Android}}},
+  author = {Nadkarni, Adwait and Andow, Benjamin and Enck, William and Jha, Somesh},
+  pages = {19},
+  abstract = {Smartphone users often use private and enterprise data with untrusted third party applications. The fundamental lack of secrecy guarantees in smartphone OSes, such as Android, exposes this data to the risk of unauthorized exfiltration. A natural solution is the integration of secrecy guarantees into the OS. In this paper, we describe the challenges for decentralized information flow control (DIFC) enforcement on Android. We propose contextsensitive DIFC enforcement via lazy polyinstantiation and practical and secure network export through domain declassification. Our DIFC system, Weir, is backwards compatible by design, and incurs less than 4 ms overhead for component startup. With Weir, we demonstrate practical and secure DIFC enforcement on Android.},
+  langid = {english}
+}
+% == BibLateX quality report for nadkarnipractical:
+% Exactly one of 'date' / 'year' must be present
+% Missing required field 'journaltitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: Zotero
+% ? Unused version: 3
+
+@online{narayan2020retrofitting,
+  title = {Retrofitting {{Fine Grain Isolation}} in the {{Firefox Renderer}} ({{Extended Version}})},
+  author = {Narayan, Shravan and Disselkoen, Craig and Garfinkel, Tal and Froyd, Nathan and Rahm, Eric and Lerner, Sorin and Shacham, Hovav and Stefan, Deian},
+  date = {2020-03-09},
+  shortjournal = {ArXiv200300572 Cs},
+  eprint = {2003.00572},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  url = {http://arxiv.org/abs/2003.00572},
+  urldate = {2021-10-27},
+  abstract = {Firefox and other major browsers rely on dozens of third-party libraries to render audio, video, images, and other content. These libraries are a frequent source of vulnerabilities. To mitigate this threat, we are migrating Firefox to an architecture that isolates these libraries in lightweight sandboxes, dramatically reducing the impact of a compromise. Retrofitting isolation can be labor-intensive, very prone to security bugs, and requires critical attention to performance. To help, we developed RLBox, a framework that minimizes the burden of converting Firefox to securely and efficiently use untrusted code. To enable this, RLBox employs static information flow enforcement, and lightweight dynamic checks, expressed directly in the C++ type system.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Cryptography and Security,D.4.6},
+  annotation = {18 citations (Semantic Scholar/arXiv) [2021-10-27]}
+}
+% == BibLateX quality report for narayan2020retrofitting:
+% Unexpected field 'primaryclass'
+% Unexpected field 'archiveprefix'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused version: 191
+
+@article{narayanretrofitting,
+  title = {Retrofitting {{Fine Grain Isolation}} in the {{Firefox Renderer}}},
+  author = {Narayan, Shravan and Disselkoen, Craig and Garfinkel, Tal and Froyd, Nathan and Rahm, Eric and Lerner, Sorin and Shacham, Hovav and Stefan, Deian},
+  pages = {28},
+  langid = {english}
+}
+% == BibLateX quality report for narayanretrofitting:
+% Exactly one of 'date' / 'year' must be present
+% Missing required field 'journaltitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: Zotero
+% ? Unused version: 339
+
+@article{newell2020improved,
+  title = {Improved {{Basic Block Reordering}}},
+  author = {Newell, Andy and Pupyrev, Sergey},
+  date = {2020-12-01},
+  journaltitle = {IEEE Trans. Comput.},
+  volume = {69},
+  number = {12},
+  eprint = {1809.04676},
+  eprinttype = {arxiv},
+  pages = {1784--1794},
+  issn = {0018-9340, 1557-9956, 2326-3814},
+  doi = {10.1109/TC.2020.2982888},
+  abstract = {Basic block reordering is an important step for profile-guided binary optimization. The state-of-the-art goal for basic block reordering is to maximize the number of fall-through branches. However, we demonstrate that such orderings may impose suboptimal performance on instruction and I-TLB caches. We propose a new algorithm that relies on a model combining the effects of fall-through and caching behavior. As details of modern processor caching is quite complex and often unknown, we show how to use machine learning in selecting parameters that best trade off different caching effects to maximize binary performance. An extensive evaluation on a variety of applications, including Facebook production workloads, the open-source compilers Clang and GCC, and SPEC CPU benchmarks, indicate that the new method outperforms existing block reordering techniques, improving the resulting performance of applications with large code size. We have open sourced the code of the new algorithm as a part of a post-link binary optimization tool, BOLT.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Programming Languages},
+  annotation = {6 citations (Semantic Scholar/arXiv) [2021-10-18] 6 citations (Semantic Scholar/DOI) [2021-10-18]}
+}
+% == BibLateX quality report for newell2020improved:
+% Unexpected field 'archiveprefix'
+% 'issn': not a valid ISSN
+% ? Possibly abbreviated journal title IEEE Trans. Comput.
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused publicationTitle: IEEE Transactions on Computers
+% ? Unused url: http://arxiv.org/abs/1809.04676
+% ? Unused version: 109
+
+@inproceedings{newman2016srcslice,
+  title = {{{srcSlice}}: A {{Tool}} for {{Efficient Static Forward Slicing}}},
+  shorttitle = {{{srcSlice}}},
+  booktitle = {2016 {{IEEE}}/{{ACM}} 38th {{International Conference}} on {{Software Engineering Companion}} ({{ICSE}}-{{C}})},
+  author = {Newman, Christian D. and Sage, Tessandra and Collard, Michael L. and Alomari, Hakam W. and Maletic, Jonathan I.},
+  date = {2016-05},
+  pages = {621--624},
+  abstract = {An efficient lightweight forward static slicing tool is presented.The tool is implemented on top of srcML, an XML representation of source code.The approach does not compute the full program dependence graph but instead dependency information is computed as needed while computing the slice on a variable.The result is a list of line numbers, dependent variables, aliases, and function calls that are part of the slice for a given variable.The tool produces the slice for all variables in a system.The approach is highly scalable and can generate the slices for all variables of the Linux kernel in less than 15 minutes. A demonstration video is at: https://youtu.be/McvFUVSGg-g.},
+  eventtitle = {2016 {{IEEE}}/{{ACM}} 38th {{International Conference}} on {{Software Engineering Companion}} ({{ICSE}}-{{C}})},
+  keywords = {Dictionaries,Kernel,Linux,Memory management,srcML,static forward program slicing,static program analysis,Syntactics}
+}
+
+@inproceedings{palit2021dynpta,
+  title = {{{DynPTA}}: Combining {{Static}} and {{Dynamic Analysis}} for {{Practical Selective Data Protection}}},
+  shorttitle = {{{DynPTA}}},
+  author = {Palit, Tapti and Moon, Jarin Firose and Monrose, Fabian and Polychronakis, Michalis},
+  date = {2021-05-01},
+  pages = {1919--1937},
+  publisher = {{IEEE Computer Society}},
+  doi = {10.1109/SP40001.2021.00082},
+  abstract = {As control flow hijacking attacks become more challenging due to the deployment of various exploit mitigation technologies, the leakage of sensitive process data through the exploitation of memory disclosure vulnerabilities is becoming an increasingly important threat. To make matters worse, recently introduced transient execution attacks provide a new avenue for leaking confidential process data. As a response, various approaches for selectively protecting subsets of critical in-memory data have been proposed, which though either require a significant code refactoring effort, or do not scale for large applications.In this paper we present DynPTA, a selective data protection approach that combines static analysis with scoped dynamic data flow tracking (DFT) to keep a subset of manually annotated sensitive data always encrypted in memory. DynPTA ameliorates the inherent overapproximation of pointer analysis\&\#x2014;a significant challenge that has prevented previous approaches from supporting large applications\&\#x2014;by relying on lightweight label lookups to determine if potentially sensitive data is actually sensitive. Labeled objects are tracked only within the subset of value flows that may carry potentially sensitive data, requiring only a fraction of the program\&\#x2019;s code to be instrumented for DFT. We experimentally evaluated DynPTA with real-world applications and demonstrate that it can prevent memory disclosure (Heartbleed) and transient execution (Spectre) attacks from leaking the protected data, while incurring a modest runtime overhead of up to 19.2\% when protecting the private TLS key of Nginx with OpenSSL.},
+  eventtitle = {2021 {{IEEE Symposium}} on {{Security}} and {{Privacy}} ({{SP}})},
+  isbn = {978-1-72818-934-5},
+  langid = {english},
+  annotation = {1 citations (Semantic Scholar/DOI) [2021-10-20]}
+}
+% == BibLateX quality report for palit2021dynpta:
+% Missing required field 'booktitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: www.computer.org
+% ? Unused url: https://www.computer.org/csdl/proceedings-article/sp/2021/893400b408/1t0x9hWW2iI
+% ? Unused version: 135
+
+@book{pandey2015llvm,
+  title = {{{LLVM}} Cookbook: Over 80 Engaging Recipes That Will Help You Build a Compiler Frontend, Optimizer, and Code Generator Using {{LLVM}}},
+  shorttitle = {{{LLVM}} Cookbook},
+  author = {Pandey, Mayur and Sarda, Suyog},
+  date = {2015},
+  publisher = {{Packt Publishing}},
+  location = {{Birmingham Mumbai}},
+  isbn = {978-1-78528-598-1 978-1-78528-640-7},
+  langid = {english},
+  pagetotal = {274}
+}
+% == BibLateX quality report for pandey2015llvm:
+% 'isbn': not a valid ISBN
+% ? Unused libraryCatalog: K10plus ISBN
+% ? Unused version: 212
+
+@inproceedings{park2019libmpk,
+  title = {Libmpk: Software {{Abstraction}} for {{Intel Memory Protection Keys}} ({{Intel}} \{\vphantom\}{{MPK}}\vphantom\{\})},
+  shorttitle = {Libmpk},
+  author = {Park, Soyeon and Lee, Sangho and Xu, Wen and Moon, Hyungon and Kim, Taesoo},
+  date = {2019},
+  pages = {241--254},
+  url = {https://www.usenix.org/conference/atc19/presentation/park-soyeon},
+  urldate = {2021-09-09},
+  eventtitle = {2019 \{\vphantom\}{{USENIX}}\vphantom\{\} {{Annual Technical Conference}} (\{\vphantom\}{{USENIX}}\vphantom\{\} \{\vphantom\}{{ATC}}\vphantom\{\} 19)},
+  isbn = {978-1-939133-03-8},
+  langid = {english}
+}
+% == BibLateX quality report for park2019libmpk:
+% Missing required field 'booktitle'
+% ? Unused libraryCatalog: www.usenix.org
+% ? Unused version: 3
+
+@inproceedings{pettis1990profile,
+  title = {Profile Guided Code Positioning},
+  booktitle = {Proceedings of the {{ACM SIGPLAN}} 1990 Conference on {{Programming}} Language Design and Implementation},
+  author = {Pettis, Karl and Hansen, Robert C.},
+  date = {1990-06-01},
+  series = {{{PLDI}} '90},
+  pages = {16--27},
+  publisher = {{Association for Computing Machinery}},
+  location = {{New York, NY, USA}},
+  doi = {10.1145/93542.93550},
+  abstract = {This paper presents the results of our investigation of code positioning techniques using execution profile data as input into the compilation process. The primary objective of the positioning is to reduce the overhead of the instruction memory hierarchy. After initial investigation in the literature, we decided to implement two prototypes for the Hewlett-Packard Precision Architecture (PA-RISC). The first, built on top of the linker, positions code based on whole procedures. This prototype has the ability to move procedures into an order that is determined by a ``closest is best'' strategy. The second prototype, built on top of an existing optimizer package, positions code based on basic blocks within procedures. Groups of basic blocks that would be better as straight-line sequences are identified as chains. These chains are then ordered according to branch heuristics. Code that is never executed during the data collection runs can be physically separated from the primary code of a procedure by a technique we devised called procedure splitting. The algorithms we implemented are described through examples in this paper. The performance improvements from our work are also summarized in various tables and charts.},
+  isbn = {978-0-89791-364-5},
+  annotation = {341 citations (Semantic Scholar/DOI) [2021-10-18]}
+}
+% == BibLateX quality report for pettis1990profile:
+% ? Unsure about the formatting of the booktitle
+% ? Unused libraryCatalog: ACM Digital Library
+% ? Unused url: https://doi.org/10.1145/93542.93550
+% ? Unused version: 111
+
+@article{porter2014practical,
+  title = {Practical {{Fine}}-{{Grained Information Flow Control Using Laminar}}},
+  author = {Porter, Donald E. and Bond, Michael D. and Roy, Indrajit and Mckinley, Kathryn S. and Witchel, Emmett},
+  date = {2014-11-17},
+  journaltitle = {ACM Trans. Program. Lang. Syst.},
+  volume = {37},
+  number = {1},
+  pages = {4:1--4:51},
+  issn = {0164-0925},
+  doi = {10.1145/2638548},
+  abstract = {Decentralized Information Flow Control (DIFC) is a promising model for writing programs with powerful, end-to-end security guarantees. Current DIFC systems that run on commodity hardware can be broadly categorized into two types: language-level and operating system-level DIFC. Language solutions provide no guarantees against security violations on system resources such as files and sockets. Operating system solutions mediate accesses to system resources but are either inefficient or imprecise at monitoring the flow of information through fine-grained program data structures. This article describes Laminar, the first system to implement DIFC using a unified set of abstractions for OS resources and heap-allocated objects. Programmers express security policies by labeling data with secrecy and integrity labels and access the labeled data in security methods. Laminar enforces the security policies specified by the labels at runtime. Laminar is implemented using a modified Java virtual machine and a new Linux security module. This article shows that security methods ease incremental deployment and limit dynamic security checks by retrofitting DIFC policies on four application case studies. Replacing the applications' ad hoc security policies changes less than 10\% of the code and incurs performance overheads from 5\% to 56\%. Compared to prior DIFC systems, Laminar supports a more general class of multithreaded DIFC programs efficiently and integrates language and OS abstractions.},
+  keywords = {Information flow control,Java virtual machine,operating systems,security method},
+  annotation = {19 citations (Semantic Scholar/DOI) [2021-10-27]}
+}
+% == BibLateX quality report for porter2014practical:
+% ? Possibly abbreviated journal title ACM Trans. Program. Lang. Syst.
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: January 2015
+% ? Unused publicationTitle: ACM Transactions on Programming Languages and Systems
+% ? Unused url: https://doi.org/10.1145/2638548
+% ? Unused version: 181
+
+@misc{ptrsplit,
+  title = {{{PtrSplit}}'s {{PDG Specifications}}}
+}
+% == BibLateX quality report for ptrsplit:
+% Exactly one of 'date' / 'year' must be present
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused version: 120
+
+@inproceedings{reps1995precise,
+  title = {Precise Interprocedural Dataflow Analysis via Graph Reachability},
+  booktitle = {Proceedings of the 22nd {{ACM SIGPLAN}}-{{SIGACT}} Symposium on {{Principles}} of Programming Languages  - {{POPL}} '95},
+  author = {Reps, Thomas and Horwitz, Susan and Sagiv, Mooly},
+  date = {1995},
+  pages = {49--61},
+  publisher = {{ACM Press}},
+  location = {{San Francisco, California, United States}},
+  doi = {10.1145/199448.199462},
+  abstract = {The paper shows how a large class of interprocedural dataflow-analysis problems can be solved precisely in polynomial time by transforming them into a special kind of graph-reachability problem. The only restrictions are that the set of dataflow facts must be a finite set, and that the dataflow functions must distribute over the confluence operator (either union or intersection). This class of problems includes\textemdash but is not limited to\textemdash the classical separable problems (also known as ``gen/kill'' or ``bit-vector'' problems)\textemdash e.g., reaching definitions, available expressions, and live variables. In addition, the class of problems that our techniques handle includes many non-separable problems, including truly-live variables, copy constant propagation, and possibly-uninitialized variables.},
+  eventtitle = {The 22nd {{ACM SIGPLAN}}-{{SIGACT}} Symposium},
+  isbn = {978-0-89791-692-9},
+  langid = {english},
+  annotation = {1079 citations (Semantic Scholar/DOI) [2021-10-27]}
+}
+% == BibLateX quality report for reps1995precise:
+% ? Unsure about the formatting of the booktitle
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: http://portal.acm.org/citation.cfm?doid=199448.199462
+% ? Unused version: 189
+
+@inproceedings{roessler2021mscope,
+  title = {{{$\mu$SCOPE}}: A {{Methodology}} for {{Analyzing Least}}-{{Privilege Compartmentalization}} in {{Large Software Artifacts}}},
+  shorttitle = {{{$\mu$SCOPE}}},
+  booktitle = {24th {{International Symposium}} on {{Research}} in {{Attacks}}, {{Intrusions}} and {{Defenses}}},
+  author = {Roessler, Nick and Atayde, Lucas and Palmer, Imani and McKee, Derrick and Pandey, Jai and Kemerlis, Vasileios P. and Payer, Mathias and Bates, Adam and Smith, Jonathan M. and DeHon, Andre and Dautenhahn, Nathan},
+  date = {2021-10-06},
+  pages = {296--311},
+  publisher = {{ACM}},
+  location = {{San Sebastian Spain}},
+  doi = {10.1145/3471621.3471839},
+  abstract = {By prioritizing simplicity and portability, least-privilege engineering has been an afterthought in OS design, resulting in monolithic kernels where any exploit leads to total compromise. \textmu SCOPE (``microscope'') addresses this problem by automatically identifying opportunities for least-privilege separation. \textmu SCOPE replaces expertdriven, semi-automated analysis with a general methodology for exploring a continuum of security vs. performance design points by adopting a quantitative and systematic approach to privilege analysis. We apply the \textmu SCOPE methodology to the Linux kernel by (1) instrumenting the entire kernel to gain comprehensive, fine-grained memory access and call activity; (2) mapping these accesses to semantic information; and (3) conducting separability analysis on the kernel using both quantitative privilege and overhead metrics. We discover opportunities for orders of magnitude privilege reduction while predicting relatively low overheads\textemdash at 15\% mediation overhead, overprivilege in Linux can be reduced up to 99.8\%\textemdash suggesting fine-grained privilege separation is feasible and laying the groundwork for accelerating real privilege separation.},
+  eventtitle = {{{RAID}} '21: 24th {{International Symposium}} on {{Research}} in {{Attacks}}, {{Intrusions}} and {{Defenses}}},
+  isbn = {978-1-4503-9058-3},
+  langid = {english},
+  annotation = {0 citations (Semantic Scholar/DOI) [2021-11-03]}
+}
+% == BibLateX quality report for roessler2021mscope:
+% ? Unsure about the formatting of the booktitle
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: https://dl.acm.org/doi/10.1145/3471621.3471839
+% ? Unused version: 299
+
+@incollection{rountev2006interprocedural,
+  title = {Interprocedural {{Dataflow Analysis}} in the {{Presence}} of {{Large Libraries}}},
+  booktitle = {Compiler {{Construction}}},
+  author = {Rountev, Atanas and Kagan, Scott and Marlowe, Thomas},
+  editor = {Mycroft, Alan and Zeller, Andreas},
+  date = {2006},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  volume = {3923},
+  pages = {2--16},
+  publisher = {{Springer Berlin Heidelberg}},
+  location = {{Berlin, Heidelberg}},
+  doi = {10.1007/11688839_2},
+  abstract = {Interprocedural dataflow analysis has a large number of uses for software optimization, maintenance, testing, and verification. For software built with reusable components, the traditional approaches for whole-program analysis cannot be used directly. This paper considers component-level analysis of a main component which is built on top of a pre-existing library component. We propose an approach for computing summary information for the library and for using it to analyze the main component. The approach defines a general theoretical framework for dataflow analysis of programs built with large extensible library components, using pre-computed summary functions for library-local execution paths. Our experimental results indicate that the cost of component-level analysis could be substantially lower than the cost of the corresponding whole-program analysis, without any loss of precision. These results present a promising step towards practical analysis techniques for largescale software systems built with reusable components.},
+  isbn = {978-3-540-33050-9 978-3-540-33051-6},
+  langid = {english}
+}
+% == BibLateX quality report for rountev2006interprocedural:
+% 'isbn': not a valid ISBN
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: http://link.springer.com/10.1007/11688839_2
+% ? Unused version: 342
+
+@article{sharirtwo,
+  title = {Two {{Approaches}} to {{Interprocedural Data Flow Analysis}}},
+  author = {Sharir, Micha and Pnueli, Amir},
+  pages = {55},
+  langid = {english}
+}
+% == BibLateX quality report for sharirtwo:
+% Exactly one of 'date' / 'year' must be present
+% Missing required field 'journaltitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: Zotero
+
+@online{standfordbasic,
+  title = {Basic {{Graph Theory}} and {{Algorithms}}},
+  author = {Standford},
+  url = {http://stanford.edu/~jolivier/305_refresher_notes/Basic_graph_theory_and_algorithms.pdf},
+  urldate = {2021-10-29}
+}
+% == BibLateX quality report for standfordbasic:
+% Exactly one of 'date' / 'year' must be present
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused version: 200
+
+@inproceedings{sung2020intraunikernel,
+  title = {Intra-Unikernel Isolation with {{Intel}} Memory Protection Keys},
+  booktitle = {Proceedings of the 16th {{ACM SIGPLAN}}/{{SIGOPS International Conference}} on {{Virtual Execution Environments}}},
+  author = {Sung, Mincheol and Olivier, Pierre and Lankes, Stefan and Ravindran, Binoy},
+  date = {2020-03-17},
+  pages = {143--156},
+  publisher = {{ACM}},
+  location = {{Lausanne Switzerland}},
+  doi = {10.1145/3381052.3381326},
+  abstract = {Unikernels are minimal, single-purpose virtual machines. This new operating system model promises numerous benefits within many application domains in terms of lightweightness, performance, and security. Although the isolation between unikernels is generally recognized as strong, there is no isolation within a unikernel itself. This is due to the use of a single, unprotected address space, a basic principle of unikernels that provide their lightweightness and performance benefits. In this paper, we propose a new design that brings memory isolation inside a unikernel instance while keeping a single address space. We leverage Intel's Memory Protection Key to do so without impacting the lightweightness and performance benefits of unikernels. We implement our isolation scheme within an existing unikernel written in Rust and use it to provide isolation between trusted and untrusted components: we isolate (1) safe kernel code from unsafe kernel code and (2) kernel code from user code. Evaluation shows that our system provides such isolation with very low performance overhead. Notably, the unikernel with our isolation exhibits only 0.6\% slowdown on a set of macrobenchmarks.},
+  eventtitle = {{{VEE}} '20: 16th {{ACM SIGPLAN}}/{{SIGOPS International Conference}} on {{Virtual Execution Environments}}},
+  isbn = {978-1-4503-7554-2},
+  langid = {english},
+  keywords = {memory protection keys,memory safety,unikernels},
+  annotation = {12 citations (Semantic Scholar/DOI) [2021-09-16] 3 citations (Crossref) [2021-09-16]}
+}
+
+@article{tan2017principles,
+  title = {Principles and {{Implementation Techniques}} of {{Software}}-{{Based Fault Isolation}}},
+  author = {Tan, Gang},
+  date = {2017},
+  journaltitle = {FNT in Privacy and Security},
+  volume = {1},
+  number = {3},
+  pages = {137--198},
+  issn = {2474-1558, 2474-1566},
+  doi = {10.1561/3300000013},
+  abstract = {When protecting a computer system, it is often necessary to isolate an untrusted component into a separate protection domain and provide only controlled interaction between the domain and the rest of the system. Software-based Fault Isolation (SFI) establishes a logical protection domain by inserting dynamic checks before memory and control-transfer instructions. Compared to other isolation mechanisms, it enjoys the benefits of high efficiency (with less than 5\% performance overhead), being readily applicable to legacy native code, and not relying on special hardware or OS support. SFI has been successfully applied in many applications, including isolating OS kernel extensions, isolating plug-ins in browsers, and isolating native libraries in the Java Virtual Machine. In this survey article, we will discuss the SFI policy, its main implementation and optimization techniques, as well as an SFI formalization on an idealized assembly language.},
+  langid = {english},
+  annotation = {14 citations (Semantic Scholar/DOI) [2021-11-08]}
+}
+% == BibLateX quality report for tan2017principles:
+% 'issn': not a valid ISSN
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused publicationTitle: Foundations and Trends® in Privacy and Security
+% ? Unused url: http://www.nowpublishers.com/article/Details/SEC-013
+% ? Unused version: 318
+
+@online{tsankov2018securify,
+  title = {Securify: Practical {{Security Analysis}} of {{Smart Contracts}}},
+  shorttitle = {Securify},
+  author = {Tsankov, Petar and Dan, Andrei and Cohen, Dana Drachsler and Gervais, Arthur and Buenzli, Florian and Vechev, Martin},
+  date = {2018-08-24},
+  shortjournal = {ArXiv180601143 Cs},
+  eprint = {1806.01143},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  url = {http://arxiv.org/abs/1806.01143},
+  urldate = {2021-10-27},
+  abstract = {Permissionless blockchains allow the execution of arbitrary programs (called smart contracts), enabling mutually untrusted entities to interact without relying on trusted third parties. Despite their potential, repeated security concerns have shaken the trust in handling billions of USD by smart contracts. To address this problem, we present Securify, a security analyzer for Ethereum smart contracts that is scalable, fully automated, and able to prove contract behaviors as safe/unsafe with respect to a given property. Securify's analysis consists of two steps. First, it symbolically analyzes the contract's dependency graph to extract precise semantic information from the code. Then, it checks compliance and violation patterns that capture sufficient conditions for proving if a property holds or not. To enable extensibility, all patterns are specified in a designated domain-specific language.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Cryptography and Security},
+  annotation = {360 citations (Semantic Scholar/arXiv) [2021-10-27]}
+}
+% == BibLateX quality report for tsankov2018securify:
+% Unexpected field 'primaryclass'
+% Unexpected field 'archiveprefix'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused version: 185
+
+@inproceedings{vahldiek-oberwagner2019erim,
+  title = {{{ERIM}}: Secure, {{Efficient In}}-Process {{Isolation}} with {{Protection Keys}} ({{MPK}})},
+  shorttitle = {\{\vphantom\}{{ERIM}}\vphantom\{\}},
+  author = {Vahldiek-Oberwagner, Anjo and Elnikety, Eslam and Duarte, Nuno O. and Sammler, Michael and Druschel, Peter and Garg, Deepak},
+  date = {2019},
+  pages = {1221--1238},
+  url = {https://www.usenix.org/conference/usenixsecurity19/presentation/vahldiek-oberwagner},
+  urldate = {2021-09-09},
+  eventtitle = {28th {{USENIX Security Symposium}} ({{USENIX Security}} 19)},
+  isbn = {978-1-939133-06-9},
+  langid = {english}
+}
+% == BibLateX quality report for vahldiek-oberwagner2019erim:
+% Missing required field 'booktitle'
+% ? Unused libraryCatalog: www.usenix.org
+% ? Unused version: 3
+
+@inproceedings{vasilakis2018breakapp,
+  title = {{{BreakApp}}: Automated, {{Flexible Application Compartmentalization}}},
+  shorttitle = {{{BreakApp}}},
+  booktitle = {Proceedings 2018 {{Network}} and {{Distributed System Security Symposium}}},
+  author = {Vasilakis, Nikos and Karel, Ben and Roessler, Nick and Dautenhahn, Nathan and DeHon, Andre and Smith, Jonathan M.},
+  date = {2018},
+  publisher = {{Internet Society}},
+  location = {{San Diego, CA}},
+  doi = {10.14722/ndss.2018.23131},
+  abstract = {Developers of large-scale software systems may use third-party modules to reduce costs and accelerate release cycles, at some risk to safety and security. BREAKAPP exploits module boundaries to automate compartmentalization of systems and enforce security policies, enhancing reliability and security. BREAKAPP transparently spawns modules in protected compartments while preserving their original behavior. Optional high-level policies decouple security assumptions made during development from requirements imposed for module composition and use. These policies allow fine-tuning trade-offs such as security and performance based on changing threat models or load patterns. Evaluation of BREAKAPP with a prototype implementation for JavaScript demonstrates feasibility by enabling simplified security hardening of existing systems with low performance overhead.},
+  eventtitle = {Network and {{Distributed System Security Symposium}}},
+  isbn = {978-1-891562-49-5},
+  langid = {english},
+  annotation = {29 citations (Semantic Scholar/DOI) [2021-09-16] 8 citations (Crossref) [2021-09-16]}
+}
+% == BibLateX quality report for vasilakis2018breakapp:
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: https://www.ndss-symposium.org/wp-content/uploads/2018/02/ndss2018_08-3_Vasilakis_paper.pdf
+% ? Unused version: 62
+
+@online{voulimeneas2021garmr,
+  title = {Garmr: Defending the Gates of {{PKU}}-Based Sandboxing},
+  shorttitle = {Garmr},
+  author = {Voulimeneas, Alexios and Vinck, Jonas and Mechelinck, Ruben and Volckaert, Stijn},
+  date = {2021-10-10},
+  shortjournal = {ArXiv211004788 Cs},
+  eprint = {2110.04788},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  url = {http://arxiv.org/abs/2110.04788},
+  urldate = {2021-11-09},
+  abstract = {Memory Protection Keys for Userspace (PKU) is a recent hardware feature that allows programs to assign virtual memory pages to protection domains, and to change domain access permissions using inexpensive, unprivileged instructions. Several in-process memory isolation approaches leverage this feature to prevent untrusted code from accessing sensitive program state and data. Typically, PKU-based isolation schemes need to be used in conjunction with mitigations such as CFI because untrusted code, when compromised, can otherwise bypass the PKU access permissions using unprivileged instructions or operating system APIs. Recently, researchers proposed fully self-contained PKUbased memory isolation schemes that do not rely on other mitigations. These systems use exploit-proof call gates to transfer control between trusted and untrusted code, as well as a sandbox that prevents tampering with the PKU infrastructure from untrusted code. In this paper, we show that these solutions are not complete. We first develop two proof-of-concept attacks against a state-of-the-art PKU-based memory isolation scheme. We then present Garmr, a PKU-based sandboxing framework that can overcome limitations of existing sandboxes. We apply Garmr to several memory isolation schemes and show that it is practical, efficient and secure.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Cryptography and Security},
+  annotation = {0 citations (Semantic Scholar/arXiv) [2021-11-09]}
+}
+% == BibLateX quality report for voulimeneas2021garmr:
+% Unexpected field 'primaryclass'
+% Unexpected field 'archiveprefix'
+% ? Unused version: 331
+
+@inproceedings{wang2020seimi,
+  title = {{{SEIMI}}: Efficient and {{Secure SMAP}}-{{Enabled Intra}}-Process {{Memory Isolation}}},
+  shorttitle = {{{SEIMI}}},
+  booktitle = {2020 {{IEEE Symposium}} on {{Security}} and {{Privacy}} ({{SP}})},
+  author = {Wang, Zhe and Wu, Chenggang and Xie, Mengyao and Zhang, Yinqian and Lu, Kangjie and Zhang, Xiaofeng and Lai, Yuanming and Kang, Yan and Yang, Min},
+  date = {2020-05},
+  pages = {592--607},
+  issn = {2375-1207},
+  doi = {10.1109/SP40000.2020.00087},
+  abstract = {Memory-corruption attacks such as code-reuse attacks and data-only attacks have been a key threat to systems security. To counter these threats, researchers have proposed a variety of defenses, including control-flow integrity (CFI), code-pointer integrity (CPI), and code (re-)randomization. All of them, to be effective, require a security primitive-intra-process protection of confidentiality and/or integrity for sensitive data (such as CFI's shadow stack and CPI's safe region).In this paper, we propose SEIMI, a highly efficient intra-process memory isolation technique for memory-corruption defenses to protect their sensitive data. The core of SEIMI is to use the efficient Supervisor-mode Access Prevention (SMAP), a hardware feature that is originally used for preventing the kernel from accessing the user space, to achieve intra-process memory isolation. To leverage SMAP, SEIMI creatively executes the user code in the privileged mode. In addition to enabling the new design of the SMAP-based memory isolation, we further develop multiple new techniques to ensure secure escalation of user code, e.g., using the descriptor caches to capture the potential segment operations and configuring the Virtual Machine Control Structure (VMCS) to invalidate the execution result of the control registers related operations. Extensive experimental results show that SEIMI outperforms existing isolation mechanisms, including both the Memory Protection Keys (MPK) based scheme and the Memory Protection Extensions (MPX) based scheme, while providing secure memory isolation.},
+  eventtitle = {2020 {{IEEE Symposium}} on {{Security}} and {{Privacy}} ({{SP}})},
+  keywords = {Data structures,Hardware,Kernel,Registers,Runtime,Security,Switches},
+  annotation = {4 citations (Semantic Scholar/DOI) [2021-09-16] 0 citations (Crossref) [2021-09-16]}
+}
+% == BibLateX quality report for wang2020seimi:
+% Unexpected field 'issn'
+% ? Unsure about the formatting of the booktitle
+% ? Unused libraryCatalog: IEEE Xplore
+% ? Unused version: 63
+
+@inproceedings{weiser1981program,
+  title = {Program Slicing},
+  booktitle = {Proceedings of the 5th International Conference on {{Software}} Engineering},
+  author = {Weiser, Mark},
+  date = {1981-03-09},
+  series = {{{ICSE}} '81},
+  pages = {439--449},
+  publisher = {{IEEE Press}},
+  location = {{San Diego, California, USA}},
+  abstract = {Program slicing is a method used by experienced computer programmers for abstracting from programs. Starting from a subset of a program's behavior, slicing reduces that program to a minimal form which still produces that behavior. The reduced program, called a ``slice'', is an independent program guaranteed to faithfully represent the original program within the domain of the specified subset of behavior. Finding a slice is in general unsolvable. A dataflow algorithm is presented for approximating slices when the behavior subset is specified as the values of a set of variables at a statement. Experimental evidence is presented that these slices are used by programmers during debugging. Experience with two automatic slicing tools is summarized. New measures of program complexity are suggested based on the organization of a program's slices.},
+  isbn = {978-0-89791-146-7},
+  keywords = {Data flow analysis,Debugging,Human factors,Program maintenance,Program metrics,Software tools}
+}
+% == BibLateX quality report for weiser1981program:
+% ? Unsure about the formatting of the booktitle
+% ? Unused libraryCatalog: ACM Digital Library
+% ? Unused version: 106
+
+@inproceedings{weiser2019sgxjail,
+  title = {{{SGXJail}}: Defeating {{Enclave Malware}} via {{Confinement}}},
+  shorttitle = {{{SGXJail}}},
+  author = {Weiser, Samuel and Mayr, Luca and Schwarz, Michael and Gruss, Daniel},
+  date = {2019},
+  pages = {353--366},
+  url = {https://www.usenix.org/conference/raid2019/presentation/weiser},
+  urldate = {2021-11-01},
+  eventtitle = {22nd {{International Symposium}} on {{Research}} in {{Attacks}}, {{Intrusions}} and {{Defenses}} (\{\vphantom\}{{RAID}}\vphantom\{\} 2019)},
+  isbn = {978-1-939133-07-6},
+  langid = {english}
+}
+% == BibLateX quality report for weiser2019sgxjail:
+% Missing required field 'booktitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: www.usenix.org
+% ? Unused version: 205
+
+@online{what,
+  title = {What Is the Difference between Program Slicing and Taint Analysis?},
+  url = {https://reverseengineering.stackexchange.com/questions/13481/what-is-the-difference-between-program-slicing-and-taint-analysis},
+  urldate = {2021-10-15},
+  organization = {{Reverse Engineering Stack Exchange}}
+}
+% == BibLateX quality report for what:
+% Exactly one of 'date' / 'year' must be present
+% ? Unused version: 85
+
+@article{wolfe1987data,
+  title = {Data Dependence and Its Application to Parallel Processing},
+  author = {Wolfe, Michael and Banerjee, Utpal},
+  date = {1987-04},
+  journaltitle = {Int J Parallel Prog},
+  volume = {16},
+  number = {2},
+  pages = {137--178},
+  issn = {0885-7458, 1573-7640},
+  doi = {10.1007/BF01379099},
+  langid = {english},
+  annotation = {62 citations (Semantic Scholar/DOI) [2021-10-21]}
+}
+% == BibLateX quality report for wolfe1987data:
+% 'issn': not a valid ISSN
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused publicationTitle: International Journal of Parallel Programming
+% ? Unused url: http://link.springer.com/10.1007/BF01379099
+% ? Unused version: 140
+
+@inproceedings{wu2013automatically,
+  title = {Automatically Partition Software into Least Privilege Components Using Dynamic Data Dependency Analysis},
+  booktitle = {2013 28th {{IEEE}}/{{ACM International Conference}} on {{Automated Software Engineering}} ({{ASE}})},
+  author = {Wu, Yongzheng and Sun, Jun and Liu, Yang and Dong, Jin Song},
+  date = {2013-11},
+  pages = {323--333},
+  doi = {10.1109/ASE.2013.6693091},
+  abstract = {The principle of least privilege requires that software components should be granted only necessary privileges, so that compromising one component does not lead to compromising others. However, writing privilege separated software is difficult and as a result, a large number of software is monolithic, i.e., it runs as a whole without separation. Manually rewriting monolithic software into privilege separated software requires significant effort and can be error prone. We propose ProgramCutter, a novel approach to automatically partitioning monolithic software using dynamic data dependency analysis. ProgramCutter works by constructing a data dependency graph whose nodes are functions and edges are data dependencies between functions. The graph is then partitioned into subgraphs where each subgraph represents a least privilege component. The privilege separated software runs each component in a separated process with confined system privileges. We evaluate it by applying it on four open source software. We can reduce the privileged part of the program from 100\% to below 22\%, while having a reasonable execution time overhead. Since ProgramCutter does not require any expert knowledge of the software, it not only can be used by its developers for software refactoring, but also by end users or system administrators. Our contributions are threefold: (i) we define a quantitative measure of the security and performance of privilege separation; (ii) we propose a graph-based approach to compute the optimal separation based on dynamic information flow analysis; and (iii) the separation process is automatic and does not require expert knowledge of the software.},
+  eventtitle = {2013 28th {{IEEE}}/{{ACM International Conference}} on {{Automated Software Engineering}} ({{ASE}})},
+  keywords = {Authentication,Databases,Educational institutions,Performance analysis,Software,Writing},
+  annotation = {26 citations (Semantic Scholar/DOI) [2021-09-16] 14 citations (Crossref) [2021-09-16]}
+}
+% == BibLateX quality report for wu2013automatically:
+% ? Unsure about the formatting of the booktitle
+% ? Unused libraryCatalog: IEEE Xplore
+% ? Unused version: 62
+
+@inproceedings{ye2018tzslicer,
+  title = {{{TZSlicer}}: Security-Aware Dynamic Program Slicing for Hardware Isolation},
+  shorttitle = {{{TZSlicer}}},
+  booktitle = {2018 {{IEEE International Symposium}} on {{Hardware Oriented Security}} and {{Trust}} ({{HOST}})},
+  author = {Ye, Mengmei and Sherman, Jonathan and Srisa-an, Witawas and Wei, Sheng},
+  date = {2018-04},
+  pages = {17--24},
+  doi = {10.1109/HST.2018.8383886},
+  abstract = {To address security issues related to information leakage, microprocessor designers and manufacturers such as ARM and Intel have introduced hardware isolation-based technologies to support secure software execution. However, utilizing such technologies often requires significant efforts to design new applications or refactor existing applications to adhere to the usage protocols. Developers also need to clearly distinguish code sections that can manipulate sensitive data and relocate them to the secure execution environment. These processes can be laborious and error-prone, since over-protection can result in poor application performance and high resource usage, and under-protection may cause exploitable security vulnerabilities. In this paper, we introduce TZSlicer, a framework to automatically identify code that must be protected based on a sensitive variable list provided by developers. TZSlicer automatically identifies code sections that can process sensitive data, extracts those sections from the original program, and creates harness in the original and extracted code sections so that they can interface with each other. We develop a prototype of TZSlicer to support slicing of C programs at function, code block, and code line levels. Also, we identify optimization opportunities to improve the context switching overhead of TZSlicer via applying loop unrolling and variable renaming. We evaluate TZSlicer using seven real-world programs, and the evaluation results indicate that TZSlicer is effective in protecting sensitive data without incurring significant runtime and resource usage overheads.},
+  eventtitle = {2018 {{IEEE International Symposium}} on {{Hardware Oriented Security}} and {{Trust}} ({{HOST}})},
+  keywords = {Arrays,Embedded systems,Hardware,Runtime,Security,Switches},
+  annotation = {7 citations (Semantic Scholar/DOI) [2021-10-14]}
+}
+% == BibLateX quality report for ye2018tzslicer:
+% ? Unsure about the formatting of the booktitle
+% ? Unused libraryCatalog: IEEE Xplore
+% ? Unused version: 98
+
+@article{zdancewicconfidentiality,
+  title = {Confidentiality and {{Integrity}} with {{Untrusted Hosts}}: Technical {{Report}}},
+  author = {Zdancewic, Steve and Myers, Andrew C},
+  pages = {36},
+  abstract = {Several security-typed languages have recently been proposed to enforce security properties such as confidentiality or integrity by type checking. We propose a new security-typed language, Spl@, that addresses two important limitations of previous approaches.},
+  langid = {english}
+}
+% == BibLateX quality report for zdancewicconfidentiality:
+% Exactly one of 'date' / 'year' must be present
+% Missing required field 'journaltitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: Zotero
+% ? Unused version: 171
+
+@inproceedings{zeldovich2008securing,
+  title = {Securing {{Distributed Systems}} with {{Information Flow Control}}},
+  author = {Zeldovich, Nickolai and Boyd-Wickizer, Silas and Mazi\`eres, David},
+  date = {2008},
+  url = {https://www.usenix.org/conference/nsdi-08/securing-distributed-systems-information-flow-control},
+  urldate = {2021-10-27},
+  eventtitle = {5th \{\vphantom\}{{USENIX}}\vphantom\{\} {{Symposium}} on {{Networked Systems Design}} and {{Implementation}} (\{\vphantom\}{{NSDI}}\vphantom\{\} 08)},
+  langid = {english}
+}
+% == BibLateX quality report for zeldovich2008securing:
+% Missing required field 'booktitle'
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: www.usenix.org
+% ? Unused version: 179
+
+@inproceedings{zhang2021condysta,
+  title = {{{ConDySTA}}: Context-{{Aware Dynamic Supplement}} to {{Static Taint Analysis}}},
+  shorttitle = {{{ConDySTA}}},
+  booktitle = {2021 {{IEEE Symposium}} on {{Security}} and {{Privacy}} ({{SP}})},
+  author = {Zhang, Xueling and Wang, Xiaoyin and Slavin, Rocky and Niu, Jianwei},
+  date = {2021-05},
+  pages = {796--812},
+  issn = {2375-1207},
+  doi = {10.1109/SP40001.2021.00040},
+  abstract = {Static taint analyses are widely-applied techniques to detect taint flows in software systems. Although they are theoretically conservative and de-signed to detect all possible taint flows, static taint analyses almost always exhibit false negatives due to a variety of implementation limitations. Dynamic programming language features, inaccessible code, and the usage of multiple programming languages in a software project are some of the major causes. To alleviate this problem, we developed a novel approach, DySTA, which uses dynamic taint analysis results as additional sources for static taint analysis. However, na\"ively adding sources causes static analysis to lose context sensitivity and thus produce false positives. Thus, we developed a hybrid context matching algorithm and corresponding tool, ConDySTA, to preserve context sensitivity in DySTA. We applied REPRODROID [1], a comprehensive benchmarking framework for Android analysis tools, to evaluate ConDySTA. The results show that across 28 apps (1) ConDySTA was able to detect 12 out of 28 taint flows which were not detected by any of the six state-of-the-art static taint analyses considered in ReproDroid, and (2) ConDySTA reported no false positives, whereas nine were reported by DySTA alone. We further applied ConDySTA and FlowDroid to 100 top Android apps from Google Play, and ConDySTA was able to detect 39 additional taint flows (besides 281 taint flows found by FlowDroid) while preserving the context sensitivity of FlowDroid.},
+  eventtitle = {2021 {{IEEE Symposium}} on {{Security}} and {{Privacy}} ({{SP}})},
+  keywords = {Benchmark testing,Context Sensitivity,Dynamic Supplement,Heuristic algorithms,Privacy,Sensitivity,Software systems,Static analysis,Taint Analysis,Tools},
+  annotation = {1 citations (Semantic Scholar/DOI) [2021-10-28]}
+}
+% == BibLateX quality report for zhang2021condysta:
+% Unexpected field 'issn'
+% ? Unsure about the formatting of the booktitle
+% ? Title looks like it was stored in title-case in Zotero
+% ? Unused libraryCatalog: IEEE Xplore
+% ? Unused version: 195
+
+@article{zheng2007dynamic,
+  title = {Dynamic Security Labels and Static Information Flow Control},
+  author = {Zheng, Lantian and Myers, Andrew C.},
+  date = {2007-03-19},
+  journaltitle = {Int. J. Inf. Secur.},
+  volume = {6},
+  number = {2-3},
+  pages = {67--84},
+  issn = {1615-5262, 1615-5270},
+  doi = {10.1007/s10207-007-0019-9},
+  abstract = {This paper presents a language in which information flow is securely controlled by a type system, yet the security class of data can vary dynamically. Information flow policies provide the means to express strong security requirements for data confidentiality and integrity. Recent work on security-typed programming languages has shown that information flow can be analyzed statically, ensuring that programs will respect the restrictions placed on data. However, real computing systems have security policies that cannot be determined at the time of program analysis. For example, a file has associated access permissions that cannot be known with certainty until it is opened. Although one security-typed programming language has included support for dynamic security labels, there has been no demonstration that a general mechanism for dynamic labels can securely control information flow. In this paper, we present an expressive language-based mechanism for reasoning about dynamic security labels. The mechanism is formally presented in a core language based on the typed lambda calculus; any well-typed program in this language is secure because it satisfies noninterference.},
+  langid = {english},
+  annotation = {117 citations (Semantic Scholar/DOI) [2021-10-25]}
+}
+% == BibLateX quality report for zheng2007dynamic:
+% 'issn': not a valid ISSN
+% ? Possibly abbreviated journal title Int. J. Inf. Secur.
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused publicationTitle: International Journal of Information Security
+% ? Unused url: http://link.springer.com/10.1007/s10207-007-0019-9
+% ? Unused version: 161
+
+@inproceedings{zheng2008securing,
+  title = {Securing Nonintrusive Web Encryption through Information Flow},
+  booktitle = {Proceedings of the Third {{ACM SIGPLAN}} Workshop on {{Programming}} Languages and Analysis for Security  - {{PLAS}} '08},
+  author = {Zheng, Lantian and Myers, Andrew C.},
+  date = {2008},
+  pages = {125},
+  publisher = {{ACM Press}},
+  location = {{Tucson, AZ, USA}},
+  doi = {10.1145/1375696.1375712},
+  abstract = {This paper proposes a nonintrusive encryption mechanism for protecting data confidentiality on the Web. The core idea is to encrypt confidential data before sending it to untrusted sites and use keystores on the Web to manage encryption keys without intervention from users. A formal language-based information flow model is used to prove the soundness of the mechanism.},
+  eventtitle = {The Third {{ACM SIGPLAN}} Workshop},
+  isbn = {978-1-59593-936-4},
+  langid = {english},
+  annotation = {7 citations (Semantic Scholar/DOI) [2021-10-25]}
+}
+% == BibLateX quality report for zheng2008securing:
+% ? Unsure about the formatting of the booktitle
+% ? Unused libraryCatalog: DOI.org (Crossref)
+% ? Unused url: http://portal.acm.org/citation.cfm?doid=1375696.1375712
+% ? Unused version: 175
+
+
+% Required packages:
+% * textcomp
+

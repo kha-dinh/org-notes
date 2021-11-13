@@ -1,0 +1,10 @@
+* TODO Inbox
+** [ ] Paper Review (Data Science)
+DEADLINE: <2021-11-18 Thu>
+** [ ] Final Project Idea (Data Science)
+DEADLINE: <2021-11-11 Thu>
+Topic, dataset, baseline, 5 related works
+** [X] Final Project (Data Science)
+DEADLINE: <2021-12-18 Sat>
+** [ ] Monthly Report
+DEADLINE: <2021-11-12 Fri>

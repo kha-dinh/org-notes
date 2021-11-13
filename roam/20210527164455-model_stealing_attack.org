@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       a053ea9c-0871-4ad8-8618-b4a468387fc5
+:END:
+#+title: Model Stealing Attack
+
+
+
+* References
++ [[id:36097950-688d-41cc-b554-f6f7facd6a44][Cache Telepathy]] steals /model architecture/ by getting the matrix sizes from side-channels, then infer the DNN architecure from that
++ [[id:c795b401-3c77-46d9-b735-9cf45e06bbfc][Privado]] predict the label of the input using memory access pattern of the network

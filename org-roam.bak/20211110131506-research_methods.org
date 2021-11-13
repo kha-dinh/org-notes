@@ -1,0 +1,74 @@
+#+title: Research Methods
+
+
+* Summary
+Research: the process of making knowledge
+* What knowledge is
+
+Knowing how to: the ability to do something
+Knowing about some thing: Knowledge about the world
+In research, you are concern about making knowledge about the world.
+The ability to do something consist of knowledge and internal ability. We need the knowledge before developing the ability.
+In engineering, we often want to have the ability to do something.
+Knowledge about the world can be written down, but ability cannot.
+
+** What knowledge look like
+Knowledge can be written down.
+The things that we can write down can be categorized into
++ Observation: What we observe
++ Model: Abstract way of describing what goes on in the world around us
++ Recipe: The way of doing things so that you get a result
+
+*** Observation
+Observation is the most fundamental way of obtaining knowledge.
+Given a condition, what happens.
+An observation in security:
++ Overflowing the stack cause undefined behaviors
++ The buffer cannot be overflowed anymore when we add bounds checks
+
+*** Model
+A model describe the relationships between things in the world. It helps you understand things without the complexity.
+Model can be:
++ Map
++ Graph
++ Picture
++ Equations
++ Description
+A map is one of the simplest example of a model. With a map, we can understand what is going on in reality without observing. However, it is an simplified version of reality. For example, there is no trees in a map.
+
+Model is used to understand the relationships in a simple and uncluttered way.
+Model can be used to make predictions
+
+Often, research is about building or expanding a model so that we can understand the world around us better
+
+In security, there are security models, cryptographic equations
+
+*** Recipe
+Recipe is the way of arranging things to get the desired results or effect.
+
+Recipe is a sort of a design.
+
+Recipe can be:
++ Processes
++ Algorithms
++ Procedures
++ Reference design
+
+There are risks when creating recipe. For instance, the recipe to increase the efficiency of a program might not be possible. However, we can re-frame the objective as understanding why it is not possible.
+
+Some recipe in security: The design of software sanitizers. SFI
+** Defining research objective
++ Where the problem comes from
++ What the problem is, why it is important
++ What knowledge we need to deal with the problem
+
+*** Abstract form
+Research objective should be in the most basic form:
+Process A can produce result B (recipe)
+How does A affect B (model)
+
+* When is Knowledge a contribution
+* New knowledge need older knowledge
+* Writing as discovery
+* Argument
+* Planning

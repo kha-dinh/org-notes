@@ -1,0 +1,9 @@
+#+title: Writing Rules
+
+* Ommiting article (the/a/an)
+** General rules:
++ The when refer to specific person, place, thing
++ A/an means not specific.
++ Can't count -> no article
++ /Some/ of something -> no article
+  - /Example/: Let's have coffee (some coffee)

@@ -1,0 +1,68 @@
+#+title: AI Security Outline
+
+cite:ashmore2019assuring
+* Introduction
+* Background
+** AI models
+** Why its important
+** Deployment Life-cycle
+** Deployment Scenarios
+* Attack & defense On the deployment workflow
+Figure: workflow, Attack & Defense
+** Data Management
+*** Attacks
+*** Defenses
+** Model Learning & Verification
+*** Attacks
+*** Defenses
+** Model Deployment
+*** Attacks
+*** Defenses
+* Scenario 1: Cloud Deployment
+** Threat Model
+** Security Analysis
+* Scenario 2: On-Device Deployment
+** Threat Model
+** Security Analysis
+* Scenario 3: Federated Deployment
+** Threat Model
+** Security Analysis
+
+# * Data Management
+# This stage contains the acquisition of data for training
+# ** Attacks
+# *** Poisoning
+# ** Defenses
+# *** Detect Poisoning
+# *** Preprocessing
+# *** Cryptography
+# *** Differential Privacy
+# ** Security Analysis
+# For cloud-based deployment, mostly the model is trained /before/ the deployment or trained without any interference
+
+
+# Online learning / reinforcement learning can where data is trained continuously can have problem
+# * Model Learning
+# ** Attack
+# ** Defenses
+
+# ** Security Analysis
+
+# * Model Verification
+# ** Defenses
+# *** Model Fuzzing
+# ** Security Analysis
+
+# * Model Deployment
+# ** Attacks
+# *** Adversarial examples / Model evasion
+# *** Membership inference
+# *** Model Inversion
+# *** Model Extraction
+# ** Defenses
+# *** Detection of adversarial examples
+# *** Obfuscation
+# *** Differential Privacy
+# *** Cryptography
+# *** Trusted Execution Environments
+# ** Security Analysis

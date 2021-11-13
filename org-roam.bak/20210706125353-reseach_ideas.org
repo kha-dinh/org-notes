@@ -1,0 +1,46 @@
+#+title: Reseach Ideas
+
+
+* Using SW Isolation for Mobile Agent Systems
++ Mobile agent is not getting adopted due to several fallbacks
+
+
+
+* Fine-grain access control for multi-party data analytic for data with SGX
++ Maybe a finer grain access control for data
++ Multi-party computation have each party contribute their data to train a shared model, while keeping each party's data
++ Ryoan (cite:hunt2016ryoan) and Chiron (cite:hunt2018chiron) let service provider untrusted provider train model by using software isolation and TEE
+  + Ryoan Employ a binary access control mechanism: Use DAG for one-shot policy
+    + Service providers can communicate, but in a restricted way
+  + Chiron allows service provider to train models without leaking data, but no data access control
++ EnclaveDB (cite:priebe2018enclavedb) protect data by storing all data inside SGX enclave
++ cite:ohrimenko2016oblivious propose using a central trusted cloud to collect data from multiple parties and train the global model
+  - Coarse access control of data: each party own their own data
++ [[id:2e19fc10-2640-4d41-b5da-8bf0940b64b3][Attribute-based Encryption]] allow data owners to define access control policy over ciphertext for data users
+  - Enhancments include revocable, accountable, updateable, hidden
++ DuetSGX (cite:nguyen2020duetsgx) remove the need for a centralized data curator by sending user data to an enclave that only serve DUET queries, which are queries that [[file:20210706143224-differential_privacy.org][Differential Privacy]] constraints.
++ Possible extension: temporal?
+
+* Proof-of-data
++ Same as blockchain's proof-of-work, but in AI model: it proof that a user contributed data to train that model
++ Problem:
+  - Privacy?
+* PIM
+** Memory monitor with PIM
++ PIM can capture all memory accesses (that is cache miss)
++ How can we utilize cache misses for security?
++ How do we insert cache-miss?
+  1. Force cache-miss:
+     1. Insert clflush (high overhead)
+     2. ??
+  2. Insert uncached regions
+
+    
+
+** PIM secure storage
++
+
+** PIM secure memory allocator
++ Can an allocator collaborate with PIM for security?
+  - Probably not, allocator use virtual addresses
+  - Most secure allocator use randomize allocation

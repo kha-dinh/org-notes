@@ -1,0 +1,30 @@
+#+title: LLVM
+
+* LLVM
+** Design
++ The design of LLVM focuses on maximizing the reuse of code, which are encapsulated by the libraries and tools. LLVM components could be used as either tools or libraries. Higher-level tools such as Clang link multiple low-level libraries for their functionalities. How ever, each tool could also be used independently through LLVM IR files as the input.
++ Polymorphism is strongly enforced. There are target-independent code, which can be used by all target and target-specific code.
++ Most of the documentation
+** Architecture
+The infrastructure consist of 3 parts:
++ The *frontend* translate programing languages into LLVM IR
++ *LLVM IR*
+  + The tools and libraries provides interfaces for IR construction, assembling and disassembling
+  + LLVM optimizer containing most of the  operates on IR
+  + In [[file:20210305150006-three_address_code.org][Three Address Code]] form and [[file:20211102121256-static_single_assignment_ssa_form.org][Static Single Assignment (SSA) Form]]
+  + [[file:20211102115107-llvm_passes.org][LLVM Passes]]
++ The *backend* is responsible for code generation. It convert LLVM IR to target-specific assembly code.
+  + Many optimizaions are back-end specific: register allocation, loop transformations, peephole optimizers, etc.
+  + [[file:20211102120153-llvm_backend.org][LLVM Backend]]
+** The libraries
+There are main libraries:
++ ~libLLVMCore~: Contains logic related to LLVM IR: IR construction and IR verifier. Also contains the pass manager.
++ ~libLLVMAnalysis~: IR analysis passes
++ ~libLLVMCodeGen~: /Target-independent/ code generation and machine IR analysis & transformation.
++ ~libLLVMTarget~: Provide access to target machine information
++ ~libLLVMX{arch}CodeGen~:  code generation for target architecture. Have information, transformation, and analysis passes
++ ~libLLVMSupport~: Utilities such as integer & floating point handling, command-line parsing, debugging, ...
++ ~libclang~: C interface for clang
++ ~libclangDriver~: Classes used by the clang driver (executable).
++ ~libclangAnalysis~: Front-end level analyses provided by Clang
+* Related

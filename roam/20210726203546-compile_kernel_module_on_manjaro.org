@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       df0ef6a3-cb1e-4e1e-872c-ff97e05356b4
+:END:
+#+title: Compile Kernel Module on Manjaro
+
+* Getting the kernel source
++ Let say kernel version is 513
+
+#+begin_src shell
+ git clone https://gitlab.manjaro.org/packages/core/linux513
+ cd linux513
+ updpkgsums
+#+end_src
++ The result is a kernel tar =linux-5.13.tar.xz=
++ Extract and make config
+#+begin_src shell
+  tar -xvf linux-5.13.tar.xz
+  cd linux-5.13
+  yes "" | make oldconfig && make prepare
+  # To compile modules?
+  make module
+#+end_src

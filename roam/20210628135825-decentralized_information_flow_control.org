@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       22cfebb7-f6a5-4514-91c0-90622c62c318
+:END:
+#+title: Decentralized Information Flow Control
+
+cite:myersdecentralized
+
+The goal is to Computations manipulate /values/, which is stored inside /slot/
+(variable, object, storage). Slots can be the /source/ and /sink/ for the
+computation. /input channels/ are _read-only_ slots can be used as a source. Value
+can be written to a slot or the /output channel/. Output channels are the only way
+to move data outside of the system (sink).
+
+Values, slots and channels have /labels/ attached to them, which indicate security
+policy. The label of a value cannot change, but a new label can be create on a
+copy of a value (/relabel/). Slots and channels cannot be relabeled.

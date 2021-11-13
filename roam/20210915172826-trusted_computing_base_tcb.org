@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       80c80cc4-9279-4464-8c5b-0a366e7f225c
+:END:
+#+title: Trusted Computing Base (TCB)
+* Overview
++ Is a small amount of software and hardware that the security depends on. It is distinguish from other software that can misbehave
++ Ideally, we need to minimize the TCB

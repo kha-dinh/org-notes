@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       b3c0f440-3b57-429e-8bb6-ed5589f30b5a
+:END:
+#+title: GPU Virtualization
+
+
+* Techniques
++ *API remoting*: Provides a GPU wrapper library to a guest OS to intercept GPU
+  calls. Requests are forwarded to the host OS or machine with GPUs and
+  processed remotely. This solves black-box GPU drivers.
++ *Para-virtualization*: Slightly modifies the GPU driver at the guest to forward
+  sensitive operations to he host OS. Have better performance compared to
+  virtualization.
++ *Full Virtualization*: Fully virtualize the GPU, so no guest modification needded.
++ *Hardware-supported Virtualization (GPU pass-through)*: Allow guest OS direct
+  access to GPUs using feature provided by motherboard chipset of GPU
+  manufacturers. Enabled by remapping DMA and interrupts to each guest OS. Most
+  cannot multiplex between multiple multiple GPU users.

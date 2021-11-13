@@ -1,0 +1,6 @@
+#+title: AutoPSI
+
+* Program slicing
++  Program slicing find of the programs that is relavent to the chosen set of variables. The slicer then
+
+[Program Slicing](http://www0.cs.ucl.ac.uk/staff/mharman/exe1.html)

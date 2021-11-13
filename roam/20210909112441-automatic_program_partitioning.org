@@ -1,0 +1,48 @@
+:PROPERTIES:
+:ID:       143f7d86-1750-417d-b7af-fde0be7ae95e
+:END:
+#+title: Program Partitioning / Compartmentalization
+
+* Overview
+Manually splitting large programs into least privilege compartments is
+error-prone and tedious. This is why research works tries to applies static
+analysis to automatically split the code base into two or more compartments.
+
+* Process
+Typically, partitioning a program have several requirements:
+1. The program's code base need to be separated into two or more parts.
+2. The communication between the parts must be maintained, typically by
+   transforming the cross-partition function calls into RPC calls ([[id:5858d065-e920-48c1-9b26-f3fc071a9bf2][PtrSplit]]).
+   Or, it could be left to the developer to write the communication code. Shared
+   memory is also used ([[id:0fc81ef8-f433-4a84-95b6-9a0b19a48b73][Cali: Compiler-Assisted Library Isolation]])
+3. The separated code parts must operates in different contexts. Typically a
+   separated process. However, some intra-process isolation techniques use a
+   separated stack and heap ([[id:ff2780a8-7d77-4f26-82f0-5eb72c2aa5b0][Hodor & ERIM]]).
+4. The contexts must be isolated from each other. Or, the trusted context must
+   be isolated from untrusted context. [[id:2600bd94-d792-4546-8a24-b98a33ee935a][Memory Isolation]] is useful to achieve
+   this.
+
+* Challenges
+** Where and How to separate the applications
+Many works use the user's annotation to identify the part that need to be separated.
+** The communication between the partitions
+The communication must be maintained for the program to function correctly.
+*** Double-fetch bug
+When two separated processes use shared memory to communicate, an attacker can
+use multiple threads to modify the shared content while the victim is reading
+it.
+** Handling Pointers
+Pointers contains ambiguous information about the underlying object. For
+instance, there is no information about the object's size when a pointer need o
+be sent from one compartment to another. [[id:5858d065-e920-48c1-9b26-f3fc071a9bf2][PtrSplit]] use instrumentation to
+store the metadata about the object's size (bound information) of only pointer
+that travel across the partitions.
+** Insecure Interfaces
+[[id:c055e12d-571b-4036-8ccb-ccd1e888dac0][RLBox: Retrofitting Fine Grain Isolation in the Firefox Renderer]] mentions the
+risks of insecure data flow and control flow between an untrusted library inside
+sandbox and a process.
+* Related Works
++ [[id:214813f8-4936-46ef-9f85-9e162c90408b][Intra Process Isolation Papers]]
++ [[id:bedb33a7-3506-459d-8707-25b2f88fba85][Program Compartmentalization Papers]]
++ [[id:0fc81ef8-f433-4a84-95b6-9a0b19a48b73][Cali: Compiler-Assisted Library Isolation]]
++ [[id:ff2780a8-7d77-4f26-82f0-5eb72c2aa5b0][Hodor & ERIM]]

@@ -1,0 +1,59 @@
+:PROPERTIES:
+:ID:       f6906c63-fd72-4682-918b-3a7dd16c4c2b
+:END:
+#+title: PIM Revise Review
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+#+OPTIONS: toc:nil
+
+* Reviews
+** Reviewer 1
+#+begin_quote
+Weaknesses
+----------
+This paper needs a lot of work to motivate the problem and to better describe the solution:
+
+The threat model is a bit confusing. The first paragraph says that they consider micro-architectural side-channel attacks as well. The third paragraph says that they consider side-channels caused by the host CPU out of scope. The two statements appear to be contradictory to this reviewer. If they are not, then please write this up better.
+
+Figure 1 is very confusing. I don't get how this figure implies that your solution is a zero-copy solution. You're loading stuff into memory, won't that affect the cache hierarchy, and therefore have the potential for side-channel attacks? I find your claim of PIM being resistant to side channel attacks to be a rather strong (and rather unsubstantiated) claim. Does the use of PIM imply that there is no data movement from memory to the caches?
+
+On Page 7, you mention "While an attack that probes the DIMM port exists [63], probing the interconnects inside the memory module or on-chip local memory is not feasible under sensible circumstances". I don't quite understand this. Isn't this possible when you have physical attacks on the machine? If not, why not?
+
+The paragraph beginning with "The PIM Memory Model" on page 5 is very poorly written. I don't understand what you mean by "DRAM module is enclavized with a memory bank of the in-memory enclave as a unit of the in-memory enclave that comprises a memory bank PIM core and PIM local memory."
+
+One of the main premises in your work is that you place the data in the memory bank before the computation, so there is no data movement during the computation. Isn't the same also possible by pre-loading SGX enclaves with data before computation, and using methods such as large page-based defenses (e.g., SGX-LAPD from RAID'17)?
+
+#+end_quote
+** Reviewer 2
+#+begin_quote
+Weaknesses
+----------
+1. The paper makes the security case for PIM enclaves based on the fact that existing host based TEEs are subject to side-channels. What is fails to mention is the cause of these host side-channels is largely shared resources (e.g., caches, buses, etc.) among mutually untrusting entities, just like the PIM core, DMA engine and other resources will be. While the paper rightly claims that a PIM enclave eliminates host side channels, it doesn't discuss the possibility of similar channels arising from shared PIM resources.
+
+2. The paper does not describe a framework to secure share PIM enclave resources among many host-side enclaves. The trust model, scheduling and control over who has access to which PIM enclave resources at any point in time is unclear. The paper does describe the interface between the PIM enclave and the host, not so much its management. The latter can get esp. tricky when the host side privileged agent such as a VMM is not trustworthy.
+
+3. Recent advances in IO accelerators (e.g, FPGA, GPU) and their ability to improve the performance of specific types of workloads when offloaded from the host has led to the development of shared virtual memory (SVM) concepts that allow seamless sharing of data between the host and the IO accelerator. This is in sharp contrast to the new computing model with PIMs assumes that the host is interested only in the eventual result of the data and not so much any intermediate value. The PIM model also assumes that the processing happens in bulk and not so much a ping-pong fashion. So, is the PIM enclave useful for all types of computation?
+
+4. The performance analysis in this paper is preliminary at best and misses the following (atleast wasn't clear from the writing)
+        a. The paper alludes to the fact that the link between the host and the PIM is secure, i.e., there is a secure channel between the host and PIM. Has the overhead of this channel been accounted for in the performance numbers? Recollect that a host based TEE whose trust boundary ends at the SoC does not incur this overhead unlike the PIM-based approach.
+        b. PIM enclave resources have to be securely multiplexed among many (presumably more) partner host enclaves. The cost of this secure context switch has not been recorded. Essentially, if there are more host threads than PIM enclaves, there is some scheduling and resource management overhead.
+        c. Overhead of checking every memory access by the memory module access controller.
+
+5. The paper mentions that we need access control to prevent access to memory modules that are being used for active computation by a PIM enclave. It provides very minimal details on how this can actually be achieved or its perf. overhead.
+
+6. Other very specific issues/questions:
+- It is unclear if the PIM can get away with having a single data encryption key for all of memory. Wouldn't this often likely to be per-host_enclave esp. if the data/key is sealed to PIM-enclave state? Don't we need a mechanism for the PIM to be able to manage all these keys securely?
+- Why is the performance of the random vs. sequential memory accesses roughly equivalent? Shouldn't the former be way worse? what was the stride for the random accesses vs. block size?
+- Isn't the plot that compares host performance vs. perf. with different number of PIM enclaves misleading? Wouldn't the number of host threads >> number of PIM enclaves?
+- The motivation to prevent access to the memory modules under active use by PIM enclaves to prevent side-channel leakage is a bit unclear. While this prevents fine grained tracking of changes to memory lines, it still allows it at a coarser granularity e.g., before and after the full PIM enclave execution.
+
+Comments for author
+-------------------
+- While the paper is very well written and easy to read, it does get repetitive in terms of the motivation for PIM enclaves and the components of the architecture. For example, you could combine sections 4.1, 4.3
+- List all the side channel attacks that you want to compare in terms of host TEEs and PIM enclaves in a table. That would make it much easier even for a reader to constrast the two approaches.
+- There are inconsistencies in minor ways: in section 4.2 under offloading model, the paper says attestation will be described in section 4.4 which in turn essentially says, attestation procedures are well-known and wraps it up.
+#+end_quote
+
+# * Issue 1:
+
+* Side-channel evaluation
++

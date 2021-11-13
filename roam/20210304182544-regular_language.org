@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       a906f467-b06f-4847-a047-0e944cb5ba69
+:END:
+#+title: Regular Language
+
+
+
+- Are formal languages that are defined by [[id:cdf40696-a3be-480c-8e9b-3d67994d0435][Regular Expressions]]
+- Over an alphabet \Sigma = {a,b, ...,z}
+- *Regular operations* can be performed between two Regular languages A and B
+  + *Union*: A \cup B
+  + *Concatenation*: A \odot B
+  + *Star*: A*
+    - Contains all combinations of the
+  + /Example/
+    - A = {good,bad}
+    - B = {cat,dog}
+    - A \cup B = {good,bad,cat,dog}
+    - A \odot B = {goodcat,gooddog,badcat,baddog}
+    - A* = {\sigma,good,bad,goodgood,goodbad,badgood,badbad,goodgoodgood, ...}

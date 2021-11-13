@@ -1,0 +1,66 @@
+:PROPERTIES:
+:ID:       0fc81ef8-f433-4a84-95b6-9a0b19a48b73
+:END:
+#+title: Cali: Compiler-Assisted Library Isolation
+
+* Overview
+The paper claims to *fully automatically shield a program from a given library*
+using compiler techniques. It use the [[id:8a5377ad-ffd8-4d57-8468-d8e2cebeb4fe][Program Dependence Graph]] to track data
+flow between the program and library during *link time.* In the slides, however,
+they said that they use Data Flow Graph instead. I think this make more sense,
+since the graph that they use mostly contain the data flow relationship.
+
+Shared memory is used for interaction between program and library, instead of
+marshaling the underlying objects as proposed by [[id:5858d065-e920-48c1-9b26-f3fc071a9bf2][PtrSplit]]. The authors argue
+that marshaling objects is obsolete when using shared memory. They use the PDG
+to identify potentially shared data and memory regions and place them in the
+shared memory.
+
+The implementation is based on [[id:54e328ec-fe5a-47dd-b78a-d1204b790ecf][LLVM]]. The authors compartmentalized Ghostscript
+(in ImageMagick), Openssl (in Socat) and SQList (in Filezilla) and found that
+the amount of shared memory could be significantly reduced (to < 1%).
+
+
+* Construction of PDG
+** Nodes and edges
+It is unclear either what they used is actually a [[id:8a5377ad-ffd8-4d57-8468-d8e2cebeb4fe][Program Dependence Graph]] or
+only the nodes of a PDG.
+
+The nodes of the PDG are the tuple: (value, type, function), where value is
+[[id:54e328ec-fe5a-47dd-b78a-d1204b790ecf][LLVM]] values, type is the type, and the function is the function the node
+belong in.
+
+Additional /subnodes/ are added, each type of subnode has a type of edge pointed
+to it.
+1. Members of a struct: "part_i" edges are added that point tho the member
+   number i
+2. Memory pointed to by a pointer type. "deref" (dereference) edge is added that
+   point to the memory region.
+
+The construction does not use data dependence edges and control dependence edges
+in the existing PDG. There is no Sensitive variable to propagate as in [[id:5858d065-e920-48c1-9b26-f3fc071a9bf2][PtrSplit]].
+** Inter-procedural Data flow :ATTACH:
+After having the baseline node and edges, they add the data flow edges for
+*intra-procedural data flow*. Data flow are added based on the rules in figure 5.
+
+Is this entirely new? I'm sure there is
+
+The paper also merge the nodes where there is data equality. For example, a two
+pointers that point to the same memory address is merged.
+
+[[attachment:_20211111_193130screenshot.png]]
+** Reachability Analysis
+This is the reason they perform data flow analysis. The idea is simple: if there
+is a data flow path from the memory allocation to a library call argument, then
+the memory must be shared, and the allocation must be changed so that it use
+shared memory. This is done in a few steps:
+1. They track all of the library calls, direct and indirect. This is because the
+   *arguments to the library calls must reside inside shared memory. Indirect
+   calls are tracked by analyzing their constructed data flow graph to find data
+   flow paths from an indirect function call to the function pointer assignment.
+2. Then, the memory referenced by any pointer argument to the library calls are
+   marked as common memory (recall that every pointer type have a subnode
+   containing memory location). From the marked memory, they perform backward
+   taint propagation to find memory allocations. At first, this is done
+   intra-procedural. Inter-procedural is done next.
+3.

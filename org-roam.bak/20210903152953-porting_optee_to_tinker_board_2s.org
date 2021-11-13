@@ -1,0 +1,49 @@
+#+title: Porting OPTEE to Tinker Board 2S
+
+
+
+* Workflow
++ Refs:
+  - http://mrvan.github.io/optee-imx6q-sabresd
+  - http://mrvan.github.io/optee-imx6ul
+
+
++ The overall workflow seems to be:
+  - Modify uboot with TEE config (https://github.com/MrVan/u-boot/commit/503c4c87a1182b58331445e79f0067ed9285101a)
+  - Compile uboot & burn to sd card
+  - Compile the kernel & copy the image + dtb file to SD card (may need changes to support TEE in the kernel)
+  - Compile OP-TEE OS
+  - Compile OPTEE Client and copy to sd card
+  - Compile xtest & copy to sd card
+  - Boot & run tests
+
+*
++ This commit ad support for hikey https://github.com/OP-TEE/optee_os/commit/d70e78c49fc9c63b2d37c596b7ad3cbd38f8e574
+
+
+
+
+* Prequisites
+Needed toolchains:
++ arm-none-aebi-gcc
++ aarch64-linux-gnu-gcc
++ arm-linux-gnueabihf-gcc
+
+
+
+
+* Building OPTEE
+Let's try rk3399
+#+begin_src bash
+make PLATFORM=rockchip PLATFORM_FLAVOR=rk3399 DEBUG=y CFG_TEE_CORE_LOG_LEVEL=4 CROSS_COMPILE64=aarch64-linux-gnu- CROSS_COMPILE32=arm-linux-gnueabihf-
+#+end_src
+
+* Building Trusted Firmware
+#+begin_src bash
+
+
+#+end_src
+
+* URLs
++ https://github.com/ARM-software/u-boot/blob/master/board/rockchip/evb_rk3399/README
++ https://github.com/ARM-software/arm-trusted-firmware/blob/master/docs/plat/rockchip.rst

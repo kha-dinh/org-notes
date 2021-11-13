@@ -1,0 +1,29 @@
+#+TITLE: Notes
+
+
+* Jain, L., & Vyas, J. (): Security Analysis of Remote Attestation
+  :PROPERTIES:
+  :Custom_ID: jainSecurityAnalysisRemote
+  :END:
+
+* Farkhani, R. M., Ahmadi, M., & Lu, L. (2020): PTAuth: Temporal Memory Safety via Robust Points-to Authentication
+  :PROPERTIES:
+  :Custom_ID: farkhaniPTAuthTemporalMemory2020
+  :END:
+
+* Coker, G., Guttman, J., Loscocco, P., Herzog, A., Millen, J., O'Hanlon, B., Ramsdell, J., … (2011): Principles of remote attestation
+  :PROPERTIES:
+  :Custom_ID: cokerPrinciplesRemoteAttestation2011
+  :END:
+
+
+* Francillon, A., Nguyen, Q., Rasmussen, K. B., & Tsudik, G. (2014): A minimalist approach to Remote Attestation
+  :PROPERTIES:
+  :Custom_ID: francillonMinimalistApproachRemote2014
+  :END:
+
+* Kohnhauser, F., Buscher, N., & Katzenbeisser, S. (2019): A Practical Attestation Protocol for Autonomous Embedded Systems
+  :PROPERTIES:
+  :Custom_ID: kohnhauserPracticalAttestationProtocol2019
+
+  :END:

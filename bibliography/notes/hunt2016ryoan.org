@@ -1,0 +1,73 @@
+#+TITLE: #+TITLE: Ryoan: A Distributed Sandbox for Untrusted Computation on Secret Data
+#+ROAM_KEY: cite:hunt2016ryoan
+* TODO Notes
+:PROPERTIES:
+:Custom_ID: hunt2016ryoan
+:NOTER_DOCUMENT: ~/Zotero/storage/DATD5JPL/Hunt et al_2016_Ryoan.pdf
+:AUTHOR: Hunt, T. et al.
+:JOURNAL: 
+:DATE: 
+:YEAR: 2016
+:DOI: 
+:URL: 
+:NOTER_PAGE: 6
+:END:
+
+
+** Summary
+:PROPERTIES:
+:NOTER_PAGE: (2 . 0.3136072370900867)
+:END:
+The goal of Ryoan is to prevent leakage of information of sensitive data without
+trusting software stack, developers or administrator.
+1. It use sandbox to confine data-processing modules and prevent them to leak data.
+2. It use trusted HW to allow user to verify individual sandboxes.
+3. Sandboxes configured to communicate in /controlled/ way.
+** Implementation Summary
+:PROPERTIES:
+:NOTER_PAGE: (3 . 0.3582089552238806)
+:END:
++ Ryoan use Native Client (NaCL) to contains untrusted code insde of SGX
+  enclave. Each container can communicate with each other. /Taint label/ similar
+  to [[file:../../roam/20210628135825-decentralized_information_flow_control.org][Decentralized Information Flow Control]] is used to ensure that the secret is
+  contained inside the module.
+
++ Request-oriented data model: module only process input once and modules cannot
+  read or write into persistent storage.
+
+** Design :ATTACH:
+:PROPERTIES:
+:NOTER_PAGE: (5 . 0.7546174142480212)
+:ID:       8299d505-080e-4da5-87d4-d1cd5aed8c92
+:END:
++ Untrusted modules that operate on sensitive data communicated in a directed
+acyclic graph manner.
+[[attachment:_20210628_144753screenshot.png]]
++ SGX protect data inside the storage by isolation. Unprotected stores are
+  removed by NaCl tool chain and runtime. System calls are eliminated by using
+  NaCl's alternatives to prevent leaking information to the OS.
++ support programs written for libc.
++ Integrity of sandboxed are ensured by remote attestation. A master enclave
+  create all Ryoan instances, create the topology and forward the attestations
+  of each node to user.
+
+
+** Distributed Sandbox
+:PROPERTIES:
+:NOTER_PAGE: (6 . 0.7685912240184757)
+:END:
++ A master enclave create other Ryoan containers in DAG base on the
+  specification.
++ Modules output are data-oblivious: Fixed size
+** Ryoan Labels
+:PROPERTIES:
+:NOTER_PAGE: (6 . 0.46061062947606485)
+:END:
++ Ryoan use a label to mark which enclave have seen the secret data.
++ Ryoan is trusted to remove the user's tag when it communicate with the
+  original requrestor.
++ Non-Confining Labels: Label from one principal that host Ryoan instance. When
+  the label does not contains tags from other principles, the module can
+  perform any IO operations
++ Confining Labels: When the label contains tags from other principles, the
+  module is confined, disallowed to persist data.

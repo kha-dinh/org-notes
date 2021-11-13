@@ -1,0 +1,6 @@
+#+title: LLVM Intrinsic Functions
+
+* What are LLVM Intrinsic functions
++ LLVM intrinsic functions provides a mechanism to extend LLVM without changing all of the passes, because they are transparent to optimization passes.
++ Are useful when the desired functionality can be generally expressed as a function all.
++ The intrinsic function name must start with the "llvm." prefix, which is reserved in llvm.

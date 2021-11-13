@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       b214e24d-6582-4335-8c55-4c742c6eb73f
+:END:
+#+title: Worklist Algorithm

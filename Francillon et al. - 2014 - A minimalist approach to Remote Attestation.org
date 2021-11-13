@@ -1,0 +1,10 @@
+* Francillon et al. - 2014 - A minimalist approach to Remote Attestation
+:PROPERTIES:
+:NOTER_DOCUMENT: ../../Zotero/storage/I2PDDFGE/Francillon et al. - 2014 - A minimalist approach to Remote Attestation.pdf
+:NOTER_PAGE: 1
+:END:
+
+** test test
+:PROPERTIES:
+:NOTER_PAGE: (1 . 0.593519882179676)
+:END:

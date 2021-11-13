@@ -1,0 +1,19 @@
+#+TITLE: #+TITLE: Dynpta: combining static and dynamic analysis for practical selective data protection
+#+ROAM_KEY: palit2021dynpta
+* TODO Notes
+:PROPERTIES:
+:Custom_ID: palit2021dynpta
+:NOTER_DOCUMENT:
+:AUTHOR: Palit, T. et al.
+:JOURNAL:
+:DATE:
+:YEAR: 2021
+:DOI:
+:URL:
+:END:
+* Summary
++ The paper proposes combining /static pointer analysis/ with /dynamic data flow tracking/. This overcome issues with scalability and precision in pointer analysis.
+
+
+* asd
++ The main difference with cite:liu2017ptrsplit is that PtrSplit avoid doing global pointer analysis and only do intra-procedural analyses. To track pointers, PtrSplit use type checking (i.e., use the pointer type of the definition and usage to match the pointer usage), which would requires no usage of =void= pointers. This is not the case for real programs such as openssl.

@@ -1,0 +1,19 @@
+#+title: Intel MPK
+
+* Overview
+Intel Memory Protection Key (MPK) is a hardware mechanism that allows \emph{userspace} applications to control page table permissions.
+
+** Hardware primitives
+*** The protection key
+
+ Intel MPK  associates a protection key (PK) with a group of pages, so that the associated pages' permission could be updated at the same time by changing the key. The fours unused bits of a page table entry is exploited to /tag/ the page with an PK. Hence, up to 16 distinct page groups could be employed at a time.
+
+*** PKRU
+Additionally, MPK introduces a 32-bit protection key rights register (PKRU) that describes the access right of the protection keys. The bit $2k$ represents the access disable (AD) bit of a key $k$, while bit $2k + 1$ represents its write disable (WD) bit. Together, the pair (AD,WD) represents a key's access permission to the page group, with $(0,0)$ allowing both reads and writes, (1,0) allowing only reads and disabling accesses with (0,1) or (1,1). Each thread has a different PKRU value, allowing thread-local permissions to be defined.
+
+
+*** Instruction set
+MPK also add new instructions to update PKRU, WRPKRU to update the value of the PKRU and RDPKRU to obtain the PKRU's current value.
++ WRPKRU: Write the value of EAX into PKRU. ECX and EDX must be set to $0$ before executing.
++ RDPKRU: Read the value  of PKRU into EAX. ECX and EDX must be set to $0$ before executing.
+

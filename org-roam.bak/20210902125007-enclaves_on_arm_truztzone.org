@@ -1,0 +1,12 @@
+#+title: Enclaves on ARM TruztZone
+
+
+* Related works
+cite:sun2015trustice "freezes" the untrusted OS, then execute the binary to the normal world and execute.
+cite:guan2017trustshadow
+cite:ferraiuolo2017komodo
+cite:zhao2019sectee
+cite:brasser2019sanctuary execute the enclave on userspace by using hardware mechanisms
+cite:tarkhani2019snape
+
+* Challenges

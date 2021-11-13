@@ -1,0 +1,131 @@
+\documentclass[aspectratio=169]{beamer}
+
+\input{settings}
+ 
+\titlegraphic{
+  \hfill
+  \includegraphics[width=.18\textwidth]{sslab-logo.pdf}
+  
+  % \includegraphics[width=.30\textwidth]{skku-soc.pdf}
+}
+
+% \setsansfont{IBMPlexSans}
+% \def\beamer@size{{size10.clo}}
+\begin{document}
+
+\title[HJLee-Template]{HJLee Slides Template}
+\author[HJLEE]{\textbf{Hojoon Lee} \inst{1} \and HJLEE \inst{1} \and Lee Hojoon \inst{1}}
+
+\institute[SKKU]{\inst{1} Sungkyunkwan University}
+
+
+\date{18 October, 2018}
+\maketitle
+
+%% Table of Contents
+% \frame{\frametitle{Table of contents}\tableofcontents}
+
+%% ---------- Basic slide ----------
+\frame{\frametitle{Text Page}
+  The quick brown fox jumps over the lazy dog
+  \begin{itemize}
+  \item The quick brown fox jumps over the lazy dog
+    \begin{itemize}
+    \item The quick brown dog jumps over the lazy fox
+    \item The quick brown dog jumps over the lazy fox
+    \end{itemize}
+  \item The quick brown dog jumps over the lazy fox
+  \item The quick brown fox jumps over the lazy dog
+  \end{itemize}
+  가나다라마바사아자차카타파하
+}
+
+
+%% ---------- One Fig top / One text Bottom ----------
+\frame{\frametitle{Figure on Top, Text on Bottom}
+  \begin{center}
+    \includegraphics[width=0.50\textwidth]{example-image-golden}    
+  \end{center}
+
+  The quick brown fox jumps over the lazy dog
+  \begin{itemize}
+  \item The quick brown fox jumps over the lazy dog
+  \item The quick brown dog jumps over the lazy fox
+  \item The quick brown fox jumps over the lazy dog
+  \end{itemize}
+
+}
+
+
+%% ---------- One Fig Left / One text Right ----------
+\frame{\frametitle{Figure on Left, Text on Right}
+
+
+  \begin{columns}
+    \column{0.50\textwidth}
+    % left column
+    \includegraphics[width=1.0\textwidth]{example-image-golden}
+
+    
+    \column{0.50\textwidth}
+    % right column
+    The quick brown fox jumps over the lazy dog
+    \begin{itemize}
+    \item The quick brown fox jumps over the lazy dog
+    \item The quick brown dog jumps over the lazy fox
+    \item The quick brown fox jumps over the lazy dog
+    \end{itemize}
+    The quick brown dog jumps over the lazy fox
+
+    
+  \end{columns}   
+
+}
+
+
+%% ---------- Two Figs Left / One text Right ----------
+\frame{\frametitle{Two Figure on Left Vertically, Text on Right}
+  \begin{columns}
+
+    \column{0.50\textwidth}
+
+    % left column
+    \includegraphics[width=0.8\textwidth]{example-image-golden}
+    \includegraphics[width=0.8\textwidth]{example-image-golden}
+    
+    \column{0.50\textwidth}
+    % right column
+    The quick brown fox jumps over the lazy dog
+    \begin{itemize}
+    \item The quick brown fox jumps over the lazy dog
+    \item The quick brown dog jumps over the lazy fox
+    \item The quick brown fox jumps over the lazy dog
+    \end{itemize}
+    The quick brown dog jumps over the lazy fox
+  \end{columns}   
+}
+
+\frame{\frametitle{Two Figure on Top Horizontally, Text on Bottom}
+  \begin{center}
+    \includegraphics[width=0.49\textwidth]{example-image-golden}
+    \includegraphics[width=0.49\textwidth]{example-image-golden}
+  \end{center}
+
+  The quick brown fox jumps over the lazy dog
+  \begin{itemize}
+  \item The quick brown fox jumps over the lazy dog
+  \item The quick brown dog jumps over the lazy fox
+  \item The quick brown fox jumps over the lazy dog
+  \end{itemize}
+
+}   
+
+%% ---------- Two Figs Left / One text Right ----------
+\frame{\frametitle{Animation}
+  \begin{center}
+    \includegraphics<1>[scale=0.7]{example-image-a}
+    \includegraphics<2>[scale=0.7]{example-image-b}
+  \end{center}
+
+}
+\end{document}

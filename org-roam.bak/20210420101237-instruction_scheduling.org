@@ -1,0 +1,4 @@
+#+title: Instruction Scheduling
+
+* Purpose
++ Reorder operations to hide latencies

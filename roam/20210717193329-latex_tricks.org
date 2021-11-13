@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       3a2fbfed-9e00-49ae-aa2e-efc51a1d3d04
+:END:
+#+title: Latex Tricks
+
+
+
+
+* Tables Manipulation
+** Basics
+*** Table and tabular
+** Add random spacing to columns
+** multicolumn
+** Rotating text
+** makecell for table header and more
++ Manual: https://mirror.yongbok.net/ctan/macros/latex/contrib/makecell/makecell.pdf
++ \thead allows for easy and consistent formating of column headers
++ \makecell offered for ceawring multilined cells
++ \multirowhead, \multirowcell
+** Automate table width with tabluarx
+tabularx allows users to specify the width of the table and provides the /X/
+column type which automatically fit content to the remaining space. Normally,
+users would have to fit the content by themself by inserting newlines and manual
+width (p{1cm} for instance).

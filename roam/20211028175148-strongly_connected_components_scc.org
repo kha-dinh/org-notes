@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       8a0f0a56-a48f-473a-ba19-5fcb1693a771
+:END:
+#+title: Strongly Connected Components (SCC)
+
+* Why SCC matter
+SCCs are helpful in clustering a graph.
+Useful in identifying bottlenect

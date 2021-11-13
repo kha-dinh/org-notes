@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       21019586-ca97-4a8d-bcd8-788f565fc5eb
+:END:
+#+title: Security Policy
+
+* Security Policy
+Is the statements of protection goals.
++ Minimize the risk
++ Set guideline, best practice of use and ensure proper compliance
++ Failure recovery
+* Mistakes
++ Self reference
+  - e.g., this policy is approved by "management"
++ Ambiguous
+  - Staff should obey security policy xxx
+  - Data shall be alvailable to those with a 'need-to-know'
+  - All breaches of VPN policy shall be reported
+    + How breach are defined, who report them
+* Security policy model
++ Is a high level description of security policy that represents:
+  - What need to be done in the policy
+  - Not /how/ to implement
++ Example security models
+  - [[id:b0bda531-8fd4-4138-86aa-e297fb628855][Multi-level Security Models]]
+  - *Multilateral Security*: Consider information flow between multiple organizations
+    + The lattice model add labels to data.
+      - e.g., (TOP_SECRET, {CRYPTO, FOREIGN}) can read (SECRET,{CRYPTO, FOREIGN}) and (TOP_SECRET,{CRYPTO})
+  - *Chinese Wall Model:*
+    + Information leak using a third party must also be stopped. This requires building a wall that isolate information within an organization
+  - Role-Based Access Control :
+    + Roles is attached to subjects
+    + Each role has permissions to access to object/resources
+    + Hierarchical RBAC allows roles to inherit form higher roles .
+      - This reduce the to total number of role definitions
