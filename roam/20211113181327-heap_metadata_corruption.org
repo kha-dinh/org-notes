@@ -6,3 +6,4 @@
 * Overview
 This attack, the heap management algorithm is tricked due to corrupted heap metadata.
 * TODO How it work
+https://github.com/shellphish/how2heap
