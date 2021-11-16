@@ -3,4 +3,9 @@
 :END:
 #+title: Memory Isolation
 
+* Overview
+Memory isolation of a program enforce that other programs cannot access the
+memory of the isolated. This makes sense in the context of [[id:8b7d6034-5fed-408f-9430-182073debece][Intra-process
+Isolation (IPI)]], where the components share the address space, and each
+components must be isolated from each other.
 * Isolation Primitives

@@ -1,4 +1,0 @@
-:PROPERTIES:
-:ID:       45ce2afe-2190-4e35-ab21-62595dd40b5f
-:END:
-#+title: Security Policy

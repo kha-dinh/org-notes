@@ -18,9 +18,9 @@ down, but ability cannot.
 ** What knowledge look like
 Knowledge can be written down.
 The things that we can write down can be categorized into
-+ Observation: What we observe
-+ Model: Abstract way of describing what goes on in the world around us
-+ Recipe: The way of doing things so that you get a result
++ *Observation:* What we observe
++ *Model*: Abstract way of describing what goes on in the world around us
++ *Recipe*: The way of doing things so that you get a result
 
 *** Observation
 Observation is the most fundamental way of obtaining knowledge.
@@ -47,19 +47,19 @@ Often, research is about building or expanding a model so that we can understand
 In security, there are security models, cryptographic equations
 
 *** Recipe
-Recipe is the way of arranging things to get the desired results or effect.
-
-Recipe is a sort of a design.
-
+Recipe is the way of arranging things to get the desired results or effect. It
+is a sort of a design.
 Recipe can be:
 + Processes
 + Algorithms
 + Procedures
 + Reference design
 
-There are risks when creating recipe. For instance, the recipe to increase the efficiency of a program might not be possible. However, we can re-frame the objective as understanding why it is not possible.
+There are risks when creating recipe. For instance, the recipe to increase the
+efficiency of a program might not be possible. However, we can re-frame the
+objective as understanding why it is not possible.
 
-Some recipe in security: The design of software sanitizers. SFI
+Some recipe in security: The design of software sanitizers. SFI, [[id:21019586-ca97-4a8d-bcd8-788f565fc5eb][Security Policy]]
 ** Defining research objective
 + Where the problem comes from
 + What the problem is, why it is important
@@ -72,7 +72,6 @@ How does A affect B (model)
 
 * When is Knowledge a contribution
 Contribution must be accepted by the community.
-
 
 * New knowledge need older knowledge
 ** Foundational Knowledge

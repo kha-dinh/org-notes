@@ -15,3 +15,7 @@
 + Value Invariant Property: A property introduced by the paper [[id:192dfbc3-f4f0-431f-bd17-379c2363db58][VIP: Safeguard
   Value Invariant Property for Thawrting Critical memory Corruption Attacks]] that
   focus on preventing [[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]] and heap metadata corruption
++ Data Confidentiality and Integrity (DCI): A policy introduced by the paper
+  [[id:216535ed-b19c-42d8-af06-119f9c5f421f][DataShield: Configurable Data Confidentiality and Integrity]]
+that focus on preventing illegal reads and writes to the programmer annotated
+types.

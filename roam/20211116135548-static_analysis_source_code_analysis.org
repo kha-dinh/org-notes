@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       68bbc446-f046-4df6-b1ed-ba11681a742a
+:END:
+#+title: Static Analysis (Source Code Analysis)

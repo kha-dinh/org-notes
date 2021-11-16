@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       7cfaa2d7-676a-4143-91ef-b6e470fe08af
+:ROAM_REFS: https://www.orgroam.com/manual.htm
+:END:
+#+title: Org Roam
+

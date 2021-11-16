@@ -4,7 +4,7 @@
 #+title: Data Flow Analysis
 
 * Overview
-+ An analasis in the front end of [[id:6bc87e74-cf9e-4d12-81ff-e979b4107177][Compilers]]
++ An analysis in the front end of [[id:6bc87e74-cf9e-4d12-81ff-e979b4107177][Compilers]]
 + Is a process of solving the effect of statements, basic blocks or larger statements.
 + Generate useful information about data at each points
   - To use for optimizations
@@ -42,13 +42,14 @@
     # This statemement kill all previous y, generate a new DFI y_s11
     S11: y := y + v
     # in[S11] = out[S10] = {v_S1, x_S10, y_S9}
-    # kill[S11] = {y_*} = {y_S9}, gen[S11] = {y_S11}
+    # kill[S11] = {y_*} = {y_S9}
+    # gen[S11] = {y_S11}
     # out[S11] = {y_S11} v ({v_S1, x_S10, y_S9} - {y_S9})
     # in[S12] = out[S11] = {v_S1, x_S10, y_S11}
 
     S12: z := x * v
     S13: x := x - z
-        
+
     # This statement has no efect on DFI
     S14: goto L on z > 0        # kill[S14] = {}, gen[S14] = {}
 # End Block

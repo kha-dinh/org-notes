@@ -19,3 +19,37 @@ before use. Compiler optimizations to reduce the cost is also presented.
 
 The mechanism is proved to be very efficient in doing it job. it provides with
  6.28% performance overhead with 13.18% memory overhead in SPEC CPU 2006.
+
+* Value Invariant Property
+The property means that between two legitimate writes, the value of
+security-sensitive data (code pointer, heap metadata) should be /immutable/ (i.e.,
+value invariant). The time where the value is immutable is called the /Value
+Invariant Period/.
+
+Thus, it is necessary to keep track of Value Invariant Period of every security
+sensitive data. The paper proposed inserting a security check to guarantee that
+the value has not been changed between the allocation/assignment and the
+destruction time.
+
+** Code Pointer
+The paper identify the life cycle of a code pointer:
+1. Assignment: a function pointer is assigned to a varilabe
+2. In-use: During this time, the function pointer should be immutable, which can
+   prevent [[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]]
+3. Destruction: When the function reaches the end, the stack is unwind, thus
+   destroying the function pointer. (How about global / heap FP?)
+
+
+* Hyperspace
+** Overview
+1. It requires the allocation to be first registered (vip_register).
+2. The value initialization must be recorded in MPK-protected region with vip_write
+   1. vip_write is only available after vip_register to prevent unauthorized
+   2. if the write is final, vip_write_final is used instead. It prevent further
+      update to the value
+3. Before loading security-sensitive values, vip_assert is used to check the
+   value with the recorded value in the protected region.
+* TLDR
+The paper track metadata of security-sensitive data (e.g., the assignment of
+function pointers) inside an MPK-protected region. Then, at the time of
+destruction, it check if the value has been altered or not.

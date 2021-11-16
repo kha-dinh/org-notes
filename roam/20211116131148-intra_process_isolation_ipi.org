@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       8b7d6034-5fed-408f-9430-182073debece
+:END:
+#+title: Intra-process Isolation (IPI)

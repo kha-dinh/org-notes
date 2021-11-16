@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       a70d425d-b79d-48ce-b627-63a34a69513e
+:END:
+#+title: Information Flow Analysis

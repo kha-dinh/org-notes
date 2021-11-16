@@ -1,0 +1,39 @@
+:PROPERTIES:
+:ID:       19d7a9ab-1f71-4812-84b9-a9624e6c40e1
+:END:
+#+title: Taint Analysis
+
+* Overview
+Taint Analysis is a type of [[id:a70d425d-b79d-48ce-b627-63a34a69513e][Information Flow Analysis(]][[id:d57045e0-aad1-4ee2-a11b-0971d5865d58][Data Flow Analysis]]) that is
+mostly used in security domain. It track how private information flows through
+the program and detect if the information is leaked to outside.
+
+** Sources and Sinks.
++ the *sources* are the private data of interest.
++ The *sinks* are the location of interest (e.g., a variable). The sink is
+  typically at where the information exit the system (e.g., return values of
+  functions). When there is an information flow from the source to the sink,
+  then there is an information leak.
+** Explicit Flows
+When there is direct information flow (data flow) from one statement to another,
+then there is an implicit flow. For example, in this example, there is explicit
+flow from x to z, and z to w, making z and w also tainted. There is information
+leak, because at the sink, w, w is tainted.
+#+begin_src C
+x = Source(0);
+y = 1;
+z = x;
+w = y + z;
+Sink(w);
+#+end_src
+
+** Implicit Flow
+Implicit flows happens when the tainted data affect the value of another
+variable *indirectly*.For example, when tainted data is use as a branching
+condition, and the value inside the condition change depending on the branch
+result.
+* Dynamic Taint Analysis
+** Limitations
++ It is hard to track implicit flows
+* References
++ https://www.cs.cmu.edu/~ckaestne/15313/2018/20181023-taint-analysis.pdf

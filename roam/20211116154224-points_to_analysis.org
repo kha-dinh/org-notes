@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       61be9235-539c-4b30-83af-5bc06bbced35
+:END:
+#+title: Points-to Analysis (Pointer Analysis)
+
+* Overview
+Points-to analysis identify the relationship between pointers and the memory
+locations that they point during the program execution.
+
+* References
++ https://engineering.purdue.edu/Cetus/Documentation/manual/ch07s05.html

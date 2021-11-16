@@ -7,4 +7,3 @@
 + Often by remember what operation happens in what order in forward pass
 * In Tensorfow
 + Tensorflow use a /GradientTape/ to record operation executed
-+

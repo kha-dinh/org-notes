@@ -1,7 +1,7 @@
 * TODO Inbox
 ** [ ] Paper Review (Data Science)
 DEADLINE: <2021-11-18 Thu>
-** [ ] Final Project Idea (Data Science)
+** [X] Final Project Idea (Data Science)
 DEADLINE: <2021-11-11 Thu>
 Topic, dataset, baseline, 5 related works
 ** [X] Final Project (Data Science)

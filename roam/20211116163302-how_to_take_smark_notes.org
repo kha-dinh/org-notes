@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       95c1be52-63b3-434d-adfb-0efdc8aacc05
+:END:
+#+title: How To Take Smark Notes (Book)
+#+filetags: :book:
