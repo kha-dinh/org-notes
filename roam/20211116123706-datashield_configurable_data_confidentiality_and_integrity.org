@@ -24,9 +24,6 @@ DCI's particular policy is:
    [[id:19d7a9ab-1f71-4812-84b9-a9624e6c40e1][Taint Analysis]].
 
 
-
-
-
 * Notes
 The paper will propagate the sensitivity to all operands of a sensitive
 variable. But this is fine and does not increase the TCB because all sensitive
