@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       4483fc83-b260-46b2-96fa-37ec36ada5e4
+:END:
+#+title: Moving computation inside memory
+
+
+
+
++ Sometime, program contains secrets that need to be protected
++ Side-channels can affect the confidentiality of secret.
++ Porting program to use accelerator is time consuming.
++ Many paper used [[id:68bbc446-f046-4df6-b1ed-ba11681a742a][Static Analysis (Source Code Analysis)]] to perform automatic secret isolation.

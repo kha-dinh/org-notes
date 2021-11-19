@@ -1,5 +1,0 @@
-
-* AI Security
-:PROPERTIES:
-:ID:       f4971d27-df8c-4d21-bb40-21e0d51f18c9
-:END:

@@ -4,29 +4,17 @@
 #+title: Zettelkasten Method
 
 * Overview
-The Zettelkasten method is a tool for capturing information that emphasize on
-*conneting ideas*.
-
+The Zettelkasten method is a tool for capturing information that emphasize on *conneting ideas*.
 
 There are 3 types of notes in the method:
-+ Fleeting notes: Contains fragments of ideas and thought. This similar to
-  [[id:ae00b54b-1b6a-4037-aec3-10ac373c9abf][Journaling]]? Fleeting notes is kind of unnecessary in [[id:e04b9a81-c798-4ef4-9f2d-e5d05c4106b8][Org Roam]] because of the
-  automatic indexing.
++ Fleeting notes: Contains fragments of ideas and thought. This similar to [[id:ae00b54b-1b6a-4037-aec3-10ac373c9abf][Journaling]]? Fleeting notes is kind of unnecessary in [[id:e04b9a81-c798-4ef4-9f2d-e5d05c4106b8][Org Roam]] because of the automatic indexing.
 + Permanent notes: Notes that is stored inside slip-box and is indexed.
-  + Literature notes: Contain short description (e.g., At line 2, this paper say
-    this.) about reference. Useful for adding reference. Using bibtex is one way
-    to achieve literature notes. Org Roam also have the REFS fields
-  + Concept notes: Atomic ideas and concepts. Need to be self-explanatory and
-    detailed, and contains.
+  + Literature notes: Contain short description (e.g., At line 2, this paper say this.) about reference. Useful for adding reference. Using bibtex is one way to achieve literature notes. Org Roam also have the REFS fields
+  + Concept notes: Atomic ideas and concepts. Need to be self-explanatory and detailed, and contains.
 * Notes
-+ The method is a bit too rigid. Concept notes are assumed to be final, and
-  fleeting
-notes are assumed to be ephemeral. This is because it is very difficult to make
-changes to notes written in papers, in the original methods. [[id:e04b9a81-c798-4ef4-9f2d-e5d05c4106b8][Org Roam]] allows
-notes to be easily updated.
++ The method is a bit too rigid. Concept notes are assumed to be final, and fleeting notes are assumed to be ephemeral. This is because it is very difficult to make changes to notes written in papers, in the original methods. [[id:e04b9a81-c798-4ef4-9f2d-e5d05c4106b8][Org Roam]] allows notes to be easily updated.
 
-+ The literature notes in the original method can be exchanged with a composed
-  bibliography file (e.g., bibtex).
++ The literature notes in the original method can be exchanged with a composed bibliography file (e.g., bibtex).
 
 * References
 + [[id:95c1be52-63b3-434d-adfb-0efdc8aacc05][How To Take Smark Notes (Book)]]
