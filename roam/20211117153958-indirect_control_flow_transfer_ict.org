@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       eac3e6ad-b910-4f33-8c70-90cecca1d203
+:END:
+#+title: Indirect Control-flow Transfer (ICT)
+
+* ICT
+Indirect control-flow transfer is the result of
+1. Indirect call and jmp
+2. Return
+It is the direct opposite of direct control-flow transfer that results from
+direct function calls.
+
+ICT is the root cause of [[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]], because

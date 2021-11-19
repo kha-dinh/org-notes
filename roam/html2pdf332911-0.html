@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Dinh Duy Kha" />
+  <title>Annotating, Tracking, and Protecting Cryptographic Secrets with CryptoMPK</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Annotating, Tracking, and Protecting Cryptographic Secrets with CryptoMPK</h1>
+<p class="author">Dinh Duy Kha</p>
+</header>
+<h1 id="overview">Overview</h1>
+<ul>
+<li>The paper define crypto buffer and crypto operations, then use <a href="id:68bbc446-f046-4df6-b1ed-ba11681a742a">Static Analysis (Source Code Analysis)</a> to automatically determine crypto buffers and crypto operations from the initial list of operations. This is somewhat simlilar to</li>
+</ul>
+<p>several works that use <a href="id:19d7a9ab-1f71-4812-84b9-a9624e6c40e1">Taint Analysis</a> to propagate secret variables (<a href="id:5858d065-e920-48c1-9b26-f3fc071a9bf2">PtrSplit</a>,<a href="id:216535ed-b19c-42d8-af06-119f9c5f421f">DataShield: Configurable Data Confidentiality and Integrity</a> )</p>
+<ul>
+<li>The crypto domain is protected with <a href="id:027687ec-a1ba-4d7d-8c56-de4e17cc6e1d">Intel MPK</a>. Switches between the domains is automatically inserted. Stack and heap allocations is replaced with a customized implementation</li>
+</ul>
+<h1 id="crypto-buffer-and-crypto-operations">Crypto buffer and crypto operations</h1>
+<ul>
+<li><strong>Crypto buffer:</strong> memory regions that contains the secret key, or the intermediate results of cryptographic computations</li>
+<li><strong>Crypto operations:</strong> Operations/instructions that can access the crypto buffers. For example, a memory read instruction to the AES key.</li>
+</ul>
+<h1 id="crypto-operations">Crypto operations</h1>
+<p>The paper points out that crypto operations have interesting properties.</p>
+<ol>
+<li>Modern cryptographic operations, on top of the secret keys, use a lot of <strong>intermediate values</strong> such as buffers and runtime data. Those data also need to be protected, but often overlooked by most mechanisms.</li>
+<li>Cryptographic operation have data flow that declassify the information. For instance, ciphertext have data flow from the key, but is considered non-confidential. Traditional Taint analysis (<a href="id:216535ed-b19c-42d8-af06-119f9c5f421f">DataShield: Configurable Data Confidentiality and Integrity</a>) would over-taint them (making ciphertext also tainted), thus:
+<ol>
+<li>Have more performance overhead</li>
+<li>Increase the TCB</li>
+</ol></li>
+</ol>
+<h1 id="process">Process</h1>
+<ul>
+<li><strong>Pre-analysis</strong>: Compile the program that contain the annotation into <a href="id:8c4d5b4c-4f13-48ae-a4af-13c3d5cbc11e">LLVM IR</a></li>
+<li><strong>Crypto buffer labeling</strong>: Use <a href="id:61be9235-539c-4b30-83af-5bc06bbced35">Points-to Analysis</a> and <a href="id:19d7a9ab-1f71-4812-84b9-a9624e6c40e1">Taint Analysis</a> to label crypto buffers.</li>
+<li><strong>Crypto operations identification</strong>: Identify memory accesses and operations that access the crypto buffers</li>
+<li><strong>Code transformation</strong>:
+<ol>
+<li>Move crypto buffers into protected memory regions</li>
+<li>Replicate functions to be protected (why?)</li>
+<li>Partition program into crypto domain and non-crypto domain</li>
+<li>Instrument switches when crossing boundary</li>
+<li>Additional binary security checks</li>
+</ol></li>
+</ul>
+<h1 id="crypto-buffer-labeling">Crypto buffer labeling</h1>
+<p>The labeling of crypto buffers is similar to that of <a href="id:19d7a9ab-1f71-4812-84b9-a9624e6c40e1">Taint Analysis</a> . The developers have to annotate which values (in this case only the pointers?) are sensitive (the encryption key or private key). CryptoMPK uses the initial annotations as the taint source and propagates the taint through data flow. The taint here is called the "crypto" tag.</p>
+<h2 id="points-to-analysis">Points-to Analysis</h2>
+<p><a href="id:61be9235-539c-4b30-83af-5bc06bbced35">Points-to Analysis (Pointer Analysis)</a> is used to "improve the accuracy of both control-flow and data-flow construction" (Not sure the implication here).</p>
+<h2 id="crypto-aware">Crypto-aware</h2>
+<p>The paper makes the taint analysis "crypto-aware" by allowing the developer to additionally annotate plaintext and ciphertext buffers with the "multulally-exclusive (mxor)" tag. During taint analysis, when data flow to those buffer, the crypto tag will be eliminated.</p>
+<h2 id="context-sensitive-analysis">Context-sensitive analysis</h2>
+<p>It also uses <a href="id:ab571a54-a9df-4c41-8c7b-8f100aabd574">Context-sensitive Analysis</a> to have different tags for the same buffer, under different contexts. The reasoning is that some function have different sensitivity, based on the calling context.</p>
+<h1 id="crypto-operations-identification">Crypto operations identification</h1>
+<p><span id="sec:crypto-op"></span>This step identifies which part of the program are allowed to access the crypto buffers. Those operations are the <a href="id:8c4d5b4c-4f13-48ae-a4af-13c3d5cbc11e">LLVM IR</a> load and store instructions, and the memory allocation and deallocation operations (malloc).</p>
+<p><strong>Memory access</strong>: When the load and store instruction access the crypto buffer's address, it is considered a crypto operations</p>
+<p><strong>Memory management:</strong> When the memory allocation and deallocation target the crypto buffer, it is considered a crypto operation. Then, it create a custom malloc/free for the crypto context</p>
+<p>This is kind of similar to <a href="id:0fc81ef8-f433-4a84-95b6-9a0b19a48b73">Cali: Compiler-Assisted Library Isolation</a>, where the allocation is replaced to use shared memory when needed. However, here, every different context have different allocation function (context-sensitive)(<a href="#sec:context-switches">7.2</a>).</p>
+<h1 id="code-transformation">Code transformation</h1>
+<p>Finally, after having the crypto buffers and the crypto operations, it transforms the source code at <a href="id:8c4d5b4c-4f13-48ae-a4af-13c3d5cbc11e">LLVM IR</a> level.</p>
+<h2 id="memory-allocations">Memory allocations</h2>
+<p>Stack and heap allocation of crypto bufers is replaced to allocate inside protected memory (Protected by <a href="id:027687ec-a1ba-4d7d-8c56-de4e17cc6e1d">Intel MPK</a>).</p>
+<h3 id="ambiguous-functions-that-contains-memory-allocation">Ambiguous functions that contains memory allocation <span class="tag" data-tag-name="ATTACH"><span class="smallcaps">ATTACH</span></span></h3>
+<p><img src="/home/khadd/org/.attach/56/9148a6-f095-44f3-b252-f978c56d3a44/_20211118_143522screenshot.png" /></p>
+<p>For functions that (1) contains memory allocations and (2), could be either sensitive or non-sensitive, depending on the calling context, there must be multiple versions of the function for each context. This is because inside those functions, the permissions for each instructions could be different on each calling context (the parameters for the functions). The paper duplicate all of such functions, each with different security permissions, and insert them to the original calling context.</p>
+<p>Moreover, to reduce the number of duplicated functions, the paper compare the signature of the calling context, and merge duplicated functions with identical signature.</p>
+<h2 id="context-switches">Context switches</h2>
+<p><span id="sec:context-switches"></span>The paper use different protection granularity for the <a href="id:18708239-715c-47b3-8db6-81bc6df24f5e">Domain Switching in Intra-process Isolation</a>. Two granularities are used, instruction level and function level. Function level is used for <strong>hotspot functions</strong>, which are functions that match the proposed heuristic. The heuristic calculate a score that is roughly based on the number of sensitive instructions over the number of total instructions, with higher weight on sensitive instructions inside of loops and calling instructions.</p>
+<p>There is no parameter passing from one domain to another, because the paper only cares about Load and Store instructions and memory allocation functions (see <a href="#sec:crypto-op">6</a>). That is, all sensitive memory allocation/deallocation must be replaced, and all sensitive Load and Store (to crypto buffer) must be inside the sensitive domain.</p>
+<h1 id="notes">Notes</h1>
+<ul>
+<li>Design and implementation fragment the paper and make it hard to understand.</li>
+<li>Only load and store to the identified crypto buffers are protected.</li>
+<li>Only target crypto libraries.</li>
+</ul>
+</body>
+</html>

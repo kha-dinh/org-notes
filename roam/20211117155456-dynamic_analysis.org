@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       59929312-3a9d-4ba9-824e-24b50d6c686d
+:END:
+#+title: Dynamic Analysis

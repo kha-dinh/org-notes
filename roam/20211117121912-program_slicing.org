@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f9de9f38-b09e-44aa-ac59-8290350368b1
+:END:
+#+title: Program Slicing
+
+
+* Program slicing
++  Program slicing find instructions of the programs that is relevant to the
+  chosen set of variables, then remove all instructions that is not necessecary.
+http://www0.cs.ucl.ac.uk/staff/mharman/exe1.html

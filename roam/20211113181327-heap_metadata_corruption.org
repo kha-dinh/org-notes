@@ -4,6 +4,7 @@
 #+title: Heap Metadata Corruption
 
 * Overview
-This attack, the heap management algorithm is tricked due to corrupted heap metadata.
+This attack, the heap management algorithm is tricked due to corrupted heap
+metadata. It allows for arbitrary writes, which can be used to corrupt data.
 * TODO How it work
 https://github.com/shellphish/how2heap

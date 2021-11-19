@@ -2,3 +2,21 @@
 :ID:       e4f7a2a5-41dc-43cb-ba44-840341771650
 :END:
 #+title: Control-flow Integrity (CFI)
+
+* Control-flow Integrity
+Control-flow integrity is a [[id:4b379e7b-25d1-45c7-a961-19ccd0439ce1][Runtime]] [[id:21019586-ca97-4a8d-bcd8-788f565fc5eb][Security Policy]] in software to detect
+[[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]] attacks. It protect the integrity of the control-flow,
+that is, the control-flow cannot be transfered to unintended targets. Generally,
+it compare the target of [[id:eac3e6ad-b910-4f33-8c70-90cecca1d203][Indirect Control-flow Transfer (ICT)]] to a set of
+allowed targets. If the target is not in the list of allowed target, it report
+as an control-flow corruption.
+
+
+The strength of a CFI policy relies on its ability to model the correct behavior
+(the list of allowed target). The less allowed target while still maintaining
+correct execution, the stronger the security.
+
+Usually, CFI use [[id:68bbc446-f046-4df6-b1ed-ba11681a742a][Static Analysis (Source Code Analysis)]] and [[id:9db852f0-600b-481b-a3e3-b46a7332c322][Control Flow Graph
+(CFG)]] to generate the list of allowed target. Using static analysis, however, is
+imprecise, thus and allows for a large amount of allowed target. [[id:59929312-3a9d-4ba9-824e-24b50d6c686d][Dynamic
+Analysis]] could also be used to improve the accuracy of allowed target.

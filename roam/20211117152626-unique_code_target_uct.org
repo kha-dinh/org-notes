@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       d2cc876b-c19a-4d94-b95f-25657edc8f1c
+:END:
+#+title: Unique Code Target (UCT)
+
+* UCT
+A property introduced by the paper [[id:68c4004c-2b56-4640-9676-a9acc4eaf887][Enforcing Unique Code Target Property for
+Control-Flow Integrity]] to enforce [[id:e4f7a2a5-41dc-43cb-ba44-840341771650][Control-flow Integrity (CFI)]]. It enforced that
+at each step of execution, there is only *one* valid target for any [[id:eac3e6ad-b910-4f33-8c70-90cecca1d203][Indirect
+Control-flow Transfer (ICT)]]. This is an improvement to the traditional CFI
+methods, which is often imprecise with multiple allowed target.
+
+To enforce UCT, one must collect necessary [[id:4b379e7b-25d1-45c7-a961-19ccd0439ce1][Runtime]] information to narrow the
+list allowed target into a single target. The authors refer to such information
+as *constraining data*.
+
+Constraining data is defined as *non-control* data that influences the calculation
+of the target of an [[id:eac3e6ad-b910-4f33-8c70-90cecca1d203][Indirect Control-flow Transfer (ICT)]]. In the original paper,
+such data is identified as:
+1. Is an operations to sensitive instructions (instructions that operate on
+   function pointers),
+2. Not a constant, and not in the sensitive instructions set
+
+# TODO
+[[id:a237d4e4-e27e-43b5-b750-cbfa3029d136][microCFI]] is an CFI technique that enforce UCT. It identify constraining data
+during static analysis and instrument the program to record necessary
+information. At runtime, it use a monitoring process to perform dynamic
+points-to analysis using the recorded information to achieve a single valid
+target.

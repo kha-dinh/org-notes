@@ -3,7 +3,20 @@
 :END:
 #+title: AutoPSI
 
-* Program slicing
-+  Program slicing find of the programs that is relavent to the chosen set of variables. The slicer then
 
-[Program Slicing](http://www0.cs.ucl.ac.uk/staff/mharman/exe1.html)
+
+
+* Motivation
+The project aims to separate
+
+
+* Challenges
+** Cross-domain communication
+
+* Related works
++ [[id:f9de9f38-b09e-44aa-ac59-8290350368b1][Program Slicing]] is kind of related, in that only the instructions that are
+  related to the sensitive instructions are "sliced" out, thus minimizing
+  the TCB while maintaining the correct execution.
++ There are also papers that perform [[id:143f7d86-1750-417d-b7af-fde0be7ae95e][Program Partitioning / Compartmentalization]].
++ It use [[id:8b7d6034-5fed-408f-9430-182073debece][Intra-process Isolation (IPI)]] to achieve the isolation of the sensitive
+  compartments.

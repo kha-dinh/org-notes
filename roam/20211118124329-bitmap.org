@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       37b35b68-4252-4fcb-a620-5059bb4b621c
+:END:
+#+title: Bitmap

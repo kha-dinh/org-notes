@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       68c4004c-2b56-4640-9676-a9acc4eaf887
+:END:
+
+#+title: Enforcing Unique Code Target Property for Control-Flow Integrity
+
+* Summary

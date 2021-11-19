@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       54367586-cd75-4563-a169-f80202645ac6
+:END:
+#+title: Temporal Safety

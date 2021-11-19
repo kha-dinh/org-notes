@@ -24,10 +24,13 @@ DCI's particular policy is:
    [[id:19d7a9ab-1f71-4812-84b9-a9624e6c40e1][Taint Analysis]].
 
 
+* Difference from [[id:19dc195b-8a0c-4fea-829e-0a9af64a8b04][Code-pointer Integrity (CPI)]]
+
 * Notes
 The paper will propagate the sensitivity to all operands of a sensitive
 variable. But this is fine and does not increase the TCB because all sensitive
-variables will have memory safety anyway. The only problem is in the performance cause by *Overtainting*.
+variables will have memory safety anyway. The only problem is in the performance
+cause by *Overtainting*.
 
 
 It is more like a limiting mechanism to limit the overhead of complete [[id:fdbace7f-32d7-4501-bd97-56ebbad2c365][Memory

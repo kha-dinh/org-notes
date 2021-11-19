@@ -2,3 +2,78 @@
 :ID:       19dc195b-8a0c-4fea-829e-0a9af64a8b04
 :END:
 #+title: Code-pointer Integrity (CPI)
+
+* Code-pointer Integrity
+Code-pointer integrity guarantees the integrity of all code pointer of a program
+(e.g., function pointers, saved return address on the stack). With CPI, all
+[[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]] attacks can be prevented.
+
+The motivation for CPI is based on the assumption that [[id:e4f7a2a5-41dc-43cb-ba44-840341771650][Control-flow Integrity
+(CFI)]] is insufficient to prevent some attacks, while [[id:fdbace7f-32d7-4501-bd97-56ebbad2c365][Memory Safety]] have
+high overheads.
+
+One other benefit is that it selectively protect only code pointers, which is
+only a small fraction of pointers in a program.
+
+** Sensitive Pointers
+The paper introduce the notion on /sensitive pointers/, which are
+1. code pointers (obviously)
+2. data pointers that might access the sensitive pointers
+
+Determining the precise set of sensitive pointers can only be done at [[id:4b379e7b-25d1-45c7-a961-19ccd0439ce1][Runtime]] ,
+because of universal pointers (pointer of void* can both be code and data
+pointers)
+
+*** Static analysis
+The sensitive pointers are gotten through [[id:68bbc446-f046-4df6-b1ed-ba11681a742a][Static]] [[id:dce88879-b8a2-4d4d-bb1d-bf84b18926ac][Type-based Analysis]] . That is,
+a pointer is sensitive if it's type is sensitive. Sensitive types are code
+pointers, pointers to sensitive types and pointers to struct that have sensitve
+type as the member, and universal pointers (void* or char*).
+
+This analysis over-approximate the sensitive pointers, as some void* pointer may
+never become code pointers in the program execution.
+
+** Implementation :ATTACH:
+
+[[attachment:_20211117_175333screenshot.png]]
+
+To enforce CPI, the original authors split the memory space into *safe region* and
+*regular region.*
+*** Protecting safe region
++ The safe region is protected by allocating the region in a random location, and
+use the segment register to store the base the safe region. In principle, this
+is a [[id:19b1c06c-52dd-477e-8a22-d93b02c276ca][Information Hiding]].
++ [[id:8b7d6034-5fed-408f-9430-182073debece][Intra-process Isolation (IPI)]] primitives could also be
+used to protect the safe region, as used in [[id:192dfbc3-f4f0-431f-bd17-379c2363db58][VIP: Safeguard Value Invariant
+Property for Thawrting Critical memory Corruption Attacks]])
+*** Instrumentation
+The program is instrumented to:
+1. Place the sensitive pointers inside the safe region. Two copy is created, one
+   original pointer and one stored in the safe region. This is to preserve
+   compatibility, and also handle universal pointers (could be either sensitive
+   or non-sensitive).
+   1. The address of the sensitive pointer (not the pointer itself), is mapped
+      to the medata.
+2. Create and propagate (through [[id:476f2524-befd-4478-b994-429ee02d736b][Pointer Arithmetic]] ) the metadata for the
+   pointers at runtime (consists of the actual value, the bounds information and
+   the temporal ID (maybe for temporal safety?)). The metdata is similar to
+   [[id:e9723577-b0b6-407b-98ef-195a9249f74a][Softbound + CETS]]. Storing the actual value allows for checking the integrity
+   of the pointer. The bounds information & temporal ID guarantee [[id:fdbace7f-32d7-4501-bd97-56ebbad2c365][Memory Safety]]
+   of those pointers (Why need memory safety?).
+   1. CPI can either store the sensitive pointer in both safe and regular
+      region, and check the value upon use. This can detect all control flow
+      hijacking attacks. (Isn't this the same as [[id:192dfbc3-f4f0-431f-bd17-379c2363db58][VIP: Safeguard Value Invariant
+      Property for Thawrting Critical memory Corruption Attacks]] ?)
+   2. or not use the pointer in the regular region at all, and only use pointer
+      in the safe region
+3. Check the metadata on the dereference of such pointer.
+
+
+** TODO Safe Stack
+
+* Difference with [[id:e4f7a2a5-41dc-43cb-ba44-840341771650][Control-flow Integrity (CFI)]]
+The key difference with CFI is that CPI protect the data itself (code pointers),
+while CFI only guarantee that the control flow transfer to the correct targets.
+
+
+* Difference with [[id:d2cc876b-c19a-4d94-b95f-25657edc8f1c][Unique Code Target (UCT)]]

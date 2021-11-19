@@ -1,0 +1,9 @@
+* Inbox
+** [2021-11-18 Thu]
+I just notice that the VIP paper's method is exactly the same as [Code-pointer
+integrity](https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-kuznetsov.pdf):
+To store sensitve data inside a safe region, and protect that region. They only
+extend the definition of sensitive data from only code pointers to also cover
+the heap metada, and use MPK to protect the safe region. However.
+1. The purpose of heap metadata corruption is to perform arbitrary writes, which in the end is to do control flow hijacking through code pointers corruption. Isn't it enough just to protect the code pointers to prevent control flow hijacking? I don't see the need of protecting the heap metadata.
+2. The paper claims to have lower memory overhead compared to CPI (40% to 105%). This is because CPI also store the *bounds information* of the protected code pointers to provide memory safety for those pointers.
