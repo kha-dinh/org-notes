@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       63a7e990-ff91-403d-8bf2-0fb0ff74ab3a
+:END:
+#+title: DeepSniffer: A DNN Model Extraction Framework Based on Learning Architectural Hints
+#+filetags: :paper-notes:
