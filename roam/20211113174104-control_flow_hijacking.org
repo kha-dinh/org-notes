@@ -4,20 +4,15 @@
 #+title: Control-flow Hijacking
 
 * Control-flow Hijacking
-In control-flow hijacking, an attacker corrupt control data (e.g., function
-pointers, return address on the stack) to divert the control flow from the original.
+In control-flow hijacking, an attacker corrupts control data (e.g., function pointers, return address on the stack) to divert the control flow from the original.
 
-Generally, it can be prevented by applying [[id:e4f7a2a5-41dc-43cb-ba44-840341771650][Control-flow Integrity (CFI)]]
-techniques and [[id:19dc195b-8a0c-4fea-829e-0a9af64a8b04][Code-pointer Integrity (CPI)]].
+Generally, it can be prevented by applying [[id:e4f7a2a5-41dc-43cb-ba44-840341771650][Control-flow Integrity (CFI)]] techniques and [[id:19dc195b-8a0c-4fea-829e-0a9af64a8b04][Code-pointer Integrity (CPI)]].
 
 
 * Defenses examples
-The following code snippet is used in [[id:192dfbc3-f4f0-431f-bd17-379c2363db58][VIP: Safeguard Value Invariant Property
-for Thawrting Critical memory Corruption Attacks]] and [[id:68c4004c-2b56-4640-9676-a9acc4eaf887][Enforcing Unique Code
-Target Property for Control-Flow Integrity]]
+The following code snippet is used in [[id:192dfbc3-f4f0-431f-bd17-379c2363db58][VIP: Safeguard Value Invariant Property for Thawrting Critical memory Corruption Attacks]] and [[id:68c4004c-2b56-4640-9676-a9acc4eaf887][Enforcing Unique Code Target Property for Control-Flow Integrity]]
 
-By performing a [[id:ef550557-2721-4305-93cb-bcbcfeb24657][Buffer Overflow]] at =strcpy=, the function pointer could be
-assigned to arbitrary functions, allowing the attacker to jump to any target.
+By performing a [[id:ef550557-2721-4305-93cb-bcbcfeb24657][Buffer Overflow]] at =strcpy=, the function pointer could be assigned to arbitrary functions, allowing the attacker to jump to any target.
 #+begin_src c
 typedef void (*FP)(char *);
 void A(char *);
@@ -43,9 +38,7 @@ void handleReq(int uid, char *input) {
 }
 #+end_src
 ** Defense with CFI
-Using [[id:e4f7a2a5-41dc-43cb-ba44-840341771650][Control-flow Integrity (CFI)]], the code snippet is protected by checking
-the =fun= pointer with the list of allowed targets. Furthermore, [[id:d2cc876b-c19a-4d94-b95f-25657edc8f1c][Unique Code
-Target (UCT)]] is a property that allow only a single valid target.
+Using [[id:e4f7a2a5-41dc-43cb-ba44-840341771650][Control-flow Integrity (CFI)]], the code snippet is protected by checking the =fun= pointer with the list of allowed targets. Furthermore, [[id:d2cc876b-c19a-4d94-b95f-25657edc8f1c][Unique Code Target (UCT)]] is a property that allow only a single valid target.
 ** Defense with CPI
 Using [[id:19dc195b-8a0c-4fea-829e-0a9af64a8b04][Code-pointer Integrity (CPI)]], the code is protected by:
 1. Saving the code pointer to a safe region (the =fun= pointer)

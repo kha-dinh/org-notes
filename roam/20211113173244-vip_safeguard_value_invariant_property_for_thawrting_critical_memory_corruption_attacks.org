@@ -2,44 +2,28 @@
 :ID:       192dfbc3-f4f0-431f-bd17-379c2363db58
 :END:
 #+title: VIP: Safeguard Value Invariant Property for Thawrting Critical memory Corruption Attacks
+#+filetags: :paper-notes:
+
 
 * Summary
-The paper claims to invented a new security property named Value Invariant
-Property. Instead of providing complete protection like other methods in
-[[id:f84adbd3-6db6-4651-bd29-bdfb1534065c][Defenses Against Memory Corruption]], it only focus on preventing two classes of
-attack, the [[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]] and [[id:004655b9-bd2c-4e0a-8d12-6b01318588aa][Heap Metadata Corruption]] attacks.
+The paper claims to invented a new security property named Value Invariant Property. Instead of providing complete protection like other methods in [[id:f84adbd3-6db6-4651-bd29-bdfb1534065c][Defenses Against Memory Corruption]], it only focus on preventing two classes of attack, the [[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]] and [[id:004655b9-bd2c-4e0a-8d12-6b01318588aa][Heap Metadata Corruption]] attacks.
 
-VIP protect integrity of the data values for security-sensitive data (function
-pointers, [[id:eb05babc-760e-4880-af12-63949bae4c0e][Virtual Function Table]] pointers) by enforcing that those data could
-only be altered via legitimate updates.
+VIP protect integrity of the data values for security-sensitive data (function pointers, [[id:eb05babc-760e-4880-af12-63949bae4c0e][Virtual Function Table]] pointers) by enforcing that those data could only be altered via legitimate updates.
 
-The prototype is called HyperSpace. It record the security sensitive values in
-[[id:027687ec-a1ba-4d7d-8c56-de4e17cc6e1d][Intel MPK]]-protected regions, and validate the sensitive value with the recorded
-before use. Compiler optimizations to reduce the cost is also presented.
+The prototype is called HyperSpace. It record the security sensitive values in [[id:027687ec-a1ba-4d7d-8c56-de4e17cc6e1d][Intel MPK]]-protected regions, and validate the sensitive value with the recorded before use. Compiler optimizations to reduce the cost is also presented.
 
-The mechanism is proved to be very efficient in doing it job. it provides with
- 6.28% performance overhead with 13.18% memory overhead in SPEC CPU 2006.
+The mechanism is proved to be very efficient in doing it job. it provides with 6.28% performance overhead with 13.18% memory overhead in SPEC CPU 2006.
 
 * Value Invariant Property
-The property means that between two legitimate writes, the value of
-security-sensitive data (code pointer, heap metadata) should be /immutable/ (i.e.,
-value invariant). The time where the value is immutable is called the /Value
-Invariant Period/.
+The property means that between two legitimate writes, the value of security-sensitive data (code pointer, heap metadata) should be /immutable/ (i.e., value invariant). The time where the value is immutable is called the /Value Invariant Period/.
 
-
-
-Thus, it is necessary to keep track of Value Invariant Period of every security
-sensitive data. The paper proposed inserting a security check to guarantee that
-the value has not been changed between the allocation/assignment and the
-destruction time.
+Thus, it is necessary to keep track of Value Invariant Period of every security sensitive data. The paper proposed inserting a security check to guarantee that the value has not been changed between the allocation/assignment and the destruction time.
 
 ** Code Pointer
 The paper identify the life cycle of a code pointer:
 1. Assignment: a function pointer is assigned to a varilabe
-2. In-use: During this time, the function pointer should be immutable, which can
-   prevent [[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]]
-3. Destruction: When the function reaches the end, the stack is unwind, thus
-   destroying the function pointer. (How about global / heap FP?)
+2. In-use: During this time, the function pointer should be immutable, which can prevent [[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]]
+3. Destruction: When the function reaches the end, the stack is unwind, thus destroying the function pointer. (How about global / heap FP?)
 
 
 * Hyperspace
@@ -47,31 +31,21 @@ The paper identify the life cycle of a code pointer:
 1. It requires the allocation to be first registered (vip_register).
 2. The value initialization must be recorded in MPK-protected region with vip_write
    1. vip_write is only available after vip_register to prevent unauthorized
-   2. if the write is final, vip_write_final is used instead. It prevent further
-      update to the value
-3. Before loading security-sensitive values, vip_assert is used to check the
-   value with the recorded value in the protected region.
+   2. if the write is final, vip_write_final is used instead. It prevent further update to the value
+3. Before loading security-sensitive values, vip_assert is used to check the value with the recorded value in the protected region.
 * States of sensitive data :ATTACH:
 [[attachment:_20211118_130855screenshot.png]]
 
-The paper use a [[id:a9e62dab-f8f7-4521-b272-d81ed5c74e7e][State Model]] to maintain the entire memory space, using a [[id:37b35b68-4252-4fcb-a620-5059bb4b621c][Bitmap]],
-where each 8-byte chunk of memory is associated with a state. The bitmap state
-is changed after the API calls (vip_register, ...). Every operations requires a
-check if the operation is valid, given the state.
+The paper use a [[id:a9e62dab-f8f7-4521-b272-d81ed5c74e7e][State Model]] to maintain the entire memory space, using a [[id:37b35b68-4252-4fcb-a620-5059bb4b621c][Bitmap]], where each 8-byte chunk of memory is associated with a state. The bitmap state is changed after the API calls (vip_register, ...). Every operations requires a check if the operation is valid, given the state.
 
-This have weaker security compared to rich metadata such as bounds information
-and temporal ID used in [[id:e9723577-b0b6-407b-98ef-195a9249f74a][Softbound + CETS]], but have less memory overhead.
+This have weaker security compared to rich metadata such as bounds information and temporal ID used in [[id:e9723577-b0b6-407b-98ef-195a9249f74a][Softbound + CETS]], but have less memory overhead.
 ** Temporal Safety
-The state represent if data is in-use or not in-use. Data is in-use after
-sensitive data is initialized (vip_register()). Thus, a free to data not in-use
-will be detected, providing [[id:54367586-cd75-4563-a169-f80202645ac6][Temporal Safety]].
+The state represent if data is in-use or not in-use. Data is in-use after sensitive data is initialized (vip_register()). Thus, a free to data not in-use will be detected, providing [[id:54367586-cd75-4563-a169-f80202645ac6][Temporal Safety]].
 
-The paper also said it is not full temporal safety. If sensitive data is freed,
-and then relocated, it cannot detect.
+The paper also said it is not full temporal safety. If sensitive data is freed, and then relocated, it cannot detect.
 
 ** Spatial safety
-The paper said by managing the safe memory region in 8-byte block granularity,
-spatial safety is maintained. Only access to registered and valid block is allowed.
+The paper said by managing the safe memory region in 8-byte block granularity, spatial safety is maintained. Only access to registered and valid block is allowed.
 #+begin_src c
 typedef void (*FP)(char *);
 void A(char *);
@@ -92,8 +66,10 @@ void handleReq(int uid, char *input) {
     fun = arr[0];
     vip_write(fun, 8);
   } else { // uid can be 1, 2
+    /* if uid is out of bound, the address of arr[uid] may be uninitialized! */
+    /* If so, it is caught as invalid operation in vip_assert */
+    /* How about it point to arr2?  */
     vip_assert(&arr[uid], 24);
-    /* if uid is out of bound, the address of arr[uid] is uninitialized! */
     fun = arr[uid];
     vip_write(&fun, 8);
   }
@@ -111,29 +87,15 @@ void handleReq(int uid, char *input) {
 
 * Defenses using Hyperspace
 ** VIP-CFI
-The paper enforce [[id:e4f7a2a5-41dc-43cb-ba44-840341771650][Control-flow Integrity (CFI)]] using hyperspace by protecting
-all code pointers. Namely, all indirect control-flow transfer must be verified
-with the. The paper says that VIP-CPI provides [[id:d2cc876b-c19a-4d94-b95f-25657edc8f1c][Unique Code Target (UCT)]]
-property.
+The paper enforce [[id:e4f7a2a5-41dc-43cb-ba44-840341771650][Control-flow Integrity (CFI)]] using hyperspace by protecting all code pointers. Namely, all indirect control-flow transfer must be verified with the. The paper says that VIP-CPI provides [[id:d2cc876b-c19a-4d94-b95f-25657edc8f1c][Unique Code Target (UCT)]] property.
 
 
 * Comparision with [[id:19dc195b-8a0c-4fea-829e-0a9af64a8b04][Code-pointer Integrity (CPI)]]
-VIP uses the same definition of sensitive pointers as CPI. Other than code
-pointers, VIP also protect heap metadata against [[id:004655b9-bd2c-4e0a-8d12-6b01318588aa][Heap Metadata Corruption]]
-(doesn't protecting the pointers themself beat the purpose of heap metadata
-corruption to perform arbitrary write?)
+VIP uses the same definition of sensitive pointers as CPI. Other than code pointers, VIP also protect heap metadata against [[id:004655b9-bd2c-4e0a-8d12-6b01318588aa][Heap Metadata Corruption]] (doesn't protecting the pointers themself beat the purpose of heap metadata corruption to perform arbitrary write?)
 
-The method is exactly the same as CPI, but extend their protection of Sensitive
-pointers (code pointers and data pointers that may access code pointers),
-security-sensitive data (that also cover inline heap metadata). Also, it use MPK
-to protect the safe region instead of randomization
+The method is exactly the same as CPI, but extend their protection of Sensitive pointers (code pointers and data pointers that may access code pointers), security-sensitive data (that also cover inline heap metadata). Also, it use MPK to protect the safe region instead of randomization
 
-It have lower memory overhead to [[id:19dc195b-8a0c-4fea-829e-0a9af64a8b04][Code-pointer Integrity (CPI)]] (about 40%
-compared to 105%). Maybe this is because CPI also stores the bounds of pointers,
-while this only store the value. Implications?
+It have lower memory overhead to [[id:19dc195b-8a0c-4fea-829e-0a9af64a8b04][Code-pointer Integrity (CPI)]] (about 40% compared to 105%). Maybe this is because CPI also stores the bounds of pointers, while this only store the value. Implications?
 * Optimizations
 * Notes
-
-
-Such runtime protection could only be available with MPK due to the low overhead
-switch.
++ Such runtime protection could only be available with MPK due to the low overhead switch.

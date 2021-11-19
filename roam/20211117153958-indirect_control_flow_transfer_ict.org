@@ -10,4 +10,6 @@ Indirect control-flow transfer is the result of
 It is the direct opposite of direct control-flow transfer that results from
 direct function calls.
 
-ICT is the root cause of [[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]], because
+ICT is the root cause of [[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]], because it requires
+de-reference of potentially unsafe [[id:810c7f88-5c27-404b-9e2b-85a884571559][Function Ponters]], which could be corrupted by
+attackers.

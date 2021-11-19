@@ -4,5 +4,6 @@
 #+title: Softbound + CETS
 
 Softbound + CETS is the [[id:da69d210-f43f-4190-9089-754e4bead1f4][State-of-the-art]] combo for achieving [[id:fdbace7f-32d7-4501-bd97-56ebbad2c365][Memory Safety]]. It
+
 combine the bounds checking from softbound for spatial memory safety, and CETS
 for temporal safety.
