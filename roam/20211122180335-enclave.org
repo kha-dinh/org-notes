@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       e807bb9a-9b30-4d94-b3e3-9078bc77e8ec
+:END:
+#+title: Enclave
