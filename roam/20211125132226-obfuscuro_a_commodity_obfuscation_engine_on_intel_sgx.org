@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       211fe0f0-8cb2-4fb2-8cb0-6387938038b8
+:END:
+#+title: Obfuscuro: A Commodity Obfuscation Engine on Intel SGX
+
+
+* Summary
++ The paper focuses on [[id:abd380a2-12f6-4d85-8c86-c97e0dba2b37][Program Obfuscation]], with the goal to both eliminate [[id:c0c1d7b6-f5e9-4145-a051-87260162e279][Side-channels]] and protect the program itself from IP theft.
++ The main idea to use [[id:d634fe6f-1962-4405-9464-89ea5d69a6c6][Intel SGX]]  to create a "black box" for programs, then eliminate the remaining side-channels.
++ [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]] is used to protect memory accesses of SGX. The implementation is data-oblivious (?) and use a register-based stash.
++ It use Scratchpad-based code execution and data access model (?) to remove the memory access pattern
++ The implementation use [[id:54e328ec-fe5a-47dd-b78a-d1204b790ecf][LLVM]] to transform SGX program's code into cache-line-granular (?) and ORAM-compatible basic blocks. Each block only have a single data and code access at a fixed offset.
++ Code and data access instructions are translate to runtime library calls
++ The runtime library serves the code and data accesses by moving data blocks from ORAM to pre-allocated memory regions for code and data (C-Pad and D-Pad).
++ Code execution and data access is always performed at the same location, so no memory side-channel is leaked.
++ Timing side-channel is also mitigated by executing the program for a fixed amount of time (configured by user)
++ The overhead is high, but much faster than cryptographic obfuscation.
+* Threat Model
+The paper guarantee that the program's logic is not leaked to any attacker observing the enclave execution.
+The attacker is assume to be able to observe all memory accesses trace and measure the timing difference
+
+* Side-channel obliviousness, Memory trace obliviousness and program obfuscation
+** Side-channel obliviousness (input-oblivious)
++ Assumes that program is known to the attacker, but the input is sensitive
++ Every sensitive input to the program must have indistinguishable side-channels
+
+** Program obfuscation
++ Assumes that program is unknown, but input-output pair is known to attacker
+  + Input-output pair can be protected through encryption
++ Every execution of the program must have indistinguishable side-channels
++ The target code must be executed without leaking memory traces
++ The access to data (stack and heap) must also not leak memory traces

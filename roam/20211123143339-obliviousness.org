@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       faedc002-0c8e-4558-909d-894885444938
+:END:
+#+title: Obliviousness in Software
+
+
+
++ Input-oblivious execution guarantees that the execution profile of a program observed by an adversary reveal nothing about the sensitive input.
+
+* Types of side-channels
+** Type of access
+** Size of access
+** Address
+** Time of access

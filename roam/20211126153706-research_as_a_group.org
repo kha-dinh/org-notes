@@ -1,0 +1,58 @@
+:PROPERTIES:
+:ID:       9b67c581-8abb-4af6-b92b-c427b47caaa2
+:END:
+#+title: Research As A Group Activity
+
+- Some people think research should be done individually.
+
+* Principles
+ + Any activities should encourage (1)
+   + Building one's own knowledge
+   + Spreading the knowledge to others
+   + Developing ideas
+ + Efficient communication (2)
+   
+* Activities
+** Meeting
+Each meeting should have a clear purpose (2). It should stop right after we answer all of the questions
+*** Paper Discussion
++ Paper discussions should only happens after all have read the paper?
+*** Paper Presentation
++ Should this be an activity?
+*** Ideal Discussion
+*** Project Discussion
+** Paper reading
+*** Shared reading
+ + Shared reading provide more ground for discussions
+ + Maybe good for very important papers / foundational papers
+ + Individual reading allows for faster reviewing. However, knowledge must be shared for individual reading to be effective.
+*** Individual reading
++ Since it is impossible for one to read all of the materials,
++ Documentation is necessary (1)
++ 1. What background knowledge the paper use
++ 2. Its relationship to other papers.
+  + Which paper it improves upon, which methods from other papers did it use?
+  + Strength / weakness compared to other paper
++ Key ideas
+** Continuous Discussion
+
+* Types of knowledge
+** References / Reading material
++ There should be three types of references:
+  + *Foundational*
+  + *Land marks*
+  + *State-of-the-art*
+** Documentations
++ Tutorials
++ Insights
++ Notes
++ Meeting notes
+   
+
+* Rounds of paper review
+Maybe paper review should be in several rounds?
+
+First round: Paper summary, ..., emphasize on its relationship to other works
+
+Second Round: Other people ask questions
+Third Round: Other people ask questions about paper

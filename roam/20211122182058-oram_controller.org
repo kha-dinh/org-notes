@@ -2,3 +2,15 @@
 :ID:       6aff37e6-865a-4039-b229-3ec794f6e5ec
 :END:
 #+title: ORAM Controller
+
+* ORAM Controller
+The ORAM controller contains the main logic of an ORAM implementation. Usually it is a function call, for example, oram_access(read, address, result).
+
+Its input is the access address, and the output is the requested data block (if read operation), or a dummy block (for write operation). Internally, it performs the ORAM operations so that the accesses leak no access pattern.
+
+The ORAM controller must execute in a trusted domain, because it requires some data structure to be secure.
+
+
+** Path ORAM controller
+Internally, the Path ORAM controller performs access to the Position Map and the Stash. For [[id:d19a3f5a-db18-4be1-822d-5fab4307177c][Path ORAM]], the ORAM controller requires a trusted memory region to store the Position Map and the Stash. The untrusted memory is used to store the ORAM tree.
+When ORAM is used inside SGX, the position map and stash can be stored inside SGX's memory, but the access to the data structure must be protected from side-channel leakage ([[id:0c92cd8b-b790-49c9-bc9d-94a65c3ee73a][Secure Path ORAM Implementation]]).

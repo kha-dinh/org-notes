@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       c4f357e7-9086-4433-b489-799231954282
+:END:
+#+title: Circuit ORAM
+
+* Summary
++ The authors shows that [[id:79d997f4-0f6c-4b18-a17c-03c8a1fe2f9a][Goldreich-Ostrovsky ORAM]]'s logarithimic lowerbound is tight under certain parameter ranges, for several performance metrics.
++ It achieves almost optimal circuit size in both theory and practice for realistic choices of block sizes.
+
++ The usecase of the scheme is mostly for [[id:6bd1941f-1b2b-48f8-b332-f2390440d2f6][Multi-party Computation (MPC)]]
+
+* Notes
+*Circuit* in circuit ORAM refer to the Circuits in [[id:6bd1941f-1b2b-48f8-b332-f2390440d2f6][Multi-party Computation (MPC)]]

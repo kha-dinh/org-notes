@@ -4,16 +4,17 @@
 #+title: Oblivious RAM (ORAM)
 
 * ORAM
-ORAM is an algorithm that run on a *trusted client* that translate the client's request to the *untrusted storage server* into a sequence of memory accesses.
-An attacker that listens to the memory accesses is guaranteed to not be able to distinguish between different accesses (read or write, and the address of access).
++ ORAM is an algorithm that run on a *trusted client* that translate the client's request to the *untrusted storage server* into a sequence of memory accesses. Hence, sometimes ORAM is called a [[id:6bc87e74-cf9e-4d12-81ff-e979b4107177][Compiler]]
 
++ An attacker that listens to the memory accesses is guaranteed to not be able to distinguish between different accesses (read or write, and the address of access).
 
+** Client & Server
 Client and server can be:
 + CPU and memory
 + [[id:e807bb9a-9b30-4d94-b3e3-9078bc77e8ec][Enclave]] and memory
 + Remote client and a cloud server
-
-An [[id:6aff37e6-865a-4039-b229-3ec794f6e5ec][ORAM Controller]] have only one API: request(operation, address, data).
+** APIs
+An [[id:6aff37e6-865a-4039-b229-3ec794f6e5ec][ORAM Controller]] have only one API: =request(operation, address, data)=.
 + For read requests, operation = read, data is NULL.
 + For write requeests, operation = write, data = data to be written
 
@@ -21,4 +22,4 @@ An [[id:6aff37e6-865a-4039-b229-3ec794f6e5ec][ORAM Controller]] have only one AP
 By itself, ORAM only hide the access pattern. Data need to be protected by also using [[id:77f74f25-5358-4002-a61a-dda0152ae553][Encryption]]. Also, the access time is not protected by ORAM.
 
 * Algorithms
-The [[id:da69d210-f43f-4190-9089-754e4bead1f4][State-of-the-art]] ORAM is [[id:d19a3f5a-db18-4be1-822d-5fab4307177c][Path ORAM]] due to its simplicity and efficiency.
+The [[id:da69d210-f43f-4190-9089-754e4bead1f4][State-of-the-art]] are [[id:d19a3f5a-db18-4be1-822d-5fab4307177c][Path ORAM]] due to its simplicity and efficiency, [[id:c4f357e7-9086-4433-b489-799231954282][Circuit ORAM]]

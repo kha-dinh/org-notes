@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       ca22491a-b763-4dde-bb60-582482d1d34b
+:END:
+#+title: Zero Flag (ZF)

@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       1f0f3dde-eb70-44de-9bbe-b15d95164a45
+:END:
+#+title: Advanced Vector Extension (AVX)

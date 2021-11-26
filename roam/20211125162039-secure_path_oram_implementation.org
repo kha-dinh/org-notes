@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       0c92cd8b-b790-49c9-bc9d-94a65c3ee73a
+:END:
+#+title: Secure Path ORAM Implementation
+
+
+* Building Blocks
+** The ORAM Controller
+The [[id:6aff37e6-865a-4039-b229-3ec794f6e5ec][ORAM Controller]]
+* Side-channels
+The memory accesses to [[id:d19a3f5a-db18-4be1-822d-5fab4307177c][Path ORAM]]'s data structures, the PosMap and the Stash, need to be side-channel resistant against side-channels. The common method employed by [[id:211fe0f0-8cb2-4fb2-8cb0-6387938038b8][Obfuscuro]] and [[id:2f818978-22ff-40c1-ba74-ca5d64bd0ecc][Raccoon]] is to "stream" through the entire data structure (or memory region). To stream is to access every elements of the structure. For example, the following code loop through every blocks in the stash, and only load the requested memory block if the flag is correct.
+
+#+begin_src C
+void retrieve_from_stash_cmov(void *cpad, int required_blk) {
+  bool flag = false;
+  for (int i = 0; i < NUM_STASH_BLOCKS; i++) {
+    // Check the validity of the condition, i.e.,
+    // is this the block to retrieve from the stash
+    flag = ((stash[i].blocknum == required_blk));
+    // Based on the flag, either perform a real or a dummy copy
+    x86_cmov(cpad, stash[i].memblk, flag);
+  }
+}
+#+end_src
+
+[[id:211fe0f0-8cb2-4fb2-8cb0-6387938038b8][Obfuscuro]] Use the [[id:1f0f3dde-eb70-44de-9bbe-b15d95164a45][Advanced Vector Extension (AVX)]] registers to implement the ORAM stash. Data access on the registers do not have memory trace, so it don't have to do data streaming.

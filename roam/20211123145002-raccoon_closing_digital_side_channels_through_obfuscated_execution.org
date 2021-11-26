@@ -1,0 +1,148 @@
+:PROPERTIES:
+:ID:       2f818978-22ff-40c1-ba74-ca5d64bd0ecc
+:END:
+#+title: Raccoon: Closing Digital Side-Channels through Obfuscated Execution
+
+
+* Summary
+The paper propose a defense for /digital side-channel attacks/ by [[id:d11d8bc7-da60-4650-8933-0528e2d69e82][Obfuscating]] the program so that all program path seems the same to attackers (isn't this [[id:a1763b10-2aa1-425d-8504-2e45b093101c][Oblivious Execution]]?).
+** Digital side-channels
++ The authors define "Digital side-channels" as side-channels that can leak information as 0 or 1. For example, when there is 2 branches on the execution path, taking one branch may generate different side-channels from the access pattern, cache usage, data size, execution time ..., that allows attackers to infers which branch is taken.
+
++ They compare it with analog side-channels, which can precisely know the details of the path, such as number of instruction executed, power consumption of each path.
+
++ Eliminating digital side-channels essentially make all other side-channels useless, as they cannot infer anything about the program execution.
+
++ The following is an example, taking different branch will leaks which bit (what about more than 2 branches?)
+#+begin_src
+function S QUARE A ND M ULTIPLY(m, s, n)
+    z←1
+    for bit b in s from left to right do
+        if b = 1 then
+            z ← m · z2 mod n
+        else
+            z ← z2 mod n
+        end if
+    end for
+return z
+end function
+#+end_src
++ The paper hide which branch is taken, by essentially running both branches. A decoy path is added, and *both real path and decoy path is executed*.
++ For memory write, both decoy and real path will write memory, but the decoy path write the same old value, but the real path write the new value.
+
+* Properties
++ Property 1: Real and decoy path execute actual program instructions.
+  + Which make sure that the instructions of the decoy path is indistinguishable from real path, even to the count of instruction.
++ Property 2: Real and decoy path are allowed to update memory.
+  + This will make sure both paths update the same location, to not leak
+    information from different update.
+
+* Overview
+1. [[id:19d7a9ab-1f71-4812-84b9-a9624e6c40e1][Taint Analysis]] identify which branch need to be obfuscated
+2. Transaction-like memory buffer intermediate results along decoy paths
+3. Control-flow statement is obfuscated
+4. Array accesses that depended on secrets is hidden using [[id:d19a3f5a-db18-4be1-822d-5fab4307177c][Path ORAM]]
+
+* Oblivious store
++ Oblivious store use CMOV, which conditionally move source operand into dest operand when the condition is true.
+
++ When CMOV is used on both path of an if branch, and the branching condition is placed into pred, both path will appear the same.
+
++ It is oblivious because it leaks nothing about the predicate (branch condition) when two operands are in the registers.
+#+begin_src C
+cmov(uint8_t pred, uint32_t dst, uint32_t src) {
+  uint32_t result;
+  __asm__ volatile("mov %2, %0;"
+                   "test %1, %1;"
+                   "cmovz %3, %0;"
+                   "test %2, %2;"
+                   : "=r"(result)
+                   : "r"(pred), "r"(dst), "r"(src)
+                   : "cc");
+  return result;
+}
+#+end_src
+
+I think this is =operation from, to;=
+
++ Line 1: Save the =dst= to =result=
++ Line 2: Check if =pred= == 0 and set the [[id:ca22491a-b763-4dde-bb60-582482d1d34b][Zero Flag (ZF)]]  flag if true
++ Line 3: If ZF is set, move =src= to =result=
++ Line 4: ??
+
++ If pred is true (0), then src is moved to result
++ if pred is false (1), dst is moved to result.
+
++ In short, this is not an actual store instruction. It prepare the input to be store, by returning the original content when not on the real path, and return the value to be written when on he real path.
+
+* Transactional memory
++ Transactional memory is use to store the result of a path
+ #+begin_src C
+// Writes a value to the transaction buffer.
+tx_write(address, value) {
+  if (/*threaded program*/)
+    lock();
+  // Write to both the transaction buffer
+  // and to the non-transactional storage.
+  tls->gl_buffer[address] = value;
+  *address = cmov(real_idx == instance, value, *address);
+  if (/*threaded program*/)
+    unlock();
+}
+// Fetches a value from the transaction buffer.
+tx_read(address) {
+  if (/*threaded program*/)
+    lock();
+  value = *address;
+  if (address in tls->gl_buffer)
+    value = tls->gl_buffer[address];
+  value = cmov(real_idx == instance, *address, value);
+  if (/*threaded program*/)
+    unlock();
+  return value;
+}
+ #+end_src
+** Write
++ Steps of tx_write:
+  1. tx_write first save the value inside the transactional buffer.
+  2. Then, it use cmov to get the result
+     + If it is the real path, cmov return move =value=
+     + Else, cmov will return current value of =address=
+  3. It assign the result of cmov to the =address=.
++ TLDR: If on real path, asign the value, else, load and store the original content.
+** Read
+1. get the value
+2. If it is in tls, get it from there
+3. If on real path, assign the true value
+4. else, assign from the tls
+
+* Example
+#+begin_src C
+/* Sample user code. */
+int array[512] __attribute__((annotate("secret")));
+if (array[mid] <= x) {
+  l = mid;
+} else {
+  r = mid;
+}
+
+/* Transformed pseudocode. */
+r1 = stream_load(array, mid);
+r2 = r1 <= x;
+key = obfuscate(r2, r3);
+if (r3) {
+  tx_write(l, mid);
+} else {
+  tx_write(r, mid);
+}
+epilog(key);
+#+end_src
+
++ [[id:19d7a9ab-1f71-4812-84b9-a9624e6c40e1][Taint Analysis]] identify that the branch condition depends on the secret value, so it obfuscates this branch.
++ There is implicit flow (See [[id:19d7a9ab-1f71-4812-84b9-a9624e6c40e1][Taint Analysis]]) from branch condition to both branch, so oblivious store should be used.
++ The array is protected by [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]], and streaming is used to load the entire array.
++ The first time obfuscate is called, it put 0 in r3.
+  + tx_write only write if the path is the real path.
+  + epilog will then transfer control to obfucate() again.
++ The second time it is called, it store 1 in r3.
+  + epilog will then return

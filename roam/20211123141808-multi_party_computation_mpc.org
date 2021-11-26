@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       6bd1941f-1b2b-48f8-b332-f2390440d2f6
+:END:
+#+title: Multi-party Computation (MPC)
