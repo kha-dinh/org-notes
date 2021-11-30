@@ -4,16 +4,16 @@
 #+title: Research Methods
 
 
-* Summary
-Research: the process of making knowledge
+* What research is
+Research: the process of making [[id:4c73322d-6dc1-404a-9a6c-d48da700709a][Knowledge]]
 * What knowledge is
+Is having the ability to do something, or knowing about something ([[id:4c73322d-6dc1-404a-9a6c-d48da700709a][Knowledge]]).
 
-Knowing how to: the ability to do something Knowing about some thing: Knowledge
-about the world In research, you only concern about making knowledge about the
-world. The ability to do something consists of knowledge and internal ability. We
-need the knowledge before developing the ability. In engineering, we often want
-to have the ability to do something. Knowledge about the world can be written
-down, but ability cannot.
+In research, you only concern about making knowledge about the world ([[id:b4390d3d-82a0-45b5-ae6a-7cf2dcf7bf8e][Propositional Knowledge]]).
+
+The ability to do something ([[id:1a2c5e61-d06f-4e1b-8832-cbd7149fd457][Procedural Knowledge]]) can be deconstructed into knowledge about and internal ability.
+In engineering, we often want to have the ability to do something, but we need the knowledge before developing the ability.
+Knowledge about the world can be written down, but ability cannot.
 
 ** What knowledge look like
 Knowledge can be written down.
@@ -55,9 +55,7 @@ Recipe can be:
 + Procedures
 + Reference design
 
-There are risks when creating recipe. For instance, the recipe to increase the
-efficiency of a program might not be possible. However, we can re-frame the
-objective as understanding why it is not possible.
+There are risks when creating recipe. For instance, the recipe to increase the efficiency of a program might not be possible. However, we can re-frame the objective as understanding why it is not possible.
 
 Some recipe in security: The design of software sanitizers. SFI, [[id:21019586-ca97-4a8d-bcd8-788f565fc5eb][Security Policy]]
 ** Defining research objective
@@ -75,26 +73,27 @@ Contribution must be accepted by the community.
 
 * New knowledge need older knowledge
 ** Foundational Knowledge
-Foundational knowledge is need to be able to understand new knowledge that is
-being build. Part of the foundational knowledge include:
+[[id:24253f73-b766-4421-b198-4a900308fe0b][Foundational Knowledge]] is need to be able to understand new knowledge that is being build.
+The foundational knowledge is usually obtained from literature survey, text books.
+
+Parts of the foundational knowledge for a research include:
 + Context: Background needed to understand the problem
 + Significance: What is the problem and its significance
-+ Originality: Knowledge that is needed to solve the problem and that it does
-  not exists
-+ Tool: Tools and methods and approaches needed to make the new knowledge
-The foundational knowledge is usually obtained from literature survey.
++ Originality: Knowledge that is needed to solve the problem and that it does not exists
++ Tool: Tools and methods and approaches needed to make the new knowledge.
+
 ** Building foundational knowledge
-As the frontier of a field is constantly shifting, reading and learning
-constantly is necessary. Highlighting a piece of knowledge helps with
-*memorization and assessment*, but we want to *synthesize* the knowledge to fully
-internalize it
+As the frontier of a field is constantly shifting, reading and learning constantly is necessary.
+
+Highlighting a piece of knowledge helps with *memorization and assessment*, but we want to *synthesize* the knowledge to fully internalize it ([[id:52c66c47-9510-4d57-93ce-7b1e8d005662][Bloom's Taxonomy]])
 
 To synthesize knowledge, one can:
 + Write about why you are highlighting that section.
 + Write about why it is important
+
 ** What to read
-The literature is commonly fragmented. Textbook contains good knowledge, but is
-often contain fundamental and background knowledge.
++ [[id:411a8850-59f4-41b0-961c-b57660a5f40c][Reading Research Papers]]
++ The literature is commonly fragmented. The textbooks are a good source knowledge, but is often contain fundamental and background knowledge.
 
 It is good to visualize the literature as the discussion of experts.
 1. Read the literature with a question in mind.
@@ -103,6 +102,7 @@ It is good to visualize the literature as the discussion of experts.
    2. If it does, find evidence to confirm (from references)
    3. There might be conflicting answers from different experts
 3. Writing down the process might be helpful
+
 * Writing as discovery
 * Argument
 * Planning

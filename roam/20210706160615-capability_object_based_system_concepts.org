@@ -3,22 +3,45 @@
 :END:
 #+title: Capability-based & Object-based System
 
+
 * Summary
-+ Provides:
-  - Single mechanism to address both primary and secondary memory
-  - Single mechanism to address HW and SW resources
-+ A capability is a =token= that give the processor permission to access an =entity= in a computer system
-+ Capability is implemented in a data structure that contains: =unique object identifer= and =access rights=
-  - Identifier is address or name of an object
-  - Access right define operations that can be perform on the object
-+ Each user/process have a =list of capabilities=: all of object that process can access
-  - Each capability in the list /identify the object/ and /indicate if the operation is permitted/
-+ Capabilities is used for object protection, so system must inhibit programs from directly modify its capability
-  - Capability is only modifiable by hardware or operating system
-+ Operations of capability system:
-  + Move capability in a list
-  + Delete
-  + Restrict rights
-  + Pass to a procedure
-  + Transmit to another user
-+ A user can have several capability lists in multi-level
+
++ A capability is a =token= that give the user permission to access resources in a computer system
+
++ Provides single mechanism to address any resources, through the capability tokens.
+
+** Capability tokens
++ Capability is usually represented as tokens (or handle). Each token represent the [[id:43aa83fc-d57c-418d-9c2f-0e608f126ba8][Authority]] (read,write,execute) of the [[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects]] over the resources
++ The tokens must be =unforgeable= to maintain the security. That is, any subject must not fake a capability token.
++ Capability-based system solves the problem of [[id:6ac90afc-68bd-4177-820b-b23a9ba04b54][Ambience Authorities]] by requiring that the Capability for any resources must also be explicitly given to subjects.
+
++ It is easy o imagine capability as a key to a lock. The key can be transferred to another person to access the resource.
+
+* Implementation
+** Capabilities storage
+The capability must be protected from tampering. Users cannot changes the capabilites when it have been granted.
+
+*** Protected storage
+The capability can be stored inside protected storage to prevent tampering.
++ For example, in operating system implementations with [[id:950bb7da-de38-4cb6-bcd2-c30380892dd9][Capability List (c-list)]], the capabilities list is stored inside kernel memory
++ There are also hardware implementation that store the capabilities in read-only memories.
+*** Unprotected storage
++ When stored inside unprotected storages (e.g., user's storage),  the capability must be prevented from tampering. This can be achieved with Cryptographic checksum (e.g., [[id:0e32165d-1210-46e5-be42-e6ff97b2f1a6][Hash-based Message Authentication Code (HMAC)]]). This way, tampering can be detected.
++ This is vcommonly used in distributed systems.
+*** Hybrid
++ Capabilities can be stored in a protected storage, but use explicitly by the user through the index.
+
+** In operating system
++ In most OSes, capability use is *Implicit* ([[id:ffcb6258-1291-4101-9e2d-7b97a9908967][Implicit vs. Explicit capabilities]]). That is, the OS stores the capability list of every processes, and check the capability of the process when it try to access objects.
++ Capability is implemented in a [[id:950bb7da-de38-4cb6-bcd2-c30380892dd9][Capability List (c-list)]]  that contains: =unique object identifer= and =access rights=
+  + Identifier is address or name of an object
+  + Access right define operations that can be perform on the object
++ For example, (=/etc/passwd=, {R,W})
+
+* Operations of capability:
+** Create
+** Delegate
+** Revoke
+** Enable
+** Disable
+** Delete

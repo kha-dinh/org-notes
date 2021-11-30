@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       1a2c5e61-d06f-4e1b-8832-cbd7149fd457
+:END:
+#+title: Procedural Knowledge
+
+A [[id:4c73322d-6dc1-404a-9a6c-d48da700709a][Knowledge]] about how to perform certain action.

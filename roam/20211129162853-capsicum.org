@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       1179e381-8e76-4c3c-9c52-f7d7d436dd2d
+:END:
+#+title: Capsicum
+
+
+
+Capsicum extends the basic [[id:43aa83fc-d57c-418d-9c2f-0e608f126ba8][Authority]] (Read,write,executable) to a broader ranges of authority in [[id:e1b42a31-8496-4a17-85c5-f33b318a826c][UNIX]] systems.

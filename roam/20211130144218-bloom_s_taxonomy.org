@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       52c66c47-9510-4d57-93ce-7b1e8d005662
+:END:
+#+title: Bloom's Taxonomy
+
+* Taxonomy :ATTACH:
+Is a framework proposed by [[id:a63952a6-ba7e-4424-8f76-739b91f2b984][Benjamin Bloom]] to categorize the [[id:a65ac379-e373-49d5-b132-3c5fa31f5657][Learning]] goals. In this taxonomy, the higher level of learning requires the lower goals.
+However, the higher goals will also develop the lower level goals.
+When learning about something, one should make the higher goals the objective.
+For example, to analyze something, it is necessary to apply, understand, and remember it.
+
+
+[[attachment:_20211130_144337screenshot.png]]

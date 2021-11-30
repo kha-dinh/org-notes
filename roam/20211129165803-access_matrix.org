@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       8d612977-e6b3-4f52-bd62-9281b3b2c8bd
+:END:
+#+title: Access Matrix
+
+The access matrix is a visualization of the [[id:43aa83fc-d57c-418d-9c2f-0e608f126ba8][Authority]] relationships between [[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects]] and [[id:75d75440-02a2-41f3-8095-cc02c46ff69b][Objects]].
+The row of the matrix list the corresponding access rights of the subject to different objects.
+
+|       | =/etc/passwd= | =file A= | =file B= |
+| Alice | R           | W      | {}     |
+| Bob   | R           | {}     | R      |
+| Carol | R           | W      | R      |

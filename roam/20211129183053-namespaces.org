@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       96c0dd62-1f19-431b-8e14-1cacb32b1f62
+:END:
+#+title: Namespaces
+
+Namespaces are features of [[id:e5af5024-4c70-41cc-84aa-f55afbefb15f][Linux]] that partition the kernel resources such that each process has different view on the system resources.
+Every process within the same namespace appears to have the same isolated global resources. Changes to resources within the same namespace is invisible to other namespaces, and vice-versa.

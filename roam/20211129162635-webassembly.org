@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       6920feda-33bb-49ad-b785-196865c850c7
+:END:
+#+title: WebAssembly

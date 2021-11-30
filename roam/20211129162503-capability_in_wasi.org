@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       6e099831-4be0-4bb6-88ac-2394aa83d11e
+:END:
+#+title: Capability in WASI
+
+[[id:caaaa0ec-b5bd-4ff1-8f5a-838c23f0a5a1][WASI]] enforce [[id:a69fbd5e-dd46-4b5f-a9c4-46213051cf14][Capability-based & Object-based System]] by enforcing that all access to external resources must be done through handles (basically the capability token).
+The handles must be explicitly given to the module. There is no direct way for a module to request for handles.
+
+WASI design of capability references [[id:1179e381-8e76-4c3c-9c52-f7d7d436dd2d][Capsicum]] and [[id:d54ddac4-97f4-4c5f-8ef5-87130f05191a][CloudABI]]
+
+
+One of the modern system that use capability.

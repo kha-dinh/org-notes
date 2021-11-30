@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       7739d663-ae8b-4062-80da-1e49df947814
+:END:
+#+title: musl
+
+musl is a [[id:34c65f98-ed04-4672-8c6f-2bb1af5265b5][C standard Library (libc)]] implementation that follows [[id:cf672299-47b0-4bad-9ea4-39809e01f507][ISO C]] and [[id:9a5a4945-5a23-4fa5-8740-99603d2650b1][POSIX]] standard.
+musl focuses on minimal code size and lightweight programs.

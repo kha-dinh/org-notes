@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       28554d4e-e236-48ac-9397-564389bd2850
+:END:
+#+title: Capabilities and File Descriptors
+
++ In [[id:e1b42a31-8496-4a17-85c5-f33b318a826c][UNIX]]  systems, [[id:a69fbd5e-dd46-4b5f-a9c4-46213051cf14][Capability]] and file descriptors are very similar.
++ Both are unforgeable tokens of [[id:43aa83fc-d57c-418d-9c2f-0e608f126ba8][Authority]] (describe the access of a [[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects]] to resources). Files descriptors can also be delegated to child process and other processes.
++ However, file descriptors have a broader ranges of rights to be used in system calls. For example, the system call fchmod change the access permissions to a file descriptor, even without write permission.
+  + [[id:1179e381-8e76-4c3c-9c52-f7d7d436dd2d][Capsicum]] wraps the file descriptors with additional capabilities (e.g., to allows update to file descriptors, etc.)

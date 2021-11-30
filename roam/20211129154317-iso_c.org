@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       cf672299-47b0-4bad-9ea4-39809e01f507
+:END:
+#+title: ISO C

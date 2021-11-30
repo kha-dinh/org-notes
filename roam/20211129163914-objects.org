@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       75d75440-02a2-41f3-8095-cc02c46ff69b
+:END:
+#+title: Objects
+
+
+Objects are entities of a [[id:acd3fa27-05fc-45df-8bdb-d611663ef452][Security Model]] that represents the resources of a system (files, file handles, informations,... )
+
+[[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects]] are people, users, entities that access objects

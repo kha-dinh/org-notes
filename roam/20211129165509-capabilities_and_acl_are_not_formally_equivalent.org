@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       4a95d497-e74c-4c8a-9fee-180a75f4fbb5
+:END:
+#+title: Capabilities and ACL are not formally equivalent
+

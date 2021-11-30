@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       6ac90afc-68bd-4177-820b-b23a9ba04b54
+:END:
+#+title: Ambient Authority
+
+
++ In a system, a subject have ambient authorities if it only need to specify the name of the object for the operation to request for an action.
++ That is, the [[id:75d75440-02a2-41f3-8095-cc02c46ff69b][Objects]] does not contains authorization information,
+
++ Ambient authority exists when a [[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects]] do not
+
+For example, the system call
+#+begin_src C
+open("filename", O_RDONLY, 0);
+#+end_src
+is authorized

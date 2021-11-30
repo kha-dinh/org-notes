@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       b4390d3d-82a0-45b5-ae6a-7cf2dcf7bf8e
+:END:
+#+title: Propositional Knowledge
+
+The [[id:4c73322d-6dc1-404a-9a6c-d48da700709a][Knowledge]] of knowing the truth of the "propositions", or facts.
+
+Is also called descriptive knowledge, as it can be expressed in a sentence, propositions.

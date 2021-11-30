@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       caaaa0ec-b5bd-4ff1-8f5a-838c23f0a5a1
+:END:
+#+title: WASI
+
+WebAssembly System Interface (WASI) is a [[id:9a5a4945-5a23-4fa5-8740-99603d2650b1][POSIX]]-like standard APIs specification for [[id:6920feda-33bb-49ad-b785-196865c850c7][WebAssembly]].
+At the moment (2021), it cover system-orirented APIs, files, networking and a few other things.
+
+The design take references from other [[id:a69fbd5e-dd46-4b5f-a9c4-46213051cf14][Capability-based & Object-based System]] such as [[id:d54ddac4-97f4-4c5f-8ef5-87130f05191a][CloudABI]] and [[id:1179e381-8e76-4c3c-9c52-f7d7d436dd2d][Capsicum]] ([[id:6e099831-4be0-4bb6-88ac-2394aa83d11e][Capability in WASI]])

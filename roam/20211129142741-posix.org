@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       9a5a4945-5a23-4fa5-8740-99603d2650b1
+:END:
+#+title: POSIX
+
+Portable Operating System Interface (POSIX) is the standard by IEEE computer security that defines user-level and system-level interfaces for maintaining compatibility between [[id:dd3948f1-ba47-421c-af8c-e5054f1708b0][Operating Systems]].
+
+The core APIs includes Process Creation, Threading, [[id:34c65f98-ed04-4672-8c6f-2bb1af5265b5][C standard Library (libc)]], Lock, Signal handilihng, ...
+
+When a program is written in POSIX standard, they can be easily ported to other POSIX-conformant OSes.
+
+
+The interfaces are implementation-agnostic. Each OS have a different implementation of the interface.
+
+https://en.wikipedia.org/wiki/POSIX

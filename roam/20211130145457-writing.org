@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       2cd57554-89d6-4ebd-8df4-76550e7fe987
+:END:
+#+title: Writing
+
+* Starting with Questions
+Writing should begin with a set of questions

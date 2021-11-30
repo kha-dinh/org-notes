@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ffcb6258-1291-4101-9e2d-7b97a9908967
+:END:
+#+title: Implicit vs. Explicit capabilities
+
+Explicit [[id:a69fbd5e-dd46-4b5f-a9c4-46213051cf14][Capability]] requires each use of the resource to represnet a capability token (or handle). For example,
+#+begin_src C
+PUT(file_capability, "test")
+#+end_src
+On the other hand, Implicit capability is enforced invisibly to the users. For example, in [[id:dd3948f1-ba47-421c-af8c-e5054f1708b0][Operating System]], the kernel store a capability list for each processes, and automatically check for processes' capabilities upon receiving a request. This approach is slower for large capability lists, but is easier to use for the users.

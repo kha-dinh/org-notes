@@ -4,18 +4,20 @@
 #+title: Multi-level Security Models
 
 * Goal
-To prevent unauthorized information disclosure
+Are [[id:acd3fa27-05fc-45df-8bdb-d611663ef452][Security Models]] that prevent unauthorized information disclosure from higher level to lower level subjects.
 
 * Definition
-+ The model is defined in term of objects (=O=) and subjects (=S=)
++ The model is defined in term of [[id:75d75440-02a2-41f3-8095-cc02c46ff69b][Objects]] (=O=) and [[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects]] (=S=)
   - O has a classification
   - S has a clearance
   - The security level is denoted by L(O) and L(S)
+
 ** Basic security theorem
 + A state transition is secure if both initial and final states are secure
 + If all state transition are secure and the initial state is secure, then every subsequence states will be secure
+
 * Bell-LaPadula (BLP) Confidentiality Model
-+ In this model, information only flows up, now down. e.g.,
++ In this model, information only flows up, not down. e.g.,
   - Only read down is allowed: S can read O if L(O) <= L(S)
     + A subject can only read object with the same or lower level
   - Only write up is allowed: S can write O if L(S) <= L(O)

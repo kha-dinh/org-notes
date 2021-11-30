@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0811940a-999e-475c-993b-5800b329426d
+:END:
+#+title: Acquaintance Knowledge
+
+Is a [[id:4c73322d-6dc1-404a-9a6c-d48da700709a][Knowledge]] acquired by the familiarity with a person, thing, place, often obtained through experience.
+Acquaintance knowledge is often associated with objects, as apposed to [[id:b4390d3d-82a0-45b5-ae6a-7cf2dcf7bf8e][Propositional Knowledge]] with facts
+For example,
++ "I know Sam"
++ "I now Russell's Problems of Philosophi"

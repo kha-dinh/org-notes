@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       aa0ea90d-0c06-4056-b943-602b6693105f
+:END:
+#+title: GNU libc (glibc)
+
+GNU libc is a [[id:b09b7884-7ed9-470f-8ee2-6e2122b88bf1][GNU]] implementation of [[id:34c65f98-ed04-4672-8c6f-2bb1af5265b5][C standard Library (libc)]].

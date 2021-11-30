@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       43aa83fc-d57c-418d-9c2f-0e608f126ba8
+:END:
+#+title: Authority
+
+When a [[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects]] have access to an [[id:75d75440-02a2-41f3-8095-cc02c46ff69b][Objects]], it have authority over the object.
+
+For example, when user Alice (subject) is able to read file =password=, Alice have authority to read password.
