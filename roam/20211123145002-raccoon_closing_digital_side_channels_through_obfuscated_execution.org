@@ -76,7 +76,8 @@ I think this is =operation from, to;=
 + In short, this is not an actual store instruction. It prepare the input to be store, by returning the original content when not on the real path, and return the value to be written when on he real path.
 
 * Transactional memory
-+ Transactional memory is use to store the result of a path
+
++ [[id:c7715a4e-3911-4a98-a65b-4b02b6e6cdd6][Transactional Memory]] is use to store the result of a path
  #+begin_src C
 // Writes a value to the transaction buffer.
 tx_write(address, value) {

@@ -5,7 +5,8 @@
 
 
 * Summary
-+ The paper focuses on [[id:abd380a2-12f6-4d85-8c86-c97e0dba2b37][Program Obfuscation]], with the goal to both eliminate [[id:c0c1d7b6-f5e9-4145-a051-87260162e279][Side-channels]] and protect the program itself from IP theft.
++ The paper focuses on [[id:abd380a2-12f6-4d85-8c86-c97e0dba2b37][Program Obfuscation]], with the goal to both eliminate [[id:c0c1d7b6-f5e9-4145-a051-87260162e279][Side-channels]]
+([[id:2f818978-22ff-40c1-ba74-ca5d64bd0ecc][Raccoon]])  and protect the program itself from IP theft.
 + The main idea to use [[id:d634fe6f-1962-4405-9464-89ea5d69a6c6][Intel SGX]]  to create a "black box" for programs, then eliminate the remaining side-channels.
 + [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]] is used to protect memory accesses of SGX. The implementation is data-oblivious (?) and use a register-based stash.
 + It use Scratchpad-based code execution and data access model (?) to remove the memory access pattern
