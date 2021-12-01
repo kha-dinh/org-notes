@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       9e316664-0b43-4661-b84b-7213c7575a53
+:END:
+#+title: Principle of Least Privilege
+
++ The Principle of least privilege requires that every module of a computing environment must be able to access only the resources that is necessary.
++ [[id:a69fbd5e-dd46-4b5f-a9c4-46213051cf14][Capability-based & Object-based System]]

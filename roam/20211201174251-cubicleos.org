@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       38747f13-f37c-4ef6-863b-142abf47ccb4
+:END:
+#+title: CubicleOS
+
+* Overview
++ Title: CubicleOS: A Library OS with Software Componentisation for Practical Isolation
++ The motivation for the paper is the lack of isolation between components inside traditional [[id:fb8c054e-3c54-44d8-b0c3-d046594c2071][Library Operating System (LibOS)]].
++ The paper isolate the system components by isolating different libraries intf

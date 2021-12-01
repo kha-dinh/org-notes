@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       01c8e513-2443-469d-9964-497489337f87
+:END:
+#+title: Library Isolation

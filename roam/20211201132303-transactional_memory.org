@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       c7715a4e-3911-4a98-a65b-4b02b6e6cdd6
+:END:
+#+title: Transactional Memory
+
+Transactional memory enforce a sequence of load and store instruction execute in an atomic way. It is a high level abstraction that allows synchronization between concurrent reads and writes of shared data.

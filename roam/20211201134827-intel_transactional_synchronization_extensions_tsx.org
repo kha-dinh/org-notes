@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       a5270bcd-870a-470d-ac5e-6bd9a81dac92
+:END:
+#+title: Intel Transactional Synchronization Extensions (TSX)
+
+Is an [[id:f2c408d5-b806-42ce-b980-bcecfffb2018][Instruction Set Architecture (ISA)]]  extension for X86 that support [[id:c7715a4e-3911-4a98-a65b-4b02b6e6cdd6][Transactional Memory]].
+Two interfaces are added:
+Hardware Lock Elision (HLE) a
+Restricted Transactional Memory (RTM)

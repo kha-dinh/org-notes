@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       2522318b-6774-4587-ae19-9c485209e0e0
+:END:
+#+title: TaoStore
+
+TaoStore use a [[id:7bd760ed-9b60-455f-a872-373ebbcbd7de][Trusted Proxy]] to handle the client queries to achieve [[id:72e716fa-f062-4e60-899e-72be8cc5b9ea][Parallelism in ORAM]].
+The trusted proxy performs the actual queries to the ORAM Tree in [[id:d19a3f5a-db18-4be1-822d-5fab4307177c][Path ORAM]]
+Trusted proxy run a secure scheduler to ensure that multiple path read do not leaks informaiton.
