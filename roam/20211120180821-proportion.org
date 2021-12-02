@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       f7356b93-974f-4467-8215-5d801bab9ccc
+:END:
+#+title: Proportion
+#+filetags: :drawing:
+
+* What
+Proportion is like a guideline for an ideal body.
+
+Blinding following proportions make the figure lack character.

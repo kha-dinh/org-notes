@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       32eac839-2c7f-475f-a16a-38a806cbf595
+:END:
+#+title: Mass
+#+filetags: :drawing:
+
+* What are mass
+#+begin_quote
+Masses of about the same size or proportion are conceived not as masses, but as one mass; those of different proportions, in respect to their movement, are conceived as wedging into each other, or as morticed or interlocking.
+#+end_quote

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       77df8a47-8aa2-4569-b8dd-9557caa6b44b
+:END:
+#+title: Wedging
+
+* What
+"Wedging" is a term invented by [[id:1cd0f5ec-89cb-4d20-bc5f-e93b909fc530][George Bridgman]] to describe how the structures of the body (muscles, bones, or [[id:32eac839-2c7f-475f-a16a-38a806cbf595][Mass]]) integrates with each other.

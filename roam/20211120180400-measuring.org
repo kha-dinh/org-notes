@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       21e4b446-5862-4f1c-8a60-a6b9ae1caf65
+:END:
+#+title: Measuring
+
+* Steps of measuring human figure
+Measure first with your eyes, by comparing between the [[id:32eac839-2c7f-475f-a16a-38a806cbf595][Masses]]
+
+Then measure mechanically (using tools such as pencil)
