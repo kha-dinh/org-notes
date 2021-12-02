@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       82bbea5b-416e-44ac-9a56-30ea469167dc
+:END:
+#+title: Pseudorandom Generator

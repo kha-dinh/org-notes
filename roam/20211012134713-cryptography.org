@@ -3,25 +3,26 @@
 :END:
 #+title: Cryptography
 
-* Kerckhoffs' Principle
-+ *Kerckhoffs' principle*: in any cryptography algorithm, only the key need to be kept secret. The crypto algorithm is not secret.
-  + Secret algorithms is insecure.
+* What
++ Is an study of techniques for secure communication in the presence of adversarial.
+* Common Attributes
++ [[id:ebcd33bd-c294-4311-bd9b-2188517e4c99][Perfect Secrecy]]
++ [[id:9cf3b1b8-064a-4046-bddd-b10de9836f46][Forward Secrecy]]
++ [[id:287314c1-b0c8-43d3-9561-a4fd6d3c5eb9][Confusion]]
++ [[id:69b16508-e733-4b64-af93-73ee853119d7][Diffusion]]
++ [[id:933428f0-5476-444a-993b-fa86cc7240f0][Kerckhoffs' Principle]]
 
-* Perfect Secrecy
-+ Perfect Secrecy (Shannon 1949): given a ciphertext c, an attacker cannot determine the message that was the plaintext. That is,
-  $PR[E(k,m_{0}) = c] = PR[E(k,m_{1}) = c]$
-+ To achieve perfect secrecy, the key length need to be greateer of equal than the message length (e.g., One Time Pad).
-+ In practice, this is hard to achieve, so most encryption schemes only limit the computational power of the adversary
-** Non-perfect secrecy
-+ Non-perfect secrecy: Given two ciphertext $c_{1} = k xor m_{1}$ and $c_{2} = k xor m_{2}$
-  Attacker can compute  $c_{1} xor c_{2} = m_{1} xor m_{2}$. Therefore, if $m_{1}$ is leak, $m_{2}$ is also leaked.
-
-
-
-* Confusion vs. diffusion
-+ *Confusion* obscure the relationship between plaintext and ciphertext (e.g., OTP)
-+ *Diffusion* spread plaintext statistic through the ciphertext. For example, if we arrange the plaintext into a matrix and scramble the row and columns, we get a new ciphertext. The key for this kind of encryption is the matrix permutation.
-
+* Functions of cryptography
++ [[id:9a164582-4780-428c-bf28-ede09520c5fd][Confidentiality]]
++ [[id:663f9e6c-6b5e-4d84-a52f-a321fb05f192][Authentication]]
++ [[id:41e7968f-4eae-4af9-ad37-8468798f12b2][Integrity]]
++ [[id:58056520-3e0e-4b6a-9894-7c89f26a511e][Non-repudiation]]
++ [[id:9b491d6b-d6ed-4f6f-ab86-dc2f49fcb3f2][Key Exchange]]
 
 * [[id:1db3d4da-1f08-4863-a8d0-2fd7cd5b962e][Attack Models of Cryptography]]
-* [[id:a5b0504e-6bd1-41ff-aaec-dce6e7464b7a][Symmetric Key Encryption]]
+
+* Modern Cryptography
++ Modern cryptography consist of:
+  + [[id:a5b0504e-6bd1-41ff-aaec-dce6e7464b7a][Symmetric Key Encryption]]
+  + [[id:d7efc6e7-9ca3-451b-84d1-f2a44185bc2a][Public-key Encryption]]
+  + [[id:99f06969-54f7-4cdd-a12b-24209e61b5d6][Cryptographic Hash Functions]]

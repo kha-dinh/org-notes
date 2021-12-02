@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       9a164582-4780-428c-bf28-ede09520c5fd
+:END:
+#+title: Confidentiality
+
+* What
++ Confidentiality is a property that guarantee the secret is not leeked, or *unauthorized disclousure of information* is prevented.

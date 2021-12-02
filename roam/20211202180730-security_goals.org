@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       4cecc2b4-b242-4bd5-8397-a1d74efa30da
+:END:
+#+title: Security Goals
+* Sample Security Goals
++ [[id:9a164582-4780-428c-bf28-ede09520c5fd][Confidentiality]]: Private information is accessible only to authorized parties
++ [[id:41e7968f-4eae-4af9-ad37-8468798f12b2][Integrity]]
+** Availability
+** Other
+**** Authorization
+Computing resource only accessible to authorized entities
+**** Authentication
+Assurance that a principal, data is genuine
+**** Accountability
+Identify principals responsible for past actions
+
+* To achieve security goals
+** Prevention
+To prevent attacks from happenings
+Cryptography is used
+** Detection
+Detect violation of security policies
+** Deference (detection + penalty)
+To defer attacks
+** Recovery
+Stop attack, access and repair

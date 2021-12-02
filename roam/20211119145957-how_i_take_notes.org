@@ -2,3 +2,16 @@
 :ID:       3134c7ec-1d76-4c33-81e1-c898573c1a7c
 :END:
 #+title: How I take notes
+
+* How
++ Create a new note for each Keyword that I deem think is important .
+* Notes
++ Notes serve many pupurses.
+  + Link between concepts
+  + Label
+  + Paper note
+  + Atomic information
+
+* Concept Atomicity
++ Allows concept to be easily linked
++ Easy reference

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       9b491d6b-d6ed-4f6f-ab86-dc2f49fcb3f2
+:END:
+#+title: Key Exchange
+
+* What
+Is a function of [[id:01f66afd-111b-432f-99c0-51f593d36e5b][Cryptography]] that allows a sender and a receiver to share the key through an adversarial medium.

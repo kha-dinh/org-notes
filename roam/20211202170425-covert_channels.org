@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       1cba345b-74d1-44a8-9976-5c19f04312f5
+:END:
+#+title: Covert Channels
+* What
++ Covert channels are channels that allows illegitimate [[id:ee919ae3-2bde-4ef5-ad92-9eaebf98a2e0][Information Flow]] in a [[id:acd3fa27-05fc-45df-8bdb-d611663ef452][Security Models]].
++ The information is usually hidden in shared resources.
++ Exists when there are share resources, and
+  + Sender can control some properties of resource ()
+  + Receiver can observe the property
+  + Communication can be synchronized

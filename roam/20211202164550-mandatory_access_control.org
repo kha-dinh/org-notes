@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       7256e571-0502-46f2-bf48-460705d82338
+:END:
+#+title: Mandatory Access Control (MAC)
+
+* What
++ In Mandatory [[id:28da2f4e-4c40-4436-9a4d-e9b499f6ba01][Access Control]], permissions / [[id:21019586-ca97-4a8d-bcd8-788f565fc5eb][Security Policy]] are not defined by the users, but by a centralized administrator.
++ It is contrast to [[id:b5f8439c-4d3e-4826-8647-8cb41cafe86a][Discretionary Access Control (DAC)]]
++ [[id:9c636f9b-e2da-4e87-b515-5ed38dcbc68d][SELinux]] uses [[id:8bf2013b-2c1c-4124-bf68-eb712506e6e8][Linux Security Modules]] to implement MAC in

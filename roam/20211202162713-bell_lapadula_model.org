@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       d8dd35bc-9276-4a3c-8492-7522a7d5c836
+:END:
+#+title: Bell-LaPadula Model
+
+* What
++ In this [[id:b0bda531-8fd4-4138-86aa-e297fb628855][Multi-level Security Models]], information only flows up, not down. e.g.,
+  - Only read down is allowed: [[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects]] S can read [[id:75d75440-02a2-41f3-8095-cc02c46ff69b][Objects]] O if L(O) <= L(S)
+    + A subject can only read object with the same or lower level
+  - Only write up is allowed: S can write O if L(S) <= L(O)
+    + No write down: an subject cannot leak information
++ Focus con [[id:9a164582-4780-428c-bf28-ede09520c5fd][Confidentiality]]
++ Using this model, a system that start in a secure state will end in a secure state
+
+* Limitation:
+** Cascade problem
++ The same label might means different things for different systems.
+** Composability
++ When an output is used as the Input?
+** Covert Channels
++ Communications channels unseen when enforcing the model is allowed
+** High cannot write to low
++ Which is common in real systems (for example error messages)
++ Can be solved by introducing [[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects]] inside [[id:80c80cc4-9279-4464-8c5b-0a366e7f225c][Trusted Computing Base (TCB)]] can be that is allowed to "write down"
+
+
+* TODO Introducing Tranquility Property
+ - Strong Tranquility: Security labels never change
+ - Weak tranquility: Security label can change if it does not violate "established security policy"
+ - To implement, we use "high watermark principle",  ich update the security label of a subject to the highest label of resource that it

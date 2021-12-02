@@ -4,9 +4,11 @@
 #+title: Capability List (c-list)
 
 * Overview
-Capability List is one method to implement [[id:a69fbd5e-dd46-4b5f-a9c4-46213051cf14][Capability-based & Object-based System]] in operating systems.
-It store the list that contains id, access right inside a protected memory (usually the kernel memory). Any use of the capability must be done implicitly ([[id:ffcb6258-1291-4101-9e2d-7b97a9908967][Implicit vs. Explicit capabilities]]) through the kernel.
-
-The use of c-list requires protected memory that cannot be tampered by the user.
-
-A user can have several capability lists in [[id:b0bda531-8fd4-4138-86aa-e297fb628855][Multi-level Security Models]]
++ Capability List is one method to implement [[id:28da2f4e-4c40-4436-9a4d-e9b499f6ba01][Access Control]] in [[id:a69fbd5e-dd46-4b5f-a9c4-46213051cf14][Capability-based & Object-based System]] in operating systems.
++ It store the list that contains id, access right inside a protected memory (usually the kernel memory). Any use of the capability must be done implicitly ([[id:ffcb6258-1291-4101-9e2d-7b97a9908967][Implicit vs. Explicit capabilities]]) through the kernel.
++ Commonly compared with [[id:f122c1b7-539c-4bf9-9c12-52e58756cc5a][Access Control List (ACL)]]
++ The use of c-list requires protected memory that cannot be tampered by the user ([[id:5f0bd81f-222c-4023-8c28-10640e32d570][Reference Monitor]]).
++ A user can have several capability lists in [[id:b0bda531-8fd4-4138-86aa-e297fb628855][Multi-level Security Models]]
+* Implementation
++ in [[id:e1b42a31-8496-4a17-85c5-f33b318a826c][UNIX]], each [[id:0cfddc8b-11e2-414d-92f7-9b0c2feb2d81][File Descriptor]] is an index to the c-list inside kernel
++ The c-list have permissions of the file descriptor to the inode.

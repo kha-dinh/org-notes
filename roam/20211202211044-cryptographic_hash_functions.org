@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       99f06969-54f7-4cdd-a12b-24209e61b5d6
+:END:
+#+title: Cryptographic Hash Functions
+
+* What
++ are one-way functions that irreversibly transform a Plaintext into a hash digest.
++ Is useful in creating a digital footprint of the message.
+  + Used in [[id:0e32165d-1210-46e5-be42-e6ff97b2f1a6][Hash-based Message Authentication Code (HMAC)]]: In stead of authenticating the entire message, only the hash of the message is verified.
+
+* Propertites
++ Pare-image resistance: given a hash, it is hard to find the original message
++ Weak collision resistance: Given a hash, it hard to find another message that produce the same hash
++ Strong collision resistance: It is hard to find any pair x and y such that H(x) = H(y)

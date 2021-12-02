@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       b3156a62-27b3-40db-ae1e-237467442312
+:END:
+#+title: Role-based Access Control (RBAC)
+* What
+  + Roles is attached to each [[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects]]
+  + Each role has permissions to access to [[id:75d75440-02a2-41f3-8095-cc02c46ff69b][Objects]]
+  + Hierarchical RBAC allows roles to inherit form higher roles, which - This reduce the to total number of role definitions

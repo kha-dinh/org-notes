@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       b5f8439c-4d3e-4826-8647-8cb41cafe86a
+:END:
+#+title: Discretionary Access Control (DAC)
+
+* What
++ Discretionary [[id:28da2f4e-4c40-4436-9a4d-e9b499f6ba01][Access Control]] allows the users to determine the permissions ([[id:21019586-ca97-4a8d-bcd8-788f565fc5eb][Security Policy]]) of their own files
++ Opposite to [[id:7256e571-0502-46f2-bf48-460705d82338][Mandatory Access Control (MAC)]]
++ Is used in [[id:e1b42a31-8496-4a17-85c5-f33b318a826c][UNIX]] systems

@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       69b16508-e733-4b64-af93-73ee853119d7
+:END:
+#+title: Diffusion
+
+* What
++ In [[id:01f66afd-111b-432f-99c0-51f593d36e5b][Cryptography]], diffusion spread plaintext statistic through the ciphertext.
++ For example, if we arrange the plaintext into a matrix and scramble the row and columns, we get a new ciphertext.
++ The key for this kind of encryption is the matrix permutation.

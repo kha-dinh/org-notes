@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       15af3c50-f1a0-496a-a88d-42ef6532b129
 :END:
-#+title: Threats and Security Goals
+#+title: Security Threats
 
 * Threats
 ** Common threats
@@ -10,33 +10,6 @@
 + Deception: Acceptance of false data
 + Disruption: Prevention of correct operation
 + Usurpation: Unauthorized control of some part of the system
-
-
-** Security Goals
-*** Confidentiality
-Private information is accessible only OT authorized parties
-**** Confidentiality vs. Privacy
-Privacy only involves personally sensitive information
-*** Integrity
-*** Availability
-*** Other
-**** Authorization
-Computing resource only accessible to authorized entities
-**** Authentication
-Assurance that a principal, data is genuine
-**** Accountability
-Identify principals responsible for past actions
-
-*** To achieve security goals
-**** Prevention
-To prevent attacks from happenings
-Cryptography is used
-**** Detection
-Detect violation of security policies
-**** Deference (detection + penalty)
-To defer attacks
-**** Recovery
-Stop attack, access and repair
 
 * Adversary Models
 We need an adversary model to build a basis for attacks and countermeasures.

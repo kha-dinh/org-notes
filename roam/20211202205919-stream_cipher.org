@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       392a5bd0-c277-4dfc-b47f-959f0e8eb9a5
+:END:
+#+title: Stream Cipher
+* What
++ Is a [[id:a5b0504e-6bd1-41ff-aaec-dce6e7464b7a][Symmetric Key Encryption]] algorithm
++ In stream cipher, a short key is stretched into a long *keystream* using  [[id:82bbea5b-416e-44ac-9a56-30ea469167dc][Pseudorandom Generator]] (PRG).
++ Don't have [[id:ebcd33bd-c294-4311-bd9b-2188517e4c99][Perfect Secrecy]]
++ Popular in the past, but not now
+  + Because efficient in hardware
++ /"The death of stream ciphers"/ - Shamir
+** RC4
++ Representative of stream cipher
++ Systematically swap and produce output bytes

@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       0d94c237-240e-4088-9963-80500458b5a6
+:END:
+#+title: Alternative to Multi-level Security Models
+
+* Models
++ [[id:2a9d8e39-d115-475d-b4fd-89326b818adb][Multilateral Security Model]]
++ [[id:5306d336-94cb-4b87-b04f-6de03d02e533][Lattice Security Model]]
++ [[id:6e2732c6-d6ed-43a8-8d37-110f264eb0a5][Chinese Wall Security Model]]
++ [[id:b3156a62-27b3-40db-ae1e-237467442312][Role-based Access Control]]
++ [[id:a69fbd5e-dd46-4b5f-a9c4-46213051cf14][Capability-based & Object-based System]]

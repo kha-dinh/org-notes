@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       9c636f9b-e2da-4e87-b515-5ed38dcbc68d
+:END:
+#+title: SELinux
+
+* What
++ Is a [[id:e5af5024-4c70-41cc-84aa-f55afbefb15f][Linux]] kernel that enforce [[id:7256e571-0502-46f2-bf48-460705d82338][Mandatory Access Control (MAC)]].

@@ -8,17 +8,21 @@
 + The attacker only have access to the ciphertexts and want to infer the underlying plaintext.
 + The attack is =passive= in nature
 + Usually based of frequency analysis
+
 * Known plaintext attack
 + Attacker have some ciphertext and plaintext pair
+
 * Chosen plaintext attack (CPA)
 + The attacker can get the ciphertext of any plaintexts of its choice by the use of an /Encryption Oracle./
 + It use a list of plaintext and ciphertext to infer the encryption algorithm
 + Trivia: CPA is used to break German ciphertext in WW2 by Alan Turing.
+
+
 ** Semantic Security
 + Given ciphertext generated from different message, an adversary cannot "/efficiently/" distinguish between two different message, or learn about any information from a ciphertext.
   + e.g., deducing the LSB of plaintext from a ciphertext
 + Advantage: $Adv_{ss}[A,Cipher] = |Pr[m = 0] - Pr[m = 1]|$
-+ Stream cipher are secmatically insecure under CPA ([[id:1db3d4da-1f08-4863-a8d0-2fd7cd5b962e][Attack Models of Cryptography]])
++ [[id:392a5bd0-c277-4dfc-b47f-959f0e8eb9a5][Stream Cipher]] is are secmatically insecure under CPA
 + If E(k,m) always produces the same ciphertext, then cipher is insecure under CPA
 + Common rule for CPA security
   + Do not use EBC
@@ -31,9 +35,11 @@
   + CTR is the best and most modern encryption (for privacy only)
     + Only insecure if non is reused
     + But not against CCP
+
 * Chosen ciphertext attack (CCA)
 + Use a ciphertext chosen by attacker to get the decrypted plaintext (by an /decryption oracle/)
 + In real world, obtaining the decryption oracle is easier in real life.
+
 + Lunchtime attack (CCA1)
   - Attacker can only queries until a certain point
   - And cannot adapt their queries

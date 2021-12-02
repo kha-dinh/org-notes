@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       3d7c548a-80db-42b7-adad-aece544fda3c
+:END:
+#+title: Inference Attacks
+
+* What
++ In inference attacks, the unauthorized users get sensitive information by analyzing the available information / data.
++ There are two types of inference attacks, by using logic and using statistics.
+
+* Logic inference
++ By combining available informations, attackers can infer knowledge
+* Statisticcal Inference
++ Statistical inference only use statistic
++ e.g., how many woman lecturer (1), what is the highest woman salary (100).
+* Anti inference
++ Polyinstantiation: One record can have multiple instances containing dummy rcords
++ Limit Query Responses:
+  + Pertubation
+  + Trimming
+  + Random sampling
++ Monitoring activities
++ Limit user's capability

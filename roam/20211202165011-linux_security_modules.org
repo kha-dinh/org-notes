@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       8bf2013b-2c1c-4124-bf68-eb712506e6e8
+:END:
+#+title: Linux Security Modules (LSM)

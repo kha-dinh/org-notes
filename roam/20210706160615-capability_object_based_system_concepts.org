@@ -7,7 +7,6 @@
 * Summary
 
 + A capability is a =token= that give the user permission to access resources in a computer system
-
 + Provides single mechanism to address any resources, through the capability tokens.
 
 ** Capability tokens

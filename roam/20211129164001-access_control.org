@@ -2,3 +2,13 @@
 :ID:       28da2f4e-4c40-4436-9a4d-e9b499f6ba01
 :END:
 #+title: Access Control
+* What
++ The act of controlling the user([[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects)]] access to system resources ([[id:75d75440-02a2-41f3-8095-cc02c46ff69b][Objects]])
++ Requires [[id:663f9e6c-6b5e-4d84-a52f-a321fb05f192][Authentication]] and [[id:4ed4341c-d97b-4f02-9e49-d4032276adc5][Authorization]]
+
+* Implementation
++ In software systmems, access control is be implemented using a [[id:5f0bd81f-222c-4023-8c28-10640e32d570][Reference Monitor]]: Any access to the restricted resources must be done through the reference monitor.
+** Data Structures
++ [[id:8d612977-e6b3-4f52-bd62-9281b3b2c8bd][Access Matrix]]
++ [[id:f122c1b7-539c-4bf9-9c12-52e58756cc5a][Access Control List (ACL)]]
++ [[id:950bb7da-de38-4cb6-bcd2-c30380892dd9][Capability List (c-list)]]

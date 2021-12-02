@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2cbbbeb9-0f69-4e10-a4b0-655728f10c2f
+:END:
+#+title: Biba Model
+
+* What
++ Focus on [[id:41e7968f-4eae-4af9-ad37-8468798f12b2][Integrity]] of the system using [[id:b0bda531-8fd4-4138-86aa-e297fb628855][Multi-level Security Models]]
++ Similar to [[id:d8dd35bc-9276-4a3c-8492-7522a7d5c836][Bell-LaPadula Model]], but prevent read down & write up
+  - Prevent malware from corrupting high level
+  - High level preserve integrity by not reading low

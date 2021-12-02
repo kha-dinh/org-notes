@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       ce9bd7a5-909c-4469-95c8-26bc1658741f
+:END:
+#+title: Security Protocols
+
+
+* What
++ Security protocol are distributed procedures between two or more parties to achieve [[id:4cecc2b4-b242-4bd5-8397-a1d74efa30da][Security Goals]]
++ are where [[id:01f66afd-111b-432f-99c0-51f593d36e5b][Cryptography]] and system mechanisms intersect.

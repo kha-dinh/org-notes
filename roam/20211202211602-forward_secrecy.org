@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       9cf3b1b8-064a-4046-bddd-b10de9836f46
+:END:
+#+title: Forward Secrecy
+
+* What
++ [[id:01f66afd-111b-432f-99c0-51f593d36e5b][Cryptography]] algorithm that has this can protect past messages even when the server is compromised.
++ This is achieved by using a different key for every session.

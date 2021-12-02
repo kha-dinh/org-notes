@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       58056520-3e0e-4b6a-9894-7c89f26a511e
+:END:
+#+title: Non-repudiation
+
+* What
++ Is a mechanism in  [[id:01f66afd-111b-432f-99c0-51f593d36e5b][Cryptography]] to prove that the sender really sent the message

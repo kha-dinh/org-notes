@@ -2,3 +2,16 @@
 :ID:       acd3fa27-05fc-45df-8bdb-d611663ef452
 :END:
 #+title: Security Models
+
+* What
++ Security Models specify high-level [[id:21019586-ca97-4a8d-bcd8-788f565fc5eb][Security Policy]].
++ Usually, it contains:
+  + What should be done in the policy
+  + Not how to implement the policy
++ Commonly, a security model the [[id:28da2f4e-4c40-4436-9a4d-e9b499f6ba01][Access Control]] of the [[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects (users, components)]] to the [[id:75d75440-02a2-41f3-8095-cc02c46ff69b][Objects]] (system resources)
++ Security model enforce [[id:9a164582-4780-428c-bf28-ede09520c5fd][Confidentiality]] or [[id:41e7968f-4eae-4af9-ad37-8468798f12b2][Integrity]] of the system by restricting the [[id:ee919ae3-2bde-4ef5-ad92-9eaebf98a2e0][Information Flow]] .
++ [[id:1cba345b-74d1-44a8-9976-5c19f04312f5][Covert Channels]] are an issue with formal [[id:acd3fa27-05fc-45df-8bdb-d611663ef452][Security Models]]
+
+* Example security models
++ [[id:b0bda531-8fd4-4138-86aa-e297fb628855][Multi-level Security Models]]
++ [[id:0d94c237-240e-4088-9963-80500458b5a6][Alternative to Multi-level Security Models]]

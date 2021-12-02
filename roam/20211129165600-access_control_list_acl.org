@@ -2,3 +2,17 @@
 :ID:       f122c1b7-539c-4bf9-9c12-52e58756cc5a
 :END:
 #+title: Access Control List (ACL)
+
+* What
++ Data structure to implement [[id:b3156a62-27b3-40db-ae1e-237467442312][Role-based Access Control (RBAC)]].
++ Is a matrix where each column have the access right for each user
++ Commonly compared with [[id:950bb7da-de38-4cb6-bcd2-c30380892dd9][Capability List (c-list)]]
+* Implementations
+ + In [[id:e1b42a31-8496-4a17-85c5-f33b318a826c][UNIX]], users have three classes:
+   1. Onwer of the file,
+   2. Group owner of the file
+   3. and other users.
+ + The ACL store permissions for each user on each files, e.g.
+   + onwer: rwx
+   + group: r-x
+   + all: r--

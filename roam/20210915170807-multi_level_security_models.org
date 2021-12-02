@@ -2,9 +2,12 @@
 :ID:       b0bda531-8fd4-4138-86aa-e297fb628855
 :END:
 #+title: Multi-level Security Models
-
-* Goal
-Are [[id:acd3fa27-05fc-45df-8bdb-d611663ef452][Security Models]] that prevent unauthorized information disclosure from higher level to lower level subjects.
+* What
++ Multi-level Security is a [[id:acd3fa27-05fc-45df-8bdb-d611663ef452][Security Models]] assign different level for each [[id:75d75440-02a2-41f3-8095-cc02c46ff69b][Objects]] and [[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects]]
++ Each Object and Subjects has [[id:b6373223-4222-45bc-bb2a-0954c4964308][Security Labels]] that indicate the security level (e.g., TOP SECRET, SECRET, CONFIDENTIAL, UNCLASSIFIED)
++ For objects, there are levels of classification
++ For subjects, there are levels of clearances
++ Is a [[id:7256e571-0502-46f2-bf48-460705d82338][Mandatory Access Control (MAC)]] policy
 
 * Definition
 + The model is defined in term of [[id:75d75440-02a2-41f3-8095-cc02c46ff69b][Objects]] (=O=) and [[id:bdc7d211-d5cb-4f72-920d-9ddf1f8042ae][Subjects]] (=S=)
@@ -12,33 +15,10 @@ Are [[id:acd3fa27-05fc-45df-8bdb-d611663ef452][Security Models]] that prevent un
   - S has a clearance
   - The security level is denoted by L(O) and L(S)
 
-** Basic security theorem
+* Basic security theorem
 + A state transition is secure if both initial and final states are secure
 + If all state transition are secure and the initial state is secure, then every subsequence states will be secure
 
-* Bell-LaPadula (BLP) Confidentiality Model
-+ In this model, information only flows up, not down. e.g.,
-  - Only read down is allowed: S can read O if L(O) <= L(S)
-    + A subject can only read object with the same or lower level
-  - Only write up is allowed: S can write O if L(S) <= L(O)
-    + No write down: an subject cannot leak information
-+ Using this model, a system that start in a secure state will end in a secure state
-** Limitation:
-*** Cascade problem
-Systems cannot merge security labels
-*** Composability
-*** Covert Channels
-*** High cannot write to low
-Which is common in real systems
-** Modifications
-+ Tranquility are weaken:
-  - Strong Tranquility: Security labels never change
-  - Weak tranquility: Security label can change if it does not violate "established security policy"
-  - - To implement, we use "high watermark principle", which update the security label of a subject to the highest label of resource that it touch.
-+ Trusted subject can be allowed to "write down"
-  - This leads to the introduction of [[id:80c80cc4-9279-4464-8c5b-0a366e7f225c][Trusted Computing Base (TCB)]], that trusted subject use.
-* Biba Integrity Model
-+ Focus on integrity instead of confidentiality
-+ No read down & no write up
-  - Prevent malware from corrupting high level
-  - High level preserve integrity by not reading low
+* Models
++ [[id:d8dd35bc-9276-4a3c-8492-7522a7d5c836][Bell-LaPadula Model]]
++ [[id:2cbbbeb9-0f69-4e10-a4b0-655728f10c2f][Biba Model]]

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       287314c1-b0c8-43d3-9561-a4fd6d3c5eb9
+:END:
+#+title: Confusion
+
+* What
++ In [[id:01f66afd-111b-432f-99c0-51f593d36e5b][Cryptography]], confusion obscure the relationship between [[id:acbd9ea8-627e-4746-8e15-63972c06420c][Plaintext]] and [[id:a51a23b1-2e03-47d2-9fd9-16bf49be158f][Ciphertext]].
++ For example, [[id:77f74f25-5358-4002-a61a-dda0152ae553][Encryption]] techniques such as [[id:57ce06c7-da34-4933-b408-402da3b0580e][One-time Pad (OTP)]] use a random key vector to obscure the plaintext.

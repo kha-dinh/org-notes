@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       933428f0-5476-444a-993b-fa86cc7240f0
+:END:
+#+title: Kerckhoffs' Principle
+
+* What
++ In any [[id:01f66afd-111b-432f-99c0-51f593d36e5b][Cryptography]] algorithm, only the key need to be kept secret. The crypto algorithm is not secret.
++ Secret algorithms is insecure. Any secret algorithm is bound to be leaked.

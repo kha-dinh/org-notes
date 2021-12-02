@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       2a9d8e39-d115-475d-b4fd-89326b818adb
+:END:
+#+title: Multilateral Security Model
+* What
++ Are [[id:acd3fa27-05fc-45df-8bdb-d611663ef452][Security Models]] that consider information flow between multiple organizations by defining data that cannot be shared.

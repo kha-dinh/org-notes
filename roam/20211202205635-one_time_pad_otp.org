@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       c4811904-7fa4-44bd-9c3d-7d88a0cb3f93
+:END:
+#+title: One-time Pad (OTP)

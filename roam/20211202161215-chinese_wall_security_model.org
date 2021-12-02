@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       6e2732c6-d6ed-43a8-8d37-110f264eb0a5
+:END:
+#+title: Chinese Wall Security Model
+* What
+  + Information leak using a third party must also be stopped.
+  + This requires building a wall that isolate information within an organization

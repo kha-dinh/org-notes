@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       5f0bd81f-222c-4023-8c28-10640e32d570
+:END:
+#+title: Reference Monitor
+
+* What
++ Is a system process or a module that control access to system resources.
+* Required Characteristics
++ Complete mediation: Must be always invoked
++ Isolation: Must be tamper-proof
++ Verifiability: Must be correctly implemented

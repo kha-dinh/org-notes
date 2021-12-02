@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       ebcd33bd-c294-4311-bd9b-2188517e4c99
+:END:
+#+title: Perfect Secrecy
+
+* What
++ Is an attribute of [[id:01f66afd-111b-432f-99c0-51f593d36e5b][Cryptography]] algorithms
++ Perfect Secrecy (Shannon 1949): given a ciphertext c, an attacker cannot determine the message that was the plaintext. That is,
+  $PR[E(k,m_{0}) = c] = PR[E(k,m_{1}) = c]$
++ To achieve perfect secrecy, the key length need to be greater of equal than the message length (e.g., One Time Pad).
++ In practice, this is hard to achieve, so most encryption schemes only limit the computational power of the adversary
+** Non-perfect secrecy
++ Non-perfect secrecy: Given two ciphertext $c_{1} = k xor m_{1}$ and $c_{2} = k xor m_{2}$
+  Attacker can compute  $c_{1} xor c_{2} = m_{1} xor m_{2}$. Therefore, if $m_{1}$ is leak, $m_{2}$ is also leaked.

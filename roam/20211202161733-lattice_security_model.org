@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       5306d336-94cb-4b87-b04f-6de03d02e533
+:END:
+#+title: Lattice Security Model
+* What
++ The lattice [[id:acd3fa27-05fc-45df-8bdb-d611663ef452][Security Models]] add multiple labels to data
+  - e.g., (TOP_SECRET, {CRYPTO, FOREIGN}) can read (SECRET,{CRYPTO, FOREIGN}) and (TOP_SECRET,{CRYPTO})
