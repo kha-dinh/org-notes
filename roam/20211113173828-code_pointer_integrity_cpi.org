@@ -4,9 +4,7 @@
 #+title: Code-pointer Integrity (CPI)
 
 * Code-pointer Integrity
-Code-pointer integrity guarantees the integrity of all code pointer of a program
-(e.g., function pointers, saved return address on the stack). With CPI, all
-[[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]] attacks can be prevented.
+Code-pointer integrity guarantees the integrity of all code pointer of a program (e.g., function pointers, saved return address on the stack). With CPI, all [[id:c65b9685-bf84-482c-9094-415f4103a035][Control-flow Hijacking]] attacks can be prevented.
 
 The motivation for CPI is based on the assumption that [[id:e4f7a2a5-41dc-43cb-ba44-840341771650][Control-flow Integrity
 (CFI)]] is insufficient to prevent some attacks, while [[id:fdbace7f-32d7-4501-bd97-56ebbad2c365][Memory Safety]] have
@@ -48,12 +46,7 @@ used to protect the safe region, as used in [[id:192dfbc3-f4f0-431f-bd17-379c236
 Property for Thawrting Critical memory Corruption Attacks]])
 *** Instrumentation
 The program is instrumented to:
-1. Place the sensitive pointers inside the safe region. Two copy is created, one
-   original pointer and one stored in the safe region. This is to preserve
-   compatibility, and also handle universal pointers (could be either sensitive
-   or non-sensitive).
-   1. The address of the sensitive pointer (not the pointer itself), is mapped
-      to the medata.
+1. Place the sensitive pointers inside the safe region. Two copy is created, one original pointer and one stored in the safe region. This is to preserve compatibility, and also handle universal pointers (could be either sensitive or non-sensitive). 1. The address of the sensitive pointer (not the pointer itself), is mapped to the medata.
 2. Create and propagate (through [[id:476f2524-befd-4478-b994-429ee02d736b][Pointer Arithmetic]] ) the metadata for the
    pointers at runtime (consists of the actual value, the bounds information and
    the temporal ID (maybe for temporal safety?)). The metdata is similar to

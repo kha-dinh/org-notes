@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       fdbc9281-366c-42dc-9408-2f56d33c4268
+:END:
+#+title: Virtual Machine
+* What
++ A virtual machine is a [[id:a356bc1d-e5f6-4b8c-b0f6-a8eeda628eb4][Virtualization]] of a computer system.
++ There are two categories of Virtual Machine:
+  + System virtual machine is a subtitues for real machine ([[id:e6ab8781-9940-4398-aa7f-abfe9126443a][Full Virtualization]])
+  + Process virtual machine allows the execution proggrams independent of platform ([[id:9eddca64-4ec3-44d1-935b-866cbb7d3d28][JVM]], [[id:6920feda-33bb-49ad-b785-196865c850c7][WebAssembly]],[[id:93374a70-2b55-485f-9cc5-7f3d2962bb8f][Containers]])

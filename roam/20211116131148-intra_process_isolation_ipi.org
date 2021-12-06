@@ -2,3 +2,9 @@
 :ID:       8b7d6034-5fed-408f-9430-182073debece
 :END:
 #+title: Intra-process Isolation (IPI)
+
+* Techniques
++ [[id:245b4493-5359-437d-88bd-f0dc7288b7bc][Software Fault Isolation (SFI)]]
++ [[id:fb8c054e-3c54-44d8-b0c3-d046594c2071][Library Operating System (LibOS)]]
+* Why is it useful
++ [[id:34c5818c-c7b3-4a56-90a6-d2fb6c32814d][Intra-process Isolation Motivations]]

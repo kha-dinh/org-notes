@@ -2,3 +2,6 @@
 :ID:       6920feda-33bb-49ad-b785-196865c850c7
 :END:
 #+title: WebAssembly
+
+* What
++ A [[id:245b4493-5359-437d-88bd-f0dc7288b7bc][Software Fault Isolation (SFI)]] framework

@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       c6f33eb9-7c15-48f0-8be6-fbf6898c3a12
+:END:
+#+title: Graphene
+* What
++ The [[id:fb8c054e-3c54-44d8-b0c3-d046594c2071][Library Operating System (LibOS)]] implementents the [[id:e5af5024-4c70-41cc-84aa-f55afbefb15f][Linux]] [[id:4f56c64a-4113-4032-8de4-35a46d57e1d5][System Calls]] ABI (300+ syscalls)
+  + Emulate any system call that can be executed on userspace.
+  + Only need to implement the [[id:e1b42a31-8496-4a17-85c5-f33b318a826c][UNIX]] ABI on each host (36 system calls)
++ At each host, there is Platform Adaption Layer (PAL) to maintain compatibility between hosts

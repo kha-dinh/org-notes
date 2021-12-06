@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       051b7ba1-7eb5-468b-9547-4796098df8b4
+:END:
+#+title: Intel CET

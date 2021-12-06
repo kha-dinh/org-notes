@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       edf5625f-9749-443c-a99d-bcca0abe1b50
+:END:
+#+title: Process Virtual Machine
+* What
++ A [[id:fdbc9281-366c-42dc-9408-2f56d33c4268][Virtual Machine]] that allows the execution programs independent of platform
++ Some techniques
+* Comparision between process virtual machine
++ [[id:9eddca64-4ec3-44d1-935b-866cbb7d3d28][JVM]]
++ [[id:6920feda-33bb-49ad-b785-196865c850c7][WebAssembly]]
+  + Depends on the host system to provide a runtime
++ [[id:93374a70-2b55-485f-9cc5-7f3d2962bb8f][Containers]]
+  + Depends on the host system to provide a runtime
+  + Hard to isolate userspace resources
+  + Binary is not compatible between systems
++ [[id:fb8c054e-3c54-44d8-b0c3-d046594c2071][Library Operating System (LibOS)]]
+  + All host [[id:4f56c64a-4113-4032-8de4-35a46d57e1d5][System Calls]] are virtualized, so not host-dependent
+  + Can isolate resources per-application
++ [[id:e6ab8781-9940-4398-aa7f-abfe9126443a][Full Virtualization]]
+  + Resource heavy

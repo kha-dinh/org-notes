@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       34c5818c-c7b3-4a56-90a6-d2fb6c32814d
+:END:
+#+title: Intra-process Isolation Motivations
+
+* What
++ Communication between intra-process modules are way faster than [[id:4b5443fc-43a4-428e-99a4-43148e031cf0][Inter-process Communication (IPC)]]

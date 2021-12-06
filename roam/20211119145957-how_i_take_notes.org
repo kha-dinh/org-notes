@@ -4,7 +4,13 @@
 #+title: How I take notes
 
 * How
-+ Create a new note for each Keyword that I deem think is important .
++ Create a new note for each Keyword that I think is important. This is where the labels comes in to play.
++ Each new notes should focus on the *Relationship* to the old notes, idea, concepts ([[id:5f658c83-79d4-4526-99ab-d66410780178][Relationship-focused Learning]])
+  #+begin_quote
+  Every step is accompanied by questions like: How does this fact fit into my idea of …? How can this phenomenon be explained by that theory? Are these two ideas contradictory or do they complement each other? Isn’t this argument similar to that one? Haven’t I heard this before? And above all: What does x mean for y? These questions not only increase our understanding, but facilitate learning as well. Once we make a meaningful connection to an idea or fact, it is difficult not to remember it when we think about what it is connected with.
+  - [[id:95c1be52-63b3-434d-adfb-0efdc8aacc05][How To Take Smark Notes (Book)]]
+  #+end_quote
+
 * Notes
 + Notes serve many pupurses.
   + Link between concepts

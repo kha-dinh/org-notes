@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       e6f63a88-4f53-4293-affe-27eead829ab7
+:END:
+#+title: Endokernel
+
+
+* What
++ Endokernel introduces a new process model for subprocess [[id:a356bc1d-e5f6-4b8c-b0f6-a8eeda628eb4][Virtualization]].
++ Each subprocess entity is represented as an in-process [[id:fdbc9281-366c-42dc-9408-2f56d33c4268][Virtual Machine]] called the endoprocess.
++ An In-process [[id:5f0bd81f-222c-4023-8c28-10640e32d570][Reference Monitor]] is used to enforce the isolation of endoprocesses.
+  + Provided an implementation using [[id:051b7ba1-7eb5-468b-9547-4796098df8b4][Intel CET]]

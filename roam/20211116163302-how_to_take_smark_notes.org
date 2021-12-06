@@ -3,3 +3,16 @@
 :END:
 #+title: How To Take Smark Notes (Book)
 #+filetags: :book:
+
+* Quotes
+
+#+begin_quote
+It is important to always keep in mind that making these links is not a chore, a kind of file-box maintenance. The search for meaningful connections is a crucial part of the thinking process towards the finished manuscript. #+end_quote
+
+#+begin_quote
+The prevalence of linear and learner-centred approaches also lead to the common misunderstanding about the use of the slip-box as a tool that can be used without changing the work routines around it. It is then often used simply as an archive where you just take out what you put in earlier. This, of course, will lead to disappointment. If we are just storing information, there would be no need to use a slip-box. To reap its benefits, we need to change our working routines. And the basis for that is a deep understanding on how and why it works and how the different steps and tasks of writing fit together. This is why a book, not just a manual, is needed to explain the principle and ideas behind it.
+#+end_quote
+
+#+begin_quote
+Every step is accompanied by questions like: How does this fact fit into my idea of …? How can this phenomenon be explained by that theory? Are these two ideas contradictory or do they complement each other? Isn’t this argument similar to that one? Haven’t I heard this before? And above all: What does x mean for y? These questions not only increase our understanding, but facilitate learning as well. Once we make a meaningful connection to an idea or fact, it is difficult not to remember it when we think about what it is connected with.
+#+end_quote

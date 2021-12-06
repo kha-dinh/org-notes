@@ -2,3 +2,10 @@
 :ID:       245b4493-5359-437d-88bd-f0dc7288b7bc
 :END:
 #+title: Software Fault Isolation (SFI)
+
+* What
++ Is a [[id:6bc87e74-cf9e-4d12-81ff-e979b4107177][Compilers-based]] technique that provide [[id:a356bc1d-e5f6-4b8c-b0f6-a8eeda628eb4][Virtualization]] of programs by transform the programs so that only safe behaviors is permitted.
++ Usually shat on by the research for having a high overhead.
+* When is it useful
++ When the host system lacks protection hardware
++ Is faster than making [[id:4b5443fc-43a4-428e-99a4-43148e031cf0][Inter-process Communication (IPC)]].

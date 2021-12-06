@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       e6ab8781-9940-4398-aa7f-abfe9126443a
+:END:
+#+title: Full Virtualization

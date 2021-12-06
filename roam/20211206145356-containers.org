@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       93374a70-2b55-485f-9cc5-7f3d2962bb8f
+:END:
+#+title: Containers
+
+* What
++ Container is a unit of software that contains all code and the dependencies: [[id:4b379e7b-25d1-45c7-a961-19ccd0439ce1][Runtime]], System APIs
++ Allows applications can be run on any platform

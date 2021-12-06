@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       17f9e5b6-7aa0-44fd-957f-6ddb58c68329
+:END:
+#+title: Containers vs. Virtual Machines
+* What
++ [[id:93374a70-2b55-485f-9cc5-7f3d2962bb8f][Containers]]
