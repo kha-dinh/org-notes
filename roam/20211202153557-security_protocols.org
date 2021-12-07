@@ -7,3 +7,18 @@
 * What
 + Security protocol are distributed procedures between two or more parties to achieve [[id:4cecc2b4-b242-4bd5-8397-a1d74efa30da][Security Goals]]
 + are where [[id:01f66afd-111b-432f-99c0-51f593d36e5b][Cryptography]] and system mechanisms intersect.
+
+* Principles of security Protocols
++ A Security protocol has to involve 2 or more parties, every one must know the protocol in advance
++ All partites must follow the protocol
++ Each step must be define precisely (unambiguous)
++ A protocol must be  complete (consider every possible situation)
+
+
+* Challenges
++ [[id:24bc1069-b46c-4a55-ba8c-00503615876b][Man In the Middle Attack]]
+
+* Some Security Protocols
++ [[id:9b491d6b-d6ed-4f6f-ab86-dc2f49fcb3f2][Key Exchange]]
++ [[id:f4f03ea5-2b51-4f1e-b18d-b21fe73c70db][Authentication Protocols]]
++ [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]]

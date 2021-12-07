@@ -2,9 +2,10 @@
 :ID:       4cecc2b4-b242-4bd5-8397-a1d74efa30da
 :END:
 #+title: Security Goals
-* Sample Security Goals
+* Some Security Goals
 + [[id:9a164582-4780-428c-bf28-ede09520c5fd][Confidentiality]]: Private information is accessible only to authorized parties
 + [[id:41e7968f-4eae-4af9-ad37-8468798f12b2][Integrity]]
++ [[id:9b491d6b-d6ed-4f6f-ab86-dc2f49fcb3f2][Key Exchange]]
 ** Availability
 ** Other
 **** Authorization

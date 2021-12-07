@@ -4,4 +4,5 @@
 #+title: Authentication
 
 * What
-+ To determine whether an access is allowed ([[id:28da2f4e-4c40-4436-9a4d-e9b499f6ba01][Access Control]])
++ To determine whether an access of an entities to some resources is allowed ([[id:28da2f4e-4c40-4436-9a4d-e9b499f6ba01][Access Control]])
+  + For example, a client authenticate with a server to access the resources.

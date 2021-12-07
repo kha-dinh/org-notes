@@ -4,5 +4,5 @@
 #+title: Authorization
 
 * What
-+ What can the user do after they have access to the resource ([[id:28da2f4e-4c40-4436-9a4d-e9b499f6ba01][Access Control]]).
-+ Typically, the permissions are  *Read*, *Write* , *Execute*
++ What can the user do after they are granted access ([[id:663f9e6c-6b5e-4d84-a52f-a321fb05f192][Authentication]]) to the resource ([[id:28da2f4e-4c40-4436-9a4d-e9b499f6ba01][Access Control]]).
++ Typically, the permissions in the context of [[id:dd3948f1-ba47-421c-af8c-e5054f1708b0][Operating System]] are  *Read*, *Write* , *Execute*

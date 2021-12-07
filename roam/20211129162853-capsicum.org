@@ -3,6 +3,6 @@
 :END:
 #+title: Capsicum
 
-
-
-Capsicum extends the basic [[id:43aa83fc-d57c-418d-9c2f-0e608f126ba8][Authority]] (Read,write,executable) to a broader ranges of authority in [[id:e1b42a31-8496-4a17-85c5-f33b318a826c][UNIX]] systems.
+* What
++ A design that bring [[id:a69fbd5e-dd46-4b5f-a9c4-46213051cf14][Capability-based & Object-based System]] to UNIX.
++ Capsicum extends the basic [[id:43aa83fc-d57c-418d-9c2f-0e608f126ba8][Authority]] (Read,write,executable) to a broader ranges of authority in [[id:e1b42a31-8496-4a17-85c5-f33b318a826c][UNIX]] systems.

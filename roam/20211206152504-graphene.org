@@ -7,3 +7,6 @@
   + Emulate any system call that can be executed on userspace.
   + Only need to implement the [[id:e1b42a31-8496-4a17-85c5-f33b318a826c][UNIX]] ABI on each host (36 system calls)
 + At each host, there is Platform Adaption Layer (PAL) to maintain compatibility between hosts
+
+* Multi-process support
++  n

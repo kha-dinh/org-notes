@@ -2,3 +2,14 @@
 :ID:       4ff605f9-dafa-4dd7-9287-de79fdb7413b
 :END:
 #+title: Usable Security
+
+* Why
++ Users are the weakest link in security
++ If the user comes up with bad passwords, then it beat the security of the system
+* How
++ Make it invisible to the users
+  + Guiding user to make good password
++ or make it easy to understand
+  + Use understandable words
+  + Password strength meters
+  + Make it hard to do the wrong thing
