@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       a2b43f2b-96ed-40a8-8597-3a44382c54f2
+:END:
+#+title: Trusted Third-party

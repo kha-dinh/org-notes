@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2bd2a4b5-e8d7-4659-a229-57b7f98db9c2
+:END:
+#+title: Elliptic Curve Cryptography
+
+
+* What
++ Is an approach to  [[id:d7efc6e7-9ca3-451b-84d1-f2a44185bc2a][Public-key Encryption]] that is based on elliptic curves.
++ Have smaller key size
++ More complex operations

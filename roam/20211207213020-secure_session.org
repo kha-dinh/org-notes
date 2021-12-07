@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       37bf0041-8bd6-473f-92dc-488ba1e3d09f
+:END:
+#+title: Secure Session
+
+* What
++ A secure session must maintain [[id:9a164582-4780-428c-bf28-ede09520c5fd][Confidentiality]] and [[id:41e7968f-4eae-4af9-ad37-8468798f12b2][Integrity]] of the messages between the parties.
++ Integrity could be compromised through:
+  + [[id:e0401fd6-ff92-4ec8-b3d1-a15278b99b5e][Replay Attack]]
+  + Reordering Attack
+  + Reflection Attack
+  + All of those attacks can be prevented using counter and message signing.

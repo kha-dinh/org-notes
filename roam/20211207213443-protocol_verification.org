@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       29d1a924-ca8f-4e78-a870-de6b4c8e8c51
+:END:
+#+title: Protocol Verification
+
+* What
++ Protocol verification try to apply [[id:a95ebb8d-5019-45be-b248-bb5a5b76e78a][Formal Methods]] to prove that a [[id:ce9bd7a5-909c-4469-95c8-26bc1658741f][Security Protocols]] is secure
++ There are the Computational approach and the Symbolic approach
++ The methods are based on an abstract [[id:9702b3d0-f329-4a4b-af99-584016d4c843][Model]], could fail to protect some attacks
+* Computational Approach
++ Represent data as bit strings
+* Symbolic Approach

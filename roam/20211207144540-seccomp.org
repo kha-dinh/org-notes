@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       113cfd34-a188-4ada-b558-4d6c38186eac
+:END:
+#+title: seccomp
+
+* What
++

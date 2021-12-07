@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       6263ff32-41a6-455c-aac9-7d0a492f25aa
+:END:
+#+title: Public-key Infrastructure (PKI)
+
+* What
++ Is the infrastructure that manage [[id:82bebcf9-6d78-4712-b4a0-0ea59ff72814][Digital Certificates]] and [[id:d7efc6e7-9ca3-451b-84d1-f2a44185bc2a][Public-key Encryption]].
+* Components of PKI
++ Certificate Authority (CA) store, issue and sign digital certificates
++ Registration authority (RA) verify the identities of the entities requesting to the CA
++ Central directory store the keys and index them
++ Certificate management system  manage access to certificates and delivery of certificates
++ Certificate policy is a state the requirements of PKI

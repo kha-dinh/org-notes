@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       c564c2c6-45c2-4fae-bc39-88d2f12d2311
+:END:
+#+title: Kerberos Protocol
+
+* What
++ Enhanced version of [[id:670158f8-e7e2-46e1-8640-fe947173a2e4][Needham-Schroeder Protocol]] for [[id:9b491d6b-d6ed-4f6f-ab86-dc2f49fcb3f2][Key Exchange]] for [[id:a5b0504e-6bd1-41ff-aaec-dce6e7464b7a][Symmetric Key Encryption]].
++ Allows two nodes of an insecure network to [[id:663f9e6c-6b5e-4d84-a52f-a321fb05f192][Authentication]] with each other.
++ Provides mutual authentication
++ Fix the weakness of the previous protocol against [[id:e0401fd6-ff92-4ec8-b3d1-a15278b99b5e][Replay Attack]] by also include the timestamp.
+* Drawbacks
++ Requires a central server
++ Host clock have to synchronize for timestamp to work

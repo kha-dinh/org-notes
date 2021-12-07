@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       5265419d-f4fa-4bb8-95b7-364ed72c14eb
+:END:
+#+title: Non-interference
+
+* What
++ Is a stricter model of [[id:b0bda531-8fd4-4138-86aa-e297fb628855][Multi-level Security Model]] which enforce that regardless of the high security input, the low security output must stay the same.
++ Higher level activities do not determine what lower level user can see
++ Prevent [[id:1cba345b-74d1-44a8-9976-5c19f04312f5][Covert Channels]]

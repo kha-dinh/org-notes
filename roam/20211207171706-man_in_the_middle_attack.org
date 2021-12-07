@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       24bc1069-b46c-4a55-ba8c-00503615876b
+:END:
+#+title: Man In the Middle Attack
+
+* What
+ + In [[id:ce9bd7a5-909c-4469-95c8-26bc1658741f][Security Protocols]], an attacker can impersonate the other parties
+ + Is the reason why [[id:a2b43f2b-96ed-40a8-8597-3a44382c54f2][Trusted Third-party]] is sometimes needed

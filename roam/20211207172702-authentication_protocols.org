@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       f4f03ea5-2b51-4f1e-b18d-b21fe73c70db
+:END:
+#+title: Authentication Protocols
+
+* What
++ Authentication protocols are [[id:ce9bd7a5-909c-4469-95c8-26bc1658741f][Security Protocols]] that perform [[id:663f9e6c-6b5e-4d84-a52f-a321fb05f192][Authentication]] between two parties (e.g. Client and Server).
++ Most important layer for secure communication in [[id:9d8a35f3-69f9-4966-8c59-e43880344f37][Computer Networks]]

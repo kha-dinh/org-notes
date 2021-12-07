@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       d2c216cb-b45b-4f75-bb36-e1c68c2a50fc
+:END:
+#+title: Authenticity
+* What
++ Authenticity means that a message came from who it claim to be

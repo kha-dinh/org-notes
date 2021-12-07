@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       50b2fbb4-50b5-4e0f-8c0f-45fa9e37fa9c
+:END:
+#+title: Digital Signature
+
+* What
++ Is a [[id:01f66afd-111b-432f-99c0-51f593d36e5b][Cryptography]] scheme to verify [[id:d2c216cb-b45b-4f75-bb36-e1c68c2a50fc][Authenticity]] of a digital message.
++ Use [[id:d7efc6e7-9ca3-451b-84d1-f2a44185bc2a][Public-key Encryption]]. The Private key is used to sign the message, while the public key is used to verify the signature.
++ In [[id:6263ff32-41a6-455c-aac9-7d0a492f25aa][Public-key Infrastructure (PKI)]], digital signature is used to bind the a public key to its owner.

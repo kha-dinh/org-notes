@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       670158f8-e7e2-46e1-8640-fe947173a2e4
+:END:
+#+title: Needham-Schroeder Protocol
+
+* What
++ Have two [[id:9b491d6b-d6ed-4f6f-ab86-dc2f49fcb3f2][Key Exchange]] protocols proposed for both [[id:a5b0504e-6bd1-41ff-aaec-dce6e7464b7a][Symmetric Key Encryption]] and [[id:d7efc6e7-9ca3-451b-84d1-f2a44185bc2a][Public-key Encryption]].
++ Is the basis for [[id:c564c2c6-45c2-4fae-bc39-88d2f12d2311][Kerberos Protocol]]

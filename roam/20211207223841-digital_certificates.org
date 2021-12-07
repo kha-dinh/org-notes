@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       82bebcf9-6d78-4712-b4a0-0ea59ff72814
+:END:
+#+title: Digital Certificates
+
+* What
++ Is a certificate that prove the ownership of the public key by binding the identity of the owner to the key
++ In [[id:6263ff32-41a6-455c-aac9-7d0a492f25aa][Public-key Infrastructure (PKI)]], the CA issue the certificates by signing them
++ The certificate contains information of the owner, it's public key, and signed by the [[id:30efb313-ed6d-4950-ba12-3c9222bf2f20][Certificate Authority (CA)]] ([[id:50b2fbb4-50b5-4e0f-8c0f-45fa9e37fa9c][Digital Signature]])
++ The most common format is [[id:58aa248a-4609-4e52-a61d-9f4f71e17e40][X.509]]
