@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       1afab1f9-d4eb-4d29-9260-870dee39b3ec
+:END:
+#+title: Light-weight Contexts
+
+* Overview
++ The author introduced a new [[id:dd3948f1-ba47-421c-af8c-e5054f1708b0][Operating System]] abstraction called the light-weight contexts (lwCs)
+
++ That provides independent units of protection, privilege and execution state within a process.
++ Each process have different
+  + memory view through their own page mappings
+  + [[id:0cfddc8b-11e2-414d-92f7-9b0c2feb2d81][File Descriptor]]
+  + access capabilites.
++ The overhead is proportional to the amount exclusive memory of each lwC
++ lwCs switching is faster than kernel thread switching?
+
++ They evaluate some common usage:
+  + Fast roll-back
+  + Session isolation
+  + Sensitive data isolation
+  + In-process [[id:5f0bd81f-222c-4023-8c28-10640e32d570][Reference Monitor]]
