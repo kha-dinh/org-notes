@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       37e08895-fa69-4d5b-ab7f-a98431dfe552
+:END:
+#+title: Process
+
+* What
++ A process is an instance of program execution.
++ The [[id:dd3948f1-ba47-421c-af8c-e5054f1708b0][Operating System]]
+maintain the state and management information of a running process in a [[id:ecf2f4e3-62a0-4f7c-b033-d612bc852138][Process Control Block]].
++ A process might be divided into multiple [[id:3244a710-cbcc-45c2-a78e-c9c8de77a579][Threads]] of execution. Each threads have a  [[id:5deb421f-2737-49ea-b4f8-2a122f10c451][Thread Control Block]] to store its execution state and management information

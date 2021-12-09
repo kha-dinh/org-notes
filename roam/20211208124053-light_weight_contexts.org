@@ -14,8 +14,12 @@
 + The overhead is proportional to the amount exclusive memory of each lwC
 + lwCs switching is faster than kernel thread switching?
 
-+ They evaluate some common usage:
++ They evaluate some common usage pattern:
   + Fast roll-back
   + Session isolation
   + Sensitive data isolation
   + In-process [[id:5f0bd81f-222c-4023-8c28-10640e32d570][Reference Monitor]]
+
+* Design
++ lwC are indexed using file descriptors
++ Each process start with a root lwC
