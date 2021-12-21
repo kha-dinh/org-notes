@@ -1,0 +1,36 @@
+
+
+* 2021
+** 2021-12 December
+*** 2021-12-14 Tuesday
+#+begin_quote
+The paper takes research in the area of TEE-based confidentiality and discusses it in the light of Machine Learning (ML). It aims to address 3 topics: threats and mitigation of attack vectors in untrusted computation environments, multi-party confidential ML computation, and retrofitting software and hardware architecture for confidential ML computations.
+
+The work presents a section on the definition of entities and assets for confidential ML. In this section, I find it somehow confusing that both the owner of the data that is used for training and the owner of a piece of data that is submitted for the classification are described as a single entity type. The owner of the data to be classified actually can be an attacker, trying to get information for the model about its training data. Similarly, the platform definition also treats the environment where the training happens the same way as the environment where the inference would happen. Although Section V presents discussions on the two situations, having the different entities would highlight the importance of the issue and help the reader.
+
+Next, the work addresses the first topic: securing offloaded ML computations to the cloud. The coverage of Intel SGX in this section is clear. The paper describes SGX capabilities, threats, and indirect attacks (on accelerators, such as GPUs). Then it discusses SGX attacks specific for ML scenarios and approaches to mitigate their risk. Finally, it discusses ARM. The discussion on ARM is short, with a single subsection (in contrast to the four subsections dedicated to SGX). In addition, as the discussion around ARM is targeted to Edge uses of the technology, it would be easier to follow if separate from the discussion on SGX (i.e., a different session).
+
+Also because of the emphasis on SGX, it would be beneficial to the reader if the paper stated upfront in the abstract that it is focused on Intel SGX for cloud and ARM Trustzone for Edge, and not discusses TEEs in general.
+
+Then, in Section V, the paper describes the security requirements for multi-party computations. After that, Section VI describes engineering challenges. Here, the memory limitation of SGX is emphasized. The paper even mentions that it is unlikely that EPC memory will be increased. Nevertheless, machines with 256 MB have been available for 2 years and machines with up to 512 GB of EPC are already available on public cloud providers (Azure, Alibaba). This is a relevant limitation and needs to be corrected as it limited the applicability of enclaves for large data sets.
+
+Still in Section VI, the discussion on porting the ML frameworks is misleading. For example, Scone is mentioned as being a Library OS, but it in fact typically used as a compiler or interpreter (i.e., original code is recompiled or runs on top of a recompiled interpreter).
+
+Lastly, the paper enumerates some open research challenges and finishes with an acknowledgment and a conclusion section.
+
+Some minor comments follow:
+- Section 2, title: “Related Survey” should probably be “Related Surveys”
+- Section 2 (among other instances): “cloud computation” is odd, the term “cloud computing” is the one typically used. Similarly “confidential computation” is typically referred to as “Confidential computing”.
+- Section 2B (among many other instances): the word “adapted” seems to be used instead of adopted (e.g., “… are the most prevalent TEEs adopted by existing commercial devices and thus *adapted* in many research works.”)
+- Section 5A (2) “…based on her the ML model…” (remove “her” or “the”)
+- Section 5B (2) “clients(or data owners)” (space missing)
+- Table 4: “agaisnt”
+- Section 5C: “In case of S-1, the service provider desire the confidentiality of the ML model deployed in user devices.” (S-1 should be S-3? “Desire” should be “desires”)
+- The Conclusion section typically comes before the acknowledgments.
+#+end_quote
++ Survey issues
+  + Reviewer suggests spliting training data owner and inference data owner. Inference data owner can be an attacker
+  + ARM should be separated to another section?
+  + Also because of the emphasis on SGX, it would be beneficial to the reader if the paper stated upfront in the abstract that it is focused on Intel SGX for cloud and ARM Trustzone for Edge, and not discusses TEEs in general.
+  + Azure and Alibaba already solve the memory issues.
+  + Still in Section VI, the discussion on porting the ML frameworks is misleading. For example, Scone is mentioned as being a Library OS, but it in fact typically used as a compiler or interpreter (i.e., original code is recompiled or runs on top of a recompiled interpreter).

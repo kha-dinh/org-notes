@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       e02cfba5-545a-4b3b-9f2d-8b5e0d3f4078
+:END:
+#+title: Anatomy of Fuzzers
+
+* What
++ A fuzzer follows the following algorithm:
+
+  #+begin_src ruby
+Input: conf, bug_oracle, time_limit
+Output: bugs // set of bugs
+
+preprocess(conf)
+while(time < time_limit and should_continue(conf)):
+    this_conf = schedule(conf, time_limit, time)
+    test_case = generate_input(conf)
+    found_bugs, exec_info = eval_input(this_conf,test_case, bug_oracle)
+    update_config(conf, this_conf, exec_info)
+    bugs.add(found_bugs)
+  #+end_src
+  + Overall, [[id:6a2b2e61-567d-42ac-b16d-0effc686a772][Fuzzers]] update a fuzz configuration over many iterations
+    + At each iteration, it =schedules= a new configuration based on the elapsed time
+    + It use the scheduled configuration to =generate test cases=
+    + It =evaluate the test cases= on the [[id:42ff8ed1-85b7-46bf-9a8e-146462c07fe0][Program Under Test (PUT)]], and use a [[id:e31b3e4e-fdff-41c9-84f7-4cc40266c420][Bug Oracle]] to determine whether bugs has been found or not
+    + Based on the information collected from execution the execution, it might update the configuration for future run

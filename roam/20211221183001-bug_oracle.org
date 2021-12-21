@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       e31b3e4e-fdff-41c9-84f7-4cc40266c420
+:END:
+#+title: Bug Oracle
+
+* What
++ Is a program that determine whether an execution of a [[id:42ff8ed1-85b7-46bf-9a8e-146462c07fe0][Program Under Test (PUT)]] violate some correctness policy

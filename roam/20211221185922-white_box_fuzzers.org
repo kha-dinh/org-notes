@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       b3375e75-870f-4464-b95e-d2bd9ab69c79
+:END:
+#+title: White-box Fuzzers
+
+* What
++ [[id:6a2b2e61-567d-42ac-b16d-0effc686a772][Fuzzer]] that can exploit the internal behaviors of the program
++ Examples includes [[id:5af925cb-d3b7-4f0c-8ab1-50523ca76b7c][Dynamic Symbolic Execution]], Fuzzers that use [[id:19d7a9ab-1f71-4812-84b9-a9624e6c40e1][Taint Analysis]]
++ Have higher overhead than [[id:b3a3d964-e62f-4154-8f74-31c45b86ee7a][Black-box Fuzzers]]

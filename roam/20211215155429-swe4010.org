@@ -1,0 +1,44 @@
+
+
+:PROPERTIES:
+:ID:       2f9e34a7-767a-48f0-8f77-2170ac7ef7da
+:END:
+#+title: SWE4010
+
+* Final Project
+| TEAM | TEAM Name | Members                               | Proposal | Design | Final |   |
+|------+-----------+---------------------------------------+----------+--------+-------+---|
+|    1 | Viewer    | KeyHeon Lee, Hyunjo Lim               |          |        |       |   |
+|    2 | MISS      | Kyuwon Cho, Byeongsu Woo              |          |        |       |   |
+|    3 | IoT       | hyeonah jung, mose gu                 |          |        |       |   |
+|    4 | Detectors | Seonhye Park, Taeyoung Kim, CJ Lee    |          |        |       |   |
+|    5 | ESLAB     | 정지윤, 이영재, 김경모                |          |        |       |   |
+|    6 | Nerd      | Myungkyu Sim, Jihwan Lee, Suhwan Shin |          |        |       |   |
+|    7 | blank     | Taehyun Noh, Siwon Heo                |          |        |       |   |
+|    8 | calc      | 조우림                                |          |        |       |   |
+|    9 | RNN       | 박태준                                |          |        |       |   |
+|   10 | needle    | 임성규, 전형준                        |          |        |       |   |
+|   11 | dop       | 김진웅                                |          |        |       |   |
+|   12 | Analysis  | 장호현                                |          |        |       |   |
+
+** Grading
+1.4.1. Background (10/100)
++ Does the paper adequately explain the general background?
++ Does the paper motivate the goal of the paper?
+1.4.2. Related Work (10/100)
+Are closely related works classified and explained?
+Are the key difference from the author(s)’s work and previous works explained?
+1.4.3. Design (20/100)
++ Are the contributions of the paper well explained?
++ Are the design choices that led to the proposed design explained in detail?
++ Is the proposed design technically sound?
+1.4.4. Evaluation (40/100)
++ Are the evaluations fair and meaningful?
++ Does the evaluation cover all the claims made in contribution statement?
++ Are the results visualized and explained in a descriptive manner?
+1.4.5. Discussion and Conclusion (20/100)
++ Does the work explain the implications of the result?
+  Background/Related Work ...................10%
+Problem Statement/Motivation ...................20%
+Design ...................40%
+Implementation and Evaluation Plan ...................30%

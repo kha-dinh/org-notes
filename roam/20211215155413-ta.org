@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       9ddcd177-a959-4c32-a921-f18c58cbca81
+:END:
+#+title: TA
+
+* Courses
++ [[id:2f9e34a7-767a-48f0-8f77-2170ac7ef7da][SWE4010]]

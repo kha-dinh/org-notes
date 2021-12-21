@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       6a2b2e61-567d-42ac-b16d-0effc686a772
+:END:
+#+title: Fuzzing
+
+* What
++ to repeatedly running a [[id:42ff8ed1-85b7-46bf-9a8e-146462c07fe0][Program Under Test (PUT)]] with input sampled from a "fuzz input space".
+  + Sampling don't need to be randomized
+  + fuzz input space might not contains the expected input space
++ [[id:2d5ed360-3721-4f69-a670-e4100ae9f413][Fuzz Testing]] is a use case of fuzzing that focus on finding bugs in software
+  + Use a [[id:e31b3e4e-fdff-41c9-84f7-4cc40266c420][Bug Oracle]] to determine wheter an input / execution of a PUT trigger an error.
++ [[id:e02cfba5-545a-4b3b-9f2d-8b5e0d3f4078][Anatomy of Fuzzers]]
++ Types of fuzers:
+  + [[id:b3a3d964-e62f-4154-8f74-31c45b86ee7a][Black-box Fuzzers]] does not see the internals / source code of the [[id:42ff8ed1-85b7-46bf-9a8e-146462c07fe0][Program Under Test (PUT)]]
+  + [[id:b3375e75-870f-4464-b95e-d2bd9ab69c79][White-box Fuzzers]] are able to see and analyze the internal behaviors of the PUT
+  + [[id:a5ec503f-f936-46cf-8ee4-1c7ccc8dab98][Grey-box Fuzzers]] might only use high-level information about the execution of PUT, such as code coverage
