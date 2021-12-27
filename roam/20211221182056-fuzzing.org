@@ -14,3 +14,47 @@
   + [[id:b3a3d964-e62f-4154-8f74-31c45b86ee7a][Black-box Fuzzers]] does not see the internals / source code of the [[id:42ff8ed1-85b7-46bf-9a8e-146462c07fe0][Program Under Test (PUT)]]
   + [[id:b3375e75-870f-4464-b95e-d2bd9ab69c79][White-box Fuzzers]] are able to see and analyze the internal behaviors of the PUT
   + [[id:a5ec503f-f936-46cf-8ee4-1c7ccc8dab98][Grey-box Fuzzers]] might only use high-level information about the execution of PUT, such as code coverage
+* Input evaluation
+** Input validation
++ Commonly violation is detected when program is terminated from [[id:fdbace7f-32d7-4501-bd97-56ebbad2c365][Memory Safety]] errors.
++ The program is instrumented with [[id:d2aa24dc-dcd3-4588-9234-006404c10d2a][Sanitizers]] so that unsafe behaviours would trigger faults.
+  + Memory errors:
+    + ASAN, [[id:e9723577-b0b6-407b-98ef-195a9249f74a][Softbound + CETS]]
+  + In C++, bad type casting is also detected
+  + [[id:e4f7a2a5-41dc-43cb-ba44-840341771650][Control-flow Integrity (CFI)]] detect invalid control flow transfers
+  + Undefined behaviours is hadnled by some
+    + MSan: detect uses of uninitialized memory
+    + UBSan: Detect misaligned pointers, division by zero, null pointer dereferencing, integer overflow
+    + Thread Sanitizer: Detect data race between threads
++ Non-sanitizer approaches:
+  + Input validation vulnerabilities
+    + XSS: KameleonFuzz extract DOM objects and compare with XSS patterns
+    + \mu4SQLi detect SQL injection with database proxy
+  + Semantic bugs: discorvered through [[id:6d5f0485-5153-4972-9583-c293f20b13be][Differential Testing]] that compare behaviour of similar programs
+    + Some Fuzzers use dif test detect differences between similkar programs
+    + Black-box dif fuzz testing use differential testing on different input of a program
+
+** Optimization
++ AFL use a fork server to fork PUT from already initialized process to remove initialization and program loading
++ Replace fork() with more optimized syscall
++ In-memory fuzzing?
+** Triage
++ Analyzing the test cases that causes the violation
+*** Deduplication
++ Deduplication prune input that would trigger the same bug
+  + Stack Backtrace Hashing: crashes with the same backtrace are grouped together
+    + e.g., main -> a -> b -> c -> foo
+  + May not detect code that is far away from the crash
+  + Coveraged-based: Use by AFL-based fuzzers. a crash is unique if
+    + It cover an unseen edge
+    + it did not cover an edge seen in all earlier crashes
+  + Semantics-aware: RETracer use reverse data-flow analysis from each crash
+    + Find pointer that cause the crash
+    + Find which instruction asigned the value to it
+    + The function at the last frame is the "blamed"
+    + Blamed functions are grouped
+*** Exploitability
++ Use heuristic
+*** Test case minimization
++ BFF minimize the number of bits that are different from original seed file
++ AFL set bytes to 0 when possible, and shortening the length of test case
