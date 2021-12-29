@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       11e8cd0a-fa1e-4868-8845-f610477e79fe
+:END:
+#+title: Partitioning ORAM
+
+* What
++ [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]] partitioning tries to partition a big ORAM into smaller ORAM instances

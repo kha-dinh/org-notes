@@ -4,7 +4,7 @@
 #+title: Inter-client Communication in ORAM
 
 * Overview
-Some [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]] protocols assume that the clients can communicate with each other for synchronization. The purpose is to achieve [[id:72e716fa-f062-4e60-899e-72be8cc5b9ea][Parallelism in ORAM]]
-Often, [[id:01cdccf5-35e8-4680-ba0a-aab324cc6cf9][Oblivious Aggregation]] is used to coordinate between the clients.
-If there is multiple accesses to the same block, only one representative performs the query.
-The presentative use [[id:984c009b-89f2-4b15-8dea-0776ccd2e92f][Oblivious Multicast]] to broadcast information to other clients.
++ Some [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]] protocols assume that the clients can communicate with each other for synchronization. The purpose is to achieve [[id:72e716fa-f062-4e60-899e-72be8cc5b9ea][Parallelism in ORAM]]
++ Often, [[id:01cdccf5-35e8-4680-ba0a-aab324cc6cf9][Oblivious Aggregation]] is used to coordinate between the clients.
++ If there is multiple accesses to the same block, only one representative performs the query.
++ The presentative use [[id:984c009b-89f2-4b15-8dea-0776ccd2e92f][Oblivious Multicast]] to broadcast information to other clients.

@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       7a635d22-696c-468e-8e67-2605a59bede8
+:END:
+#+title: PIM ORAM
+
+
+
+
+
+
+* Notes
++ A study by Bindschaedler et al.~\cite{curious} revealed that there is a gap between the theoretical front and the practical front of ORAM usage.
++

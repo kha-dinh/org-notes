@@ -4,7 +4,7 @@
 #+title: Path ORAM
 
 * Path ORAM
-
++ One of the first [[id:25d93cde-79d2-4ba7-9824-6422bd551200][Tree-based ORAM]]
 + Path [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]]  use a tree-based construction, which represent data blocks as nodes (or buckets) on a [[id:a18647e2-e2b7-423d-9ab3-823f4b7a1010][Binary Tree]]. It is a bucket when a node contains multiple blocks.
 + Each block can either be a real block, containing data, or dummy block, containing dummy data.
 + At every access, the block is re-encrypted by the client.
@@ -22,11 +22,12 @@ The reading/writing on a block is done as folow:
 2. The client download all blocks along the path of the tree and add them to the stash (to satisfy the invariant)
    1. The request block is now in the stash. The client can update the block.
 3. A new path is selected randomly by updating the PosMap
-4. Client reencrypt and upload as many blocks as possible in the stash, along the same path it is read. Blocks are placed as close to the leaf nodes as possible.
+4. Client reencrypt and upload as many blocks as possible in the stash to the bucket, along the same path it is read. Blocks are placed as close to the leaf nodes as possible.
    1. The requested block is now on a different path, but is in the same location as before. The next read to the same block will read a different path
 * Recursion
 The PosMap size scale linearly with the number of blocks. Sometimes, it is not possible to store the PosMap in the client storage (trusted storage), and need to be stored in an insecure storage.
 Path ORAM use a recursion trick to protect the PosMap: the PosMap itself is stored in a second Path ORAM. The second Path ORAM's PosMap is smaller than the original one. When this is applied multiple times (i.e., recursion), the PosMap will reach a size that can be fit in the client storage.
 
 * Improvements
-[[id:c4f357e7-9086-4433-b489-799231954282][Circuit ORAM]] have same bandwidth as PathORAM but have reduce client storage to O(1)
++ [[id:c4f357e7-9086-4433-b489-799231954282][Circuit ORAM]] have same bandwidth as PathORAM but have reduce client storage to O(1)
++ [[id:f98986c1-3090-4362-ac1e-89192956cc26][RingORAM]] reduce the bandwith of PathORAM by fetching only 1 block per bucket on the path

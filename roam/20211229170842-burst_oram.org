@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       fea8cb14-b7fe-4874-aa24-791a4da066d4
+:END:
+#+title: Burst ORAM (Dautrich, Sec '14)
+
+* What
++ [[id:88b69192-014f-427d-aa88-6949d34949d4][Oblivious Storage]] Based on [[id:29deb7a4-897b-42c9-985a-0395eb0b1e51][ObliviStore]]
++ Introduce the /XOR technique/, that use [[id:9fbbf991-7b9b-48db-a27a-1ea577c7771d][Server Computation in ORAM]]
+* Notes
++ Have a good summary of [[id:29deb7a4-897b-42c9-985a-0395eb0b1e51][ObliviStore (Stephanov, S&P '13)]]

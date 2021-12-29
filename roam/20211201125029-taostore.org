@@ -1,8 +1,11 @@
 :PROPERTIES:
 :ID:       2522318b-6774-4587-ae19-9c485209e0e0
 :END:
-#+title: TaoStore
+#+title: TaoStore (Sahin, S&P '16)
 
-TaoStore use a [[id:7bd760ed-9b60-455f-a872-373ebbcbd7de][Trusted Proxy]] to handle the client queries to achieve [[id:72e716fa-f062-4e60-899e-72be8cc5b9ea][Parallelism in ORAM]].
-The trusted proxy performs the actual queries to the ORAM Tree in [[id:d19a3f5a-db18-4be1-822d-5fab4307177c][Path ORAM]]
-Trusted proxy run a secure scheduler to ensure that multiple path read do not leaks informaiton.
+
+* What
++ TaoStore is an [[id:88b69192-014f-427d-aa88-6949d34949d4][Oblivious Storage]] that use a [[id:7bd760ed-9b60-455f-a872-373ebbcbd7de][Trusted Proxy]] to handle the client queries to achieve [[id:72e716fa-f062-4e60-899e-72be8cc5b9ea][Parallelism in ORAM]].
++ The trusted proxy performs the actual queries to the ORAM Tree in [[id:d19a3f5a-db18-4be1-822d-5fab4307177c][Path ORAM]]
++ Use [[id:25d93cde-79d2-4ba7-9824-6422bd551200][Tree-based ORAM]], as oposed to [[id:90671cb6-2eb5-4c4b-944d-a2d69286a386][Partition-based ORAM]] ([[id:1badc1cf-7d22-4cfd-8cdb-753bfad1ee21][CURIOUS (Bindschaedler, CCS '15)]], [[id:29deb7a4-897b-42c9-985a-0395eb0b1e51][ObliviStore (Stephanov, S&P '13)]])
++ Trusted proxy run a secure scheduler to ensure that multiple path read do not leaks informaiton.

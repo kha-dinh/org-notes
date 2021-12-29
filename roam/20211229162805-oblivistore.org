@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       29deb7a4-897b-42c9-985a-0395eb0b1e51
+:END:
+#+title: ObliviStore (Stephanov, S&P '13)
+
+* What
++ Is an [[id:88b69192-014f-427d-aa88-6949d34949d4][Oblivious Storage]] implemented using [[id:90671cb6-2eb5-4c4b-944d-a2d69286a386][Partition-based ORAM]]

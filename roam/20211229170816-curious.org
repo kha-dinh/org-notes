@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       1badc1cf-7d22-4cfd-8cdb-753bfad1ee21
+:END:
+#+title: CURIOUS (Bindschaedler, CCS '15)
+
+* What
++ An [[id:88b69192-014f-427d-aa88-6949d34949d4][Oblivious Storage]] based on [[id:29deb7a4-897b-42c9-985a-0395eb0b1e51][ObliviStore]]
++ Use [[id:90671cb6-2eb5-4c4b-944d-a2d69286a386][Partition-based ORAM]]

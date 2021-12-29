@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       88b69192-014f-427d-aa88-6949d34949d4
+:END:
+#+title: Oblivious Storage
+
+* What
++ Remote storage that hide the access pattern to memory
++ Commonly use [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]]
++ Commonly require a [[id:7bd760ed-9b60-455f-a872-373ebbcbd7de][Trusted Proxy]] server that perform ORAM accesses. This allow them to have [[id:72e716fa-f062-4e60-899e-72be8cc5b9ea][Parallelism in ORAM]]
++ Usually requires a cache at the client

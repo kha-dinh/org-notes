@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       9fbbf991-7b9b-48db-a27a-1ea577c7771d
+:END:
+#+title: Server Computation in ORAM
+* What
++ Some [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]] design have the untrusted server perform some computation to
+  + Reduce bandwith cost

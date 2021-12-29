@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       90671cb6-2eb5-4c4b-944d-a2d69286a386
+:END:
+#+title: Partition-based ORAM
+
+* What
++ Partition-based ORAM divide the storage into partitions.
++ Same as other [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]], the client manage a PosMap to keep track which partition a block belong to.
++ There is an eviction cache to hold the downloaded block for a random amount of time. The block is evicted back to a random partition
