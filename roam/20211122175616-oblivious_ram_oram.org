@@ -23,3 +23,7 @@ By itself, ORAM only hide the access pattern. Data need to be protected by also 
 
 * Algorithms
 The [[id:da69d210-f43f-4190-9089-754e4bead1f4][State-of-the-art]] are [[id:d19a3f5a-db18-4be1-822d-5fab4307177c][Path ORAM]] due to its simplicity and efficiency, [[id:c4f357e7-9086-4433-b489-799231954282][Circuit ORAM]]
+
+* Improvement
++ [[id:72e716fa-f062-4e60-899e-72be8cc5b9ea][Parallelism in ORAM]]
++ [[id:40c192f7-cbc9-427b-b608-91917a9e498c][Asynchronicity in ORAM]]

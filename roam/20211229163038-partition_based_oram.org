@@ -5,5 +5,6 @@
 
 * What
 + Partition-based ORAM divide the storage into partitions.
++ Commonly used in [[id:88b69192-014f-427d-aa88-6949d34949d4][Oblivious Storages]]
 + Same as other [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]], the client manage a PosMap to keep track which partition a block belong to.
 + There is an eviction cache to hold the downloaded block for a random amount of time. The block is evicted back to a random partition

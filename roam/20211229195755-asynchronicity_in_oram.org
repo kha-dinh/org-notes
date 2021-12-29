@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       40c192f7-cbc9-427b-b608-91917a9e498c
+:END:
+#+title: Asynchronicity in ORAM
+
+* What
+
++ Many research works has been done to achieve asynchnonicity .
++ An [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]] that have asynchronicity is able to process multiple requests concurrently.
++ Asynchronicity is important in applications that divide the object into multiple blocks ([[id:1badc1cf-7d22-4cfd-8cdb-753bfad1ee21][CURIOUS (Bindschaedler, CCS '15)]]), because the application is blocked until all the blocks is retrieved.
+
+* Approaches
++ Some use a [[id:7bd760ed-9b60-455f-a872-373ebbcbd7de][Trusted Proxy]] (an [[id:88b69192-014f-427d-aa88-6949d34949d4][Oblivious Storage]]) to schedule ORAM requests of multiple users, or asynchornous requests
++ Some assume [[id:8273d2ab-183a-4047-b8ee-08a2071c9d47][Inter-client Communication]] to synchronize between the clients
