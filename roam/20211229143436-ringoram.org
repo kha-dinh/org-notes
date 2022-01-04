@@ -1,4 +1,41 @@
 :PROPERTIES:
 :ID:       f98986c1-3090-4362-ac1e-89192956cc26
 :END:
-#+title: RingORAM
+#+title: RingORAM (Ren, Sec '15)
+
+* What
++ [[id:25d93cde-79d2-4ba7-9824-6422bd551200][Tree-based ORAM]] that is similar to [[id:d19a3f5a-db18-4be1-822d-5fab4307177c][Path ORAM]]
++ Use [[id:9fbbf991-7b9b-48db-a27a-1ea577c7771d][Server Computation in ORAM]] of [[id:fea8cb14-b7fe-4874-aa24-791a4da066d4][Burst ORAM (Dautrich, Sec '14)]] without partitioning ([[id:90671cb6-2eb5-4c4b-944d-a2d69286a386][Partition-based ORAM]])
++ The algorithm read only one block from each bucket on the path, which significantly reduce bandwidth and make the bandwidth independent on the bucket size
++ Stores the permutation of each bucket as metadata
++ Early reshuffle reshuffle buckets that are read too many times
++ Eviction path is selected based on reverse lexicographical order which evenly spread eviction path over the entire tree
+
+* Protocol
+** Sever Storage
++ Similar to [[id:d19a3f5a-db18-4be1-822d-5fab4307177c][Path ORAM]], data is stored in a [[id:a18647e2-e2b7-423d-9ab3-823f4b7a1010][Binary Tree]] of buckets
++ Each bucket have Z + S slots
+  + Z: real blocks
+  + S: dummy b  s
++ Each bucket  store some metadata
+** Client Storage
++ A position map and a stash
++ Position map map each block to a random leaf
++ Stash store blocks that have not been evicted
+  + And blocks on the eviction path during eviction
+** Invariants
++ Same as Path ORAM
++ The position of dummy and real blocks are randomly permutated with every write to a bucket
+* Bucket Metadata
++ Bucket metadata is stored along the buckets
+* Posmap Lookup
++ Identical to Path ORAM
+* Read Path
++ Read only one block from each bucket
++ Read dummy block (that is not read before) if not in bucket
+* Evict Path
++ Read all blocks along a path into the stash
+  + fill that block with blocks from the stash, evict (similar to Path oram)
++ Select path in reverse lexicographical order
++ /Does not happen every access/
+* Early reshuffle

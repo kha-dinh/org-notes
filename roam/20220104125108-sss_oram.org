@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       8c1bb6c5-a9a1-4f67-9ec3-75d71a7ae737
+:END:
+#+title: SSS ORAM
+
+* What
++ One of the first [[id:90671cb6-2eb5-4c4b-944d-a2d69286a386][Partition-based ORAM]]
++ ORAM is partitioned in to sub ORAMs

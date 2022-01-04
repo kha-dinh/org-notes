@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       8cfb2b7f-f232-4cd4-815d-1d0f631a0191
+:END:
+#+title: ORAM Performance Metrics
+
+* Bandwidth
++ Bandwidth or bandwidth blowup in [[id:83e1d468-29df-4e78-9fb2-02433eb69fa4][Oblivious RAM (ORAM)]] refers to the average number of blocks transfer between server and client in a single read or write
+
++ [[id:fea8cb14-b7fe-4874-aa24-791a4da066d4][Burst ORAM (Dautrich, Sec '14)]] described bandwidth in an storage scheme:
+  + Online bandwidth: Block transferred before the request is marked as satisfied.
+  + Offline bandwidth: Transfer needed to prepare for subsequent requests. Can be done after online bandwidth.
+  + Overall bandwidth: sum of online and offline.
+  + Effective bandwidth:  Online IO + pending IO from previous requests.
+* Response time
++ Response time is the [[id:2e612c47-48c1-4799-8ef4-5741e084bc96][Elapsed Real Time]] from when request is sent and when client receives a response.

@@ -6,6 +6,21 @@
 
 * What
 + TaoStore is an [[id:88b69192-014f-427d-aa88-6949d34949d4][Oblivious Storage]] that use a [[id:7bd760ed-9b60-455f-a872-373ebbcbd7de][Trusted Proxy]] to handle the client queries to achieve [[id:72e716fa-f062-4e60-899e-72be8cc5b9ea][Parallelism in ORAM]].
-+ The trusted proxy performs the actual queries to the ORAM Tree in [[id:d19a3f5a-db18-4be1-822d-5fab4307177c][Path ORAM]]
-+ Use [[id:25d93cde-79d2-4ba7-9824-6422bd551200][Tree-based ORAM]], as oposed to [[id:90671cb6-2eb5-4c4b-944d-a2d69286a386][Partition-based ORAM]] ([[id:1badc1cf-7d22-4cfd-8cdb-753bfad1ee21][CURIOUS (Bindschaedler, CCS '15)]], [[id:29deb7a4-897b-42c9-985a-0395eb0b1e51][ObliviStore (Stephanov, S&P '13)]])
-+ Trusted proxy run a secure scheduler to ensure that multiple path read do not leaks informaiton.
++ Use [[id:25d93cde-79d2-4ba7-9824-6422bd551200][Tree-based ORAM]], as opposed to [[id:90671cb6-2eb5-4c4b-944d-a2d69286a386][Partition-based ORAM]] of related papers ([[id:1badc1cf-7d22-4cfd-8cdb-753bfad1ee21][CURIOUS (Bindschaedler, CCS '15)]], [[id:29deb7a4-897b-42c9-985a-0395eb0b1e51][ObliviStore (Stephanov, S&P '13)]])
+  + Result in better simplicity, flexibility & efficiency
+  + Partition-based ORAM sequentialize accesses to the same partition, which create overheads
+  + Remove background shuffling from previous papers
++ A trusted proxy run a secure scheduler to ensure that multiple path read do not leaks information.
++ The system allows multiple paths of [[id:d19a3f5a-db18-4be1-822d-5fab4307177c][Path ORAM]] to be queried concurrently
+
+* Attack agaisnt CURIOUS
++ It point out an attack agaisnt [[id:1badc1cf-7d22-4cfd-8cdb-753bfad1ee21][CURIOUS (Bindschaedler, CCS '15)]].
+  + Attacker know about the response time (not in the original paper) of request.
+    + Attacker can schedule requests to the ORAM server, but does not learn about the content
+    + Can be done with [[id:08bb39cc-24ae-4d5d-b9d0-d1507d491cf2][Chosen-plaintext Attack (CPA)]] model
+  + In CURIOUS, requests to the same block also trigger a fake read to the untrusted server, but the response is delayed until the "real" read finish.
+  + Based on this, the attacker can distinguish between read to the same block and read to independent blocks by measuring response time
+
+* Fully Concurrent
++ Techniques were applied to make eviction, update concurrent
++ A local subtree is used for each concurrent request

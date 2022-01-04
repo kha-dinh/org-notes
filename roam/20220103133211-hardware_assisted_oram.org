@@ -1,0 +1,45 @@
+:PROPERTIES:
+:ID:       dc05e5d5-542d-4aee-94ef-8227c2fa539e
+:END:
+#+title: Hardware-assisted ORAM Map
+
+* Result
+#+attr_html: :alt  :align left :class img
+[[/home/khadd/org/roam/20220103133211-hardware_assisted_oram_diagram-Hardware-assisted_ORAM.png]]
+
+* Hardware-assisted ORAM
+** ORAM for Side-channel Elimination
+*** Memory Trace Oblivious
+*** Input-Oblivious
+**** Raccoon
+***** Branch Obfuscation
+***** ORAM for Data Access Obfuscation
+*** Program Obfuscation
+**** Obfuscuro
+***** Hide code and data access with ORAM
+
+
+** Oblivious Storage
+*** Protecting: Access Pattern from requests
+*** CURIOUS
+**** Asynchronicity
+**** Partitioning ORAM
+*** ObliviStore
+**** Asynchronicity
+**** Partitioning ORAM
+*** TaoStore
+**** Asynchronicity
+**** Partitioning ORAM
+
+** Oblivious RAM
+*** BurstORAM
+**** Optimizations with server-side computation
+** Secure Accelerators
+*** Attestation & Secure channel
+** Secure Processor Architecture
+**** Ascend
+**** Phantom
+**** Freecursive ORAM
+**** Optimizations
+***** Background Eviction
+***** PosMap Look-aside Buffer

@@ -6,5 +6,20 @@
 * What
 + [[id:88b69192-014f-427d-aa88-6949d34949d4][Oblivious Storage]] Based on [[id:29deb7a4-897b-42c9-985a-0395eb0b1e51][ObliviStore]]
 + Introduce the /XOR technique/, that use [[id:9fbbf991-7b9b-48db-a27a-1ea577c7771d][Server Computation in ORAM]]
++ The paper tries to minimize "online" work of the storage (response time observed by client, or time from request -> response), and delay "offline" work (ORAM shuffling) untile idle time.
++ Online, offline, overall and effective bandwidth are defined ([[id:8cfb2b7f-f232-4cd4-815d-1d0f631a0191][ORAM Performance Metrics]])
++ Online IO is reduced through the XOR technique
++ Shuffle IO is reduced through smart scheduling that prioritize jobs free the most client space & use least shuffle IO
++ Overall IO can be reduced by caching the smallest levels from each partition
+* XOR Technique
++ For every partition p and layer l, there is a different key
++ Real blocks are encrypted as AES(key, offset, data)
++ Dummy block are encrypted as AES(key, offset)
++ All blocks are XOR together
++ The client know which block are dummy, and know the offset of each block
+  + Client Reconstruct encrypted dummy blocks
+  + XOR with the result from server -> real block
 * Notes
++ Used fixed 50ms network latency
 + Have a good summary of [[id:29deb7a4-897b-42c9-985a-0395eb0b1e51][ObliviStore (Stephanov, S&P '13)]]
++ The approach could be useful for SGX storage?

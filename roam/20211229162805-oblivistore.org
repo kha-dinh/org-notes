@@ -5,3 +5,11 @@
 
 * What
 + Is an [[id:88b69192-014f-427d-aa88-6949d34949d4][Oblivious Storage]] implemented using [[id:90671cb6-2eb5-4c4b-944d-a2d69286a386][Partition-based ORAM]]
++ Enable naive concurrency that have vulnerabilities.
++ Based on [[id:8c1bb6c5-a9a1-4f67-9ec3-75d71a7ae737][SSS ORAM]]
++ Stores encrypted blocks in $O(\sqrt(N))$  partitions
+  + Each partition have $O(logN)$ levels.
+    + Each level have 2, 4, 8, ..., $O(sqrt(N))$ blocks
+  + A new level have half encrypted real block and half dummy blocks
++ Client need to store $O(sqrt(N))$ blocks and PosMap of N blocks
++ Introduce "Level compression" to reduce the bandwidth of eviction by half

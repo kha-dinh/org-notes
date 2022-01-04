@@ -5,9 +5,16 @@
 
 * What
 + The authors argue that standard metrics used in ORAM implementation (bandwidth) is insufficient
+  + Proposed that [[id:40c192f7-cbc9-427b-b608-91917a9e498c][Asynchronicity in ORAM]] is necessary
+  + Also propose using the monetary expense metric for cloud computation
 + An [[id:88b69192-014f-427d-aa88-6949d34949d4][Oblivious Storage]] based on [[id:29deb7a4-897b-42c9-985a-0395eb0b1e51][ObliviStore]]
 + An attack vector is found in the implementation of [[id:29deb7a4-897b-42c9-985a-0395eb0b1e51][ObliviStore (Stephanov, S&P '13)]], where the request for the same block is slower than request for independent blocks.
   + This is because independent requests are ran in concurrently, while same requests are sequentialized.
++ Use fixed size smaller ORAMs, as opposed to Layered [[id:90671cb6-2eb5-4c4b-944d-a2d69286a386][Partition-based ORAM]] (ObliviStore, [[id:fea8cb14-b7fe-4874-aa24-791a4da066d4][Burst ORAM (Dautrich, Sec '14)]])
++ Introduce a simpler eviction strategy to ObliviStore background shuffling.
+  + Eviction is based on the subORAM's algorithm and performed directly after request
++ Double the network traffic of ObliviStore, but have lower response time
+
 * Design
 + The proposed system use [[id:90671cb6-2eb5-4c4b-944d-a2d69286a386][Partition-based ORAM]] and support [[id:40c192f7-cbc9-427b-b608-91917a9e498c][Asynchronicity in ORAM]]
 and [[id:72e716fa-f062-4e60-899e-72be8cc5b9ea][Parallelism in ORAM]]
@@ -19,3 +26,5 @@ and [[id:72e716fa-f062-4e60-899e-72be8cc5b9ea][Parallelism in ORAM]]
   + x is put into  the eviction cache of the subORAM
 ** Conccurency model
 + To solve the side-channel created by concurrency,
+* Note
++ Proposed a good application benchmark for oblivious storage

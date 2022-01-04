@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       2e612c47-48c1-4799-8ef4-5741e084bc96
+:END:
+#+title: Elapsed Real Time
+
+* What
++ Also called real time, wall-clock time, wall time
++ Actual time taken by a program from start to end.
++ Different from CPU time, which measure active CPU time. CPU time can be influenced by delays, architecture,...
+  + Parallel program have more CPU time than real time.

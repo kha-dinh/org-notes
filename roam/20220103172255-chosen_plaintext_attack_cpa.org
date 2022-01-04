@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       08bb39cc-24ae-4d5d-b9d0-d1507d491cf2
+:END:
+#+title: Chosen-plaintext Attack (CPA)
