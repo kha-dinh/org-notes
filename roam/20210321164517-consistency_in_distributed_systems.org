@@ -1,9 +1,10 @@
 :PROPERTIES:
 :ID:       a6a02d90-1f01-45ec-a2b2-1775fc279db7
 :END:
-#+title: Consistency in Distributed Systems
+#+title: Consistency
 
-* Consistency Problem
+* What
++ A problem occured when data is distributed on multiple system
 + Every time data changed on replica, it has to change on all other replicas
 * Consistency Models
 ** Data centric

@@ -2,3 +2,81 @@
 :ID:       1c76664e-8f5e-40fb-869a-19f2e3c27f7c
 :END:
 #+title: PIM-Enclave
+* Review
++ While the paper is touching an interesting problem and timely topic, the paper fails in showing its novelty.
++ Specifically, it is hard to see what are the main benefits compared with existing enclave techniques. In addition, the presentation of the paper is not clear.
++ Hope that the attached reviews are helpful in revising the paper.
+
+** Reviewer 1
+
+Reviewer #1: In this paper, the authors describe a framework of PIM enclaves. The proposed design is evaluated using gem5 simulation environment.
+
+[[[Reasons for accepting the paper]]]
+
+The concept, integrating PIM and enclave like protection, has merits and is likely a research direction worth pursuing further as research.
+
+The design appears to be well thought taking into account recent research process in enclave security and extension (for instance, I/O based and FPGA based extension of enclave).
+
+The authors report experiment results and show performance of PIM-enclave.
+
+[[[Questions and weaknesses]]]
+
+The work and the paper need significant improvements. Detailed questions and feedback are provided below.
+
++ Design of PIM-enclave needs further elaboration and clarification. The model assumes that host CPU is also enclave enabled. This is not explicitly described but later discussion in the paper suggests that this should be the case.  However, it is not clear to me how host enclave and PIM enclaves work together other than the DMA communication interface. There are many questions how multiple enclaves in the same system cooperate securely for computing. Just one example, is there mutual authentication between host enclave and PIM-enclave?
+
++ The enclaves proposed in the paper are enclave co-processors. I feel that calling them PIM-enclave is somewhat misleading. They are not integrated with the main global DRAM in terms of memory hierarchy.  From this aspect, I have concern on novelty of this work. How is it different from simple idea that allocates dedicated physical cores in a 3D stacked CPU+memory as enclaves? Or simply partition a massive mult-core CPU with some cores dedicated as enclaves in a 3D stacked CPU + memory chip?
+
++ Removing certain operations from the host CPU can reduce exposure to certain threats. However, PIM-enclave will introduce its own and new attack surface. There is little discussion on attacks to the PIM core. The three attack scenarios in Table III is far from sufficient. Like the host CPU, PIM-core faces similar attack surface like any other processors. Extra complexity like communication interface between the host and PIM-core will further increase the attack surface not reduce it. For instance, PIM-core is vulnerable to the same power attack like plundervolt, just give one example. Attack like row-hammer also applies to both the host based enclave and PIM-core.
+
++ It is not very clear how global memory encryption and integrity are enabled. Specifically, there is almost no discussion how the design enables and ensures memory integrity, which is critical to prevent replay attacks. The paper only mentions encrypted DMA transactions, which is not the same as what is required to protect memory confidentiality and integrity.
+
++ When presenting the design details, the paper primarily uses SGX as a reference enclave, for instance, part related to attestation and other design details. However, I feel that the authors should mention other TEE designs like AMD-SEV. In my view, AMD-SEV is more relevant to the requirements and the focus of this work than SGX because AMD-SEV relies on ARM based SP for TEE and targets physical memory encryption and integrity protection.
+
++ Many questions remain unanswered like how does PIM-enclave support virtualization? basic requirement for its intended use in data centers; how PIM-enclave states are handled during context switch? How is virtual machine migration supported?
+
++ Experiment results are not convincing. PIM-core performance is typically far inferior comparing with the host CPU (in-order core vs high performance O3 core). The reported results are not based on realistic setting. It unfairly reduces the host performance using in-order core. Moreover, PIM-core local memory latency is set to be 0.01ns, which is too small. Results in Fig 8 are likely due to these two parameter settings. What will the results look like if the host CPU is set to be a high performance O3 core and the PIM local memory latency is set to be 1ns or 0.1ns.
+
++ Related work is not complete. There is a large body of research on DRAM encryption and integration protection. Most of them are not mentioned in the paper.
+
+[[[Suggestions]]]
+
++ Conduct more experiments using different settings (host core configuration, PIM-enclave local memory latency) and compare the results.
+
++ Clarify the design like host side enclave, etc as described above.
+
++ Consider to add memory integrity protection and elaborate how memory integrity is protected. The DMA encryption design described so far is far from complete as a solution for main memory encryption and integrity protection.
+
++ Expand attack surface analysis to PIM-core and PIM enclave, specifically likely attacks to PIM-core.
+
++ Extend related work to cover AMD enclave, prior research related to main memory encryption and integrity protection, encrypted bus communications, etc.
+
+
+** Reviewer 2
+Reviewer #2: Demand for data-intensive workloads and confidential computing are the prominent research directions shaping the future of cloud computing, the authors present a novel design of Processing-In-Memory (PIM) Enclave as a data-intensive workload accelerator for confidential computing, and also resistant to the side-channels that may occur while the data moves in route on the memory bus or stored in shared storage such as the processor caches.
+
+Strengths:
+1.      The PIM Enclave design is new for confidential computing on data-intensive workload.
+2.      Some side channel due to data movement or data sharing can be eliminated because there is no data copying between the host enclave and PIM-Enclave during computation.
+3.      The design requirements and the overall structure of this paper are clear.
+
+Weaknesses:
+1．      The programmer may select sensitive parts of the program to run inside PIM-enclave, but the original enclave is designed for sensitive parts of a program, what is the differences between the original enclave and the PIM-enclave?
+2．      What the PIM Kernel is and is for? And how to load the parts of a program into the PIM-enclave? And which parts of a program should run in the PIM-enclave or host enclave?
+3．      The access control logic depicted in figure 3 is not clearly presented.
+4．      The evaluation part in Section VI about k-means is not enough to explain the PIM-enclave's applicability to data intensive computing, more algorithms should be evaluated.
+5.      Page 6 in Section IV D, at the end of the second paragraph, what the "PC" is for?
+6.      Page 8 in Section V A, at the end of the last paragraph, we added add a delay, add repeated?
+7.      Page 9 in Section VI A, at the first paragraph, We shall The experiment imitates…?
+
+** Fixing
+*** Issue
++ The cooperation between host and PIM is not clear, there is also not a clear usage model. Is PIM used by the host enclave or a remote client?
++
+*** R1
++ how host enclave and PIM enclaves work together other than the DMA communication interface
++ How is it different from simple idea that allocates dedicated physical cores in a 3D stacked CPU+memory as enclaves? Or simply partition a massive mult-core CPU with some cores dedicated as enclaves in a 3D stacked CPU + memory chip?
++ Need more discussion about attack to PIM-enclave
++ How it enable memory integrity
++ how does PIM-enclave support virtualization, how PIM-enclave states are handled during context switch? How is virtual machine migration supported?
++ Related work is not complete. There is a large body of research on DRAM encryption and integration protection. Most of them are not mentioned in the paper.

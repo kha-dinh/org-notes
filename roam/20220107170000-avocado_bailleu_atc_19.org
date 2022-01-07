@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       bb255ec2-f4a1-4ca5-9199-85166c54407f
+:END:
+#+title: Avocado (Bailleu, ATC '21)
+
+* What
++ The paper propose [[id:04fb2996-3198-4d09-a4e4-e1b39530f168][In-memory Distributed Storage]]  [[id:39366a01-c574-49fb-9feb-2504af575428][Key-value Store]] on untrusted cloud environment
++ Provide strong security, [[id:6f0ad17d-e287-48ce-b4e3-14972987f4ad][Fault-tolerance]], [[id:e9c0ff2c-58b4-4d14-a6c1-3d975813c708][Linearizability]] and performance
++ Overcome memory limitation of single [[id:d634fe6f-1962-4405-9464-89ea5d69a6c6][Intel SGX]] by extending trust of single enclave to distributed environment
++ Expensive I/O used by TEEs (asynchornous system call based) is replaced with a high-performance network stack based on eRPC
+  + Allows direct I/O inside TEE protected domain
++ Use a secure [[id:f44d9f35-4b2a-46df-80a0-161a15dad813][Replication Protocol]]  protocol that is lighter than normal protocols
+  + Protect integrity of the protocol using TEE
+  + Linearizable reads and writes
+  + Outperform BFT
+  + Requires fewer replicas
++ A scalable attestation mechanism that establish trust across multiple nodes (instead of 1 node from SGX)
+  + New Configuration and attestation service for distributed system
++ Fast access to single-node KVS
+  + Skip list data structure t
+  + Lock-free scalable concurrent update
+* System model
++ Key space is divided into [[id:d39d2633-e03e-4cca-a0b0-a8fcd2eddb75][Shards]]
+  + Each shard is replicated over number of nodes
++ Client send PUT/GET/DELETE to a shard of the key,
+  + Choose a request coordinator from the list of node
++ Nodes will communicate with each other
+  + Then provide proof of success
+  + Proof needs:
+    + [[id:41e7968f-4eae-4af9-ad37-8468798f12b2][Integrity]]
+    + [[id:d2c216cb-b45b-4f75-bb36-e1c68c2a50fc][Authenticity]]
+    + [[id:a6a02d90-1f01-45ec-a2b2-1775fc279db7][Consistency]]
+    + Non-/Existence
+** Data Model
++ Server only acknowledge request when:
+  + Adversary cannot read / manipulate stored data
+  + Servers can establish trust with each other
+  + Operation always observe the latest view of data
+
+** Threat model
++
+* Network Stack
++ Problems
+  + Enclave network I/O is done by asynchronous system calls, which is slow
+  + Mapping devices into trusted memory is not possile
++ Use direct I/O networking (RDMA & DPDK)
++ DMA / message buffers are mapped into untrusted memory

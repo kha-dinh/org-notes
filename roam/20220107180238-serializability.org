@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       2d3e7267-6a07-4714-9661-5373b984530e
+:END:
+#+title: Serializability

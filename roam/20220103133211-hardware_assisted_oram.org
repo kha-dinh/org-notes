@@ -36,7 +36,11 @@
 **** Optimizations with server-side computation
 ** Secure Accelerators
 *** Attestation & Secure channel
-** Secure Processor Architecture
+** Other HW-assisted ORAM
+*** ZeroTrace
+**** SGX
+
+*** Secure Processor Architecture
 **** Ascend
 **** Phantom
 **** Freecursive ORAM

@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       04fb2996-3198-4d09-a4e4-e1b39530f168
+:END:
+#+title: In-memory Distributed Storage
+
+* Issues
++ Same as other distri
++ [[id:6f0ad17d-e287-48ce-b4e3-14972987f4ad][Fault tolerance]]
++ [[id:a6a02d90-1f01-45ec-a2b2-1775fc279db7][Consistency]]

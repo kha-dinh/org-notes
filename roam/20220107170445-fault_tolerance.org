@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       6f0ad17d-e287-48ce-b4e3-14972987f4ad
+:END:
+#+title: Fault tolerance

@@ -1,4 +1,0 @@
-:PROPERTIES:
-:ID:       6ad1c364-ee02-42b1-83f0-8f32cdc8dabf
-:END:
-#+title: Fault Tolerancce in Distributed Systems

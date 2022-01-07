@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       5ba8652c-b3f1-4da1-b25e-072a5ed8304f
+:END:
+#+title: Distribution Transparency
+
+* Transparency
+- Access Transparency
+- Location Transparency
+- Migration & Relocation Transparency
+- Replication Transparency
+- Concurrency Transparency
+- Failure Transparency

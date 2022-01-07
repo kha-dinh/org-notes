@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       d2cef90e-1212-4812-89ab-641c643fd134
 :END:
-#+title: Clock Synchronization (Distributed System)
+#+title: Clock Synchronization
 
 
 * Algorithms

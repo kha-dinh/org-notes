@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       e9c0ff2c-58b4-4d14-a6c1-3d975813c708
+:END:
+#+title: Linearizability
+
+* What
++ In [[id:21c33304-3fbe-4fc8-aa5e-63f405f0434d][Distributed System]] linerizaility is a [[id:a6a02d90-1f01-45ec-a2b2-1775fc279db7][Consistency]] model
++ In Concurrent programming, linerizaility is a when the /invocations/ of a list of event were [[id:2d3e7267-6a07-4714-9661-5373b984530e][Serializable]],
++ Which means that the whole
++ Linearizability is important when object may be accessed by multiple processes
+  + The programmer need to reason about expected results
++ A history (list of completed events(invocation & response)) is linearizable when
+  + It can be reorder to create a "sequential history" (invocation is immediately followed by a response) (Same as [[id:2d3e7267-6a07-4714-9661-5373b984530e][Serializability]])
+  + The reordered sequential history is correct according to the sequential definition(same as serializability)
+  + If response preceded in invocation in original history, it must precede in the reordered one (new).
+    + This allows for linearization of objects
+* Example
+| A invokes lock | A successfully locks | B invokes unlock | B successfully unlocks | A invokes unlock | A successfully unlocks |
++ This order is not linearizable, but sequentializable.
++ If B's unlock is moved before A, the history is valid. But it break linearizability definition (the order of events must be intact when reordering)
