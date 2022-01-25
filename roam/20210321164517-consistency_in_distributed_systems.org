@@ -21,7 +21,6 @@
   + Number and order of update operations
 *** Sequential Consistency
 + The result of any operation is the same in sequential order for any process
-+
 *** Causal Consistency
 + 2 events are =causally related= if one caused by or influenced by the another
 + The order does not matter if the operations are not causually related

@@ -2,6 +2,131 @@
 :ID:       1c76664e-8f5e-40fb-869a-19f2e3c27f7c
 :END:
 #+title: PIM-Enclave
+
+
+[[/home/khadd/org/roam/20210406132914-pim_enclave_diagram-PIM-Enclave.png]]
+o
+* PIM-Enclave
+** Motivations
+*** Secure In-memory Processing
+*** Reduce Data Movement
+** Contributions
+:PROPERTIES:
+:OMM-COLOR: GREEN
+:END:
+*** Hardware Design Based On PIM
+**** Minimal Performance Impact
+*** CPU-PIM Cooperation Model
+*** Secure Access Scheme
+**** Hide Access Pattern
+**** Preserve Memory Integrity
+** Evaluation
+:PROPERTIES:
+:OMM-COLOR: GREEN
+:END:
+*** Microbenchmark
+**** DMA Access
+*** Applications
+**** In-memory Matrix Multiplication
+***** CPU-PIM Cooperation Model
+***** Minimal Performance Impact
+**** K-mean
+***** Execution time (10 Iterations)
+***** Multiple Iterations
+**** Secure Store
+***** Secure Access Scheme
+
+* Outline
+** Introuction
+** Background and Related Works
+*** PIM
+**** PIM accelerators
+**** PIM architectures
+**** Baseline PIM assumptions
+*** Confidential computing
+**** Secure enclave and the cloud
+**** Secure accelerators
+**** Side-channel attacks and defenses
+** Overview of PIM-Enclave
+*** Usage Model
+**** is a secure in-memory accelerator
+***** trusted by the host enclave
+***** have secure communication channel
+***** is efficient at processing large data
+**** extends memory of CPU-based enclaves
+***** protects confidentiality and integrity of data
+***** hide the access pattern of data
+****** accesses from PIM
+****** accesses from host
+**** demonstration with an k-mean example
+***** k-mean is a data-intensive application
+***** putting data to PIM allows host enclave to process more data
+***** communication channel protected by AES
+***** access pattern from PIM is hidden with the access control logic
+***** access pattern from host is hidden with the secure access interface
+***** data integrity is protected by only allows the secure access interface to update memory. Direct update must be requested by the host enclave.
+*** threat model
+**** scope
+***** we protect
+****** the execution of PIM enclaves
+****** data packets on the bus
+****** observable memory changes
+***** out of scope:
+****** EM & power
+****** Host-side side-channel
+**** privileged software
+*****  untrusted memory mappings
+***** unauthorized accesses to memory
+**** physical attack on the bus
+***** snooping & side-channels
+**** other
+***** dma attacks
+***** cold boot
+*** design requirements
+**** requirements as secure in-memory accelerator
+***** R1-a: establish trust with the host
+***** R1-b: secure communication channel
+***** R1-c: efficiently process large data
+**** requirements as trusted memory
+***** R2-a: protect confidentiality of data
+****** R2-a-1: memory encryption
+******* prevent unauthorized accesses & cold boot
+****** R2-a-2: hide the access pattern of PIM
+****** R2-a-3: hide the access pattern of HOST
+***** R2-b: protect integrity of data
+****** replay, spoofing, splicng
+** Enabling in-memory confidential computation
+*** Hardware capabilities
+*** Remote attestation & key exchange
+**** Satisfy R1-a & R1-b
+*** Process large data efficiently with the AES engine
+**** Satisfy R1-c
+** PIM-enclave as memory extension
+*** keeping memory encrypted with a shared key
+**** Satisfy R2-a-1
+*** thwarting unauthorized accesses with the access control
+**** Satisfy R2-a-2
+**** Satisfy R2-b
+*** enabling memory accesses from host with the secure access interface
+**** Satisfy R2-a-3 by encrypting the access address (trustore, invisimem)
+**** Satisfy R2-b by only allow memory updates through the interface
+** Implementation
+** Evaluation
+*** security analysis
+**** in-memory hash table
+***** show sensitive application can be offloaded to PIM
+**** secure access interface
+***** show the interface can hide the access pattern
+*** Microbenchmark
+**** encrypted data transfer
+**** secure access interface
+*** data-intensive application
+**** k-mean algorithm
+***** demonstrate the computation model
+***** the performance when multiple PIM cores are used
+** Conclusion
+
+
 * Review
 + While the paper is touching an interesting problem and timely topic, the paper fails in showing its novelty.
 + Specifically, it is hard to see what are the main benefits compared with existing enclave techniques. In addition, the presentation of the paper is not clear.

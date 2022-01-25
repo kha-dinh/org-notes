@@ -7,7 +7,15 @@
 
 
 
+* Performance Model for PIM accelerated ORAM
+** Online through
+** Online Latency
++ Online latency is defined as time of request until time the request is satisfied
++ In [[id:f98986c1-3090-4362-ac1e-89192956cc26][RingORAM (Ren, Sec '15)]], it is the time of request until data is fetched into the stash & returned to client
++ $Online latency = \Delta + time read path$
+  + $t_{read path}= \alpha * logN * block size (bytes)$
+  + With XOR technique:
+    + $t_{read path}= \alpha * N * block size (bytes) + t_{storage}$
+    + $t_{storage}= \beta * logN * block size (bytes)$
 
-* Notes
-+ A study by Bindschaedler et al.~\cite{curious} revealed that there is a gap between the theoretical front and the practical front of ORAM usage.
-+
++ Offline latency = time evict + time early reshuffle
