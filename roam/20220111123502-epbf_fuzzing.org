@@ -1,0 +1,74 @@
+:PROPERTIES:
+:ID:       d8e0d9cc-ab8d-4be0-826b-71d210fe7316
+:END:
+#+title: ePBF Fuzzing
+
+* Steps
+** Compiling kernel components into userspace
+*** Collecting
++ Use kernel build system and header files to generate processed source code (macros, includes)
++ Generate .i files for code than contain =bpf_check=
+#+begin_src makefile
+process_example:
+    cd $(KERNEL_SRC) &&  \
+        make HOSTCC=clang CC=clang kernel/bpf/verifier.i
+#+end_src
+*** Compiling
++ Verifier might need object files of other components
++ Userspace hooks: implementations of kernel functions (e.g., kmalloc) in userspace
++ Have to implement every undefined references
+** Execution flow
++ A manager start VMs & execute fuzzer processes
++ Generator generate / mutate BPF program
++ Verify with the userspace verifier
++ If program is valid, call actual bpf system call
++ Use bug detection to find bug
+** Generating Input
++ Doesn't use libfuzzer because it's inefficient, most mutated input is not valid
++ PBF support 10 registers
++ When uninitialized, can have values:
+  + NOT_INIT
+  + SCALAR_VALUE
+  + PTR_TO_MAP_VALUE_OR_NULL:
+  + PTR_TO_MAP_VALUE: Check for NULL has been done
+  + more states
++ Use header, body and footer as a skeleton
+*** Header
++ Prepare BPF map
++ Initialize 2 registers with unknown value from the map (SCALAR_VALUE)
++ Generate conditional jumps
+#+begin_src cpp
+inline struct bpf_insn input::generate_min_bounds(unsigned reg, int64_t val)
+{
+    bool is64bit = this->rg->one_of(2);
+    this->min_bound = val == -1 ? this->rg->rand_int_range(-FUZZ_MAP_SIZE, FUZZ_MAP_SIZE): val;
+
+    if (is64bit)
+        return BPF_JMP_IMM(BPF_JSGT, reg, this->min_bound, 1);
+    else
+        return BPF_JMP32_IMM(BPF_JSGT, reg, this->min_bound, 1);
+}
+#+end_src
+
+*** Body
++ In a loop, choose 2 registers for ALU or branching
++ Generate random instructions
+
+*** Footer
++ Guarantee that the input will perform memory write to the map
++ Generate ptr arithmetic instruction on the map (addition, subtraction),
++
+***
+** Bug Detection
++ Goal is to find faulty pointer arithmetic (out of bound load/store)
++ Perform random ALU on the pointer to BPF map
++ The value of the map must change if it is in bound
+* Notes
+** Why Userspace
++ Faster than kernel-space (context switches)
++ More control over
++ Scale better on more cores (becasue just compiler is not protected by mutex)
+** Advantages
++ This project find logical errors in the verifier, not just memory errors
+** Improvement
++ Execute everything in userspace

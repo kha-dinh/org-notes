@@ -1,0 +1,244 @@
+% Created 2022-01-25 Tue 18:13
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Dinh Duy Kha}
+\date{\today}
+\title{Outline}
+\hypersetup{
+ pdfauthor={Dinh Duy Kha},
+ pdftitle={Outline},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.2 (Org mode 9.6)}, 
+ pdflang={English}}
+\usepackage{biblatex}
+\addbibresource{~/org/bibliography/bibliography.bib}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Introuction}
+\label{sec:orgbfa7fe1}
+\section{Background and Related Works}
+\label{sec:orgf841941}
+\subsection{PIM}
+\label{sec:orgb01d4e2}
+\subsubsection{PIM accelerators}
+\label{sec:org4d8ee4e}
+\subsubsection{PIM architectures}
+\label{sec:orgda0d2ae}
+\subsubsection{Baseline PIM assumptions}
+\label{sec:orgb531ace}
+\subsection{Confidential computing}
+\label{sec:org4b22eb1}
+\subsubsection{Secure enclave and the cloud}
+\label{sec:org91490c6}
+\subsubsection{Secure accelerators}
+\label{sec:org4e2bd4f}
+\subsubsection{Side-channel attacks and defenses}
+\label{sec:org501865d}
+\section{Overview of PIM-Enclave}
+\label{sec:orgd2443a8}
+\subsection{Usage Model}
+\label{sec:org853483c}
+\subsubsection{is a secure in-memory accelerator}
+\label{sec:orgf12966a}
+\begin{enumerate}
+\item trusted by the host enclave
+\label{sec:org850e42f}
+\item have secure communication channel
+\label{sec:org72499c1}
+\item is efficient at processing large data
+\label{sec:org7235504}
+\end{enumerate}
+\subsubsection{extends memory of CPU-based enclaves}
+\label{sec:orgc8bf6bc}
+\begin{enumerate}
+\item protects confidentiality and integrity of data
+\label{sec:orgc628c89}
+\item hide the access pattern of data
+\label{sec:org3e8941f}
+\begin{enumerate}
+\item accesses from PIM
+\label{sec:orga86551d}
+\item accesses from host
+\label{sec:orge814af2}
+\end{enumerate}
+\end{enumerate}
+\subsubsection{demonstration with an k-mean example}
+\label{sec:org1b3e249}
+\begin{enumerate}
+\item k-mean is a data-intensive application
+\label{sec:org33d53a8}
+\item putting data to PIM allows host enclave to process more data
+\label{sec:org4d4cf17}
+\item communication channel protected by AES
+\label{sec:orgc21f5f1}
+\item access pattern from PIM is hidden with the access control logic
+\label{sec:orgb7f603e}
+\item access pattern from host is hidden with the secure access interface
+\label{sec:org0211bff}
+\item data integrity is protected by only allows the secure access interface to update memory. Direct update must be requested by the host enclave.
+\label{sec:org891e263}
+\end{enumerate}
+\subsection{Threat model \& Design requirements}
+\label{sec:orgaf4f635}
+\subsubsection{threat model}
+\label{sec:org298bee3}
+\begin{enumerate}
+\item scope
+\label{sec:org7e9151f}
+\begin{enumerate}
+\item we protect
+\label{sec:org5c6737a}
+\begin{enumerate}
+\item the execution of PIM enclaves
+\label{sec:org4830b9d}
+\item data packets on the bus
+\label{sec:org45bd952}
+\item observable memory changes
+\label{sec:org797a609}
+\end{enumerate}
+\item out of scope:
+\label{sec:org4e8bfac}
+\begin{enumerate}
+\item EM \& power
+\label{sec:org25962ef}
+\item Host-side side-channel
+\label{sec:org750aa49}
+\end{enumerate}
+\end{enumerate}
+\item privileged software
+\label{sec:orge65723c}
+\begin{enumerate}
+\item untrusted memory mappings
+\label{sec:orgde470d2}
+\item unauthorized accesses to memory
+\label{sec:orge054211}
+\end{enumerate}
+\item physical attack on the bus
+\label{sec:org43d24dc}
+\begin{enumerate}
+\item snooping \& side-channels
+\label{sec:org0aac69d}
+\end{enumerate}
+\item other
+\label{sec:org6e8f99d}
+\begin{enumerate}
+\item dma attacks
+\label{sec:orgcbbf085}
+\item cold boot
+\label{sec:org989e357}
+\end{enumerate}
+\end{enumerate}
+\subsubsection{requirements as secure in-memory accelerator}
+\label{sec:org6abda3e}
+\begin{enumerate}
+\item R1-a: establish trust with the host
+\label{sec:org8bf95a8}
+\item R1-b: secure communication channel
+\label{sec:orge6604d1}
+\item R1-c: efficiently process large data
+\label{sec:orgd0ee7ff}
+\end{enumerate}
+\subsubsection{requirements as trusted memory}
+\label{sec:org8818db9}
+\begin{enumerate}
+\item R2-a: protect confidentiality of data
+\label{sec:org1c16471}
+\begin{enumerate}
+\item R2-a-1: memory encryption
+\label{sec:org239abac}
+\begin{enumerate}
+\item prevent unauthorized accesses \& cold boot
+\label{sec:org3944a04}
+\end{enumerate}
+\item R2-a-2: hide the access pattern of PIM
+\label{sec:orgc3fa038}
+\item R2-a-3: hide the access pattern of HOST
+\label{sec:org8ea25fa}
+\end{enumerate}
+\item R2-b: protect integrity of data
+\label{sec:orgc417487}
+\begin{enumerate}
+\item replay, spoofing, splicng
+\label{sec:org5b5443c}
+\end{enumerate}
+\end{enumerate}
+\section{Enabling in-memory confidential computation}
+\label{sec:org0ad53d3}
+\subsection{Hardware capabilities}
+\label{sec:orgd3256c8}
+\subsection{Remote attestation \& key exchange}
+\label{sec:orgac00635}
+\subsubsection{Satisfy R1-a \& R1-b}
+\label{sec:orgf6a80ea}
+\subsection{Process large data efficiently with the AES engine}
+\label{sec:org3dfe836}
+\subsubsection{Satisfy R1-c}
+\label{sec:orga71afa2}
+\section{PIM-enclave as memory extension}
+\label{sec:org5a2f2dc}
+\subsection{keeping memory encrypted with a shared key}
+\label{sec:org21e3310}
+\subsubsection{Satisfy R2-a-1}
+\label{sec:org23ab08b}
+\subsection{thwarting unauthorized accesses with the access control}
+\label{sec:org8b13cd0}
+\subsubsection{Satisfy R2-a-2}
+\label{sec:org9c1d058}
+\subsubsection{Satisfy R2-b}
+\label{sec:orgc40be8b}
+\subsection{enabling memory accesses from host with the secure access interface}
+\label{sec:org34d866e}
+\subsubsection{Satisfy R2-a-3 by encrypting the access address (trustore, invisimem)}
+\label{sec:orgee9eaa7}
+\subsubsection{Satisfy R2-b by only allow memory updates through the interface}
+\label{sec:orgd17e28e}
+\section{Implementation}
+\label{sec:orgabc2fa3}
+\section{Evaluation}
+\label{sec:org491c38c}
+\subsection{security analysis}
+\label{sec:org3c9a81a}
+\subsubsection{in-memory hash table}
+\label{sec:org011d79c}
+\begin{enumerate}
+\item show sensitive application can be offloaded to PIM
+\label{sec:org92c9fd2}
+\end{enumerate}
+\subsubsection{secure access interface}
+\label{sec:orgdfb2b71}
+\begin{enumerate}
+\item show the interface can hide the access pattern
+\label{sec:org51b2a60}
+\end{enumerate}
+\subsection{Microbenchmark}
+\label{sec:org6d86f05}
+\subsubsection{encrypted data transfer}
+\label{sec:orge266fd1}
+\subsubsection{secure access interface}
+\label{sec:org918266b}
+\subsection{data-intensive application}
+\label{sec:org08b765c}
+\subsubsection{k-mean algorithm}
+\label{sec:orgaeae79c}
+\begin{enumerate}
+\item demonstrate the computation model
+\label{sec:org7dc22aa}
+\end{enumerate}
+\section{Conclusion}
+\label{sec:orgf69a0f1}
+\end{document}

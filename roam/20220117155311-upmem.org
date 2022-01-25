@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       778e2792-16cc-47ee-8ccd-05c5c523cee0
+:END:
+#+title: UPMEM
+
+
+* What
++ A Processing-in-Memory Architecture
+* CPU-DPU communication
